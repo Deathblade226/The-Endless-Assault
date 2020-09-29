@@ -482,10 +482,55 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 329367632853865001, guid: b7c06462559aa054fab5bed22d0f51a6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 329367632853875577, guid: b7c06462559aa054fab5bed22d0f51a6,
         type: 3}
       propertyPath: m_Name
       value: OrcChief
+      objectReference: {fileID: 0}
+    - target: {fileID: 329367632853875729, guid: b7c06462559aa054fab5bed22d0f51a6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 329367632853878627, guid: b7c06462559aa054fab5bed22d0f51a6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 329367632853883177, guid: b7c06462559aa054fab5bed22d0f51a6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 329367632853886725, guid: b7c06462559aa054fab5bed22d0f51a6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 329367632853889767, guid: b7c06462559aa054fab5bed22d0f51a6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 329367632853894113, guid: b7c06462559aa054fab5bed22d0f51a6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 329367632853902001, guid: b7c06462559aa054fab5bed22d0f51a6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 329367632853965823, guid: b7c06462559aa054fab5bed22d0f51a6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b7c06462559aa054fab5bed22d0f51a6, type: 3}
