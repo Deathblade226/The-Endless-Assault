@@ -35,6 +35,21 @@ MonoBehaviour:
   RpcList:
   - ClickRpc
   - DestroyRpc
+  - ApplyDamage
+  - RegenHealth
+  - CreatePlacable
+  - DeleteUnit
+  - MovePlaceableToMouse
+  - RotatePlaceable
+  - RPC_Summon
+  - Shoot
+  - SpawnObject
+  - StartAttacking
+  - StartTravel
+  - StartWander
+  - StopAttacking
+  - StopWander
+  - ToggleGame
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 0
