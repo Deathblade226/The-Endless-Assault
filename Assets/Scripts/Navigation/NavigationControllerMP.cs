@@ -9,16 +9,17 @@ using UnityEngine.AI;
 [RequireComponent(typeof(AttackNavMP))]
 [RequireComponent(typeof(TravelNavMP))]
 [RequireComponent(typeof(WanderNavMP))]
-public class NavigationControllerMP : Navigation, IPunObservable {
+[RequireComponent(typeof(VisionSystem))]
+public class NavigationControllerMP : NavigationMP, IPunObservable {
 
 [SerializeField] AttackNavMP attackNav = null;
 [SerializeField] TravelNavMP travelNav = null;
 [SerializeField] WanderNavMP wanderNav = null;
 
 public AttackNavMP AttackNav { get => attackNav; set => attackNav = value; }
-public Game GameController { get; set; }
+//public Game GameController { get; set; }
 
-private NavMeshPath navPath ;
+private NavMeshPath navPath;
 private GameObject objective = null;
 
 void IPunObservable.OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info) { 
@@ -34,7 +35,7 @@ private void Awake() {
 
 private IEnumerator Start() { 
 	yield return null;
-    this.GameController = Game.game;
+    //this.GameController = Game.game;
     this.navPath = new NavMeshPath();
     if (this.attackNav != null) this.attackNav.Nc = this;
     if (this.wanderNav != null) this.wanderNav.Nc = this;
@@ -45,13 +46,15 @@ private IEnumerator Start() {
 }
 
 private void Update() {
-    if (GameController.GameRunning) StartCoroutine(MonsterLogic());
+    //if (GameController.GameRunning) 
+    StartCoroutine(MonsterLogic());
     if (Animator != null) Animator.SetFloat("Speed", Agent.velocity.magnitude);
 }
 
 IEnumerator MonsterLogic() {
-    if (GameController.GameRunning) {
-    GameObject target = AIUtilities.GetNearestGameObject(gameObject, attackNav.target, Range, Fov);
+    //if (GameController.GameRunning) {
+    //GameObject target = AIUtilities.GetNearestGameObject(gameObject, attackNav.target, Range, Fov);
+    GameObject target = GetComponent<VisionSystem>().SeenTarget;
 
     if (target != null) { 
     
@@ -76,7 +79,7 @@ IEnumerator MonsterLogic() {
     travelNav.Moving = false; 
     
     }
-    }
+    //}
 yield return null; }
 
 private void OnDestroy() {

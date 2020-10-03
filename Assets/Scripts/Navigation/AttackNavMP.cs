@@ -9,8 +9,7 @@ public class AttackNavMP : MonoBehaviourPun, IPunObservable {
 [SerializeField] float attackRange = 2.0f;
 [SerializeField] NavigationControllerMP nc = null;
 [SerializeField] Weapon weapon = null;
-[SerializeField] bool lookForAltTarget = true;
-[SerializeField] public string target = "";
+//[SerializeField] bool lookForAltTarget = true;
 
 public string Target { get; set; } = "";
 public bool Active { get; set; } = false;
@@ -47,15 +46,15 @@ private IEnumerator Start() {
 }
 
 private void Update() {
-	if (this.nc.GameController.GameRunning) { 
-	if (this.lookForAltTarget && this.altT == null) this.altT = AIUtilities.GetNearestGameObject(this.gameObject, this.target, this.attackRange);
+	//if (this.nc.GameController.GameRunning) { 
+	//if (this.lookForAltTarget && this.altT == null) this.altT = GetComponent<VisionSystem>().SeenTarget;
 
-	if (this.altT != null) { this.Target = this.altT.tag; this.Active = true; }
-	else { StopAttacking(); this.Nc.Agent.isStopped = false; }
+	//if (this.altT != null) { this.Target = this.altT.tag; this.Active = true; }
+	//else { StopAttacking(); this.Nc.Agent.isStopped = false; }
 
 	if (( this.Target != "" || this.altT != null) && this.Active) { 
 	
-	var target = AIUtilities.GetNearestGameObject(this.gameObject, this.Target, this.Nc.Range, this.Nc.Fov, this.Nc.SeeThroughWalls);
+	var target = GetComponent<VisionSystem>().SeenTarget;
 
 	if (target != null) { 
 
@@ -88,7 +87,7 @@ private void Update() {
 
 	}
 	}        
-	}
+	//}
 }
 public void StartAttacking() { 
 	Active = true;

@@ -19,9 +19,6 @@ public NavMeshAgent Agent { get => agent; set => agent = value; }
 public Animator Animator { get => animator; set => animator = value; }
 public bool X { get => m_x; set => m_x = value; }
 public bool Z { get => m_z; set => m_z = value; }
-public bool SeeThroughWalls { get => seeThroughWalls; set => seeThroughWalls = value; }
-public float Fov { get => fov; set => fov = value; }
-public float Range { get => range; set => range = value; }
 
 //Debug
 }
