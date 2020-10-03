@@ -1536,6 +1536,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 585417531133414879, guid: 4c30bfe328760af45a0df7ffcc75960e,
+        type: 3}
+      propertyPath: m_Speed
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3157387316625919344, guid: 4c30bfe328760af45a0df7ffcc75960e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1599,6 +1604,21 @@ PrefabInstance:
     - target: {fileID: 3336172698178726445, guid: 4c30bfe328760af45a0df7ffcc75960e,
         type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6312789746102671678, guid: 4c30bfe328760af45a0df7ffcc75960e,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6312789746102671678, guid: 4c30bfe328760af45a0df7ffcc75960e,
+        type: 3}
+      propertyPath: m_Center.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6312789746102671678, guid: 4c30bfe328760af45a0df7ffcc75960e,
+        type: 3}
+      propertyPath: m_Center.z
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1692,7 +1712,7 @@ PrefabInstance:
     - target: {fileID: 5425879186702437923, guid: 7a07df218de81af4bb97b2a69c52fbb7,
         type: 3}
       propertyPath: m_Speed
-      value: 3
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 5425879186702437924, guid: 7a07df218de81af4bb97b2a69c52fbb7,
         type: 3}
@@ -1702,7 +1722,7 @@ PrefabInstance:
     - target: {fileID: 5425879186702437924, guid: 7a07df218de81af4bb97b2a69c52fbb7,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5425879186702437982, guid: 7a07df218de81af4bb97b2a69c52fbb7,
         type: 3}
@@ -1773,11 +1793,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: OrcChiefMonster
       objectReference: {fileID: 0}
-    - target: {fileID: 413197153697535199, guid: 2a31c6fd5db8e844dae79c86ef431f22,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1904803355039128313, guid: 2a31c6fd5db8e844dae79c86ef431f22,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1832,6 +1847,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8655673092655523063, guid: 2a31c6fd5db8e844dae79c86ef431f22,
+        type: 3}
+      propertyPath: m_Speed
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a31c6fd5db8e844dae79c86ef431f22, type: 3}
