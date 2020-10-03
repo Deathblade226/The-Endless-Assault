@@ -15,6 +15,8 @@ public static GameObject GetNearestGameObject(GameObject source, string tagName,
 
     foreach(Collider collider in colliders) { 
 
+    if (collider.tag != tagName) { continue; }
+
     Vector3 targetDir = collider.transform.position - source.transform.position;
     float angleDif = Vector3.Angle(targetDir, source.transform.forward);
 

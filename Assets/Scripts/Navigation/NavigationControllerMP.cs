@@ -56,7 +56,7 @@ private void Update() {
     wanderNav.StopWander(); 
     Agent.SetDestination(target.transform.position); 
     
-    } else if (attackNav != null && attackNav.Target != "" && !attackNav.Active) { 
+    } else if (target != null && attackNav != null && attackNav.Target != "" && !attackNav.Active) { 
     
     travelNav.Moving = false; 
     wanderNav.StopWander(); 
