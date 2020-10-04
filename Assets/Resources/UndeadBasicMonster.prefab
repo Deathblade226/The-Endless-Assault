@@ -3354,7 +3354,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fieldOfViewAngle: 124
   visionRange: 5
-  target: Player
+  targets:
+  - Player
+  - Defense
   visionTrigger: {fileID: 5425879186702437927}
 --- !u!114 &5425879186702437925
 MonoBehaviour:

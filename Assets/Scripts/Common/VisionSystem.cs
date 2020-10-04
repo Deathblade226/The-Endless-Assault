@@ -8,8 +8,8 @@ using UnityEditor;
 public class VisionSystem : MonoBehaviour {
 
 [SerializeField][Range(0,360)] float fieldOfViewAngle = 180f;
-[SerializeField] float visionRange = 10f;
-[SerializeField] string target;
+[SerializeField][Range(0,50)] float visionRange = 10f;
+[SerializeField] List<string> targets;
 [SerializeField] SphereCollider visionTrigger = null;
 
 private GameObject seenTarget = null;
@@ -29,8 +29,8 @@ private void OnTriggerStay(Collider other) {
     bool valid = true;
     Vector3 targetDir = other.transform.position - transform.position;
     float angleDif = Vector3.Angle(targetDir, transform.forward);
-    if (other.tag == target) {
-    if (Physics.Raycast(transform.position, targetDir.normalized, out RaycastHit hit, visionRange)) { valid = hit.collider.gameObject.tag == target; }
+    if (targets.Contains(other.tag)) {
+    if (Physics.Raycast(transform.position, targetDir.normalized, out RaycastHit hit, visionRange)) { valid = targets.Contains(hit.collider.gameObject.tag); }
     
     //( transform.position - seenTarget.transform.position).sqrMagnitude > (transform.position - other.transform.position).sqrMagnitude
     float distanceSeen = SeenTarget == null ? float.MaxValue : ( transform.position - seenTarget.transform.position ).sqrMagnitude;
@@ -51,7 +51,24 @@ private void OnDrawGizmos() {
     Vector3 up = transform.up;
     Gizmos.DrawRay(transform.position + up, (leftRayDirection * visionRange));
     Gizmos.DrawRay(transform.position + up, (rightRayDirection * visionRange));
-    Gizmos.DrawWireSphere(transform.position + up, visionRange);
+    DrawEllipse(transform.position + up, transform.forward, transform.up, visionRange, visionRange, 100, Gizmos.color);
+    //Gizmos.DrawWireSphere(transform.position + up, visionRange);
+}
+
+private void DrawEllipse(Vector3 pos, Vector3 forward, Vector3 up, float radiusX, float radiusY, int segments, Color color, float duration = 0) {
+    float angle = 0f;
+    Quaternion rot = Quaternion.LookRotation(forward, up);
+    Vector3 lastPoint = Vector3.zero;
+    Vector3 thisPoint = Vector3.zero;
+    for (int i = 0; i < segments + 1; i++) {
+    thisPoint.x = Mathf.Sin(Mathf.Deg2Rad * angle) * radiusX;
+    thisPoint.z = Mathf.Cos(Mathf.Deg2Rad * angle) * radiusY;
+    if (i > 0) {
+    Debug.DrawLine(rot * lastPoint + pos, rot * thisPoint + pos, color, duration);
+    }
+    lastPoint = thisPoint;
+    angle += 360f / segments;
+    }
 }
 
 }

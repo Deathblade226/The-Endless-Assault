@@ -1763,6 +1763,26 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5425879186702437926, guid: 7a07df218de81af4bb97b2a69c52fbb7,
+        type: 3}
+      propertyPath: targets.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5425879186702437926, guid: 7a07df218de81af4bb97b2a69c52fbb7,
+        type: 3}
+      propertyPath: targets.Array.data[0]
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 5425879186702437926, guid: 7a07df218de81af4bb97b2a69c52fbb7,
+        type: 3}
+      propertyPath: targets.Array.data[1]
+      value: Defense
+      objectReference: {fileID: 0}
+    - target: {fileID: 5425879186702437926, guid: 7a07df218de81af4bb97b2a69c52fbb7,
+        type: 3}
+      propertyPath: visionRange
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5425879186702437982, guid: 7a07df218de81af4bb97b2a69c52fbb7,
         type: 3}
       propertyPath: m_LocalPosition.x
