@@ -3348,8 +3348,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ac768a6d026f944ebad8d4cd676aa06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fieldOfViewAngle: 180
-  visionRange: 10
+  fieldOfViewAngle: 124
+  visionRange: 5
   target: Player
   visionTrigger: {fileID: 5425879186702437927}
 --- !u!114 &5425879186702437925
@@ -3895,7 +3895,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 2ee8d64f7e7eb7c408084353f219e996, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1

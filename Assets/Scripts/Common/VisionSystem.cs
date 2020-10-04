@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEditor;
 
 [RequireComponent(typeof(SphereCollider))]
 public class VisionSystem : MonoBehaviour {
 
-[SerializeField] float fieldOfViewAngle = 180f;
+[SerializeField][Range(0,360)] float fieldOfViewAngle = 180f;
 [SerializeField] float visionRange = 10f;
 [SerializeField] string target;
 [SerializeField] SphereCollider visionTrigger = null;
@@ -14,13 +15,14 @@ public class VisionSystem : MonoBehaviour {
 private GameObject seenTarget = null;
 
 public GameObject SeenTarget { get => seenTarget; set => seenTarget =  value ; }
+public float Distance { get => (seenTarget.transform.position - transform.position).magnitude; }
 
 private void Awake() {
     visionTrigger.radius = visionRange;		
 }
 
 private void Update() {
-    Debug.Log(SeenTarget);		
+    //Debug.Log(SeenTarget);		
 }
 
 private void OnTriggerStay(Collider other) {
@@ -38,6 +40,17 @@ private void OnTriggerStay(Collider other) {
     SeenTarget = other.gameObject;
     }
     }
+}
+
+private void OnDrawGizmos() {
+    float halfFOV = fieldOfViewAngle / 2.0f;
+    Quaternion leftRayRotation = Quaternion.AngleAxis( -halfFOV, Vector3.up );
+    Quaternion rightRayRotation = Quaternion.AngleAxis( halfFOV, Vector3.up );
+    Vector3 leftRayDirection = leftRayRotation * transform.forward;
+    Vector3 rightRayDirection = rightRayRotation * transform.forward;
+    Gizmos.DrawRay( transform.position, leftRayDirection * visionRange);
+    Gizmos.DrawRay( transform.position, rightRayDirection * visionRange);
+    Gizmos.DrawWireSphere(transform.position, visionRange);
 }
 
 }

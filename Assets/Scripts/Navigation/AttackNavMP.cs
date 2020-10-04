@@ -38,7 +38,7 @@ void IPunObservable.OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo
 }
 
 private void Awake() {
-	//if(this.weapon != null) this.weapon.attack = this;
+	if(this.weapon != null) this.weapon.attack = this;
 }
 
 private IEnumerator Start() { 
@@ -46,6 +46,7 @@ private IEnumerator Start() {
 }
 
 private void Update() {
+	VisionSystem vs = GetComponent<VisionSystem>();
 	//if (this.nc.GameController.GameRunning) { 
 	//if (this.lookForAltTarget && this.altT == null) this.altT = GetComponent<VisionSystem>().SeenTarget;
 
@@ -54,12 +55,14 @@ private void Update() {
 
 	if (( this.Target != "" || this.altT != null) && this.Active) { 
 	
-	var target = GetComponent<VisionSystem>().SeenTarget;
+	var target = vs.SeenTarget;
 
 	if (target != null) { 
 
-	this.attacking = (( this.transform.position - target.transform.position).magnitude <= this.attackRange && this.AttackTime <= 0);
+	this.attacking = (vs.Distance <= this.attackRange && this.AttackTime <= 0);
 	
+	Debug.Log($"Target Distance <= Attack Range: {vs.Distance <= this.attackRange}");
+
 	if (this.attacking) {
 	this.transform.LookAt(target.transform);
 	this.AttackTime = attackCD; 

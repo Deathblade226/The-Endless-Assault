@@ -1364,8 +1364,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ac768a6d026f944ebad8d4cd676aa06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fieldOfViewAngle: 180
-  visionRange: 10
+  fieldOfViewAngle: 90
+  visionRange: 5
   target: Player
   visionTrigger: {fileID: 6312789746102671678}
 --- !u!114 &1565432829060781885

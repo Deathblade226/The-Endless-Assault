@@ -23,7 +23,7 @@ private bool attacking = false;
 private GameObject altT = null;
 
 private void Awake() {
-	if(weapon != null) weapon.attack = this;
+	//if(weapon != null) weapon.attack = this;
 }
 
 private void Update() {
