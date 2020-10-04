@@ -377,7 +377,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackCD: 3
-  attackRange: 2
+  attackRange: 5
   nc: {fileID: 2496098305512758044}
   weapon: {fileID: 7374259174621758362}
 --- !u!114 &8246309568133611641
@@ -435,7 +435,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fieldOfViewAngle: 124
-  visionRange: 5
+  visionRange: 3
   targets:
   - Player
   - Defence

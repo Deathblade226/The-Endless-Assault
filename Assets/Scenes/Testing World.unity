@@ -1550,15 +1550,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 585417531133414879, guid: 4c30bfe328760af45a0df7ffcc75960e,
-        type: 3}
-      propertyPath: m_Speed
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 1259409080391402732, guid: 4c30bfe328760af45a0df7ffcc75960e,
         type: 3}
       propertyPath: viewIdField
-      value: 6
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3157387316625919344, guid: 4c30bfe328760af45a0df7ffcc75960e,
         type: 3}
@@ -1573,7 +1568,7 @@ PrefabInstance:
     - target: {fileID: 3157387316625919344, guid: 4c30bfe328760af45a0df7ffcc75960e,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -7.844
       objectReference: {fileID: 0}
     - target: {fileID: 3157387316625919344, guid: 4c30bfe328760af45a0df7ffcc75960e,
         type: 3}
@@ -1620,30 +1615,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: OrcFighterMonster
       objectReference: {fileID: 0}
-    - target: {fileID: 3336172698178726445, guid: 4c30bfe328760af45a0df7ffcc75960e,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5496298731474999670, guid: 4c30bfe328760af45a0df7ffcc75960e,
         type: 3}
       propertyPath: viewIdField
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6312789746102671678, guid: 4c30bfe328760af45a0df7ffcc75960e,
-        type: 3}
-      propertyPath: m_Center.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6312789746102671678, guid: 4c30bfe328760af45a0df7ffcc75960e,
-        type: 3}
-      propertyPath: m_Center.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6312789746102671678, guid: 4c30bfe328760af45a0df7ffcc75960e,
-        type: 3}
-      propertyPath: m_Center.z
-      value: 0
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c30bfe328760af45a0df7ffcc75960e, type: 3}
@@ -1657,32 +1632,22 @@ PrefabInstance:
     - target: {fileID: 42922821990736468, guid: 085328aea6660d64281c1bf7d996c661,
         type: 3}
       propertyPath: viewIdField
-      value: 8
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 620276120765555011, guid: 085328aea6660d64281c1bf7d996c661,
         type: 3}
       propertyPath: m_Name
       value: UndeadArmoredMonster
       objectReference: {fileID: 0}
-    - target: {fileID: 620276120765555011, guid: 085328aea6660d64281c1bf7d996c661,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 639459755379249563, guid: 085328aea6660d64281c1bf7d996c661,
-        type: 3}
-      propertyPath: m_Speed
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 1383502236491338188, guid: 085328aea6660d64281c1bf7d996c661,
         type: 3}
       propertyPath: viewIdField
-      value: 7
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6277916971576104537, guid: 085328aea6660d64281c1bf7d996c661,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.99
+      value: -1.85
       objectReference: {fileID: 0}
     - target: {fileID: 6277916971576104537, guid: 085328aea6660d64281c1bf7d996c661,
         type: 3}
@@ -1692,7 +1657,7 @@ PrefabInstance:
     - target: {fileID: 6277916971576104537, guid: 085328aea6660d64281c1bf7d996c661,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -7.844
       objectReference: {fileID: 0}
     - target: {fileID: 6277916971576104537, guid: 085328aea6660d64281c1bf7d996c661,
         type: 3}
@@ -1746,47 +1711,22 @@ PrefabInstance:
     - target: {fileID: 2724179909582691583, guid: 7a07df218de81af4bb97b2a69c52fbb7,
         type: 3}
       propertyPath: viewIdField
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 5425879186702437923, guid: 7a07df218de81af4bb97b2a69c52fbb7,
-        type: 3}
-      propertyPath: m_Speed
-      value: 2.5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5425879186702437924, guid: 7a07df218de81af4bb97b2a69c52fbb7,
         type: 3}
       propertyPath: m_Name
-      value: UndeadBasicMonster
-      objectReference: {fileID: 0}
-    - target: {fileID: 5425879186702437924, guid: 7a07df218de81af4bb97b2a69c52fbb7,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5425879186702437926, guid: 7a07df218de81af4bb97b2a69c52fbb7,
-        type: 3}
-      propertyPath: targets.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5425879186702437926, guid: 7a07df218de81af4bb97b2a69c52fbb7,
-        type: 3}
-      propertyPath: targets.Array.data[0]
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 5425879186702437926, guid: 7a07df218de81af4bb97b2a69c52fbb7,
-        type: 3}
-      propertyPath: targets.Array.data[1]
-      value: Defense
+      value: UndeadMageMonster
       objectReference: {fileID: 0}
     - target: {fileID: 5425879186702437926, guid: 7a07df218de81af4bb97b2a69c52fbb7,
         type: 3}
       propertyPath: visionRange
-      value: 3
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5425879186702437982, guid: 7a07df218de81af4bb97b2a69c52fbb7,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6
+      value: -8.04
       objectReference: {fileID: 0}
     - target: {fileID: 5425879186702437982, guid: 7a07df218de81af4bb97b2a69c52fbb7,
         type: 3}
@@ -1796,7 +1736,7 @@ PrefabInstance:
     - target: {fileID: 5425879186702437982, guid: 7a07df218de81af4bb97b2a69c52fbb7,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.324
+      value: -7.52
       objectReference: {fileID: 0}
     - target: {fileID: 5425879186702437982, guid: 7a07df218de81af4bb97b2a69c52fbb7,
         type: 3}
@@ -1841,7 +1781,7 @@ PrefabInstance:
     - target: {fileID: 6342122237251849352, guid: 7a07df218de81af4bb97b2a69c52fbb7,
         type: 3}
       propertyPath: viewIdField
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a07df218de81af4bb97b2a69c52fbb7, type: 3}
@@ -1946,11 +1886,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: OrcChiefMonster
       objectReference: {fileID: 0}
-    - target: {fileID: 413197153697535199, guid: 2a31c6fd5db8e844dae79c86ef431f22,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 762912169798589474, guid: 2a31c6fd5db8e844dae79c86ef431f22,
         type: 3}
       propertyPath: viewIdField
@@ -1959,7 +1894,7 @@ PrefabInstance:
     - target: {fileID: 1904803355039128313, guid: 2a31c6fd5db8e844dae79c86ef431f22,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.46
+      value: 4.49
       objectReference: {fileID: 0}
     - target: {fileID: 1904803355039128313, guid: 2a31c6fd5db8e844dae79c86ef431f22,
         type: 3}
@@ -1969,7 +1904,7 @@ PrefabInstance:
     - target: {fileID: 1904803355039128313, guid: 2a31c6fd5db8e844dae79c86ef431f22,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -7.844
       objectReference: {fileID: 0}
     - target: {fileID: 1904803355039128313, guid: 2a31c6fd5db8e844dae79c86ef431f22,
         type: 3}
@@ -2010,11 +1945,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6685321407979092440, guid: 2a31c6fd5db8e844dae79c86ef431f22,
-        type: 3}
-      propertyPath: attackRange
-      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7250804571136628107, guid: 2a31c6fd5db8e844dae79c86ef431f22,
         type: 3}
