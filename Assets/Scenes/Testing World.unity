@@ -1807,6 +1807,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Defense - Blockade
       objectReference: {fileID: 0}
+    - target: {fileID: 1670681377402366227, guid: 9871d830700905b4a8600740e0fec8ba,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6314826336793477095, guid: 9871d830700905b4a8600740e0fec8ba,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1820,7 +1825,7 @@ PrefabInstance:
     - target: {fileID: 6314826336793477095, guid: 9871d830700905b4a8600740e0fec8ba,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 4.73
       objectReference: {fileID: 0}
     - target: {fileID: 6314826336793477095, guid: 9871d830700905b4a8600740e0fec8ba,
         type: 3}
@@ -1861,6 +1866,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7470206099168030952, guid: 9871d830700905b4a8600740e0fec8ba,
+        type: 3}
+      propertyPath: viewIdField
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9871d830700905b4a8600740e0fec8ba, type: 3}

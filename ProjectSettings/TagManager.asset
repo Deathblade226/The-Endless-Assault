@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - EndPoint
+  - Defense
   layers:
   - Default
   - TransparentFX
