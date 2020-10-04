@@ -48,9 +48,10 @@ private void OnDrawGizmos() {
     Quaternion rightRayRotation = Quaternion.AngleAxis( halfFOV, Vector3.up );
     Vector3 leftRayDirection = leftRayRotation * transform.forward;
     Vector3 rightRayDirection = rightRayRotation * transform.forward;
-    Gizmos.DrawRay( transform.position, leftRayDirection * visionRange);
-    Gizmos.DrawRay( transform.position, rightRayDirection * visionRange);
-    Gizmos.DrawWireSphere(transform.position, visionRange);
+    Vector3 up = transform.up;
+    Gizmos.DrawRay(transform.position + up, (leftRayDirection * visionRange));
+    Gizmos.DrawRay(transform.position + up, (rightRayDirection * visionRange));
+    Gizmos.DrawWireSphere(transform.position + up, visionRange);
 }
 
 }
