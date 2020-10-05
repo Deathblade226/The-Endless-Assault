@@ -2965,7 +2965,7 @@ MonoBehaviour:
   m_Value: 0
   m_Options:
     m_Options:
-    - m_Text: Placeholder
+    - m_Text: Blackridge Gates
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
@@ -4295,7 +4295,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Placeholder
+  m_Text: Blackridge Gates
 --- !u!222 &1833256863
 CanvasRenderer:
   m_ObjectHideFlags: 0
