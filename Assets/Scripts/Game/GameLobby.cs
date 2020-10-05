@@ -20,7 +20,6 @@ public class GameLobby : MonoBehaviourPunCallbacks {
 [SerializeField]Slider playerSlider = null;
 [SerializeField]Text mapSelecter = null;
 [SerializeField]Toggle serverVisability = null;
-[SerializeField]GameObject helpPanel = null;
 
 List<RoomInfo> createdRooms = new List<RoomInfo>(); 
 Vector2 roomListScroll = Vector2.zero; 
@@ -88,7 +87,8 @@ void LobbyWindow(int index) {
     if (GUILayout.Button("Join Room")) {
     joiningRoom = true;                    
     // set player name                    
-    PhotonNetwork.NickName = playerName;                    
+    PhotonNetwork.NickName = (playerName.Trim() == "") ? SystemInfo.deviceName : playerName;     
+    
     // join the Room                    
     PhotonNetwork.JoinRoom(createdRooms[i].Name);
     }
@@ -154,12 +154,6 @@ public override void OnCreatedRoom() {
 
 public override void OnJoinedRoom() {        
     Debug.Log("OnJoinedRoom");    
-}
-
-public void HelpPanel() { 
-    if (helpPanel != null) { 
-    helpPanel.SetActive(!helpPanel.activeSelf);
-    }    
 }
 
 }
