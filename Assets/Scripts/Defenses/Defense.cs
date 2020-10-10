@@ -1,18 +1,10 @@
-﻿using System.Collections;
+﻿using Photon.Pun;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Defense : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+public class Defense : MonoBehaviourPun {
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+[SerializeField]float cost = 0;
+public float Cost { get => cost; set => cost =  value ; }
 }

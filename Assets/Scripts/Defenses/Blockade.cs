@@ -2,17 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Blockade : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+public class Blockade : Defense {
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+private void Update() {
+	GameObject target = gameObject.GetComponent<VisionSystem>().SeenTarget;
+	
+	if (target != null) {
+	tag = "Defense";
+	} else { tag = "Untagged"; }
+
+}
+
 }
