@@ -24,7 +24,7 @@ void IPunObservable.OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo
 
 private void Update() {
 	GameObject target = gameObject.GetComponent<VisionSystem>().SeenTarget;
-
+	Debug.DrawLine(spawnPoint.transform.position, target.transform.position);
 	if (target != null && attackCD == 0) {
 
 	gameObject.transform.LookAt(target.transform);
@@ -37,12 +37,6 @@ private void Update() {
 	}
 
 	} else { attackCD -= Time.deltaTime; }
-}
-
-private void OnDrawGizmos() {
-	Gizmos.color = Color.red;
-	GameObject target = gameObject.GetComponent<VisionSystem>().SeenTarget;
-	if (target != null) Gizmos.DrawRay(spawnPoint.transform.position, target.transform.position);
 }
 
 }

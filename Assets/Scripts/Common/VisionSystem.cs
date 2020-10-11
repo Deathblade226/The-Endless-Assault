@@ -41,6 +41,9 @@ private void OnTriggerStay(Collider other) {
     }
     }
 }
+private void OnTriggerExit(Collider other) {
+    if (other.gameObject == seenTarget) { seenTarget = null; }		
+}
 
 private void OnDrawGizmos() {
     float halfFOV = fieldOfViewAngle / 2.0f;
