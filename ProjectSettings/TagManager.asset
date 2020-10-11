@@ -6,6 +6,7 @@ TagManager:
   tags:
   - EndPoint
   - Defense
+  - Monster
   layers:
   - Default
   - TransparentFX

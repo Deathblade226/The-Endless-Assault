@@ -28,12 +28,21 @@ private void Update() {
 	if (target != null && attackCD == 0) {
 
 	gameObject.transform.LookAt(target.transform);
+	if (projectile != null) { 
+	attackCD = attackRate;
 	GameObject shot = PhotonNetwork.Instantiate(projectile.name, spawnPoint.transform.position, gameObject.transform.rotation);
 	Rigidbody shotRB = shot.GetComponent<Rigidbody>();
 	shotRB.useGravity = shotHasGravity;
 	shotRB.AddForce(gameObject.transform.forward * shotSpeed, ForceMode.Acceleration);
+	}
 
 	} else { attackCD -= Time.deltaTime; }
+}
+
+private void OnDrawGizmos() {
+	Gizmos.color = Color.red;
+	GameObject target = gameObject.GetComponent<VisionSystem>().SeenTarget;
+	if (target != null) Gizmos.DrawRay(spawnPoint.transform.position, target.transform.position);
 }
 
 }
