@@ -2,17 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FollowCamera : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+public class FollowCamera : MonoBehaviour {
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+[SerializeField]Transform target = null;
+
+void Update() {
+    Camera.main.transform.transform.position = transform.position;        
+    Camera.main.transform.LookAt(target);
+}
+
 }
