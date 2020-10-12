@@ -11,7 +11,7 @@
                     "id": "6bba8ae2-0eae-4aba-baad-ccb8bc129dda",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "Hold"
                 },
                 {
                     "name": "Jump",
@@ -27,10 +27,32 @@
                     "id": "b62e30e6-4603-4fec-ba18-6ccef962eacf",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "Hold"
                 }
             ],
             "bindings": [
+                {
+                    "name": "",
+                    "id": "55295594-cc14-42a5-ab49-d7d7211f73dc",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "bd1226fc-0814-439c-9503-1862a84652e3",
+                    "path": "<Keyboard>/shift",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Sprint",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
                 {
                     "name": "2D Vector - Wasd",
                     "id": "90060b9c-b3b1-4172-9f1c-f296c5ea7384",
@@ -140,28 +162,6 @@
                     "action": "Walk",
                     "isComposite": false,
                     "isPartOfComposite": true
-                },
-                {
-                    "name": "",
-                    "id": "55295594-cc14-42a5-ab49-d7d7211f73dc",
-                    "path": "<Keyboard>/space",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Jump",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "bd1226fc-0814-439c-9503-1862a84652e3",
-                    "path": "<Keyboard>/shift",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Sprint",
-                    "isComposite": false,
-                    "isPartOfComposite": false
                 }
             ]
         }
