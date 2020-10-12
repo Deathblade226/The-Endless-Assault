@@ -29,7 +29,7 @@ private void Walk() {
 private void Jump() { 
 
 }
-private void Sprint() 
+private void Sprint() { }
 
 private void OnEnable() {
 	controls.Player.Enable();		
