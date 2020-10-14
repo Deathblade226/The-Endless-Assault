@@ -34,8 +34,9 @@ private void Start() {
 }
 
 private void Update() {
-	Vector3 movement = new Vector2(move.x, move.y) * Time.deltaTime;
-	rb.AddForce(movement, ForceMode.Acceleration);
+	//Vector3 movement = new Vector2(move.x, move.y) * Time.deltaTime;
+	//rb.AddForce(movement, ForceMode.Acceleration);
+	Debug.Log(move);
 }
 
 private void Jump() { 

@@ -11,7 +11,7 @@
                     "id": "6bba8ae2-0eae-4aba-baad-ccb8bc129dda",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "Hold(duration=0.01,pressPoint=0.01)"
+                    "interactions": ""
                 },
                 {
                     "name": "Jump",
@@ -57,7 +57,7 @@
                     "name": "2D Vector - Wasd",
                     "id": "90060b9c-b3b1-4172-9f1c-f296c5ea7384",
                     "path": "2DVector",
-                    "interactions": "Hold(duration=0.01,pressPoint=0.01)",
+                    "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Walk",
@@ -101,61 +101,6 @@
                     "name": "right",
                     "id": "912177e6-1ae6-48e3-a5e0-3050dac176f8",
                     "path": "<Keyboard>/d",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Walk",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "2D Vector - Arrows",
-                    "id": "18038a57-b292-4937-bc62-0eb9c396ab43",
-                    "path": "2DVector",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Walk",
-                    "isComposite": true,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "up",
-                    "id": "ea6c6b67-6a48-4bc8-8151-b4f6d1e7c9e7",
-                    "path": "<Keyboard>/upArrow",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Walk",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "down",
-                    "id": "9eb98905-c58e-45b6-b08e-29c3069f53a0",
-                    "path": "<Keyboard>/downArrow",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Walk",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "left",
-                    "id": "1e8976f3-88c2-43e4-af90-14a8f16c8e23",
-                    "path": "<Keyboard>/leftArrow",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Walk",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "right",
-                    "id": "a031bf3e-b3e6-4773-b85d-441310d5ee3f",
-                    "path": "<Keyboard>/rightArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
