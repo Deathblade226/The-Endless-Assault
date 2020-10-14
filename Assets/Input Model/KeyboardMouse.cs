@@ -24,7 +24,7 @@ public class @KeyboardMouse : IInputActionCollection, IDisposable
                     ""id"": ""6bba8ae2-0eae-4aba-baad-ccb8bc129dda"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": ""Hold""
+                    ""interactions"": ""Hold(duration=0.01,pressPoint=0.01)""
                 },
                 {
                     ""name"": ""Jump"",
@@ -70,7 +70,7 @@ public class @KeyboardMouse : IInputActionCollection, IDisposable
                     ""name"": ""2D Vector - Wasd"",
                     ""id"": ""90060b9c-b3b1-4172-9f1c-f296c5ea7384"",
                     ""path"": ""2DVector"",
-                    ""interactions"": """",
+                    ""interactions"": ""Hold(duration=0.01,pressPoint=0.01)"",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Walk"",
