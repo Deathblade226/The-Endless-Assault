@@ -26,8 +26,7 @@ private void Start() {
 }
 
 private void Update() {
-	Vector3 movement = walkInput * Time.deltaTime;
-	transform.Translate(movement * currentSpeed);
+	transform.Translate(new Vector3((walkInput.x * Time.deltaTime) * currentSpeed,0, (walkInput.y * Time.deltaTime) * currentSpeed));
 }
 
 public void OnMove(InputAction.CallbackContext context) { 
