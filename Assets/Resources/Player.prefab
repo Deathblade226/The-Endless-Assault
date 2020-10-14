@@ -261,13 +261,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9164312128905945287}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.69, z: -2.49}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.3870001, z: -3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 9164312130377554203}
-  m_Father: {fileID: 9164312130522971425}
-  m_RootOrder: 2
+  m_Father: {fileID: 9164312130238337307}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &9164312128905945281
 MonoBehaviour:
@@ -379,9 +379,10 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1.303, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 9164312128905945286}
   m_Father: {fileID: 9164312130522971425}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &9164312130377554200
 GameObject:
@@ -602,7 +603,6 @@ Transform:
   m_Children:
   - {fileID: 9164312129468770297}
   - {fileID: 9164312130412884076}
-  - {fileID: 9164312128905945286}
   - {fileID: 9164312130238337307}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -729,6 +729,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkSpeed: 10
   roationSpeed: 1
+  camTarget: {fileID: 9164312130238337304}
+  camClamp: -1
 --- !u!114 &1134590605255202224
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -800,6 +802,36 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: b62e30e6-4603-4fec-ba18-6ccef962eacf
     m_ActionName: Player/Sprint[/Keyboard/shift]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 9164312130522971424}
+        m_MethodName: OnRotate
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 0e44de8e-d934-45b0-ac4f-a59fbb995717
+    m_ActionName: Player/Rotation[/Mouse/position]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 9164312130522971424}
+        m_MethodName: OnToggleCursor
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 8bfdd5c7-3b91-4b7a-85d0-51153d61a6fc
+    m_ActionName: Player/New action
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
