@@ -7,9 +7,9 @@
             "actions": [
                 {
                     "name": "Walk",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "6bba8ae2-0eae-4aba-baad-ccb8bc129dda",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": ""
                 },

@@ -10,22 +10,14 @@ public class PlayerController : MonoBehaviour {
 [SerializeField]float walkSpeed = 1;
 [SerializeField]float roationSpeed = 1;
 
-private KeyboardMouse controls;
-
-private float currentSpeed = 1;
-private Vector2 move;
-private bool sprint = false;
 private Rigidbody rb;
+private float currentSpeed;
+private Vector2 walkInput;
+private float jumpInput;
+private float sprintInput;
 
 private void Awake() {
-	controls = new KeyboardMouse();	
 	rb = gameObject.GetComponent<Rigidbody>();
-
-	controls.Player.Walk.performed += ctx => move = ctx.ReadValue<Vector2>();
-	controls.Player.Walk.performed += ctx => move = Vector2.zero;
-	controls.Player.Sprint.performed += ctx => sprint = ctx.ReadValue<bool>();
-	controls.Player.Sprint.performed += ctx => sprint = false;
-	controls.Player.Jump.performed += ctx => Jump();
 
 }
 
@@ -34,20 +26,26 @@ private void Start() {
 }
 
 private void Update() {
-	//Vector3 movement = new Vector2(move.x, move.y) * Time.deltaTime;
-	//rb.AddForce(movement, ForceMode.Acceleration);
-	Debug.Log(move);
+	Vector3 movement = walkInput * Time.deltaTime;
+	transform.Translate(movement * currentSpeed);
 }
 
-private void Jump() { 
-
+public void OnMove(InputAction.CallbackContext context) { 
+	walkInput = context.ReadValue<Vector2>();
 }
+public void OnJump(InputAction.CallbackContext context) { 
+	jumpInput = context.ReadValue<float>();
+}
+public void OnSprint(InputAction.CallbackContext context) { 
+	sprintInput = context.ReadValue<float>();
+}
+
 
 private void OnEnable() {
-	controls.Player.Enable();		
+
 }
 private void OnDisable() {
-	controls.Player.Disable();		
+
 }
 
 }
