@@ -532,8 +532,8 @@ Rigidbody:
   m_GameObject: {fileID: 9164312130522971448}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0.8
-  m_AngularDrag: 0.8
+  m_Drag: 0.9
+  m_AngularDrag: 0.9
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -644,8 +644,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkSpeed: 10
-  roationSpeedX: 0.5
-  roationSpeedY: 0.5
+  roationSpeedX: 0.1
+  roationSpeedY: 0.25
   camTarget: {fileID: 9164312130238337304}
   camClamp: 25
 --- !u!114 &1134590605255202224
