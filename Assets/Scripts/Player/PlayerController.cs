@@ -34,21 +34,12 @@ private void FixedUpdate() {
 	transform.Translate(new Vector3((walkInput.x * Time.deltaTime) * currentSpeed,0, (walkInput.y * Time.deltaTime) * currentSpeed));
 	Vector2 position = new Vector2((Screen.width/2) - mouseInput.x, (Screen.height/2) - mouseInput.y);
 
-	//Debug.Log(position);
-	//Debug.Log($"X Abs: {Mathf.Abs(position.x)}");
-	if (Mathf.Abs(position.x) > 200) { 
-	
-	rb.AddTorque(new Vector3(0, -position.normalized.x * roationSpeedX)); 
-	camTarget.transform.rotation = new Quaternion(camTarget.transform.rotation.x, 0, 0, 0);	
+	if (Mathf.Abs(position.x) > 200) { rb.AddTorque(new Vector3(0, -position.normalized.x * roationSpeedX)); }
 
-	}
-	//Debug.Log($"Y Abs: {Mathf.Abs(position.y)}");
-
-	//Debug.Log($"{Mathf.Abs(camTarget.transform.rotation.x)} > {camClamp}{Mathf.Abs(camTarget.transform.rotation.x) > camClamp}");
 	if (Mathf.Abs(position.y) > 75) { 
 	rotation += -position.normalized.y * roationSpeedY;
 	rotation = Mathf.Clamp(rotation, -camClamp, camClamp);
-	camTarget.transform.localEulerAngles = new Vector3(rotation, transform.localEulerAngles.y, transform.localEulerAngles.z);
+	camTarget.transform.localEulerAngles = new Vector3(rotation, 0, 0);
 	}
 }
 
