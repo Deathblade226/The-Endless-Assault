@@ -22,7 +22,7 @@ void Update() {
 private void SpawnCluster() {
 
 	for (int i = 0; i < clusters[spot].Count; i++) {
-	PhotonNetwork.InstantiateRoomObject(clusters[spot].Monster.name, new Vector3(transform.position.x + Random.Range(-spawnRange, spawnRange), transform.position.y, transform.position.z + Random.Range(-spawnRange, spawnRange)), Quaternion.identity);
+	PhotonNetwork.InstantiateRoomObject(clusters[spot].Monster.gameObject.name, new Vector3(transform.position.x + Random.Range(-spawnRange, spawnRange), transform.position.y, transform.position.z + Random.Range(-spawnRange, spawnRange)), Quaternion.identity);
 	}
 	currentSpawnCD = clusters[spot].SpawnCD;
 	spot++;
