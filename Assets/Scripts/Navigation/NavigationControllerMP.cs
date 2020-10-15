@@ -49,6 +49,7 @@ private void Update() {
     //if (GameController.GameRunning) 
     //StartCoroutine(MonsterLogic());
     GameObject target = GetComponent<VisionSystem>().SeenTarget;
+    if (target == null) target = AIUtilities.GetNearestGameObject(gameObject, travelNav.TargetTag, xray:true);
 
     if (target != null) { 
     
