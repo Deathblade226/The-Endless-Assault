@@ -30,14 +30,6 @@
                     "interactions": "Hold"
                 },
                 {
-                    "name": "Rotation",
-                    "type": "Value",
-                    "id": "0e44de8e-d934-45b0-ac4f-a59fbb995717",
-                    "expectedControlType": "Vector2",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
                     "name": "Cursor",
                     "type": "Button",
                     "id": "8bfdd5c7-3b91-4b7a-85d0-51153d61a6fc",
@@ -178,17 +170,6 @@
                     "action": "Walk",
                     "isComposite": false,
                     "isPartOfComposite": true
-                },
-                {
-                    "name": "",
-                    "id": "1c64e3ed-902f-403b-a511-d3d92361b339",
-                    "path": "<Mouse>/position",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Rotation",
-                    "isComposite": false,
-                    "isPartOfComposite": false
                 },
                 {
                     "name": "",
