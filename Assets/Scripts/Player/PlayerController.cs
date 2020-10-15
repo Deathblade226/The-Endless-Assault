@@ -31,12 +31,12 @@ private void Start() {
 private void FixedUpdate() {
 	transform.Translate(new Vector3((walkInput.x * Time.deltaTime) * currentSpeed,0, (walkInput.y * Time.deltaTime) * currentSpeed));
 	Vector2 mousePosition = rotationInput - new Vector2(Screen.width / 2, Screen.height / 2);
-	Debug.Log(mousePosition);
+	//Debug.Log(mousePosition);
 	if(Cursor.lockState != CursorLockMode.Locked) transform.Rotate(Vector3.up, mousePosition.normalized.x);
-	camTarget.transform.Rotate(Vector3.right, mousePosition.normalized.y);
-
-	camTarget.transform.rotation = new Quaternion(Mathf.Clamp(camTarget.transform.rotation.x, -camClamp, camClamp), 0, 0, 0); 
-	
+	Quaternion rotation = camTarget.transform.rotation;
+	rotation.x += mousePosition.y;
+	Debug.Log(rotation.x);
+	if (rotation.x > -camClamp && rotation.x < camClamp) camTarget.transform.Rotate(Vector3.right, mousePosition.normalized.y);
 }
 
 public void OnMove(InputAction.CallbackContext context) { 

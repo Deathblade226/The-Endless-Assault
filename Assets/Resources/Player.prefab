@@ -730,7 +730,7 @@ MonoBehaviour:
   walkSpeed: 10
   roationSpeed: 1
   camTarget: {fileID: 9164312130238337304}
-  camClamp: -1
+  camClamp: 1000
 --- !u!114 &1134590605255202224
 MonoBehaviour:
   m_ObjectHideFlags: 0
