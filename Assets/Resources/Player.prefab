@@ -644,6 +644,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkSpeed: 10
+  animator: {fileID: 9164312129461584159}
   roationSpeedX: 0.1
   roationSpeedY: 0.25
   camTarget: {fileID: 9164312130238337304}
@@ -809,8 +810,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9513408, guid: 3f42b29f9f09e0e40b05df7c984384f1, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: ddb26a055e7a0a844964e51ab947fba8, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f42b29f9f09e0e40b05df7c984384f1, type: 3}
+--- !u!95 &9164312129461584159 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 9513408, guid: 3f42b29f9f09e0e40b05df7c984384f1,
+    type: 3}
+  m_PrefabInstance: {fileID: 9164312129468999903}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &9164312129468770297 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 495398, guid: 3f42b29f9f09e0e40b05df7c984384f1,

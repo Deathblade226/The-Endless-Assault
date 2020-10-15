@@ -6,8 +6,12 @@ using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.XR.Haptics;
 
 public class PlayerController : MonoBehaviour {
+
     
+[Header("Movement Controls")]
 [SerializeField]float walkSpeed = 1;
+[SerializeField]Animator animator = null;
+[Header("Camera Controls")]
 [SerializeField]float roationSpeedX = 1;
 [SerializeField]float roationSpeedY = 1;
 [SerializeField]GameObject camTarget = null;
@@ -41,6 +45,9 @@ private void FixedUpdate() {
 	rotation = Mathf.Clamp(rotation, -camClamp, camClamp);
 	camTarget.transform.localEulerAngles = new Vector3(rotation, 0, 0);
 	}
+
+	animator.SetFloat("SpeedX", rb.velocity.x);
+	animator.SetFloat("SpeedY", rb.velocity.z);
 }
 
 public void OnMove(InputAction.CallbackContext context) { 
