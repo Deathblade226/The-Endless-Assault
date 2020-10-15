@@ -26,8 +26,10 @@ void IPunObservable.OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo
 }
 public void StartTravel() {
     if (this.Target == null) this.Target = AIUtilities.GetNearestGameObject(this.gameObject, this.TargetTag, xray:true);
+	if (this.nc.Agent.isOnNavMesh) { 
     this.Moving = true; 
-    this.nc.Agent.SetDestination(this.Target.transform.position);
+	this.nc.Agent.SetDestination(this.Target.transform.position);
+	} 
 }
 
 }
