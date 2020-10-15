@@ -532,8 +532,8 @@ Rigidbody:
   m_GameObject: {fileID: 9164312130522971448}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0.9
-  m_AngularDrag: 0.9
+  m_Drag: 1
+  m_AngularDrag: 2.5
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -546,7 +546,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9164312130522971448}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: ec8ad458173ac5b489d0420eefe345f8, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.3
@@ -649,6 +649,8 @@ MonoBehaviour:
   roationSpeedY: 0.25
   camTarget: {fileID: 9164312130238337304}
   camClamp: 25
+  horizontalWindow: 100
+  verticalWindow: 100
 --- !u!114 &1134590605255202224
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -814,6 +816,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: ddb26a055e7a0a844964e51ab947fba8, type: 2}
+    - target: {fileID: 9513408, guid: 3f42b29f9f09e0e40b05df7c984384f1, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f42b29f9f09e0e40b05df7c984384f1, type: 3}
 --- !u!95 &9164312129461584159 stripped

@@ -16,6 +16,8 @@ public class PlayerController : MonoBehaviour {
 [SerializeField]float roationSpeedY = 1;
 [SerializeField]GameObject camTarget = null;
 [SerializeField]float camClamp = 10;
+[SerializeField]float horizontalWindow = 200;
+[SerializeField]float verticalWindow = 75;
 
 private Rigidbody rb;
 private float currentSpeed;
@@ -38,16 +40,17 @@ private void FixedUpdate() {
 	transform.Translate(new Vector3((walkInput.x * Time.deltaTime) * currentSpeed,0, (walkInput.y * Time.deltaTime) * currentSpeed));
 	Vector2 position = new Vector2((Screen.width/2) - mouseInput.x, (Screen.height/2) - mouseInput.y);
 
-	if (Mathf.Abs(position.x) > 200) { rb.AddTorque(new Vector3(0, -position.normalized.x * roationSpeedX)); }
+	if (Mathf.Abs(position.x) > horizontalWindow) { rb.AddTorque(new Vector3(0, -position.normalized.x * roationSpeedX)); }
 
-	if (Mathf.Abs(position.y) > 75) { 
+	if (Mathf.Abs(position.y) > verticalWindow) { 
 	rotation += -position.normalized.y * roationSpeedY;
 	rotation = Mathf.Clamp(rotation, -camClamp, camClamp);
 	camTarget.transform.localEulerAngles = new Vector3(rotation, 0, 0);
 	}
 
-	animator.SetFloat("SpeedX", rb.velocity.x);
-	animator.SetFloat("SpeedY", rb.velocity.z);
+	animator.SetBool("Moving", (walkInput.x != 0 || walkInput.y != 0));
+	animator.SetFloat("SpeedX", walkInput.x);
+	animator.SetFloat("SpeedY", walkInput.y);
 }
 
 public void OnMove(InputAction.CallbackContext context) { 
