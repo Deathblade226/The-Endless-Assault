@@ -706,8 +706,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkSpeed: 10
-  jumpForce: 5
-  jumpCD: 2
+  jumpForce: 10
+  jumpCD: 1
   animator: {fileID: 9164312129461584159}
   groundStart: {fileID: 1019996534709364007}
   groundEnd: {fileID: 1517133929037209179}
@@ -715,11 +715,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   roationSpeedX: 0.1
-  roationSpeedY: 0.25
+  roationSpeedY: 0.8
   camTarget: {fileID: 9164312130238337304}
   camClamp: 25
   horizontalWindow: 100
-  verticalWindow: 100
+  verticalWindow: 200
 --- !u!114 &1134590605255202224
 MonoBehaviour:
   m_ObjectHideFlags: 0
