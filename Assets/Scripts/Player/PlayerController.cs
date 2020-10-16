@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour {
     
 [Header("Movement Controls")]
 [SerializeField]float walkSpeed = 1;
+[SerializeField]float jumpForce = 1;
 [SerializeField]Animator animator = null;
 [Header("Camera Controls")]
 [SerializeField]float roationSpeedX = 1;
@@ -26,6 +27,7 @@ private Vector2 mouseInput;
 private float jumpInput;
 private float sprintInput;
 private float rotation = 0;
+private bool grounded = true;
 
 private void Awake() {
 	rb = gameObject.GetComponent<Rigidbody>();
@@ -47,6 +49,9 @@ private void FixedUpdate() {
 	rotation = Mathf.Clamp(rotation, -camClamp, camClamp);
 	camTarget.transform.localEulerAngles = new Vector3(rotation, 0, 0);
 	}
+
+	//if (jumpForce != 0 && grounded) { rb.AddForce(Vector3.up * jumpForce); grounded = false; }
+	Debug.Log(jumpForce);
 
 	animator.SetBool("Moving", (walkInput.x != 0 || walkInput.y != 0));
 	animator.SetFloat("SpeedX", walkInput.x);

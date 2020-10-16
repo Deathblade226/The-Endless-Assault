@@ -12,7 +12,7 @@ private int spot = 0;
 private float currentSpawnCD = 0;
 
 void Start() {
-	SpawnCluster();
+	//SpawnCluster();
 }
 
 void Update() {
