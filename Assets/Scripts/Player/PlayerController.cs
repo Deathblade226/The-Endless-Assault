@@ -55,7 +55,7 @@ private void FixedUpdate() {
 	Vector3 GD = new Vector3(GS.x, GE.y - GS.y, GS.z);
 
 	if (Physics.Raycast(GS, GD, out hit)) { 
-	Debug.Log(hit.collider.gameObject);
+	//Debug.Log(hit.collider.gameObject);
 	grounded = groundLayers == (groundLayers | (1 << hit.collider.gameObject.layer)); 
 	}	
 

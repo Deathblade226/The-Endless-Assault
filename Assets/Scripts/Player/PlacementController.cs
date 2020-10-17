@@ -4,47 +4,28 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Photon.Pun;
-
-[Serializable] public class UnitTypes {
-
-public List<GameObject> variants;
-
-}
+using UnityEngine.InputSystem;
 
 public class PlacementController : MonoBehaviour {
 
 [SerializeField] Text TowerDisplay = null;
-[SerializeField] List<UnitTypes> Units = new List<UnitTypes>();
+[SerializeField] List<GameObject> Units = new List<GameObject>();
 [SerializeField] PhotonView PV = null;
 [SerializeField] LayerMask IgnoredLayers;
 
 private GameObject currentObject = null;
 private float rotation;
 private int currentTower = -1;
-private int side = 0;
 
 private void Start() {
     if (!PV.IsMine) return;    
-    Camera.main.transform.position = transform.position;
-    Camera.main.transform.rotation.Set(transform.rotation.x, transform.rotation.y, transform.rotation.z, transform.rotation.w);
-    Camera.main.transform.parent = this.transform;
+    //Camera.main.transform.position = transform.position;
+    //Camera.main.transform.rotation.Set(transform.rotation.x, transform.rotation.y, transform.rotation.z, transform.rotation.w);
+    //Camera.main.transform.parent = this.transform;
 }
 
 void Update() {
     if (!PV.IsMine) return;
-    if (Game.game.GameRunning) return;
-
-
-    PV.RPC("CreatePlacable", RpcTarget.All);
-    //CreatePlacable();
-    
-    //if (TowerDisplay != null) { 
-    //string display = "Tower: ";   
-    //display += (currentObject != null) ? $"{currentObject.GetComponent<DefenseTD>().TowerName} \nCost: {currentObject.GetComponent<DefenseTD>().Cost}" : "None";
-    //TowerDisplay.text = display;
-    //}
-
-    //if (!Game.game.Paused && BuildCam != null) Cursor.lockState = (BuildCam.gameObject.activeSelf) ? CursorLockMode.None : CursorLockMode.Locked;
 
     if (currentObject != null) {
     PV.RPC("MovePlaceableToMouse", RpcTarget.All);
@@ -55,9 +36,6 @@ void Update() {
     //SpawnObject();
     }
 
-    if (currentObject == null && Input.GetKey(KeyCode.Z) && !Game.game.GameRunning) { 
-    PV.RPC("DeleteUnit", RpcTarget.All);
-    }
 }
 
 [PunRPC]
@@ -103,56 +81,84 @@ private void MovePlaceableToMouse() {
     currentObject.transform.rotation = Quaternion.FromToRotation(Vector3.up, hitInfo.normal);
     }
     }
-    // Blue <- 0 -> Red
-    if (currentObject.transform.position.x > 0) { 
-    PhotonNetwork.Destroy(currentObject);
-    side = 1;
-    currentObject = PhotonNetwork.Instantiate(Units[currentTower].variants[side].name, currentObject.transform.position, currentObject.transform.rotation); 
+}
+
+public void KeyZ(InputAction.CallbackContext context) { 
+    if (currentObject == null) { PV.RPC("DeleteUnit", RpcTarget.All); }
+}
+public void KeyOne(InputAction.CallbackContext context) { 
+    if (currentTower == 0) { Destroy(); } 
+    else { 
+    Destroy();
+    Spawn(0);
     }
-    else if (currentObject.transform.position.x < 0) {
-    PhotonNetwork.Destroy(currentObject);
-    side = 0;
-    currentObject = PhotonNetwork.Instantiate(Units[currentTower].variants[side].name, currentObject.transform.position, currentObject.transform.rotation); 
+}
+public void KeyTwo(InputAction.CallbackContext context) { 
+    if (currentTower == 1) { Destroy(); } 
+    else { 
+    Destroy();
+    Spawn(1);
+    }
+}
+public void KeyThree(InputAction.CallbackContext context) { 
+    if (currentTower == 2) { Destroy(); } 
+    else { 
+    Destroy();
+    Spawn(2);
+    }
+}
+public void KeyFour(InputAction.CallbackContext context) { 
+    if (currentTower == 3) { Destroy(); } 
+    else { 
+    Destroy();
+    Spawn(3);
+    }
+}
+public void KeyFive(InputAction.CallbackContext context) { 
+    if (currentTower == 4) { Destroy(); } 
+    else { 
+    Destroy();
+    Spawn(4);
+    }
+}
+public void KeySix(InputAction.CallbackContext context) { 
+    if (currentTower == 5) { Destroy(); } 
+    else { 
+    Destroy();
+    Spawn(5);
+    }
+}
+public void KeySeven(InputAction.CallbackContext context) { 
+    if (currentTower == 6) { Destroy(); } 
+    else { 
+    Destroy();
+    Spawn(6);
+    }
+}
+public void KeyEight(InputAction.CallbackContext context) { 
+    if (currentTower == 7) { Destroy(); } 
+    else { 
+    Destroy();
+    Spawn(7);
+    }
+}
+public void KeyNine(InputAction.CallbackContext context) { 
+    if (currentTower == 8) { Destroy(); } 
+    else { 
+    Destroy();
+    Spawn(8);
     }
 }
 
-[PunRPC]
-private void CreatePlacable() {
-    if (!PV.IsMine) return;
-    StartCoroutine(crCreatePlaceAble());
+private void Spawn(int key) { 
+    if (Units.Count > key) { 
+    currentTower = key;
+    currentObject = PhotonNetwork.Instantiate(Units[currentTower].name, new Vector3(), Quaternion.identity);
+    }
 }
-
-IEnumerator crCreatePlaceAble() {
-    for (int i = 0; i < Units.Count; i++) {
-
-    if (Input.GetKeyDown(KeyCode.Alpha0 + 1 + i)) { 
-
-    if (Pressed(i)) { 
-    PhotonNetwork.Destroy(currentObject);
-    //Destroy(currentObject); 
-    currentTower = -1; 
-    
-    } else { 
-    
-    if (currentObject != null) { 
-    PhotonNetwork.Destroy(currentObject);
-    //Destroy(currentObject); 
-    }    
-    currentTower = i;
-    currentObject = PhotonNetwork.Instantiate(Units[currentTower].variants[side].name, new Vector3(), Quaternion.identity);
-    //currentObject = Instantiate(placeableObjects[i]);
-    }
-    break;
-    }
-    }
-    StopCoroutine("crCreatePlaceAble");
-    yield return null;
+private void Destroy() {
+    if (currentObject != null) PhotonNetwork.Destroy(currentObject);
+    currentTower = -1;
 }
-
-private bool Pressed(int i) { 
-    //Debug.Log("I: " + i); 
-    //Debug.Log("ID: " + currentTower); 
-    //Debug.Log(currentTower % ( placeableObjects.Count / 2 )); 
-return currentObject != null && currentTower == i; }
 
 }

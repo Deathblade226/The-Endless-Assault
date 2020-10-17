@@ -3146,7 +3146,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 290499575}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Invisible Walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6207,6 +6207,10 @@ PrefabInstance:
     - target: {fileID: 1034782792238062, guid: b15a1aac1b43c6d43a7c4f54d2a37c27, type: 3}
       propertyPath: m_Name
       value: SquareTower
+      objectReference: {fileID: 0}
+    - target: {fileID: 1034782792238062, guid: b15a1aac1b43c6d43a7c4f54d2a37c27, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4333590073545900, guid: b15a1aac1b43c6d43a7c4f54d2a37c27, type: 3}
       propertyPath: m_LocalPosition.x
@@ -14171,6 +14175,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 2xWall (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1233615296551410, guid: f1863a3ca31860647b7118fcca100b85, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4851223715100110, guid: f1863a3ca31860647b7118fcca100b85, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.244
@@ -15086,6 +15094,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 2xWall
       objectReference: {fileID: 0}
+    - target: {fileID: 1233615296551410, guid: f1863a3ca31860647b7118fcca100b85, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4851223715100110, guid: f1863a3ca31860647b7118fcca100b85, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.244
@@ -15162,7 +15174,7 @@ GameObject:
   - component: {fileID: 1353488507}
   - component: {fileID: 1353488506}
   - component: {fileID: 1353488505}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Plane (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15178,7 +15190,7 @@ Transform:
   m_GameObject: {fileID: 1353488503}
   m_LocalRotation: {x: 0, y: 0.7071068, z: -0.7071068, w: 0}
   m_LocalPosition: {x: -3.48, y: 6, z: 13.01}
-  m_LocalScale: {x: 10, y: 1, z: 1}
+  m_LocalScale: {x: 10, y: 1, z: 2}
   m_Children: []
   m_Father: {fileID: 290499575}
   m_RootOrder: 1
@@ -17401,6 +17413,10 @@ PrefabInstance:
     - target: {fileID: 1034782792238062, guid: b15a1aac1b43c6d43a7c4f54d2a37c27, type: 3}
       propertyPath: m_Name
       value: SquareTower (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1034782792238062, guid: b15a1aac1b43c6d43a7c4f54d2a37c27, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4333590073545900, guid: b15a1aac1b43c6d43a7c4f54d2a37c27, type: 3}
       propertyPath: m_LocalPosition.x
@@ -22176,7 +22192,7 @@ GameObject:
   - component: {fileID: 1951526054}
   - component: {fileID: 1951526053}
   - component: {fileID: 1951526052}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22192,7 +22208,7 @@ Transform:
   m_GameObject: {fileID: 1951526050}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -3.48, y: 6, z: -13.01}
-  m_LocalScale: {x: 10, y: 1, z: 1}
+  m_LocalScale: {x: 10, y: 1, z: 2}
   m_Children: []
   m_Father: {fileID: 290499575}
   m_RootOrder: 0
@@ -23001,7 +23017,7 @@ GameObject:
   - component: {fileID: 1996507499}
   - component: {fileID: 1996507498}
   - component: {fileID: 1996507497}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
