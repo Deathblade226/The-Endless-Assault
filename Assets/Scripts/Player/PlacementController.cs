@@ -49,7 +49,7 @@ private void DeleteUnit() {
 }
 
 private void RotatePlaceable() {
-    Debug.Log(rotation);
+    //Debug.Log(rotation);
     rotation += scrollInput * 0.1f;
     currentObject.transform.rotation = new Quaternion(currentObject.transform.rotation.x, rotation, currentObject.transform.rotation.z, currentObject.transform.rotation.w);
     scrollInput = 0;
@@ -57,8 +57,8 @@ private void RotatePlaceable() {
 
 
 private void MovePlaceableToMouse() {
-	Vector2 position = new Vector2((Screen.width/2) - mouseInput.x, (Screen.height/2) - mouseInput.y);
-    Ray ray = Camera.main.ScreenPointToRay(position);
+	//Vector2 position = new Vector2((Screen.width/2) - mouseInput.x, (Screen.height/2) - mouseInput.y);
+    Ray ray = Camera.main.ScreenPointToRay(mouseInput);
     RaycastHit hitInfo;
     if (Physics.Raycast(ray, out hitInfo)) {
     
