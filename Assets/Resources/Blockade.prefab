@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 580526051332404506}
   - component: {fileID: 7545086368392123824}
   m_Layer: 2
-  m_Name: Defense - Blockade
+  m_Name: Blockade
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

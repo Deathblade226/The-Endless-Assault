@@ -54,7 +54,6 @@ private void DeleteUnit() {
 private void RotatePlaceable() {
     if (!pv.IsMine) return;
     currentObject.transform.Rotate(Vector3.up, scrollInput * .1f);
-    //Debug.Log(currentObject.transform.rotation);
     scrollInput = 0;
 }
 
@@ -66,7 +65,7 @@ private void MovePlaceableToMouse() {
     if (Physics.Raycast(ray, out hitInfo)) {
     if (((1<<hitInfo.collider.gameObject.layer) & IgnoredLayers) == 0) { 
     currentObject.transform.position = hitInfo.point;
-    currentObject.transform.rotation = Quaternion.FromToRotation(Vector3.up, hitInfo.normal);
+    //currentObject.transform.rotation = Quaternion.FromToRotation(Vector3.up, hitInfo.normal);
     }
     }
 }
