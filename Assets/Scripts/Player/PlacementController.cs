@@ -14,20 +14,17 @@ public class PlacementController : MonoBehaviourPun, IPunObservable {
 [SerializeField] List<String> tags;
 
 private GameObject currentObject = null;
-private float rotation;
 private int currentTower = -1;
 private Vector2 mouseInput;
 private float scrollInput;
 
 public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info) {
     if(stream.IsWriting) {
-	stream.SendNext(this.currentObject);
+	//stream.SendNext(this.currentObject);
 	stream.SendNext(this.currentTower);
-	stream.SendNext(this.rotation);
 	} else {
-	this.currentObject = (GameObject) stream.ReceiveNext();
+	//this.currentObject = (GameObject) stream.ReceiveNext();
 	this.currentTower = (int) stream.ReceiveNext();
-	this.rotation = (float) stream.ReceiveNext();
 	}
 }
 
@@ -49,20 +46,17 @@ private void DeleteUnit() {
 }
 
 private void RotatePlaceable() {
-    //Debug.Log(rotation);
-    rotation += scrollInput * 0.1f;
-    currentObject.transform.rotation = new Quaternion(currentObject.transform.rotation.x, rotation, currentObject.transform.rotation.z, currentObject.transform.rotation.w);
+    Quaternion rotation = currentObject.transform.rotation;
+    currentObject.transform.Rotate(Vector3.up, scrollInput * .1f);
+    //Debug.Log(currentObject.transform.rotation);
     scrollInput = 0;
 }
 
 
 private void MovePlaceableToMouse() {
-	//Vector2 position = new Vector2((Screen.width/2) - mouseInput.x, (Screen.height/2) - mouseInput.y);
-    //Debug.Log(mouseInput);
     Ray ray = Camera.main.ScreenPointToRay(mouseInput);
     RaycastHit hitInfo;
     if (Physics.Raycast(ray, out hitInfo)) {
-    //Debug.Log(hitInfo.collider.name);
     if (((1<<hitInfo.collider.gameObject.layer) & IgnoredLayers) == 0) { 
     currentObject.transform.position = hitInfo.point;
     currentObject.transform.rotation = Quaternion.FromToRotation(Vector3.up, hitInfo.normal);
@@ -159,7 +153,6 @@ private void Spawn(int key) {
 private void Destroy() {
     if (currentObject != null) PhotonNetwork.Destroy(currentObject);
     currentTower = -1;
-    rotation = 0;
 }
 
 }

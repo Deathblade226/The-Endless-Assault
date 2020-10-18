@@ -24,13 +24,14 @@ void IPunObservable.OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo
 
 private void Update() {
 	GameObject target = gameObject.GetComponent<VisionSystem>().SeenTarget;
-	Debug.DrawLine(spawnPoint.transform.position, target.transform.position);
 	if (target != null && attackCD == 0) {
+	Debug.DrawLine(spawnPoint.transform.position, target.transform.position);
 
 	gameObject.transform.LookAt(target.transform);
 	if (projectile != null) { 
 	attackCD = attackRate;
 	GameObject shot = PhotonNetwork.Instantiate(projectile.name, spawnPoint.transform.position, gameObject.transform.rotation);
+	shot.GetComponent<Projectile>().WeaponDamage = damage;
 	Rigidbody shotRB = shot.GetComponent<Rigidbody>();
 	shotRB.useGravity = shotHasGravity;
 	shotRB.AddForce(gameObject.transform.forward * shotSpeed, ForceMode.Acceleration);
