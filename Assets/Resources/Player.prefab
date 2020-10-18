@@ -115,6 +115,7 @@ GameObject:
   - component: {fileID: 7634412068735821039}
   - component: {fileID: 6825458950818869460}
   - component: {fileID: 6014707960338650039}
+  - component: {fileID: 3782384596182855408}
   m_Layer: 2
   m_Name: PC
   m_TagString: Untagged
@@ -148,6 +149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6ef2b43da748174293f443ad1c20449, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pv: {fileID: 3782384596182855408}
   TowerDisplay: {fileID: 0}
   Units:
   - {fileID: 1670681377402366227, guid: 9871d830700905b4a8600740e0fec8ba, type: 3}
@@ -157,6 +159,7 @@ MonoBehaviour:
     m_Bits: 512
   tags:
   - Defense
+  - Obstacle
 --- !u!114 &6014707960338650039
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -403,6 +406,29 @@ MonoBehaviour:
   m_DefaultActionMap: Placement
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &3782384596182855408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5001815204629458015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  observableSearch: 2
+  Synchronization: 3
+  OwnershipTransfer: 0
+  ObservedComponents:
+  - {fileID: 6825458950818869460}
+  viewIdField: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &9164312128488539633
 GameObject:
   m_ObjectHideFlags: 0
@@ -959,7 +985,6 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 9164312130522971450}
   - {fileID: 9164312130522971451}
-  - {fileID: 6825458950818869460}
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -1006,6 +1031,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaa18d5ad7c1e08469321dae88958f1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pv: {fileID: 9164312130522971429}
   walkSpeed: 10
   jumpForce: 10
   jumpCD: 1

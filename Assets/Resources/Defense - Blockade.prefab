@@ -67,7 +67,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 1
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &1746484532183860750
 MonoBehaviour:
@@ -600,7 +600,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4047832129424818467}
   - component: {fileID: 8693001121307664261}
-  m_Layer: 2
+  m_Layer: 8
   m_Name: NavVolMod
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Photon.Pun;
+using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using UnityEngine;
@@ -8,7 +9,9 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour {
 
-    
+[Header("Photon")]
+[SerializeField]PhotonView pv;    
+
 [Header("Movement Controls")]
 [SerializeField]float walkSpeed = 1;
 [SerializeField]float jumpForce = 1;
@@ -47,6 +50,7 @@ private void Start() {
 }
 
 private void FixedUpdate() {
+	if (!pv.IsMine) return;
 	if(jumpCD > 0) jumpCDC -= Time.deltaTime;
 
 	RaycastHit hit;
@@ -75,10 +79,12 @@ private void FixedUpdate() {
 	animator.SetFloat("SpeedY", walkInput.y);
 }
 
-public void OnMove(InputAction.CallbackContext context) { 
+public void OnMove(InputAction.CallbackContext context) {
+	if (!pv.IsMine) return;
 	walkInput = context.ReadValue<Vector2>();
 }
-public void OnJump(InputAction.CallbackContext context) { 
+public void OnJump(InputAction.CallbackContext context) {
+	if (!pv.IsMine) return;
 	if (grounded && jumpCDC <= 0) { 
 	rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse); 
 	grounded = false; 
@@ -86,21 +92,16 @@ public void OnJump(InputAction.CallbackContext context) {
 	}
 }
 public void OnSprint(InputAction.CallbackContext context) { 
+	if (!pv.IsMine) return;
 	sprintInput = context.ReadValue<float>();
 }
 public void OnMouseMove(InputAction.CallbackContext context) { 
+	if (!pv.IsMine) return;
 	mouseInput = context.ReadValue<Vector2>();
 }
 public void OnToggleCursor(InputAction.CallbackContext context) { 
+	if (!pv.IsMine) return;
 	Cursor.lockState = ( Cursor.lockState == CursorLockMode.Locked) ? CursorLockMode.Confined : CursorLockMode.Locked;
-}
-
-
-private void OnEnable() {
-
-}
-private void OnDisable() {
-
 }
 
 }

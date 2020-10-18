@@ -5,9 +5,12 @@ using UnityEngine;
 using UnityEngine.UI;
 using Photon.Pun;
 using UnityEngine.InputSystem;
+using UnityEngine.AI;
+using System.Security.Cryptography;
 
 public class PlacementController : MonoBehaviourPun, IPunObservable {
 
+[SerializeField] PhotonView pv;
 [SerializeField] Text TowerDisplay = null;
 [SerializeField] List<GameObject> Units = new List<GameObject>();
 [SerializeField] LayerMask IgnoredLayers;
@@ -29,6 +32,7 @@ public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info) {
 }
 
 void Update() {
+    if (!pv.IsMine) return;
     if (currentObject != null) {
     MovePlaceableToMouse();
     RotatePlaceable();
@@ -36,17 +40,19 @@ void Update() {
 }
 
 private void DeleteUnit() {
-    Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+    if (!pv.IsMine) return;
+    Ray ray = Camera.main.ScreenPointToRay(mouseInput);
     RaycastHit hitInfo;
     if (Physics.Raycast(ray, out hitInfo)) {
     if (tags.Contains(hitInfo.collider.gameObject.tag)) { 
     PhotonNetwork.Destroy(hitInfo.collider.gameObject);
+    UpdateNav();
     }
     }
 }
 
 private void RotatePlaceable() {
-    Quaternion rotation = currentObject.transform.rotation;
+    if (!pv.IsMine) return;
     currentObject.transform.Rotate(Vector3.up, scrollInput * .1f);
     //Debug.Log(currentObject.transform.rotation);
     scrollInput = 0;
@@ -54,6 +60,7 @@ private void RotatePlaceable() {
 
 
 private void MovePlaceableToMouse() {
+    if (!pv.IsMine) return;
     Ray ray = Camera.main.ScreenPointToRay(mouseInput);
     RaycastHit hitInfo;
     if (Physics.Raycast(ray, out hitInfo)) {
@@ -65,15 +72,17 @@ private void MovePlaceableToMouse() {
 }
 
 public void PlaceObject(InputAction.CallbackContext context) {
+    if (!pv.IsMine) return;
     if (currentObject == null) return;
     currentObject.layer = LayerMask.NameToLayer("World");
     currentObject = null;
-    //Game.Rebuild = true;
+    UpdateNav();
 }
 public void KeyZ(InputAction.CallbackContext context) { 
     DeleteUnit();
 }
 public void KeyOne(InputAction.CallbackContext context) { 
+    if (!pv.IsMine) return;    
     if (currentTower == 0) { Destroy(); } 
     else { 
     Destroy();
@@ -81,6 +90,7 @@ public void KeyOne(InputAction.CallbackContext context) {
     }
 }
 public void KeyTwo(InputAction.CallbackContext context) { 
+    if (!pv.IsMine) return;
     if (currentTower == 1) { Destroy(); } 
     else { 
     Destroy();
@@ -88,6 +98,7 @@ public void KeyTwo(InputAction.CallbackContext context) {
     }
 }
 public void KeyThree(InputAction.CallbackContext context) { 
+	if (!pv.IsMine) return;
     if (currentTower == 2) { Destroy(); } 
     else { 
     Destroy();
@@ -95,6 +106,7 @@ public void KeyThree(InputAction.CallbackContext context) {
     }
 }
 public void KeyFour(InputAction.CallbackContext context) { 
+	if (!pv.IsMine) return;
     if (currentTower == 3) { Destroy(); } 
     else { 
     Destroy();
@@ -102,6 +114,7 @@ public void KeyFour(InputAction.CallbackContext context) {
     }
 }
 public void KeyFive(InputAction.CallbackContext context) { 
+	if (!pv.IsMine) return;
     if (currentTower == 4) { Destroy(); } 
     else { 
     Destroy();
@@ -109,6 +122,7 @@ public void KeyFive(InputAction.CallbackContext context) {
     }
 }
 public void KeySix(InputAction.CallbackContext context) { 
+	if (!pv.IsMine) return;
     if (currentTower == 5) { Destroy(); } 
     else { 
     Destroy();
@@ -116,6 +130,7 @@ public void KeySix(InputAction.CallbackContext context) {
     }
 }
 public void KeySeven(InputAction.CallbackContext context) { 
+	if (!pv.IsMine) return;
     if (currentTower == 6) { Destroy(); } 
     else { 
     Destroy();
@@ -123,6 +138,7 @@ public void KeySeven(InputAction.CallbackContext context) {
     }
 }
 public void KeyEight(InputAction.CallbackContext context) { 
+	if (!pv.IsMine) return;
     if (currentTower == 7) { Destroy(); } 
     else { 
     Destroy();
@@ -130,6 +146,7 @@ public void KeyEight(InputAction.CallbackContext context) {
     }
 }
 public void KeyNine(InputAction.CallbackContext context) { 
+	if (!pv.IsMine) return;
     if (currentTower == 8) { Destroy(); } 
     else { 
     Destroy();
@@ -138,9 +155,11 @@ public void KeyNine(InputAction.CallbackContext context) {
 }
 
 public void OnMouseMove(InputAction.CallbackContext context) { 
+	if (!pv.IsMine) return;
 	mouseInput = context.ReadValue<Vector2>();
 }
 public void OnMouseScroll(InputAction.CallbackContext context) { 
+	if (!pv.IsMine) return;
 	scrollInput = context.ReadValue<float>();
 }
 
@@ -153,6 +172,11 @@ private void Spawn(int key) {
 private void Destroy() {
     if (currentObject != null) PhotonNetwork.Destroy(currentObject);
     currentTower = -1;
+}
+
+private void UpdateNav() { 
+    if (!pv.IsMine) return;
+    if (GameObject.FindGameObjectsWithTag("NavMesh").Length != 0) GameObject.FindGameObjectsWithTag("NavMesh")[0].GetComponent<NavMeshSurface>().BuildNavMesh();
 }
 
 }

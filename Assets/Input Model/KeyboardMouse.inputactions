@@ -299,7 +299,7 @@
                     "name": "Scroll",
                     "type": "Value",
                     "id": "8307377b-ebf6-404e-9fe0-77a46cd0d29a",
-                    "expectedControlType": "",
+                    "expectedControlType": "Axis",
                     "processors": "",
                     "interactions": ""
                 },
