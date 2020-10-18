@@ -293,7 +293,7 @@
                     "id": "b5a67bc1-f019-4c42-a9a4-44b5f6a8fc08",
                     "expectedControlType": "Vector2",
                     "processors": "",
-                    "interactions": "Press"
+                    "interactions": ""
                 },
                 {
                     "name": "Scroll",

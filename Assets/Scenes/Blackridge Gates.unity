@@ -5483,7 +5483,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 480432941}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Castle Walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}

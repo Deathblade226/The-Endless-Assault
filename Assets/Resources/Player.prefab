@@ -1013,7 +1013,7 @@ MonoBehaviour:
   groundEnd: {fileID: 1517133929037209179}
   groundLayers:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 4294967295
   roationSpeedX: 0.1
   roationSpeedY: 0.8
   camTarget: {fileID: 9164312130238337304}

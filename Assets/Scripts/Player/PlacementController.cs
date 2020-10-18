@@ -58,10 +58,11 @@ private void RotatePlaceable() {
 
 private void MovePlaceableToMouse() {
 	//Vector2 position = new Vector2((Screen.width/2) - mouseInput.x, (Screen.height/2) - mouseInput.y);
+    //Debug.Log(mouseInput);
     Ray ray = Camera.main.ScreenPointToRay(mouseInput);
     RaycastHit hitInfo;
     if (Physics.Raycast(ray, out hitInfo)) {
-    
+    //Debug.Log(hitInfo.collider.name);
     if (((1<<hitInfo.collider.gameObject.layer) & IgnoredLayers) == 0) { 
     currentObject.transform.position = hitInfo.point;
     currentObject.transform.rotation = Quaternion.FromToRotation(Vector3.up, hitInfo.normal);
@@ -70,6 +71,8 @@ private void MovePlaceableToMouse() {
 }
 
 public void PlaceObject(InputAction.CallbackContext context) {
+    if (currentObject == null) return;
+    currentObject.layer = LayerMask.NameToLayer("World");
     currentObject = null;
     //Game.Rebuild = true;
 }

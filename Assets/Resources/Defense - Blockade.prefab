@@ -16,9 +16,9 @@ GameObject:
   - component: {fileID: 6368108875230972380}
   - component: {fileID: 580526051332404506}
   - component: {fileID: 7545086368392123824}
-  m_Layer: 9
+  m_Layer: 2
   m_Name: Defense - Blockade
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -180,7 +180,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5633820504193486708}
   - component: {fileID: 2470258946691507001}
-  m_Layer: 9
+  m_Layer: 2
   m_Name: Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -270,7 +270,7 @@ GameObject:
   - component: {fileID: 8997247531137605308}
   - component: {fileID: 7807137765781998608}
   - component: {fileID: 43902223518585863}
-  m_Layer: 9
+  m_Layer: 2
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -342,7 +342,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3737631853206996474}
-  m_Layer: 9
+  m_Layer: 2
   m_Name: Handle Slide Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -377,7 +377,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6027299580192403351}
-  m_Layer: 9
+  m_Layer: 2
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -415,7 +415,7 @@ GameObject:
   - component: {fileID: 2911021326929318645}
   - component: {fileID: 410302425204042661}
   - component: {fileID: 6379674371899550484}
-  m_Layer: 9
+  m_Layer: 2
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -490,7 +490,7 @@ GameObject:
   - component: {fileID: 2742328042348891344}
   - component: {fileID: 7907572310091383081}
   - component: {fileID: 7011492744660036021}
-  m_Layer: 9
+  m_Layer: 2
   m_Name: Healthbar Display
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -600,7 +600,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4047832129424818467}
   - component: {fileID: 8693001121307664261}
-  m_Layer: 8
+  m_Layer: 2
   m_Name: NavVolMod
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -722,7 +722,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 54323df1c268d4840b8621baa1013856,
         type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54323df1c268d4840b8621baa1013856, type: 3}
