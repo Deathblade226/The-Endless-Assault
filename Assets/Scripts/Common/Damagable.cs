@@ -42,7 +42,8 @@ private void Update() {
 	//This will start the regen when both cds are 0
 	//Resets the regen cd if hit
 	if (damageCd <= 0 && regenCd > 0) { regenCd -= Time.deltaTime; }
-	else if (m_constantRegen || ( damageCd <= 0 && regenCd <= 0 )) { PV.RPC("RegenHealth", RpcTarget.All); }
+	else if (m_constantRegen || ( damageCd <= 0 && regenCd <= 0 )) { //PV.RPC("RegenHealth", RpcTarget.All); 
+	}
 	else { regenCd = m_regenCd; }
 }
 

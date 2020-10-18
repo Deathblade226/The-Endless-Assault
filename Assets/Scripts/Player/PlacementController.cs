@@ -6,73 +6,59 @@ using UnityEngine.UI;
 using Photon.Pun;
 using UnityEngine.InputSystem;
 
-public class PlacementController : MonoBehaviour {
+public class PlacementController : MonoBehaviourPun, IPunObservable {
 
 [SerializeField] Text TowerDisplay = null;
 [SerializeField] List<GameObject> Units = new List<GameObject>();
-[SerializeField] PhotonView PV = null;
 [SerializeField] LayerMask IgnoredLayers;
+[SerializeField] List<String> tags;
 
 private GameObject currentObject = null;
 private float rotation;
 private int currentTower = -1;
+private Vector2 mouseInput;
+private float scrollInput;
 
-private void Start() {
-    if (!PV.IsMine) return;    
-    //Camera.main.transform.position = transform.position;
-    //Camera.main.transform.rotation.Set(transform.rotation.x, transform.rotation.y, transform.rotation.z, transform.rotation.w);
-    //Camera.main.transform.parent = this.transform;
+public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info) {
+    if(stream.IsWriting) {
+	stream.SendNext(this.currentObject);
+	stream.SendNext(this.currentTower);
+	stream.SendNext(this.rotation);
+	} else {
+	this.currentObject = (GameObject) stream.ReceiveNext();
+	this.currentTower = (int) stream.ReceiveNext();
+	this.rotation = (float) stream.ReceiveNext();
+	}
 }
 
 void Update() {
-    if (!PV.IsMine) return;
-
     if (currentObject != null) {
-    PV.RPC("MovePlaceableToMouse", RpcTarget.All);
-    //MovePlaceableToMouse();
-    PV.RPC("RotatePlaceable", RpcTarget.All);
-    //RotatePlaceable();It
-    PV.RPC("SpawnObject", RpcTarget.All);
-    //SpawnObject();
+    MovePlaceableToMouse();
+    RotatePlaceable();
     }
-
 }
 
-[PunRPC]
 private void DeleteUnit() {
-    if (!PV.IsMine) return;
     Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
     RaycastHit hitInfo;
     if (Physics.Raycast(ray, out hitInfo)) {
-    if (hitInfo.collider.gameObject.tag == "Blue-Unit" || hitInfo.collider.gameObject.tag == "Red-Unit") { 
-    if (PV.IsMine) PhotonNetwork.Destroy(hitInfo.collider.gameObject);
+    if (tags.Contains(hitInfo.collider.gameObject.tag)) { 
+    PhotonNetwork.Destroy(hitInfo.collider.gameObject);
     }
     }
 }
 
-[PunRPC]
-private void SpawnObject() {
-    if (!PV.IsMine) return;
-    if (Input.GetMouseButtonDown(0)) {
-    //GameObject unit = currentObject;
-    //currentObject.layer = 0;
-    currentObject.GetComponent<CapsuleCollider>().enabled = true;
-    currentObject = null;
-    //Game.Rebuild = true;
-    }
-}
-
-[PunRPC]
 private void RotatePlaceable() {
-    if (!PV.IsMine) return;
-    rotation += Input.mouseScrollDelta.y;
-    currentObject.transform.Rotate(Vector3.up, rotation * 10f);
+    Debug.Log(rotation);
+    rotation += scrollInput * 0.1f;
+    currentObject.transform.rotation = new Quaternion(currentObject.transform.rotation.x, rotation, currentObject.transform.rotation.z, currentObject.transform.rotation.w);
+    scrollInput = 0;
 }
 
-[PunRPC]
+
 private void MovePlaceableToMouse() {
-    if (!PV.IsMine) return;
-    Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+	Vector2 position = new Vector2((Screen.width/2) - mouseInput.x, (Screen.height/2) - mouseInput.y);
+    Ray ray = Camera.main.ScreenPointToRay(position);
     RaycastHit hitInfo;
     if (Physics.Raycast(ray, out hitInfo)) {
     
@@ -83,8 +69,12 @@ private void MovePlaceableToMouse() {
     }
 }
 
+public void PlaceObject(InputAction.CallbackContext context) {
+    currentObject = null;
+    //Game.Rebuild = true;
+}
 public void KeyZ(InputAction.CallbackContext context) { 
-    if (currentObject == null) { PV.RPC("DeleteUnit", RpcTarget.All); }
+    DeleteUnit();
 }
 public void KeyOne(InputAction.CallbackContext context) { 
     if (currentTower == 0) { Destroy(); } 
@@ -150,6 +140,13 @@ public void KeyNine(InputAction.CallbackContext context) {
     }
 }
 
+public void OnMouseMove(InputAction.CallbackContext context) { 
+	mouseInput = context.ReadValue<Vector2>();
+}
+public void OnMouseScroll(InputAction.CallbackContext context) { 
+	scrollInput = context.ReadValue<float>();
+}
+
 private void Spawn(int key) { 
     if (Units.Count > key) { 
     currentTower = key;
@@ -159,6 +156,7 @@ private void Spawn(int key) {
 private void Destroy() {
     if (currentObject != null) PhotonNetwork.Destroy(currentObject);
     currentTower = -1;
+    rotation = 0;
 }
 
 }
