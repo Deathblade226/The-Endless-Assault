@@ -14910,6 +14910,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MonsterDemo
       objectReference: {fileID: 0}
+    - target: {fileID: 2376791165151996865, guid: b35348fb4377bec4f89fd8e5df1987b2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3598915990400241147, guid: b35348fb4377bec4f89fd8e5df1987b2,
         type: 3}
       propertyPath: viewIdField

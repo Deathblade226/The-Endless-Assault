@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Damagable : MonoBehaviour {
+public class Damagable : MonoBehaviourPun, IPunObservable {
 
 [SerializeField] float m_health = 100;
 [SerializeField] int value = 0;
@@ -26,6 +26,15 @@ public float MaxHealth { get => maxHealth; set => maxHealth = value; }
 public float health { get => m_health; set => m_health = value; }
 public bool destroyed { get; set; } = false;
 public float DamageReduction { get => m_damageReduction; set => m_damageReduction = value; }
+
+void IPunObservable.OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info) { 
+	if(stream.IsWriting) {
+	stream.SendNext(this.health);
+	} else {
+	this.health = (float) stream.ReceiveNext();
+	}
+}
+
 private void Start() { MaxHealth = health; 
 	if (m_healthBar != null) { 
 	m_healthBar.maxValue = health;
