@@ -23,8 +23,10 @@ void IPunObservable.OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo
 }
 
 private void Update() {
-	GameObject target = gameObject.GetComponent<VisionSystem>().SeenTarget;
-	if (target != null && attackCD == 0) {
+	VisionSystem vs = gameObject.GetComponent<VisionSystem>();
+	GameObject target = vs.SeenTarget;
+	Debug.Log(attackCD);
+	if (target != null && attackCD <= 0) {
 	Debug.DrawLine(spawnPoint.transform.position, target.transform.position);
 
 	gameObject.transform.LookAt(target.transform);
@@ -37,7 +39,7 @@ private void Update() {
 	shotRB.AddForce(gameObject.transform.forward * shotSpeed, ForceMode.Acceleration);
 	}
 
-	} else { attackCD -= Time.deltaTime; }
+	} else if (vs.Active) { attackCD -= Time.deltaTime; }
 }
 
 }

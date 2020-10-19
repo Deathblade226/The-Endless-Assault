@@ -3,29 +3,37 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEditor;
+using Photon.Pun;
 
 [RequireComponent(typeof(SphereCollider))]
-public class VisionSystem : MonoBehaviour {
+public class VisionSystem : MonoBehaviourPun, IPunObservable {
 
 [SerializeField][Range(0,360)] float fieldOfViewAngle = 180f;
 [SerializeField][Range(0,50)] float visionRange = 10f;
 [SerializeField] List<string> targets;
 [SerializeField] SphereCollider visionTrigger = null;
 
+public bool Active { get; set; } = false;
+
 private GameObject seenTarget = null;
 
 public GameObject SeenTarget { get => seenTarget; set => seenTarget =  value ; }
 public float Distance { get => (seenTarget.transform.position - transform.position).magnitude; }
 
+public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info) {
+    if(stream.IsWriting) {
+	stream.SendNext(this.Active);
+	} else {
+	this.Active = (bool)stream.ReceiveNext();
+	}
+}
+
 private void Awake() {
     visionTrigger.radius = visionRange;		
 }
 
-private void Update() {
-    //Debug.Log(SeenTarget);		
-}
-
 private void OnTriggerStay(Collider other) {
+    if (Active) {
     bool valid = true;
     Vector3 targetDir = other.transform.position - transform.position;
     float angleDif = Vector3.Angle(targetDir, transform.forward);
@@ -40,6 +48,7 @@ private void OnTriggerStay(Collider other) {
     SeenTarget = other.gameObject;
     }
     }
+    }
 }
 private void OnTriggerExit(Collider other) {
     if (other.gameObject == seenTarget) { seenTarget = null; }		
@@ -52,9 +61,9 @@ private void OnDrawGizmos() {
     Vector3 leftRayDirection = leftRayRotation * transform.forward;
     Vector3 rightRayDirection = rightRayRotation * transform.forward;
     Vector3 up = transform.up;
-    Gizmos.DrawRay(transform.position + up, (leftRayDirection * visionRange));
-    Gizmos.DrawRay(transform.position + up, (rightRayDirection * visionRange));
-    DrawEllipse(transform.position + up, transform.forward, transform.up, visionRange, visionRange, 100, Gizmos.color);
+    Gizmos.DrawRay(transform.position, (leftRayDirection * visionRange));
+    Gizmos.DrawRay(transform.position, (rightRayDirection * visionRange));
+    DrawEllipse(transform.position, transform.forward, transform.up, visionRange, visionRange, 100, Gizmos.color);
     //Gizmos.DrawWireSphere(transform.position + up, visionRange);
 }
 
