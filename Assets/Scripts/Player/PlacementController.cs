@@ -74,6 +74,9 @@ public void PlaceObject(InputAction.CallbackContext context) {
     if (!pv.IsMine) return;
     if (currentObject == null) return;
     currentObject.layer = LayerMask.NameToLayer("World");
+    VisionSystem vs = currentObject.GetComponent<VisionSystem>();
+    if(vs == null) { vs = currentObject.transform.GetComponentInChildren<VisionSystem>(true); }
+    vs.enabled = true;
     currentObject = null;
     UpdateNav();
 }

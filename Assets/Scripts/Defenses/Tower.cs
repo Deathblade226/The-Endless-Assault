@@ -5,12 +5,12 @@ using UnityEngine;
 
 public class Tower : Defense, IPunObservable {
 
-[SerializeField]float attackRate = 0;
-[SerializeField]float damage = 0;
-[SerializeField]float shotSpeed = 0;
-[SerializeField]bool shotHasGravity = false;
-[SerializeField]GameObject spawnPoint = null;
-[SerializeField]GameObject projectile = null;
+[Tooltip("One attack every x amount of time.")][SerializeField]float attackRate = 0;
+[Tooltip("The damage of the projectile.")][SerializeField]float damage = 0;
+[Tooltip("The speed of the projectile.")][SerializeField]float shotSpeed = 0;
+[Tooltip("Does the shot have gravity.")][SerializeField]bool shotHasGravity = false;
+[Tooltip("Spawnpoint of the projectile.")][SerializeField]GameObject spawnPoint = null;
+[Tooltip("What the tower shoots.")][SerializeField]GameObject projectile = null;
 
 private float attackCD = 0;
 
