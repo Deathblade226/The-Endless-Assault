@@ -81,13 +81,15 @@ public void PlaceObject(InputAction.CallbackContext context) {
     UpdateNav();
 }
 public void KeyZ(InputAction.CallbackContext context) { 
-    DeleteUnit();
+    pv.RPC("Destroy", RpcTarget.All);
+    //Destroy();
 }
 public void KeyOne(InputAction.CallbackContext context) { 
     if (!pv.IsMine) return;    
     if (currentTower == 0) { Destroy(); } 
     else { 
-    Destroy();
+    pv.RPC("Destroy", RpcTarget.All);
+    //Destroy();
     Spawn(0);
     }
 }
@@ -95,7 +97,8 @@ public void KeyTwo(InputAction.CallbackContext context) {
     if (!pv.IsMine) return;
     if (currentTower == 1) { Destroy(); } 
     else { 
-    Destroy();
+    pv.RPC("Destroy", RpcTarget.All);
+    //Destroy();
     Spawn(1);
     }
 }
@@ -103,7 +106,8 @@ public void KeyThree(InputAction.CallbackContext context) {
 	if (!pv.IsMine) return;
     if (currentTower == 2) { Destroy(); } 
     else { 
-    Destroy();
+    pv.RPC("Destroy", RpcTarget.All);
+    //Destroy();
     Spawn(2);
     }
 }
@@ -111,7 +115,8 @@ public void KeyFour(InputAction.CallbackContext context) {
 	if (!pv.IsMine) return;
     if (currentTower == 3) { Destroy(); } 
     else { 
-    Destroy();
+    pv.RPC("Destroy", RpcTarget.All);
+    //Destroy();
     Spawn(3);
     }
 }
@@ -119,7 +124,8 @@ public void KeyFive(InputAction.CallbackContext context) {
 	if (!pv.IsMine) return;
     if (currentTower == 4) { Destroy(); } 
     else { 
-    Destroy();
+    pv.RPC("Destroy", RpcTarget.All);
+    //Destroy();
     Spawn(4);
     }
 }
@@ -127,7 +133,8 @@ public void KeySix(InputAction.CallbackContext context) {
 	if (!pv.IsMine) return;
     if (currentTower == 5) { Destroy(); } 
     else { 
-    Destroy();
+    pv.RPC("Destroy", RpcTarget.All);
+    //Destroy();
     Spawn(5);
     }
 }
@@ -135,7 +142,8 @@ public void KeySeven(InputAction.CallbackContext context) {
 	if (!pv.IsMine) return;
     if (currentTower == 6) { Destroy(); } 
     else { 
-    Destroy();
+    pv.RPC("Destroy", RpcTarget.All);
+    //Destroy();
     Spawn(6);
     }
 }
@@ -143,7 +151,8 @@ public void KeyEight(InputAction.CallbackContext context) {
 	if (!pv.IsMine) return;
     if (currentTower == 7) { Destroy(); } 
     else { 
-    Destroy();
+    pv.RPC("Destroy", RpcTarget.All);
+    //Destroy();
     Spawn(7);
     }
 }
@@ -151,7 +160,8 @@ public void KeyNine(InputAction.CallbackContext context) {
 	if (!pv.IsMine) return;
     if (currentTower == 8) { Destroy(); } 
     else { 
-    Destroy();
+    pv.RPC("Destroy", RpcTarget.All);
+    //Destroy();
     Spawn(8);
     }
 }
@@ -171,6 +181,8 @@ private void Spawn(int key) {
     currentObject = PhotonNetwork.Instantiate(Units[currentTower].name, new Vector3(), Quaternion.identity);
     }
 }
+
+[PunRPC]
 private void Destroy() {
     if (currentObject != null) PhotonNetwork.Destroy(currentObject);
     currentTower = -1;

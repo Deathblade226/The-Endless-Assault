@@ -41,11 +41,13 @@ private bool grounded = true;
 private float jumpCDC = 0;
 
 private void Awake() {
+	if (!pv.IsMine) return;
 	rb = gameObject.GetComponent<Rigidbody>();
 	Cursor.lockState = CursorLockMode.Confined;
 }
 
 private void Start() {
+	if (!pv.IsMine) return;
 	currentSpeed = walkSpeed;		
 }
 

@@ -16,7 +16,7 @@ MonoBehaviour:
     AppIdRealtime: dc1d4cec-6bfe-46df-aa6e-595ad368f674
     AppIdChat: 
     AppIdVoice: 
-    AppVersion: 
+    AppVersion: 1.0
     UseNameServer: 1
     FixedRegion: usw
     Server: 
@@ -50,6 +50,7 @@ MonoBehaviour:
   - StopAttacking
   - StopWander
   - ToggleGame
+  - Destroy
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 0
