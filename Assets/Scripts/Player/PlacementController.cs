@@ -184,7 +184,7 @@ private void Spawn(int key) {
 
 [PunRPC]
 private void Destroy() {
-    if (currentObject != null) PhotonNetwork.Destroy(currentObject);
+    if (currentObject != null) Destroy(currentObject);
     currentTower = -1;
 }
 
