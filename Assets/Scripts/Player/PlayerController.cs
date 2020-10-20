@@ -68,9 +68,9 @@ private void FixedUpdate() {
 	transform.Translate(new Vector3((walkInput.x * Time.deltaTime) * currentSpeed,0, (walkInput.y * Time.deltaTime) * currentSpeed));
 	Vector2 position = new Vector2((Screen.width/2) - mouseInput.x, (Screen.height/2) - mouseInput.y);
 
-	if (Mathf.Abs(position.x) > horizontalWindow) { rb.AddTorque(new Vector3(0, -position.normalized.x * roationSpeedX)); }
+	if (Mathf.Abs(position.x) > horizontalWindow && Cursor.lockState != CursorLockMode.Locked) { rb.AddTorque(new Vector3(0, -position.normalized.x * roationSpeedX)); }
 
-	if (Mathf.Abs(position.y) > verticalWindow) { 
+	if (Mathf.Abs(position.y) > verticalWindow && Cursor.lockState != CursorLockMode.Locked) { 
 	rotation += -position.normalized.y * roationSpeedY;
 	rotation = Mathf.Clamp(rotation, -camClamp, camClamp);
 	camTarget.transform.localEulerAngles = new Vector3(rotation, 0, 0);
