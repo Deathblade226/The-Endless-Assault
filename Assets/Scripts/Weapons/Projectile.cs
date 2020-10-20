@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Projectile : MonoBehaviour {
+public class Projectile : MonoBehaviourPun, IPunObservable {
 
 [SerializeField] float damage = 0;
 [SerializeField] string enemyTag = "";
@@ -13,8 +13,22 @@ public class Projectile : MonoBehaviour {
 public float WeaponDamage { get => damage; set => damage = value; }
 public string EnemyTag { get => enemyTag; set => enemyTag = value; }
 
-private void Start() { pv.RPC("Destroy", RpcTarget.All, LifeTime); }
+private float currentLife;
 
+void IPunObservable.OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info) { 
+    if(stream.IsWriting) {
+	stream.SendNext(this.currentLife);
+	} else {
+	this.currentLife = (float) stream.ReceiveNext();
+	}
+}
+
+private void Start() {
+    currentLife = LifeTime;	
+}
+private void Update() {
+    if (currentLife > 0) { currentLife -= Time.deltaTime; } else { pv.RPC("RPC_Destroy", RpcTarget.All); }
+}
 private void OnTriggerEnter(Collider other) {
     if (other.tag == EnemyTag) { 
     
@@ -22,13 +36,13 @@ private void OnTriggerEnter(Collider other) {
     if (health != null) { 
     health.ApplyDamage(WeaponDamage);
     }
-    pv.RPC("Destroy", RpcTarget.All, 0);
+    pv.RPC("RPC_Destroy", RpcTarget.All);
     }       
 }
 
 [PunRPC]
-public void Destroy(float lifetime) {
-    if (lifetime == 0) { Destroy(gameObject); } else { Destroy(gameObject, LifeTime); }
+public void RPC_Destroy() {
+    Destroy(gameObject); 
 }
 
 }

@@ -552,7 +552,7 @@ MonoBehaviour:
   cost: 0
   attackRate: 5
   damage: 0
-  shotSpeed: 5
+  shotSpeed: 1
   shotHasGravity: 0
   spawnPoint: {fileID: 6040005499747659652}
   projectile: {fileID: 1384266958994512122, guid: ca829011068e6fa4a88f3f3765cb65e6,

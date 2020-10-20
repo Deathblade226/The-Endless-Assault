@@ -36,7 +36,7 @@ private void Update() {
 	shot.GetComponent<Projectile>().WeaponDamage = damage;
 	Rigidbody shotRB = shot.GetComponent<Rigidbody>();
 	shotRB.useGravity = shotHasGravity;
-	shotRB.AddForce(gameObject.transform.forward * shotSpeed, ForceMode.Acceleration);
+	shotRB.AddForce(gameObject.transform.forward * shotSpeed * 10, ForceMode.Acceleration);
 	}
 
 	} else if (vs.Active) { attackCD -= Time.deltaTime; }
