@@ -25,7 +25,7 @@ void IPunObservable.OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo
 private void Update() {
 	VisionSystem vs = gameObject.GetComponent<VisionSystem>();
 	GameObject target = vs.SeenTarget;
-	Debug.Log(attackCD);
+	//Debug.Log(attackCD);
 	if (target != null && attackCD <= 0) {
 	Debug.DrawLine(spawnPoint.transform.position, target.transform.position);
 
