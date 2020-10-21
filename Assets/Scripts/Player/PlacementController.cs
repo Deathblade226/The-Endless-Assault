@@ -12,6 +12,7 @@ public class PlacementController : MonoBehaviourPun, IPunObservable {
 
 [SerializeField] PhotonView pv;
 [SerializeField] Text TowerDisplay = null;
+[SerializeField] float rotationSpeed = 1;
 [SerializeField] List<GameObject> Units = new List<GameObject>();
 [SerializeField] LayerMask IgnoredLayers;
 [SerializeField] List<String> tags;
@@ -30,7 +31,6 @@ public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info) {
 	this.currentTower = (int) stream.ReceiveNext();
 	}
 }
-
 void Update() {
     if (!pv.IsMine) return;
     if (currentObject != null) {
@@ -38,7 +38,6 @@ void Update() {
     RotatePlaceable();
     }
 }
-
 private void DeleteUnit() {
     if (!pv.IsMine) return;
     Ray ray = Camera.main.ScreenPointToRay(mouseInput);
@@ -50,14 +49,11 @@ private void DeleteUnit() {
     }
     }
 }
-
 private void RotatePlaceable() {
     if (!pv.IsMine) return;
-    currentObject.transform.Rotate(Vector3.up, scrollInput * .1f);
+    currentObject.transform.Rotate(Vector3.up, (scrollInput / 12) * rotationSpeed);
     scrollInput = 0;
 }
-
-
 private void MovePlaceableToMouse() {
     if (!pv.IsMine) return;
     Ray ray = Camera.main.ScreenPointToRay(mouseInput);
@@ -69,22 +65,30 @@ private void MovePlaceableToMouse() {
     }
     }
 }
-
 public void PlaceObject(InputAction.CallbackContext context) {
     if (!pv.IsMine) return;
-    if (currentObject != null) { 
-    currentObject.layer = LayerMask.NameToLayer("World");
-    VisionSystem vs = currentObject.GetComponent<VisionSystem>();
-    if(vs == null) { vs = currentObject.transform.GetComponentInChildren<VisionSystem>(true); }
-    vs.Active = true;
-    currentObject = null;
+    if (this.currentObject != null) {
     pv.RPC("UpdateNav", RpcTarget.All);
+    pv.RPC("SettingValues", RpcTarget.All, currentObject.GetComponent<PhotonView>().ViewID);
+    this.currentObject = null;
     }
 }
+[PunRPC]
+public void SettingValues(int id) { 
+    GameObject go = PhotonView.Find(id).gameObject;
+    go.layer = LayerMask.NameToLayer("World");
+    VisionSystem vs = go.GetComponent<VisionSystem>();
+    if(vs == null) { vs = go.transform.GetComponentInChildren<VisionSystem>(true); }
+    vs.Active = true;
+}
+
 public void KeyZ(InputAction.CallbackContext context) { 
-    if (!pv.IsMine) return;    
-    pv.RPC("Destroy", RpcTarget.All);
-    //Destroy();
+    if (!pv.IsMine) return;
+    Ray ray = Camera.main.ScreenPointToRay(mouseInput);
+    RaycastHit hitInfo;
+    if (Physics.Raycast(ray, out hitInfo)) {
+    PhotonNetwork.Destroy(hitInfo.collider.gameObject);
+    }
 }
 public void KeyOne(InputAction.CallbackContext context) { 
     if (!pv.IsMine) return;    
@@ -186,14 +190,12 @@ private void Spawn(int key) {
     currentObject = PhotonNetwork.Instantiate(Units[currentTower].name, new Vector3(), Quaternion.identity);
     }
 }
-
 [PunRPC]
 private void Destroy() {
     if (currentObject != null) 
     PhotonNetwork.Destroy(currentObject);
     currentTower = -1;
 }
-
 [PunRPC]
 private void UpdateNav() { 
     if (!pv.IsMine) return;
