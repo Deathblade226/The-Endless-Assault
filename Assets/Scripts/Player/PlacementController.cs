@@ -179,7 +179,8 @@ public void OnMouseScroll(InputAction.CallbackContext context) {
 }
 
 [PunRPC]
-private void Spawn(int key) { 
+private void Spawn(int key) {
+    if (!pv.IsMine) return;
     if (Units.Count > key) { 
     currentTower = key;
     currentObject = PhotonNetwork.Instantiate(Units[currentTower].name, new Vector3(), Quaternion.identity);
