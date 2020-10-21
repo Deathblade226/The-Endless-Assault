@@ -71,14 +71,7 @@ private void MovePlaceableToMouse() {
 }
 
 public void PlaceObject(InputAction.CallbackContext context) {
-    if (!pv.IsMine) return;
-    if (currentObject == null) return;
-    currentObject.layer = LayerMask.NameToLayer("World");
-    VisionSystem vs = currentObject.GetComponent<VisionSystem>();
-    if(vs == null) { vs = currentObject.transform.GetComponentInChildren<VisionSystem>(true); }
-    vs.Active = true;
-    currentObject = null;
-    UpdateNav();
+    pv.RPC("UpdateNav", RpcTarget.All);
 }
 public void KeyZ(InputAction.CallbackContext context) { 
     pv.RPC("Destroy", RpcTarget.All);
@@ -90,7 +83,7 @@ public void KeyOne(InputAction.CallbackContext context) {
     else { 
     pv.RPC("Destroy", RpcTarget.All);
     //Destroy();
-    Spawn(0);
+    pv.RPC("Spawn", RpcTarget.All, 0);
     }
 }
 public void KeyTwo(InputAction.CallbackContext context) { 
@@ -99,7 +92,7 @@ public void KeyTwo(InputAction.CallbackContext context) {
     else { 
     pv.RPC("Destroy", RpcTarget.All);
     //Destroy();
-    Spawn(1);
+    pv.RPC("Spawn", RpcTarget.All, 1);
     }
 }
 public void KeyThree(InputAction.CallbackContext context) { 
@@ -108,7 +101,7 @@ public void KeyThree(InputAction.CallbackContext context) {
     else { 
     pv.RPC("Destroy", RpcTarget.All);
     //Destroy();
-    Spawn(2);
+    pv.RPC("Spawn", RpcTarget.All, 2);
     }
 }
 public void KeyFour(InputAction.CallbackContext context) { 
@@ -117,7 +110,7 @@ public void KeyFour(InputAction.CallbackContext context) {
     else { 
     pv.RPC("Destroy", RpcTarget.All);
     //Destroy();
-    Spawn(3);
+    pv.RPC("Spawn", RpcTarget.All, 3);
     }
 }
 public void KeyFive(InputAction.CallbackContext context) { 
@@ -126,7 +119,7 @@ public void KeyFive(InputAction.CallbackContext context) {
     else { 
     pv.RPC("Destroy", RpcTarget.All);
     //Destroy();
-    Spawn(4);
+    pv.RPC("Spawn", RpcTarget.All, 4);
     }
 }
 public void KeySix(InputAction.CallbackContext context) { 
@@ -135,7 +128,7 @@ public void KeySix(InputAction.CallbackContext context) {
     else { 
     pv.RPC("Destroy", RpcTarget.All);
     //Destroy();
-    Spawn(5);
+    pv.RPC("Spawn", RpcTarget.All, 5);
     }
 }
 public void KeySeven(InputAction.CallbackContext context) { 
@@ -144,7 +137,7 @@ public void KeySeven(InputAction.CallbackContext context) {
     else { 
     pv.RPC("Destroy", RpcTarget.All);
     //Destroy();
-    Spawn(6);
+    pv.RPC("Spawn", RpcTarget.All, 6);
     }
 }
 public void KeyEight(InputAction.CallbackContext context) { 
@@ -153,7 +146,7 @@ public void KeyEight(InputAction.CallbackContext context) {
     else { 
     pv.RPC("Destroy", RpcTarget.All);
     //Destroy();
-    Spawn(7);
+    pv.RPC("Spawn", RpcTarget.All, 7);    
     }
 }
 public void KeyNine(InputAction.CallbackContext context) { 
@@ -162,7 +155,8 @@ public void KeyNine(InputAction.CallbackContext context) {
     else { 
     pv.RPC("Destroy", RpcTarget.All);
     //Destroy();
-    Spawn(8);
+    pv.RPC("Spawn", RpcTarget.All, 8);
+    //Spawn(8);
     }
 }
 
@@ -175,6 +169,7 @@ public void OnMouseScroll(InputAction.CallbackContext context) {
 	scrollInput = context.ReadValue<float>();
 }
 
+[PunRPC]
 private void Spawn(int key) { 
     if (Units.Count > key) { 
     currentTower = key;
@@ -188,8 +183,14 @@ private void Destroy() {
     currentTower = -1;
 }
 
+[PunRPC]
 private void UpdateNav() { 
-    if (!pv.IsMine) return;
+    if (!pv.IsMine && currentObject == null) return;
+    currentObject.layer = LayerMask.NameToLayer("World");
+    VisionSystem vs = currentObject.GetComponent<VisionSystem>();
+    if(vs == null) { vs = currentObject.transform.GetComponentInChildren<VisionSystem>(true); }
+    vs.Active = true;
+    currentObject = null;
     if (GameObject.FindGameObjectsWithTag("NavMesh").Length != 0) GameObject.FindGameObjectsWithTag("NavMesh")[0].GetComponent<NavMeshSurface>().BuildNavMesh();
 }
 
