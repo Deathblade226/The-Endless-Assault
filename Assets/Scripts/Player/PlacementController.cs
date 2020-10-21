@@ -71,9 +71,18 @@ private void MovePlaceableToMouse() {
 }
 
 public void PlaceObject(InputAction.CallbackContext context) {
+    if (!pv.IsMine) return;
+    if (currentObject != null) { 
+    currentObject.layer = LayerMask.NameToLayer("World");
+    VisionSystem vs = currentObject.GetComponent<VisionSystem>();
+    if(vs == null) { vs = currentObject.transform.GetComponentInChildren<VisionSystem>(true); }
+    vs.Active = true;
+    currentObject = null;
     pv.RPC("UpdateNav", RpcTarget.All);
+    }
 }
 public void KeyZ(InputAction.CallbackContext context) { 
+    if (!pv.IsMine) return;    
     pv.RPC("Destroy", RpcTarget.All);
     //Destroy();
 }
@@ -88,7 +97,7 @@ public void KeyOne(InputAction.CallbackContext context) {
 }
 public void KeyTwo(InputAction.CallbackContext context) { 
     if (!pv.IsMine) return;
-    if (currentTower == 1) { Destroy(); } 
+    if (currentTower == 1) { pv.RPC("Destroy", RpcTarget.All); } 
     else { 
     pv.RPC("Destroy", RpcTarget.All);
     //Destroy();
@@ -97,7 +106,7 @@ public void KeyTwo(InputAction.CallbackContext context) {
 }
 public void KeyThree(InputAction.CallbackContext context) { 
 	if (!pv.IsMine) return;
-    if (currentTower == 2) { Destroy(); } 
+    if (currentTower == 2) { pv.RPC("Destroy", RpcTarget.All); } 
     else { 
     pv.RPC("Destroy", RpcTarget.All);
     //Destroy();
@@ -106,7 +115,7 @@ public void KeyThree(InputAction.CallbackContext context) {
 }
 public void KeyFour(InputAction.CallbackContext context) { 
 	if (!pv.IsMine) return;
-    if (currentTower == 3) { Destroy(); } 
+    if (currentTower == 3) { pv.RPC("Destroy", RpcTarget.All); } 
     else { 
     pv.RPC("Destroy", RpcTarget.All);
     //Destroy();
@@ -115,7 +124,7 @@ public void KeyFour(InputAction.CallbackContext context) {
 }
 public void KeyFive(InputAction.CallbackContext context) { 
 	if (!pv.IsMine) return;
-    if (currentTower == 4) { Destroy(); } 
+    if (currentTower == 4) { pv.RPC("Destroy", RpcTarget.All); } 
     else { 
     pv.RPC("Destroy", RpcTarget.All);
     //Destroy();
@@ -124,7 +133,7 @@ public void KeyFive(InputAction.CallbackContext context) {
 }
 public void KeySix(InputAction.CallbackContext context) { 
 	if (!pv.IsMine) return;
-    if (currentTower == 5) { Destroy(); } 
+    if (currentTower == 5) { pv.RPC("Destroy", RpcTarget.All); } 
     else { 
     pv.RPC("Destroy", RpcTarget.All);
     //Destroy();
@@ -133,7 +142,7 @@ public void KeySix(InputAction.CallbackContext context) {
 }
 public void KeySeven(InputAction.CallbackContext context) { 
 	if (!pv.IsMine) return;
-    if (currentTower == 6) { Destroy(); } 
+    if (currentTower == 6) { pv.RPC("Destroy", RpcTarget.All); } 
     else { 
     pv.RPC("Destroy", RpcTarget.All);
     //Destroy();
@@ -142,7 +151,7 @@ public void KeySeven(InputAction.CallbackContext context) {
 }
 public void KeyEight(InputAction.CallbackContext context) { 
 	if (!pv.IsMine) return;
-    if (currentTower == 7) { Destroy(); } 
+    if (currentTower == 7) { pv.RPC("Destroy", RpcTarget.All); } 
     else { 
     pv.RPC("Destroy", RpcTarget.All);
     //Destroy();
@@ -151,7 +160,7 @@ public void KeyEight(InputAction.CallbackContext context) {
 }
 public void KeyNine(InputAction.CallbackContext context) { 
 	if (!pv.IsMine) return;
-    if (currentTower == 8) { Destroy(); } 
+    if (currentTower == 8) { pv.RPC("Destroy", RpcTarget.All); } 
     else { 
     pv.RPC("Destroy", RpcTarget.All);
     //Destroy();
@@ -179,18 +188,14 @@ private void Spawn(int key) {
 
 [PunRPC]
 private void Destroy() {
-    if (currentObject != null) Destroy(currentObject);
+    if (currentObject != null) 
+    PhotonNetwork.Destroy(currentObject);
     currentTower = -1;
 }
 
 [PunRPC]
 private void UpdateNav() { 
-    if (!pv.IsMine && currentObject == null) return;
-    currentObject.layer = LayerMask.NameToLayer("World");
-    VisionSystem vs = currentObject.GetComponent<VisionSystem>();
-    if(vs == null) { vs = currentObject.transform.GetComponentInChildren<VisionSystem>(true); }
-    vs.Active = true;
-    currentObject = null;
+    if (!pv.IsMine) return;
     if (GameObject.FindGameObjectsWithTag("NavMesh").Length != 0) GameObject.FindGameObjectsWithTag("NavMesh")[0].GetComponent<NavMeshSurface>().BuildNavMesh();
 }
 
