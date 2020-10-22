@@ -22,17 +22,14 @@ public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info) {
 	}
 }
 
-void Start() {
-	//SpawnCluster();
-}
-
 void Update() {
-	if (currentSpawnCD > 0) { currentSpawnCD -= Time.deltaTime; }
-	else { }
+	if (spot+1 == clusters.Count) { gameObject.SetActive(false); }
+	else if (currentSpawnCD > 0) { currentSpawnCD -= Time.deltaTime; }
+	else { SpawnCluster(); }
+	
 }
 
-private void SpawnCluster() {
-
+public void SpawnCluster() {
 	for (int i = 0; i < clusters[spot].Count; i++) {
 	PhotonNetwork.InstantiateRoomObject(clusters[spot].Monster.gameObject.name, new Vector3(transform.position.x + Random.Range(-spawnRange, spawnRange), transform.position.y + 0.1f, transform.position.z + Random.Range(-spawnRange, spawnRange)), Quaternion.identity);
 	}

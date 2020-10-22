@@ -547,7 +547,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &31204218
 Transform:
   m_ObjectHideFlags: 0
@@ -8706,7 +8706,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 796319085}
-  - component: {fileID: 796319086}
   - component: {fileID: 796319087}
   - component: {fileID: 796319088}
   m_Layer: 8
@@ -8715,7 +8714,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &796319085
 Transform:
   m_ObjectHideFlags: 0
@@ -8730,29 +8729,6 @@ Transform:
   m_Father: {fileID: 1089757398}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &796319086
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 796319084}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ObservedComponentsFoldoutOpen: 1
-  Group: 0
-  prefixField: -1
-  observableSearch: 2
-  Synchronization: 3
-  OwnershipTransfer: 0
-  ObservedComponents:
-  - {fileID: 796319087}
-  viewIdField: 2
-  InstantiationId: 0
-  isRuntimeInstantiated: 0
 --- !u!114 &796319087
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8766,7 +8742,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnRange: 4
-  pv: {fileID: 796319086}
+  pv: {fileID: 0}
   clusters:
   - {fileID: 796319088}
   - {fileID: 796319088}
@@ -11532,9 +11508,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1089757398}
   - component: {fileID: 1089757399}
+  - component: {fileID: 1089757400}
   m_Layer: 8
   m_Name: Spawner
-  m_TagString: Untagged
+  m_TagString: Spawner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11570,12 +11547,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9abd102c6b611b24787b27341903fc23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pv: {fileID: 1089757400}
   waves:
   - {fileID: 796319087}
   - {fileID: 1994828074}
   - {fileID: 1790363380}
   - {fileID: 1120138016}
   - {fileID: 31204219}
+--- !u!114 &1089757400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1089757397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  observableSearch: 2
+  Synchronization: 3
+  OwnershipTransfer: 0
+  ObservedComponents:
+  - {fileID: 1089757399}
+  - {fileID: 796319087}
+  - {fileID: 1994828074}
+  - {fileID: 1790363380}
+  - {fileID: 1120138016}
+  - {fileID: 31204219}
+  viewIdField: 3
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1001 &1090177788
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11828,7 +11834,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1120138015
 Transform:
   m_ObjectHideFlags: 0
@@ -20213,7 +20219,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1790363379
 Transform:
   m_ObjectHideFlags: 0
@@ -23352,13 +23358,14 @@ GameObject:
   m_Component:
   - component: {fileID: 1994828073}
   - component: {fileID: 1994828074}
+  - component: {fileID: 1994828075}
   m_Layer: 8
   m_Name: Wave 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1994828073
 Transform:
   m_ObjectHideFlags: 0
@@ -23387,7 +23394,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnRange: 4
   pv: {fileID: 0}
-  clusters: []
+  clusters:
+  - {fileID: 1994828075}
+  - {fileID: 1994828075}
+  - {fileID: 1994828075}
+  - {fileID: 1994828075}
+  - {fileID: 1994828075}
+--- !u!114 &1994828075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1994828072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a2d31d6bfc11b345b0e50dbdb20d73a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  monster: {fileID: 3336172698178726445, guid: 4c30bfe328760af45a0df7ffcc75960e, type: 3}
+  count: 10
+  spawnCD: 5
 --- !u!1001 &1995609757
 PrefabInstance:
   m_ObjectHideFlags: 0

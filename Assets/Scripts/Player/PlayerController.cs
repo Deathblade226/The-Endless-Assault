@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
+using System.Threading;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.XR.Haptics;
@@ -79,6 +80,13 @@ private void FixedUpdate() {
 	animator.SetBool("Moving", (walkInput.x != 0 || walkInput.y != 0));
 	animator.SetFloat("SpeedX", walkInput.x);
 	animator.SetFloat("SpeedY", walkInput.y);
+}
+
+public void StartGame(InputAction.CallbackContext context) {
+	if (pv.IsMine && PhotonNetwork.MasterClient.IsMasterClient) { 
+	GameObject go = GameObject.FindGameObjectWithTag("Spawner");
+	go.GetComponent<PhotonView>().RPC("StartWave", RpcTarget.All);
+	}
 }
 
 public void OnMove(InputAction.CallbackContext context) {

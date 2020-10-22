@@ -9,6 +9,7 @@ TagManager:
   - Monster
   - Obstacle
   - NavMesh
+  - Spawner
   layers:
   - Default
   - TransparentFX
