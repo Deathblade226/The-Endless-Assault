@@ -42,4 +42,9 @@ private void Update() {
 	} else if (vs.Active) { attackCD -= Time.deltaTime; }
 }
 
+[PunRPC]
+private void Attack() { 
+
+}
+
 }

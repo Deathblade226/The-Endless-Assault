@@ -575,6 +575,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnRange: 4
+  pv: {fileID: 0}
   clusters: []
 --- !u!1001 &43337562
 PrefabInstance:
@@ -8705,8 +8706,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 796319085}
-  - component: {fileID: 796319087}
   - component: {fileID: 796319086}
+  - component: {fileID: 796319087}
   - component: {fileID: 796319088}
   m_Layer: 8
   m_Name: Wave 1
@@ -8738,12 +8739,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 796319084}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a2d31d6bfc11b345b0e50dbdb20d73a, type: 3}
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  monster: {fileID: 413197153697535199, guid: 2a31c6fd5db8e844dae79c86ef431f22, type: 3}
-  count: 5
-  spawnCD: 0
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  observableSearch: 2
+  Synchronization: 3
+  OwnershipTransfer: 0
+  ObservedComponents:
+  - {fileID: 796319087}
+  viewIdField: 2
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!114 &796319087
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8757,8 +8766,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnRange: 4
+  pv: {fileID: 796319086}
   clusters:
-  - {fileID: 796319086}
+  - {fileID: 796319088}
+  - {fileID: 796319088}
   - {fileID: 796319088}
 --- !u!114 &796319088
 MonoBehaviour:
@@ -8773,8 +8784,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monster: {fileID: 3336172698178726445, guid: 4c30bfe328760af45a0df7ffcc75960e, type: 3}
-  count: 5
-  spawnCD: 0
+  count: 10
+  spawnCD: 5
 --- !u!1001 &804596619
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11561,6 +11572,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waves:
   - {fileID: 796319087}
+  - {fileID: 1994828074}
+  - {fileID: 1790363380}
+  - {fileID: 1120138016}
+  - {fileID: 31204219}
 --- !u!1001 &1090177788
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11841,6 +11856,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnRange: 4
+  pv: {fileID: 0}
   clusters: []
 --- !u!1001 &1127697401
 PrefabInstance:
@@ -15097,7 +15113,7 @@ PrefabInstance:
     - target: {fileID: 2376791165151996865, guid: b35348fb4377bec4f89fd8e5df1987b2,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3598915990400241147, guid: b35348fb4377bec4f89fd8e5df1987b2,
         type: 3}
@@ -20225,6 +20241,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnRange: 4
+  pv: {fileID: 0}
   clusters: []
 --- !u!1001 &1791760950
 PrefabInstance:
@@ -23369,6 +23386,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnRange: 4
+  pv: {fileID: 0}
   clusters: []
 --- !u!1001 &1995609757
 PrefabInstance:
