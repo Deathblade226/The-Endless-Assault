@@ -25,8 +25,8 @@ public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info) {
 public void StartWave() { 
 	spawning = GameObject.FindGameObjectWithTag("Monster") != null;
 	//Debug.Log($"{!spawning} | {!waves[wave].gameObject.activeSelf} | {wave}");
-	if (!spawning && !waves[wave-1].gameObject.activeSelf) wave++;
-	if (wave < waves.Count) waves[wave-1].gameObject.SetActive(true);
+	if (wave < waves.Count) waves[wave].gameObject.SetActive(true);
+	if (!spawning && !waves[wave].gameObject.activeSelf) wave++;
 }
 
 }
