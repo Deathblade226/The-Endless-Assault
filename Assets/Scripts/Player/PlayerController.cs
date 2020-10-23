@@ -83,10 +83,14 @@ private void FixedUpdate() {
 }
 
 public void StartGame(InputAction.CallbackContext context) {
-	if (pv.IsMine && PhotonNetwork.MasterClient.IsMasterClient) { 
+	if (!pv.IsMine) return;
+	ActivateWaves();
+}
+
+private void ActivateWaves() { 
+	if (!PhotonNetwork.IsMasterClient) return;
 	GameObject go = GameObject.FindGameObjectWithTag("Spawner");
 	go.GetComponent<PhotonView>().RPC("StartWave", RpcTarget.All);
-	}
 }
 
 public void OnMove(InputAction.CallbackContext context) {

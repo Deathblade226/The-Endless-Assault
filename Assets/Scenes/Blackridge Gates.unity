@@ -8760,7 +8760,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monster: {fileID: 3336172698178726445, guid: 4c30bfe328760af45a0df7ffcc75960e, type: 3}
-  count: 10
+  count: 2
   spawnCD: 5
 --- !u!1001 &804596619
 PrefabInstance:

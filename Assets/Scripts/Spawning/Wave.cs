@@ -26,7 +26,6 @@ void Update() {
 	if (spot+1 == clusters.Count) { gameObject.SetActive(false); }
 	else if (currentSpawnCD > 0) { currentSpawnCD -= Time.deltaTime; }
 	else { SpawnCluster(); }
-	
 }
 
 public void SpawnCluster() {
