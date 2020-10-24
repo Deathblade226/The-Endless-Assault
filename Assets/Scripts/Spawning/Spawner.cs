@@ -23,7 +23,7 @@ public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info) {
 
 [PunRPC] 
 public void StartWave() { 
-	spawning = (GameObject.FindGameObjectWithTag("Monster") != null && !waves[wave].gameObject.activeSelf);
+	spawning = (GameObject.FindGameObjectWithTag("Monster") != null && waves[wave].gameObject.activeSelf);
 	//Debug.Log($"{!spawning} | {!waves[wave].gameObject.activeSelf} | {wave}");
 	if (wave < waves.Count) waves[wave].gameObject.SetActive(true);
 	if (!spawning && !waves[wave].gameObject.activeSelf) wave++;
