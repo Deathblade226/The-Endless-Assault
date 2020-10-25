@@ -32,7 +32,8 @@ private void Update() {
 	gameObject.transform.LookAt(target.transform);
 	if (projectile != null) { 
 	attackCD = attackRate;
-	GameObject shot = PhotonNetwork.Instantiate(projectile.name, spawnPoint.transform.position, gameObject.transform.rotation);
+	GameObject shot	= null;
+	if (PhotonNetwork.IsMasterClient) shot = PhotonNetwork.Instantiate(projectile.name, spawnPoint.transform.position, gameObject.transform.rotation);
 	shot.GetComponent<Projectile>().WeaponDamage = damage;
 	Rigidbody shotRB = shot.GetComponent<Rigidbody>();
 	shotRB.useGravity = shotHasGravity;
@@ -43,7 +44,7 @@ private void Update() {
 }
 
 [PunRPC]
-private void Attack() { 
+private void updateShot(string id) { 
 
 }
 
