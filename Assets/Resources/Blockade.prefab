@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 6314826336793477095}
   - component: {fileID: 7099375552791745537}
   - component: {fileID: 4536555269685391557}
-  - component: {fileID: 1746484532183860750}
   - component: {fileID: 7470206099168030952}
   - component: {fileID: 6368108875230972380}
   - component: {fileID: 580526051332404506}
@@ -71,29 +70,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1746484532183860750
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1670681377402366227}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c23f9b2ba9181147906fccd6a9e9a6d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_health: 100
-  value: 0
-  m_damageReduction: 0.2
-  m_regenCap: 1
-  m_regenAmount: 0
-  m_regenCd: 0
-  m_damageCd: 3
-  m_constantRegen: 0
-  PV: {fileID: 7470206099168030952}
-  m_deathSpawn: {fileID: 0}
-  m_healthBar: {fileID: 2470258946691507001}
 --- !u!114 &7470206099168030952
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -113,7 +89,7 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   ObservedComponents:
-  - {fileID: 1746484532183860750}
+  - {fileID: 0}
   - {fileID: 6368108875230972380}
   - {fileID: 580526051332404506}
   - {fileID: 7545086368392123824}
@@ -141,7 +117,9 @@ MonoBehaviour:
   m_regenCd: 0
   m_damageCd: 0
   m_constantRegen: 0
+  m_killOnDeath: 1
   PV: {fileID: 7470206099168030952}
+  m_hideObject: {fileID: 0}
   m_deathSpawn: {fileID: 0}
   m_healthBar: {fileID: 2470258946691507001}
 --- !u!114 &580526051332404506
@@ -525,6 +503,7 @@ GameObject:
   - component: {fileID: 2742328042348891344}
   - component: {fileID: 7907572310091383081}
   - component: {fileID: 7011492744660036021}
+  - component: {fileID: 4806483028355310659}
   m_Layer: 2
   m_Name: Healthbar Display
   m_TagString: Untagged
@@ -612,6 +591,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &4806483028355310659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7518902634153924079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9032b359d01ab744b84053db54fe116, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!65 &4265273965244860905
 BoxCollider:
   m_ObjectHideFlags: 0

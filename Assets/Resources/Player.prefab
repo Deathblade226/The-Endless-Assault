@@ -986,7 +986,9 @@ MonoBehaviour:
   m_regenCd: 5
   m_damageCd: 0
   m_constantRegen: 0
+  m_killOnDeath: 0
   PV: {fileID: 9164312130522971429}
+  m_hideObject: {fileID: 9164312129469088375}
   m_deathSpawn: {fileID: 0}
   m_healthBar: {fileID: 9164312128594599473}
 --- !u!114 &9164312130522971429
@@ -1616,6 +1618,12 @@ Animator:
 --- !u!4 &9164312129468770297 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 495398, guid: 3f42b29f9f09e0e40b05df7c984384f1,
+    type: 3}
+  m_PrefabInstance: {fileID: 9164312129468999903}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &9164312129469088375 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 174760, guid: 3f42b29f9f09e0e40b05df7c984384f1,
     type: 3}
   m_PrefabInstance: {fileID: 9164312129468999903}
   m_PrefabAsset: {fileID: 0}

@@ -14,7 +14,9 @@ public class Damagable : MonoBehaviourPun, IPunObservable {
 [SerializeField] float m_regenCd = 0;
 [SerializeField] float m_damageCd = 0;
 [SerializeField] bool m_constantRegen = false;
+[SerializeField] bool m_killOnDeath = false;
 [SerializeField] PhotonView PV = null;
+[SerializeField] GameObject m_hideObject = null;
 [SerializeField] GameObject m_deathSpawn = null;
 [SerializeField] Slider m_healthBar = null;
 
@@ -58,10 +60,12 @@ private void Update() {
 
 [PunRPC]
 public void ApplyDamage(float damageAmount) {
+	Debug.Log(damageAmount);
 	if (damageCd <= 0) {
 	damageCd = m_damageCd;
+	regenCd = m_regenCd;
 	health = health - (damageAmount - (damageAmount*DamageReduction));
-	if (!destroyed && health <= 0) {
+	if (!destroyed && health <= 0 && m_killOnDeath) {
 	//Game.game.Currency += score;
 	if (m_deathSpawn != null) {
 	GameObject damage = PhotonNetwork.Instantiate(m_deathSpawn.name, transform.position, transform.rotation);
@@ -70,6 +74,11 @@ public void ApplyDamage(float damageAmount) {
 	//Destroy(gameObject);
 	if (PV.IsMine) { 
 	PhotonNetwork.Destroy(gameObject);
+	destroyed = true;
+	}
+	} else if (!destroyed && health <= 0 && !m_killOnDeath) { 
+	if (m_hideObject != null) { 
+	m_hideObject.SetActive(false);
 	destroyed = true;
 	}
 	}

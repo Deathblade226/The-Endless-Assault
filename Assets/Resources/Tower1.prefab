@@ -369,8 +369,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 0
   attackRate: 5
-  damage: 0
-  shotSpeed: 1
+  damage: 20
+  shotSpeed: 10
   shotHasGravity: 0
   spawnPoint: {fileID: 6040005499747659652}
   projectile: {fileID: 1384266958994512122, guid: ca829011068e6fa4a88f3f3765cb65e6,
@@ -405,6 +405,8 @@ GameObject:
   - component: {fileID: 8257008687515400975}
   - component: {fileID: 8415085668987799543}
   - component: {fileID: 8463944199118243043}
+  - component: {fileID: 6043647538720696236}
+  - component: {fileID: 7311612173545537411}
   m_Layer: 2
   m_Name: Tower1
   m_TagString: Defense
@@ -450,6 +452,7 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 8415085668987799543}
   - {fileID: 8463944199118243043}
+  - {fileID: 6043647538720696236}
   - {fileID: 6040005500139292632}
   - {fileID: 6040005500139292635}
   viewIdField: 0
@@ -502,6 +505,44 @@ MonoBehaviour:
   m_SynchronizePosition: 1
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
+--- !u!114 &6043647538720696236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6040005500278772246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c23f9b2ba9181147906fccd6a9e9a6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_health: 100
+  value: 0
+  m_damageReduction: 0
+  m_regenCap: 1
+  m_regenAmount: 0
+  m_regenCd: 0
+  m_damageCd: 0
+  m_constantRegen: 0
+  m_killOnDeath: 1
+  PV: {fileID: 3366420395868956466}
+  m_hideObject: {fileID: 0}
+  m_deathSpawn: {fileID: 0}
+  m_healthBar: {fileID: 6209891441063924045}
+--- !u!65 &7311612173545537411
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6040005500278772246}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.55, y: 3, z: 0.55}
+  m_Center: {x: 0, y: 1.5, z: 0}
 --- !u!1 &6040005501054854170
 GameObject:
   m_ObjectHideFlags: 0
@@ -582,6 +623,7 @@ GameObject:
   - component: {fileID: 1528563243501835958}
   - component: {fileID: 4274917892584238429}
   - component: {fileID: 6811519941228137676}
+  - component: {fileID: 837928254543931991}
   m_Layer: 2
   m_Name: Healthbar Display
   m_TagString: Untagged
@@ -669,6 +711,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &837928254543931991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7555323608896268220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9032b359d01ab744b84053db54fe116, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2078361319766712798
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -968,15 +1022,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c6f73bcf82c9fe46ab5f84e64cbd0bf, type: 3}
---- !u!4 &9130547046399401443 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6c6f73bcf82c9fe46ab5f84e64cbd0bf,
-    type: 3}
-  m_PrefabInstance: {fileID: 8735999578309769736}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &8502207330061944665 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 6c6f73bcf82c9fe46ab5f84e64cbd0bf,
+    type: 3}
+  m_PrefabInstance: {fileID: 8735999578309769736}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &9130547046399401443 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6c6f73bcf82c9fe46ab5f84e64cbd0bf,
     type: 3}
   m_PrefabInstance: {fileID: 8735999578309769736}
   m_PrefabAsset: {fileID: 0}

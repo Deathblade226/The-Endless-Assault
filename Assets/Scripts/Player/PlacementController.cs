@@ -21,6 +21,7 @@ private GameObject currentObject = null;
 private int currentTower = -1;
 private Vector2 mouseInput;
 private float scrollInput;
+private List<String> layers = new List<string>{"7", "9"};
 
 public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info) {
     if(stream.IsWriting) {
@@ -87,7 +88,7 @@ public void KeyZ(InputAction.CallbackContext context) {
     Ray ray = Camera.main.ScreenPointToRay(mouseInput);
     RaycastHit hitInfo;
     if (Physics.Raycast(ray, out hitInfo)) {
-    PhotonNetwork.Destroy(hitInfo.collider.gameObject);
+    if (layers.Contains(hitInfo.collider.gameObject.layer.ToString())) PhotonNetwork.Destroy(hitInfo.collider.gameObject);
     }
 }
 public void KeyOne(InputAction.CallbackContext context) { 

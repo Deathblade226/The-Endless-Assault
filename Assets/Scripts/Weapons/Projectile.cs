@@ -33,8 +33,9 @@ private void OnTriggerEnter(Collider other) {
     if (other.tag == EnemyTag) { 
     
     Damagable health = other.GetComponent<Damagable>();
+    Debug.Log(health);
     if (health != null) { 
-    health.ApplyDamage(WeaponDamage);
+    other.GetComponent<PhotonView>().RPC("ApplyDamage", RpcTarget.All, WeaponDamage);    
     }
     pv.RPC("RPC_Destroy", RpcTarget.All);
     }       

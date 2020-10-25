@@ -15114,17 +15114,27 @@ PrefabInstance:
     - target: {fileID: 2376791165151996865, guid: b35348fb4377bec4f89fd8e5df1987b2,
         type: 3}
       propertyPath: m_Name
-      value: MonsterDemo
-      objectReference: {fileID: 0}
-    - target: {fileID: 2376791165151996865, guid: b35348fb4377bec4f89fd8e5df1987b2,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
+      value: TrainingMonsterDemo
       objectReference: {fileID: 0}
     - target: {fileID: 3598915990400241147, guid: b35348fb4377bec4f89fd8e5df1987b2,
         type: 3}
       propertyPath: viewIdField
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5391643832316444562, guid: b35348fb4377bec4f89fd8e5df1987b2,
+        type: 3}
+      propertyPath: viewIdField
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7802482548121558178, guid: b35348fb4377bec4f89fd8e5df1987b2,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7802482548121558178, guid: b35348fb4377bec4f89fd8e5df1987b2,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b35348fb4377bec4f89fd8e5df1987b2, type: 3}
