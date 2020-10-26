@@ -273,6 +273,7 @@ GameObject:
   - component: {fileID: 6040005500139292633}
   - component: {fileID: 6040005500139292632}
   - component: {fileID: 6040005500139292635}
+  - component: {fileID: 2401315857425837965}
   m_Layer: 2
   m_Name: Sphere
   m_TagString: Untagged
@@ -375,6 +376,7 @@ MonoBehaviour:
   spawnPoint: {fileID: 6040005499747659652}
   projectile: {fileID: 1384266958994512122, guid: ca829011068e6fa4a88f3f3765cb65e6,
     type: 3}
+  pv: {fileID: 2401315857425837965}
 --- !u!114 &6040005500139292635
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -392,6 +394,30 @@ MonoBehaviour:
   targets:
   - Monster
   visionTrigger: {fileID: 6040005500139292633}
+--- !u!114 &2401315857425837965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6040005500139292637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  observableSearch: 2
+  Synchronization: 3
+  OwnershipTransfer: 0
+  ObservedComponents:
+  - {fileID: 6040005500139292632}
+  - {fileID: 6040005500139292635}
+  viewIdField: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &6040005500278772246
 GameObject:
   m_ObjectHideFlags: 0
