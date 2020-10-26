@@ -31,7 +31,7 @@ private void Update() {
 	//Debug.DrawLine(spawnPoint.transform.position, target.transform.position);
 	gameObject.transform.LookAt(target.transform);
 	if (PhotonNetwork.IsMasterClient) { 
-	GameObject shot = PhotonNetwork.Instantiate(projectile.name, spawnPoint.transform.position, gameObject.transform.rotation); 
+	GameObject shot = PhotonNetwork.InstantiateRoomObject(projectile.name, spawnPoint.transform.position, gameObject.transform.rotation); 
 	pv.RPC("Attack", RpcTarget.All, shot.GetComponent<PhotonView>().ViewID);
 	}
 	attackCD = attackRate;

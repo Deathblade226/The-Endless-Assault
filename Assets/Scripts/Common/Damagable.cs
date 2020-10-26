@@ -60,7 +60,7 @@ private void Update() {
 
 [PunRPC]
 public void ApplyDamage(float damageAmount) {
-	Debug.Log(damageAmount);
+	//Debug.Log(damageAmount);
 	if (damageCd <= 0) {
 	damageCd = m_damageCd;
 	regenCd = m_regenCd;
