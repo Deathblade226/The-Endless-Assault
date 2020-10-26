@@ -677,6 +677,7 @@ GameObject:
   - component: {fileID: 1141390981631405515}
   - component: {fileID: 2913827163419286711}
   - component: {fileID: 4887940917142539993}
+  - component: {fileID: 4629093507723360587}
   m_Layer: 0
   m_Name: SM_Wep_Goblin_Axe_01
   m_TagString: Untagged
@@ -759,6 +760,22 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 43370510499483692, guid: e322d376e400f9241b220697963dc078, type: 2}
+--- !u!114 &4629093507723360587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2030333344383778048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2be0c5067b335db48a1bd2a1eea67c76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 0
+  destroyOnHit: 0
+  pv: {fileID: 0}
+  Type: Weapon
 --- !u!1 &2517902542117945623
 GameObject:
   m_ObjectHideFlags: 0

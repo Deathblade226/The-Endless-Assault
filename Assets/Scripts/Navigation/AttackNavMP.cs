@@ -26,14 +26,14 @@ void IPunObservable.OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo
 	stream.SendNext(this.Target);
 	stream.SendNext(this.Active);
 	stream.SendNext(this.attacking);
-	stream.SendNext(this.altT);
 	stream.SendNext(this.AttackTime);
+	//stream.SendNext(this.altT);
 	} else {
 	this.Target = (string) stream.ReceiveNext();
 	this.Active = (bool) stream.ReceiveNext();
 	this.attacking = (bool) stream.ReceiveNext();
 	this.AttackTime = (float) stream.ReceiveNext();
-	this.altT = (GameObject) stream.ReceiveNext();
+	//this.altT = (GameObject) stream.ReceiveNext();
 	}
 }
 
@@ -79,7 +79,7 @@ private void Update() {
 	this.AttackTime -= Time.deltaTime; 
 
 	} else { 
-	if (this.weapon.Type != "Summon") { 
+	if (this.weapon != null && this.weapon.Type != "Summon") { 
 	this.Nc.Animator.SetTrigger("StopAttack"); 
 	this.Nc.Agent.SetDestination(target.transform.position);
 	this.Nc.Agent.isStopped = false; 

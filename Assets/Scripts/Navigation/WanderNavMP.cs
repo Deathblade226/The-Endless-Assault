@@ -18,8 +18,8 @@ void IPunObservable.OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo
 	stream.SendNext(this.Active);
 	stream.SendNext(this.MoveTime);
 	} else {
-	this.MoveTime = (float) stream.ReceiveNext();
 	this.Active = (bool) stream.ReceiveNext();
+	this.MoveTime = (float) stream.ReceiveNext();
 	}
 }
 

@@ -46,8 +46,6 @@ private IEnumerator Start() {
 }
 
 private void Update() {
-    //if (GameController.GameRunning) 
-    //StartCoroutine(MonsterLogic());
     GameObject target = GetComponent<VisionSystem>().SeenTarget;
     if (target == null) target = AIUtilities.GetNearestGameObject(gameObject, travelNav.TargetTag, xray:true);
 
@@ -75,17 +73,6 @@ private void Update() {
     
     }
     if (Animator != null) Animator.SetFloat("Speed", Agent.velocity.magnitude);
-}
-
-IEnumerator MonsterLogic() {
-    //if (GameController.GameRunning) {
-    //GameObject target = AIUtilities.GetNearestGameObject(gameObject, attackNav.target, Range, Fov);
-    
-    //}
-yield return null; }
-
-private void OnDestroy() {
-    StopCoroutine(MonsterLogic());
 }
 
 }

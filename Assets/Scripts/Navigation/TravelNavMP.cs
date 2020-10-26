@@ -11,24 +11,22 @@ public class TravelNavMP : MonoBehaviourPun, IPunObservable {
 public bool Moving { get; set; }
 public string TargetTag { get => targetTag; set => targetTag = value; }
 public NavigationControllerMP Nc { get => nc; set => nc = value; }
-public GameObject Target { get => target; set => target = value; }
-
-private GameObject target = null;
+public Vector3 Target { get; set; }
 
 void IPunObservable.OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info) { 
 	if(stream.IsWriting) {
 	stream.SendNext(this.Target);
 	stream.SendNext(this.Moving);
 	} else {
-	this.Target = (GameObject) stream.ReceiveNext();
+	this.Target = (Vector3) stream.ReceiveNext();
 	this.Moving = (bool) stream.ReceiveNext();
 	}
 }
 public void StartTravel() {
-    if (this.Target == null) this.Target = AIUtilities.GetNearestGameObject(this.gameObject, this.TargetTag, xray:true);
+    if (this.Target == null) Target = AIUtilities.GetNearestGameObject(this.gameObject, this.TargetTag, xray:true).transform.position;
 	if (this.nc.Agent.isOnNavMesh) { 
     this.Moving = true; 
-	this.nc.Agent.SetDestination(this.Target.transform.position);
+	this.nc.Agent.SetDestination(Target);
 	} 
 }
 
