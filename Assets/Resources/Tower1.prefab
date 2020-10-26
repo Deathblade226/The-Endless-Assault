@@ -371,7 +371,7 @@ MonoBehaviour:
   cost: 0
   attackRate: 5
   damage: 20
-  shotSpeed: 10
+  shotSpeed: 50
   shotHasGravity: 0
   spawnPoint: {fileID: 6040005499747659652}
   projectile: {fileID: 1384266958994512122, guid: ca829011068e6fa4a88f3f3765cb65e6,
@@ -390,7 +390,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fieldOfViewAngle: 360
-  visionRange: 20
+  visionRange: 30
   targets:
   - Monster
   visionTrigger: {fileID: 6040005500139292633}
@@ -479,8 +479,6 @@ MonoBehaviour:
   - {fileID: 8415085668987799543}
   - {fileID: 8463944199118243043}
   - {fileID: 6043647538720696236}
-  - {fileID: 6040005500139292632}
-  - {fileID: 6040005500139292635}
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
