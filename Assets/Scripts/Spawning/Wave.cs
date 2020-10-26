@@ -30,7 +30,9 @@ void Update() {
 	for (int i = 0; i < clusters[spot].Count; i++) {
 	float rX = Random.Range(-spawnRange, spawnRange);
 	float rZ = Random.Range(-spawnRange, spawnRange);
-	GameObject monster = PhotonNetwork.InstantiateRoomObject(clusters[spot].Monster.gameObject.name, new Vector3(transform.position.x + rX, transform.position.y + 0.1f, transform.position.z + rZ), Quaternion.identity);
+	string name = clusters[spot].Monster.gameObject.name;
+	Vector3 spawn = new Vector3(transform.position.x + rX, transform.position.y + 0.1f, transform.position.z + rZ);
+	PhotonNetwork.InstantiateRoomObject(name, spawn, Quaternion.identity);
 	}
 
 	currentSpawnCD = clusters[spot].SpawnCD;
