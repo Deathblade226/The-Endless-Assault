@@ -122,6 +122,7 @@ MonoBehaviour:
   m_hideObject: {fileID: 0}
   m_deathSpawn: {fileID: 0}
   m_healthBar: {fileID: 2470258946691507001}
+  m_healthText: {fileID: 0}
 --- !u!114 &580526051332404506
 MonoBehaviour:
   m_ObjectHideFlags: 0

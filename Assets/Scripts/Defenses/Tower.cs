@@ -42,6 +42,7 @@ private void Update() {
 private void Attack(int id) { 
 	if (projectile != null) { 
 	GameObject shot = PhotonView.Find(id).gameObject;
+	shot.transform.LookAt(gameObject.GetComponent<VisionSystem>().SeenTarget.transform.position);
 	shot.GetComponent<Projectile>().WeaponDamage = damage;
 	Rigidbody shotRB = shot.GetComponent<Rigidbody>();
 	shotRB.useGravity = shotHasGravity;

@@ -1,6 +1,7 @@
 ﻿using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -19,7 +20,7 @@ public class Damagable : MonoBehaviourPun, IPunObservable {
 [SerializeField] GameObject m_hideObject = null;
 [SerializeField] GameObject m_deathSpawn = null;
 [SerializeField] Slider m_healthBar = null;
-
+[SerializeField] TextMeshProUGUI m_healthText = null;
 private float maxHealth;
 private float damageCd;
 private float regenCd;
@@ -45,6 +46,7 @@ private void Start() { MaxHealth = health;
 }
 
 private void Update() {
+	m_healthText.SetText($"{health}/{maxHealth}");
 	//Updates the healthbar
 	if (m_healthBar != null) { m_healthBar.value = health; }
 	//Reduces the IFrames after hit
@@ -91,6 +93,7 @@ public void RegenHealth() {
 	//Debug.Log(regenCap);
 	if (health + m_regenAmount <= regenCap) { health += m_regenAmount; }
 	else if (health + m_regenAmount > regenCap && health < regenCap) { health = regenCap; }
+	m_healthText.SetText($"{health}/{maxHealth}");
 }
 
 public void RunRPCMethod(float damage) { 
