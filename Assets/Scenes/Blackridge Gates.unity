@@ -17045,6 +17045,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MonsterDemo
       objectReference: {fileID: 0}
+    - target: {fileID: 2376791165151996865, guid: b35348fb4377bec4f89fd8e5df1987b2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3417779263551738810, guid: b35348fb4377bec4f89fd8e5df1987b2,
         type: 3}
       propertyPath: m_healthText
@@ -17063,12 +17068,12 @@ PrefabInstance:
     - target: {fileID: 7802482548121558178, guid: b35348fb4377bec4f89fd8e5df1987b2,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7802482548121558178, guid: b35348fb4377bec4f89fd8e5df1987b2,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b35348fb4377bec4f89fd8e5df1987b2, type: 3}
@@ -21339,7 +21344,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0.003, y: 1.028}
+  m_AnchoredPosition: {x: 0.003, y: 0.583}
   m_SizeDelta: {x: 3, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1821719768
