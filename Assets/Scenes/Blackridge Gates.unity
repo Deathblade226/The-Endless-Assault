@@ -8876,6 +8876,9 @@ GameObject:
   - component: {fileID: 796319085}
   - component: {fileID: 796319087}
   - component: {fileID: 796319088}
+  - component: {fileID: 796319090}
+  - component: {fileID: 796319089}
+  - component: {fileID: 796319086}
   m_Layer: 8
   m_Name: Wave 1
   m_TagString: Untagged
@@ -8897,6 +8900,21 @@ Transform:
   m_Father: {fileID: 1089757398}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &796319086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 796319084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a2d31d6bfc11b345b0e50dbdb20d73a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  monster: {fileID: 5425879186702437924, guid: 7a07df218de81af4bb97b2a69c52fbb7, type: 3}
+  count: 2
+  spawnCD: 5
 --- !u!114 &796319087
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8913,8 +8931,9 @@ MonoBehaviour:
   pv: {fileID: 0}
   clusters:
   - {fileID: 796319088}
-  - {fileID: 796319088}
-  - {fileID: 796319088}
+  - {fileID: 796319090}
+  - {fileID: 796319089}
+  - {fileID: 796319086}
 --- !u!114 &796319088
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8928,6 +8947,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monster: {fileID: 3336172698178726445, guid: 4c30bfe328760af45a0df7ffcc75960e, type: 3}
+  count: 2
+  spawnCD: 5
+--- !u!114 &796319089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 796319084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a2d31d6bfc11b345b0e50dbdb20d73a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  monster: {fileID: 620276120765555011, guid: 085328aea6660d64281c1bf7d996c661, type: 3}
+  count: 2
+  spawnCD: 5
+--- !u!114 &796319090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 796319084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a2d31d6bfc11b345b0e50dbdb20d73a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  monster: {fileID: 413197153697535199, guid: 2a31c6fd5db8e844dae79c86ef431f22, type: 3}
   count: 2
   spawnCD: 5
 --- !u!1001 &804596619
