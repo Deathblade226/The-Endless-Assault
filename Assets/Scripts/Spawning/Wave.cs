@@ -23,7 +23,7 @@ public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info) {
 }
 
 void Update() {
-	if (spot+1 == clusters.Count) { gameObject.SetActive(false); }
+	if (spot == clusters.Count) { gameObject.SetActive(false); }
 	else if (currentSpawnCD > 0) { currentSpawnCD -= Time.deltaTime; }
 	else if (currentSpawnCD <= 0 && PhotonNetwork.IsMasterClient) {  
 
