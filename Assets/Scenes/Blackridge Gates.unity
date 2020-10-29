@@ -541,6 +541,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: OrcFighterMonster
       objectReference: {fileID: 0}
+    - target: {fileID: 3336172698178726445, guid: 4c30bfe328760af45a0df7ffcc75960e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5496298731474999670, guid: 4c30bfe328760af45a0df7ffcc75960e,
         type: 3}
       propertyPath: viewIdField
@@ -549,12 +554,12 @@ PrefabInstance:
     - target: {fileID: 7478587519996008095, guid: 4c30bfe328760af45a0df7ffcc75960e,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7478587519996008095, guid: 4c30bfe328760af45a0df7ffcc75960e,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9004221202551909131, guid: 4c30bfe328760af45a0df7ffcc75960e,
         type: 3}
@@ -6907,15 +6912,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: OrcChiefMonster
       objectReference: {fileID: 0}
-    - target: {fileID: 637046337087402404, guid: 2a31c6fd5db8e844dae79c86ef431f22,
+    - target: {fileID: 413197153697535199, guid: 2a31c6fd5db8e844dae79c86ef431f22,
         type: 3}
-      propertyPath: m_AnchorMax.x
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 637046337087402404, guid: 2a31c6fd5db8e844dae79c86ef431f22,
         type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 637046337087402404, guid: 2a31c6fd5db8e844dae79c86ef431f22,
+        type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 762912169798589474, guid: 2a31c6fd5db8e844dae79c86ef431f22,
         type: 3}
