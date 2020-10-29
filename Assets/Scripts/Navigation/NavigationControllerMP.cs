@@ -1,4 +1,5 @@
 ﻿using Photon.Pun;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -47,31 +48,26 @@ private IEnumerator Start() {
 
 private void Update() {
     GameObject target = GetComponent<VisionSystem>().SeenTarget;
-    if (target == null) target = AIUtilities.GetNearestGameObject(gameObject, travelNav.TargetTag, xray:true);
 
     if (target != null) { 
     
-    travelNav.Moving = false; 
-    wanderNav.StopWander(); 
-    Agent.SetDestination(target.transform.position); 
-    
-    } else if (target != null && attackNav != null && attackNav.Target != "" && !attackNav.Active) { 
-    
-    travelNav.Moving = false; 
+    travelNav.Moving = false;
     wanderNav.StopWander(); 
     attackNav.StartAttacking(); 
     
-    } else if (objective != null && !travelNav.Moving && !attackNav.Active) { 
+    } else if (objective != null && target == null) { 
     
     wanderNav.StopWander();
+    attackNav.StopAttacking();
     travelNav.StartTravel();  
     
-    } else if (!wanderNav.Active && !travelNav.Moving && !attackNav.Active) { 
+    } else { 
     
+    travelNav.Moving = false;
+    attackNav.StopAttacking();
     wanderNav.StartWander();
-    travelNav.Moving = false; 
-    
     }
+
     if (Animator != null) Animator.SetFloat("Speed", Agent.velocity.magnitude);
 }
 

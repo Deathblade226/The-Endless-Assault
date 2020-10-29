@@ -11,7 +11,6 @@ public class AttackNavMP : MonoBehaviourPun, IPunObservable {
 [SerializeField] Weapon weapon = null;
 //[SerializeField] bool lookForAltTarget = true;
 
-public string Target { get; set; } = "";
 public bool Active { get; set; } = false;
 public NavigationControllerMP Nc { get => nc; set => nc = value; }
 public bool Attacking { get => attacking; }
@@ -23,13 +22,11 @@ private GameObject altT = null;
 
 void IPunObservable.OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info) { 
 	if(stream.IsWriting) {
-	stream.SendNext(this.Target);
 	stream.SendNext(this.Active);
 	stream.SendNext(this.attacking);
 	stream.SendNext(this.AttackTime);
 	//stream.SendNext(this.altT);
 	} else {
-	this.Target = (string) stream.ReceiveNext();
 	this.Active = (bool) stream.ReceiveNext();
 	this.attacking = (bool) stream.ReceiveNext();
 	this.AttackTime = (float) stream.ReceiveNext();
@@ -53,15 +50,15 @@ private void Update() {
 	//if (this.altT != null) { this.Target = this.altT.tag; this.Active = true; }
 	//else { StopAttacking(); this.Nc.Agent.isStopped = false; }
 
-	if (( this.Target != "" || this.altT != null) && this.Active) { 
+	if (vs.SeenTarget != null && this.Active) { 
 	
-	var target = vs.SeenTarget;
+	GameObject target = vs.SeenTarget;
 
 	if (target != null) { 
 
 	this.attacking = (vs.Distance <= this.attackRange && this.AttackTime <= 0);
 	
-	Debug.Log($"Target Distance <= Attack Range: {vs.Distance <= this.attackRange}");
+	//Debug.Log($"Target Distance <= Attack Range: {vs.Distance <= this.attackRange}");
 
 	if (this.attacking) {
 	this.transform.LookAt(target.transform);
@@ -98,7 +95,6 @@ public void StartAttacking() {
 
 public void StopAttacking() { 
 	Active = false;
-	Target = "";
 }
 
 }

@@ -10,6 +10,7 @@ public class RangedWeapon : Weapon {
 [SerializeField] bool gravity = false;
 [SerializeField] float speed = 1.0f;
 [SerializeField] float lifeTime = 1.0f;
+[SerializeField] string Target;
 
 private void Awake() { Type = "Ranged"; }
 
@@ -19,7 +20,7 @@ public override void Attack() {
 
 private void Update() {
     if (attack != null) { 
-    GameObject target = AIUtilities.GetNearestGameObject(spawner.gameObject, attack.Target, xray:true);
+    GameObject target = AIUtilities.GetNearestGameObject(spawner.gameObject, Target, xray:true);
     if (target != null) spawner.gameObject.transform.LookAt(target.transform);
     }
 }

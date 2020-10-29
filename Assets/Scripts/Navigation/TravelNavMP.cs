@@ -1,4 +1,5 @@
 ﻿using Photon.Pun;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,19 +16,22 @@ public Vector3 Target { get; set; }
 
 void IPunObservable.OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info) { 
 	if(stream.IsWriting) {
-	stream.SendNext(this.Target);
 	stream.SendNext(this.Moving);
 	} else {
-	this.Target = (Vector3) stream.ReceiveNext();
 	this.Moving = (bool) stream.ReceiveNext();
 	}
 }
 public void StartTravel() {
-    if (this.Target == null) Target = AIUtilities.GetNearestGameObject(this.gameObject, this.TargetTag, xray:true).transform.position;
-	if (this.nc.Agent.isOnNavMesh) { 
     this.Moving = true; 
+	if (this.Target == new Vector3()) Target = AIUtilities.GetNearestGameObject(this.gameObject, this.TargetTag, xray:true).transform.position;
+}
+
+public void Update() {
+
+	if (Moving && Target != new Vector3() && nc.Agent.destination != Target) {
 	this.nc.Agent.SetDestination(Target);
-	} 
+	Debug.Log($"{gameObject.name} | {nc.Agent.isOnNavMesh}");
+	}
 }
 
 }
