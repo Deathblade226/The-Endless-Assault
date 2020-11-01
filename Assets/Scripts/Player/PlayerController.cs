@@ -117,5 +117,8 @@ public void OnToggleCursor(InputAction.CallbackContext context) {
 	if (!pv.IsMine) return;
 	Cursor.lockState = ( Cursor.lockState == CursorLockMode.Locked) ? CursorLockMode.Confined : CursorLockMode.Locked;
 }
+public void PauseMenu(InputAction.CallbackContext context) {
+	if (!pv.IsMine) return;	
+}
 
 }

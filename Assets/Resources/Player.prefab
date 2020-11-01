@@ -690,6 +690,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 6d47781e-3b84-4318-8fcb-16690ee63bec
     m_ActionName: Player/Start[/Keyboard/g]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 27e9c656-99cf-4953-9703-f2556caa005f
+    m_ActionName: Player/Escape[/Keyboard/escape]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Placement
@@ -1229,6 +1233,7 @@ MonoBehaviour:
   camClamp: 25
   horizontalWindow: 200
   verticalWindow: 200
+  pauseMenu: {fileID: 0}
 --- !u!114 &1134590605255202224
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1397,6 +1402,21 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 6d47781e-3b84-4318-8fcb-16690ee63bec
     m_ActionName: Player/Start[/Keyboard/g]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 9164312130522971424}
+        m_MethodName: PauseMenu
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 27e9c656-99cf-4953-9703-f2556caa005f
+    m_ActionName: Player/Escape[/Keyboard/escape]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
