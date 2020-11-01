@@ -32,6 +32,10 @@ public class PlayerController : MonoBehaviour {
 [SerializeField]float horizontalWindow = 200;
 [SerializeField]float verticalWindow = 75;
 
+[Header("Pause Menu")]
+[SerializeField]GameObject pauseMenu = null;
+
+
 private Rigidbody rb;
 private float currentSpeed;
 private Vector2 walkInput;
@@ -40,6 +44,8 @@ private float sprintInput;
 private float rotation = 0;
 private bool grounded = true;
 private float jumpCDC = 0;
+private bool lockCursor = false;
+private bool locked = false;
 
 private void Awake() {
 	if (!pv.IsMine) return;
@@ -69,9 +75,9 @@ private void FixedUpdate() {
 	transform.Translate(new Vector3((walkInput.x * Time.deltaTime) * currentSpeed,0, (walkInput.y * Time.deltaTime) * currentSpeed));
 	Vector2 position = new Vector2((Screen.width/2) - mouseInput.x, (Screen.height/2) - mouseInput.y);
 
-	if (Mathf.Abs(position.x) > horizontalWindow && Cursor.lockState != CursorLockMode.Locked) { rb.AddTorque(new Vector3(0, -position.normalized.x * roationSpeedX)); }
+	if (Mathf.Abs(position.x) > horizontalWindow && !lockCursor) { rb.AddTorque(new Vector3(0, -position.normalized.x * roationSpeedX)); }
 
-	if (Mathf.Abs(position.y) > verticalWindow && Cursor.lockState != CursorLockMode.Locked) { 
+	if (Mathf.Abs(position.y) > verticalWindow && !lockCursor) { 
 	rotation += -position.normalized.y * roationSpeedY;
 	rotation = Mathf.Clamp(rotation, -camClamp, camClamp);
 	camTarget.transform.localEulerAngles = new Vector3(rotation, 0, 0);
@@ -116,9 +122,16 @@ public void OnMouseMove(InputAction.CallbackContext context) {
 public void OnToggleCursor(InputAction.CallbackContext context) { 
 	if (!pv.IsMine) return;
 	Cursor.lockState = ( Cursor.lockState == CursorLockMode.Locked) ? CursorLockMode.Confined : CursorLockMode.Locked;
+	lockCursor = Cursor.lockState == CursorLockMode.Locked;
 }
 public void PauseMenu(InputAction.CallbackContext context) {
 	if (!pv.IsMine) return;	
+	//Debug.Log(pauseMenu.activeSelf);
+	pauseMenu.SetActive(!pauseMenu.activeSelf);
+	lockCursor = pauseMenu.activeSelf;
+	locked = Cursor.lockState == CursorLockMode.Locked;
+	if (locked && !lockCursor) { Cursor.lockState = CursorLockMode.Locked;
+	} else { Cursor.lockState = CursorLockMode.Confined; }
 }
 
 }
