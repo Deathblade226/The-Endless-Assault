@@ -10,7 +10,8 @@ TagManager:
   - Obstacle
   - NavMesh
   - Spawner
-  - ESCMenu
+  - SFX
+  - Music
   layers:
   - Default
   - TransparentFX

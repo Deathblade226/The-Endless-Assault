@@ -32,7 +32,7 @@ private void Update() {
 void OnGUI() {
     if (PhotonNetwork.CurrentRoom == null) return;
     // leave this Room        
-    if (GUI.Button(new Rect(5, 5, 125, 25), "Leave Room")) { PhotonNetwork.LeaveRoom(); }
+    //if (GUI.Button(new Rect(5, 5, 125, 25), "Leave Room")) { PhotonNetwork.LeaveRoom(); }
     // show the Room name        
     GUI.Label(new Rect(135, 5, 200, 25), PhotonNetwork.CurrentRoom.Name);
     // show the list of the players connected to this Room        

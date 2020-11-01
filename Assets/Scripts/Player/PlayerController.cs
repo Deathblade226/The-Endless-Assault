@@ -133,5 +133,14 @@ public void PauseMenu(InputAction.CallbackContext context) {
 	if (locked && !lockCursor) { Cursor.lockState = CursorLockMode.Locked;
 	} else { Cursor.lockState = CursorLockMode.Confined; }
 }
+public void CloseMenu() { 
+	if (!pv.IsMine) return;	
+	//Debug.Log(pauseMenu.activeSelf);
+	pauseMenu.SetActive(!pauseMenu.activeSelf);
+	lockCursor = pauseMenu.activeSelf;
+	locked = Cursor.lockState == CursorLockMode.Locked;
+	if (locked && !lockCursor) { Cursor.lockState = CursorLockMode.Locked;
+	} else { Cursor.lockState = CursorLockMode.Confined; }
+}
 
 }
