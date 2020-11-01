@@ -29,6 +29,10 @@ return PlayerPrefs.GetString(name);}
 public static void SetValue(string name, int value) { PlayerPrefs.SetInt(name, value); }
 public static void SetValue(string name, float value) { PlayerPrefs.SetFloat(name, value); }
 public static void SetValue(string name, string value) { PlayerPrefs.SetString(name, value); }
-public static void LeaveRoom() { PhotonNetwork.LeaveRoom(); }
+public void LeaveRoom(bool quitGame = false) { 
+    PhotonNetwork.DestroyPlayerObjects(PhotonNetwork.LocalPlayer);
+    PhotonNetwork.LeaveRoom(); 
+    if (quitGame) { ExitGame(); } else { PhotonNetwork.LoadLevel(0); }
+}
 
 }
