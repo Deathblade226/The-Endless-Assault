@@ -550,20 +550,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c23f9b2ba9181147906fccd6a9e9a6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PV: {fileID: 7250804571136628107}
   m_health: 500
-  value: 0
   m_damageReduction: 0.2
+  m_damageCd: 0
+  m_killOnDeath: 1
   m_regenCap: 1
   m_regenAmount: 0
   m_regenCd: 0
-  m_damageCd: 0
   m_constantRegen: 0
-  m_killOnDeath: 1
-  PV: {fileID: 7250804571136628107}
   m_hideObject: {fileID: 0}
   m_deathSpawn: {fileID: 0}
   m_healthBar: {fileID: 2032749062535818987}
   m_healthText: {fileID: 5523880095404036286}
+  fillArea: {fileID: 8530463754927084723}
+  oneHundred: {r: 0, g: 0.6981132, b: 0.13947354, a: 1}
+  sevenFive: {r: 1, g: 0.9504018, b: 0, a: 1}
+  five: {r: 1, g: 0.5615011, b: 0, a: 1}
+  twoFive: {r: 1, g: 0, b: 0.18256807, a: 1}
 --- !u!1 &607256328293622847
 GameObject:
   m_ObjectHideFlags: 0
