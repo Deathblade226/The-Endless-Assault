@@ -386,9 +386,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackCD: 3
-  attackRange: 2
+  attackRange: 1.5
   nc: {fileID: 1366767068853417376}
-  weapon: {fileID: 0}
+  weapon: {fileID: 5677295741464285121}
 --- !u!114 &524224731480750055
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -445,10 +445,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fieldOfViewAngle: 124
   visionRange: 3
+  visionTrigger: {fileID: 6317760118692096263}
+  active: 1
   targets:
   - Player
   - Defense
-  visionTrigger: {fileID: 6317760118692096263}
 --- !u!114 &1366767068853417376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4770,6 +4771,8 @@ GameObject:
   - component: {fileID: 5352577511550319266}
   - component: {fileID: 8478931256261108994}
   - component: {fileID: 8053107221506515817}
+  - component: {fileID: 5677295741464285121}
+  - component: {fileID: 4076855717836736748}
   m_Layer: 0
   m_Name: SM_Wep_Straightsword_01
   m_TagString: Untagged
@@ -4852,6 +4855,46 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 43826581424661576, guid: 23c2830330476d8498d6e1378c25bfe6, type: 2}
+--- !u!114 &5677295741464285121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8033114833249056334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2be0c5067b335db48a1bd2a1eea67c76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pv: {fileID: 4076855717836736748}
+  damage: 5
+  enemies:
+  - Player
+  - Defense
+  Type: Weapon
+--- !u!114 &4076855717836736748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8033114833249056334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  observableSearch: 2
+  Synchronization: 3
+  OwnershipTransfer: 0
+  ObservedComponents: []
+  viewIdField: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &8119854513513852025
 GameObject:
   m_ObjectHideFlags: 0

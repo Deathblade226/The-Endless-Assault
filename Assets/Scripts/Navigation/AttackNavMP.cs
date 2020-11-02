@@ -38,54 +38,43 @@ private void Awake() {
 	if(this.weapon != null) this.weapon.attack = this;
 }
 
-private IEnumerator Start() { 
-	yield return null;
-}
-
 private void Update() {
-	VisionSystem vs = GetComponent<VisionSystem>();
 	//if (this.nc.GameController.GameRunning) { 
 	//if (this.lookForAltTarget && this.altT == null) this.altT = GetComponent<VisionSystem>().SeenTarget;
 
 	//if (this.altT != null) { this.Target = this.altT.tag; this.Active = true; }
 	//else { StopAttacking(); this.Nc.Agent.isStopped = false; }
-
-	if (vs.SeenTarget != null && this.Active) { 
-	
+	VisionSystem vs = GetComponent<VisionSystem>();
 	GameObject target = vs.SeenTarget;
 
-	if (target != null) { 
+	if (target != null && Active) { 
 
-	this.attacking = (vs.Distance <= this.attackRange && this.AttackTime <= 0);
-	
-	//Debug.Log($"Target Distance <= Attack Range: {vs.Distance <= this.attackRange}");
+	attacking = (vs.Distance <= attackRange && AttackTime <= 0);
 
 	if (this.attacking) {
+	this.Nc.Agent.isStopped = true; 
 	this.transform.LookAt(target.transform);
 	this.AttackTime = attackCD; 
-	this.Nc.Agent.isStopped = true; 
 
-	if (this.weapon != null) { 
-	this.weapon.Attack(); 
-	}
-		
+	if (weapon != null) { weapon.CanAttack = true; }
 	if (this.Nc.Animator != null) this.Nc.Animator.SetTrigger("Attack");  
-
-	} else if ((this.transform.position - target.transform.position).magnitude <= this.attackRange) { 
+		
+	} else if (vs.Distance <= this.attackRange) { 
 	this.Nc.Agent.isStopped = true; 
 	this.AttackTime -= Time.deltaTime; 
 
 	} else { 
-	if (this.weapon != null && this.weapon.Type != "Summon") { 
-	this.Nc.Animator.SetTrigger("StopAttack"); 
+	
+	if (this.weapon != null) { 
+	//this.Nc.Animator.SetTrigger("StopAttack"); 
 	this.Nc.Agent.SetDestination(target.transform.position);
 	this.Nc.Agent.isStopped = false; 
 	}
+
 	this.AttackTime -= Time.deltaTime; 
 
 	}
 
-	}
 	}        
 	//}
 }

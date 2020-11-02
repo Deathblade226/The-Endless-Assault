@@ -8,17 +8,22 @@ using Photon.Pun;
 [RequireComponent(typeof(SphereCollider))]
 public class VisionSystem : MonoBehaviourPun, IPunObservable {
 
+[Header("Vision Cone")]
 [SerializeField][Range(0,360)] float fieldOfViewAngle = 180f;
 [SerializeField][Range(0,50)] float visionRange = 10f;
-[SerializeField] List<string> targets;
 [SerializeField] SphereCollider visionTrigger = null;
 
-public bool Active { get; set; } = false;
+[Header("Vision Active")]
+[SerializeField] bool active;
+
+[Header("Vision Targets")]
+[SerializeField] List<string> targets;
 
 private GameObject seenTarget = null;
 
 public GameObject SeenTarget { get => seenTarget; set => seenTarget =  value ; }
 public float Distance { get => (seenTarget.transform.position - transform.position).magnitude; }
+public bool Active { get => active; set => active =  value ; }
 
 public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info) {
     if(stream.IsWriting) {

@@ -48,7 +48,7 @@ private IEnumerator Start() {
 
 private void Update() {
     GameObject target = GetComponent<VisionSystem>().SeenTarget;
-
+    Debug.Log(target);
     if (target != null) { 
     
     travelNav.Moving = false;

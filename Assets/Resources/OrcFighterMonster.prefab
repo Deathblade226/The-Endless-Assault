@@ -802,6 +802,7 @@ GameObject:
   - component: {fileID: 2913827163419286711}
   - component: {fileID: 4887940917142539993}
   - component: {fileID: 4629093507723360587}
+  - component: {fileID: 3021593097439756354}
   m_Layer: 0
   m_Name: SM_Wep_Goblin_Axe_01
   m_TagString: Untagged
@@ -817,7 +818,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2030333344383778048}
   m_LocalRotation: {x: -0.64763254, y: 0.21724011, z: -0.26546264, w: 0.6803738}
-  m_LocalPosition: {x: 9.1, y: 5.1, z: -6.2}
+  m_LocalPosition: {x: 10.2, y: 4.5, z: -8.6}
   m_LocalScale: {x: 125, y: 125, z: 125}
   m_Children: []
   m_Father: {fileID: 8690661520547879067}
@@ -896,10 +897,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2be0c5067b335db48a1bd2a1eea67c76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
-  destroyOnHit: 0
-  pv: {fileID: 0}
+  pv: {fileID: 3021593097439756354}
+  damage: 5
+  enemies:
+  - Player
+  - Defense
   Type: Weapon
+--- !u!114 &3021593097439756354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2030333344383778048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  observableSearch: 2
+  Synchronization: 3
+  OwnershipTransfer: 0
+  ObservedComponents: []
+  viewIdField: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &2517902542117945623
 GameObject:
   m_ObjectHideFlags: 0
@@ -1528,9 +1553,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackCD: 3
-  attackRange: 2
+  attackRange: 1.5
   nc: {fileID: 1565432829060781885}
-  weapon: {fileID: 0}
+  weapon: {fileID: 4629093507723360587}
 --- !u!114 &8260753577783504034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1587,10 +1612,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fieldOfViewAngle: 124
   visionRange: 3
+  visionTrigger: {fileID: 6312789746102671678}
+  active: 1
   targets:
   - Player
   - Defense
-  visionTrigger: {fileID: 6312789746102671678}
 --- !u!114 &1565432829060781885
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5383,7 +5409,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 52576045a78adf740828fc5f6f3283d6, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1

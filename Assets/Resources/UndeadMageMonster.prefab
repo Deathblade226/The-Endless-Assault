@@ -3762,10 +3762,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fieldOfViewAngle: 60
   visionRange: 10
+  visionTrigger: {fileID: 5425879186702437927}
+  active: 1
   targets:
   - Player
   - Defense
-  visionTrigger: {fileID: 5425879186702437927}
 --- !u!114 &5425879186702437925
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4566,7 +4567,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 2ee8d64f7e7eb7c408084353f219e996, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1

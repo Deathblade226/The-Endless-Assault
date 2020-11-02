@@ -12,10 +12,6 @@ public class SummonWeapon : Weapon {
 private bool canSummon = false;
 private List<GameObject> Summons = new List<GameObject>();
 
-void Awake() { Type = "Summon"; }
-
-public override void Attack() { canSummon = true; }
-
 private void Update() {
     if (!PV.IsMine) return;
     PV.RPC("RPC_Summon", RpcTarget.All);

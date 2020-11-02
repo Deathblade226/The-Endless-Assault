@@ -14,10 +14,6 @@ public class RangedWeapon : Weapon {
 
 private void Awake() { Type = "Ranged"; }
 
-public override void Attack() {
-    PV.RPC("Shoot", RpcTarget.All);
-}
-
 private void Update() {
     if (attack != null) { 
     GameObject target = AIUtilities.GetNearestGameObject(spawner.gameObject, Target, xray:true);

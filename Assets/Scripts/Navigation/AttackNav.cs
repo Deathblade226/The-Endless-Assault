@@ -47,7 +47,7 @@ private void Update() {
 	Nc.Agent.isStopped = true; 
 
 	if (weapon != null) { 
-	weapon.Attack(); 
+	weapon.CanAttack = true; 
 	}
 		
 	if (Nc.Animator != null) Nc.Animator.SetTrigger("Attack");  
