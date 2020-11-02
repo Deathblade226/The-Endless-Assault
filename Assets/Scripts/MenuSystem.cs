@@ -20,10 +20,16 @@ public class MenuSystem : MonoBehaviour {
 
 
 public void Start() {
-	if (PlayerPrefs.HasKey("MusicLevels")) { PlayerPrefs.SetFloat("MusicLevels", 100); }
-	if (PlayerPrefs.HasKey("SFXLevels")) { PlayerPrefs.SetFloat("SFXLevels", 100); }
+	if (!PlayerPrefs.HasKey("MusicLevels")) { PlayerPrefs.SetFloat("MusicLevels", 100); }
+	else { music.value = PlayerPrefs.GetFloat("MusicLevels"); }
+	
+	if (!PlayerPrefs.HasKey("SFXLevels")) { PlayerPrefs.SetFloat("SFXLevels", 100); }
+	else { sfx.value = PlayerPrefs.GetFloat("SFXLevels"); }
 }
-
+public void Update() {
+	PlayerPrefs.SetFloat("MusicLevels", music.value);
+	PlayerPrefs.SetFloat("SFXLevels", sfx.value);
+}
 public void ShowTitle() {
 	titleScreen.SetActive(true);
 	lobbyMenu.SetActive(false);
