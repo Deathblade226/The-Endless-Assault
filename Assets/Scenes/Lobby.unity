@@ -4330,11 +4330,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   titleScreen: {fileID: 2117026430}
-  lobbyMenu: {fileID: 2117026430}
+  lobbyMenu: {fileID: 764159502}
   optionsMenu: {fileID: 353191804}
   helpMenu: {fileID: 1032137466}
   music: {fileID: 1155037934}
   sfx: {fileID: 893081645}
+  lobbyObject: {fileID: 1457202029}
 --- !u!114 &1116204187
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5205,8 +5206,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1328764142}
-        m_MethodName: ExitGame
+      - m_Target: {fileID: 1116204186}
+        m_MethodName: ShowTitle
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
