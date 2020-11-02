@@ -7,20 +7,37 @@ using UnityEngine.UI;
 
 public class Damagable : MonoBehaviourPun, IPunObservable {
 
+[Header("Photon")]
+[SerializeField] PhotonView PV = null;
+
+[Header("Damage")]
 [SerializeField] float m_health = 100;
-[SerializeField] int value = 0;
 [SerializeField] [Range(-1,1)]float m_damageReduction = 0;
+[SerializeField] float m_damageCd = 0;
+[SerializeField] bool m_killOnDeath = false;
+
+[Header("Regeneration")]
 [SerializeField] [Range(0,1)]float m_regenCap = 1;
 [SerializeField] float m_regenAmount = 0;
 [SerializeField] float m_regenCd = 0;
-[SerializeField] float m_damageCd = 0;
 [SerializeField] bool m_constantRegen = false;
-[SerializeField] bool m_killOnDeath = false;
-[SerializeField] PhotonView PV = null;
+
+[Header("Death")]
 [SerializeField] GameObject m_hideObject = null;
 [SerializeField] GameObject m_deathSpawn = null;
+
+[Header("Display")]
 [SerializeField] Slider m_healthBar = null;
 [SerializeField] TextMeshProUGUI m_healthText = null;
+
+[Header("Color")]
+[SerializeField] Image fillArea = null;
+[SerializeField] Color oneHundred;
+[SerializeField] Color sevenFive;
+[SerializeField] Color five;
+[SerializeField] Color twoFive;
+
+
 private float maxHealth;
 private float damageCd;
 private float regenCd;
@@ -47,8 +64,19 @@ private void Start() { MaxHealth = health;
 
 private void Update() {
 	m_healthText.SetText($"{health}/{maxHealth}");
+	Color color = new Color();
+	float percent = health/maxHealth;
+	if (percent < 0.25f) { color = twoFive; }
+	else if (percent < 0.5f) { color = five; }
+	else if (percent < 0.75f) { color = sevenFive; }
+	else { color = oneHundred; }
+
 	//Updates the healthbar
-	if (m_healthBar != null) { m_healthBar.value = health; }
+	if (m_healthBar != null) { 
+	m_healthBar.value = health; 
+	fillArea.color = color;
+	}
+
 	//Reduces the IFrames after hit
 	if (damageCd > 0) { damageCd -= Time.deltaTime; }
 	//Redices the regen cd when the target hasnt taken damage in a bit
