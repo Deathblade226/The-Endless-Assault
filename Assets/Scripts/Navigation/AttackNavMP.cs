@@ -64,14 +64,13 @@ private void Update() {
 	this.AttackTime -= Time.deltaTime; 
 
 	} else { 
+	this.AttackTime -= Time.deltaTime; 
 	
 	if (this.weapon != null) { 
-	//this.Nc.Animator.SetTrigger("StopAttack"); 
 	this.Nc.Agent.SetDestination(target.transform.position);
 	this.Nc.Agent.isStopped = false; 
 	}
 
-	this.AttackTime -= Time.deltaTime; 
 
 	}
 
