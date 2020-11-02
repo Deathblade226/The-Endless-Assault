@@ -18607,7 +18607,7 @@ PrefabInstance:
     - target: {fileID: 3417779263551738810, guid: b35348fb4377bec4f89fd8e5df1987b2,
         type: 3}
       propertyPath: five.g
-      value: 0.7600515
+      value: 0.5615011
       objectReference: {fileID: 0}
     - target: {fileID: 3417779263551738810, guid: b35348fb4377bec4f89fd8e5df1987b2,
         type: 3}
@@ -18622,12 +18622,12 @@ PrefabInstance:
     - target: {fileID: 3417779263551738810, guid: b35348fb4377bec4f89fd8e5df1987b2,
         type: 3}
       propertyPath: sevenFive.r
-      value: 0.71025753
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3417779263551738810, guid: b35348fb4377bec4f89fd8e5df1987b2,
         type: 3}
       propertyPath: sevenFive.g
-      value: 1
+      value: 0.9504018
       objectReference: {fileID: 0}
     - target: {fileID: 3417779263551738810, guid: b35348fb4377bec4f89fd8e5df1987b2,
         type: 3}
