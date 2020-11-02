@@ -437,7 +437,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fieldOfViewAngle: 124
-  visionRange: 3
+  visionRange: 5
   visionTrigger: {fileID: 2649828721066842183}
   active: 1
   targets:

@@ -7234,6 +7234,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2649828721066842183, guid: 2a31c6fd5db8e844dae79c86ef431f22,
+        type: 3}
+      propertyPath: m_Radius
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2649828721066842183, guid: 2a31c6fd5db8e844dae79c86ef431f22,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3214823224138904131, guid: 2a31c6fd5db8e844dae79c86ef431f22,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -7248,6 +7258,11 @@ PrefabInstance:
         type: 3}
       propertyPath: viewIdField
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266191107018143486, guid: 2a31c6fd5db8e844dae79c86ef431f22,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8644891617590022026, guid: 2a31c6fd5db8e844dae79c86ef431f22,
         type: 3}
@@ -18593,6 +18608,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Constraints
       value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 2376791165561889001, guid: b35348fb4377bec4f89fd8e5df1987b2,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2376791165561889002, guid: b35348fb4377bec4f89fd8e5df1987b2,
         type: 3}

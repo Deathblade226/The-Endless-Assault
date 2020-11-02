@@ -28,6 +28,7 @@ void IPunObservable.OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo
 }
 
 private void Awake() {
+    GetComponent<VisionSystem>().Active = true;
     Agent = gameObject.GetComponent<NavMeshAgent>();
     attackNav = gameObject.GetComponent<AttackNavMP>();        
     travelNav = gameObject.GetComponent<TravelNavMP>();        
@@ -48,7 +49,7 @@ private IEnumerator Start() {
 
 private void Update() {
     GameObject target = GetComponent<VisionSystem>().SeenTarget;
-    Debug.Log(target);
+    //Debug.Log(target);
     if (target != null) { 
     
     travelNav.Moving = false;

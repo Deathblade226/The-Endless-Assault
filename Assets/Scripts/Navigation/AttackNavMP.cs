@@ -46,7 +46,7 @@ private void Update() {
 	//else { StopAttacking(); this.Nc.Agent.isStopped = false; }
 	VisionSystem vs = GetComponent<VisionSystem>();
 	GameObject target = vs.SeenTarget;
-
+	//Debug.Log(AttackTime);
 	if (target != null && Active) { 
 
 	attacking = (vs.Distance <= attackRange && AttackTime <= 0);
@@ -61,20 +61,17 @@ private void Update() {
 		
 	} else if (vs.Distance <= this.attackRange) { 
 	this.Nc.Agent.isStopped = true; 
-	this.AttackTime -= Time.deltaTime; 
-
+	
 	} else { 
-	this.AttackTime -= Time.deltaTime; 
 	
 	if (this.weapon != null) { 
 	this.Nc.Agent.SetDestination(target.transform.position);
 	this.Nc.Agent.isStopped = false; 
 	}
-
-
 	}
 
 	}        
+	if (AttackTime > 0) this.AttackTime -= Time.deltaTime; 
 	//}
 }
 public void StartAttacking() { 

@@ -11,7 +11,7 @@ public class VisionSystem : MonoBehaviourPun, IPunObservable {
 [Header("Vision Cone")]
 [SerializeField][Range(0,360)] float fieldOfViewAngle = 180f;
 [SerializeField][Range(0,50)] float visionRange = 10f;
-[SerializeField] SphereCollider visionTrigger = null;
+[SerializeField]SphereCollider visionTrigger = null;
 
 [Header("Vision Active")]
 [SerializeField] bool active;
@@ -36,27 +36,29 @@ public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info) {
 private void Awake() {
     visionTrigger.radius = visionRange;		
 }
+private void OnTriggerEnter(Collider other) { TargetCheck(other); }
 
-private void OnTriggerStay(Collider other) {
-    if (Active) {
+private void OnTriggerStay(Collider other) { TargetCheck(other); }
+
+private void OnTriggerExit(Collider other) {
+    if (other.gameObject == seenTarget) { seenTarget = null; }		
+}
+private void TargetCheck(Collider other) { 
+    if (targets.Contains(other.tag) && Active) {
+    if (seenTarget == null) seenTarget = other.gameObject;
     bool valid = true;
     Vector3 targetDir = other.transform.position - transform.position;
     float angleDif = Vector3.Angle(targetDir, transform.forward);
-    if (targets.Contains(other.tag)) {
     if (Physics.Raycast(transform.position, targetDir.normalized, out RaycastHit hit, visionRange)) { valid = targets.Contains(hit.collider.gameObject.tag); }
     
     //( transform.position - seenTarget.transform.position).sqrMagnitude > (transform.position - other.transform.position).sqrMagnitude
-    float distanceSeen = SeenTarget == null ? float.MaxValue : ( transform.position - seenTarget.transform.position ).sqrMagnitude;
+    float distanceSeen = SeenTarget == null ? float.MaxValue : Distance;
     float distanceNew = (transform.position - other.transform.position).sqrMagnitude;
 
     if (valid && distanceSeen > distanceNew && angleDif <= fieldOfViewAngle) { 
     SeenTarget = other.gameObject;
     }
     }
-    }
-}
-private void OnTriggerExit(Collider other) {
-    if (other.gameObject == seenTarget) { seenTarget = null; }		
 }
 
 private void OnDrawGizmos() {
