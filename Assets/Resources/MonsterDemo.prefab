@@ -179,20 +179,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c23f9b2ba9181147906fccd6a9e9a6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PV: {fileID: 5391643832316444562}
   m_health: 100
-  value: 0
   m_damageReduction: 0
+  m_damageCd: 0
+  m_killOnDeath: 0
   m_regenCap: 1
   m_regenAmount: 100
   m_regenCd: 10
-  m_damageCd: 0
   m_constantRegen: 0
-  m_killOnDeath: 0
-  PV: {fileID: 5391643832316444562}
   m_hideObject: {fileID: 0}
   m_deathSpawn: {fileID: 0}
   m_healthBar: {fileID: 815734005561561581}
   m_healthText: {fileID: 6565632926206501366}
+  fillArea: {fileID: 3729952222052238793}
+  oneHundred: {r: 0, g: 0.6981132, b: 0.13947354, a: 1}
+  sevenFive: {r: 1, g: 0.9504018, b: 0, a: 1}
+  five: {r: 1, g: 0.5615011, b: 0, a: 1}
+  twoFive: {r: 1, g: 0, b: 0.18256807, a: 1}
 --- !u!114 &5391643832316444562
 MonoBehaviour:
   m_ObjectHideFlags: 0

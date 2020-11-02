@@ -18569,101 +18569,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: MonsterDemo
       objectReference: {fileID: 0}
-    - target: {fileID: 2376791165151996865, guid: b35348fb4377bec4f89fd8e5df1987b2,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3417779263551738810, guid: b35348fb4377bec4f89fd8e5df1987b2,
-        type: 3}
-      propertyPath: m_healthText
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3417779263551738810, guid: b35348fb4377bec4f89fd8e5df1987b2,
-        type: 3}
-      propertyPath: oneHundred.r
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3417779263551738810, guid: b35348fb4377bec4f89fd8e5df1987b2,
-        type: 3}
-      propertyPath: oneHundred.g
-      value: 0.6981132
-      objectReference: {fileID: 0}
-    - target: {fileID: 3417779263551738810, guid: b35348fb4377bec4f89fd8e5df1987b2,
-        type: 3}
-      propertyPath: oneHundred.b
-      value: 0.13947354
-      objectReference: {fileID: 0}
-    - target: {fileID: 3417779263551738810, guid: b35348fb4377bec4f89fd8e5df1987b2,
-        type: 3}
-      propertyPath: oneHundred.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3417779263551738810, guid: b35348fb4377bec4f89fd8e5df1987b2,
-        type: 3}
-      propertyPath: five.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3417779263551738810, guid: b35348fb4377bec4f89fd8e5df1987b2,
-        type: 3}
-      propertyPath: five.g
-      value: 0.5615011
-      objectReference: {fileID: 0}
-    - target: {fileID: 3417779263551738810, guid: b35348fb4377bec4f89fd8e5df1987b2,
-        type: 3}
-      propertyPath: five.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3417779263551738810, guid: b35348fb4377bec4f89fd8e5df1987b2,
-        type: 3}
-      propertyPath: five.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3417779263551738810, guid: b35348fb4377bec4f89fd8e5df1987b2,
-        type: 3}
-      propertyPath: sevenFive.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3417779263551738810, guid: b35348fb4377bec4f89fd8e5df1987b2,
-        type: 3}
-      propertyPath: sevenFive.g
-      value: 0.9504018
-      objectReference: {fileID: 0}
-    - target: {fileID: 3417779263551738810, guid: b35348fb4377bec4f89fd8e5df1987b2,
-        type: 3}
-      propertyPath: sevenFive.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3417779263551738810, guid: b35348fb4377bec4f89fd8e5df1987b2,
-        type: 3}
-      propertyPath: twoFive.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3417779263551738810, guid: b35348fb4377bec4f89fd8e5df1987b2,
-        type: 3}
-      propertyPath: twoFive.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3417779263551738810, guid: b35348fb4377bec4f89fd8e5df1987b2,
-        type: 3}
-      propertyPath: twoFive.b
-      value: 0.18256807
-      objectReference: {fileID: 0}
-    - target: {fileID: 3417779263551738810, guid: b35348fb4377bec4f89fd8e5df1987b2,
-        type: 3}
-      propertyPath: twoFive.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3417779263551738810, guid: b35348fb4377bec4f89fd8e5df1987b2,
-        type: 3}
-      propertyPath: sevenFive.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3417779263551738810, guid: b35348fb4377bec4f89fd8e5df1987b2,
-        type: 3}
-      propertyPath: fillArea
-      value: 
-      objectReference: {fileID: 1499574522}
     - target: {fileID: 3598915990400241147, guid: b35348fb4377bec4f89fd8e5df1987b2,
         type: 3}
       propertyPath: viewIdField
@@ -18683,16 +18588,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7802482548121558178, guid: b35348fb4377bec4f89fd8e5df1987b2,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7802482548121558178, guid: b35348fb4377bec4f89fd8e5df1987b2,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b35348fb4377bec4f89fd8e5df1987b2, type: 3}
@@ -19107,11 +19002,11 @@ MonoBehaviour:
   m_deathSpawn: {fileID: 0}
   m_healthBar: {fileID: 1637144360}
   m_healthText: {fileID: 1369411887}
-  fillArea: {fileID: 0}
-  oneHundred: {r: 0, g: 0, b: 0, a: 0}
-  sevenFive: {r: 0, g: 0, b: 0, a: 0}
-  five: {r: 0, g: 0, b: 0, a: 0}
-  twoFive: {r: 0, g: 0, b: 0, a: 0}
+  fillArea: {fileID: 1237763702}
+  oneHundred: {r: 0, g: 0.6981132, b: 0.13947354, a: 1}
+  sevenFive: {r: 1, g: 0.9504018, b: 0, a: 1}
+  five: {r: 1, g: 0.5615011, b: 0, a: 1}
+  twoFive: {r: 1, g: 0, b: 0.18256807, a: 1}
 --- !u!1001 &1461966235
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19853,18 +19748,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1499100691}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1499574522 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3729952222052238793, guid: b35348fb4377bec4f89fd8e5df1987b2,
-    type: 3}
-  m_PrefabInstance: {fileID: 1444699540}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1500295570
 GameObject:
   m_ObjectHideFlags: 0

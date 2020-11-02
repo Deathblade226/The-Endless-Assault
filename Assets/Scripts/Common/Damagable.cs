@@ -66,15 +66,15 @@ private void Update() {
 	m_healthText.SetText($"{health}/{maxHealth}");
 	Color color = new Color();
 	float percent = health/maxHealth;
-	if (percent < 0.25f) { color = twoFive; }
-	else if (percent < 0.5f) { color = five; }
-	else if (percent < 0.75f) { color = sevenFive; }
+	if (percent <= 0.25f) { color = twoFive; }
+	else if (percent <= 0.5f) { color = five; }
+	else if (percent <= 0.75f) { color = sevenFive; }
 	else { color = oneHundred; }
 
 	//Updates the healthbar
 	if (m_healthBar != null) { 
 	m_healthBar.value = health; 
-	fillArea.color = color;
+	if (fillArea != null) fillArea.color = color;
 	}
 
 	//Reduces the IFrames after hit
