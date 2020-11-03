@@ -7,15 +7,26 @@ using Photon.Pun;
 using UnityEngine.InputSystem;
 using UnityEngine.AI;
 using System.Security.Cryptography;
+using TMPro;
+using System.Text.RegularExpressions;
 
 public class PlacementController : MonoBehaviourPun, IPunObservable {
 
+[Header("Photon")]
 [SerializeField] PhotonView pv;
-[SerializeField] Text TowerDisplay = null;
+
+[Header("Placement")]
 [SerializeField] float rotationSpeed = 1;
 [SerializeField] List<GameObject> Units = new List<GameObject>();
 [SerializeField] LayerMask IgnoredLayers;
 [SerializeField] List<String> tags;
+
+[Header("Display Info")]
+[SerializeField] GameObject DisplayPanel = null;
+[SerializeField] TextMeshProUGUI DefenseName = null;
+[SerializeField] TextMeshProUGUI DefenseCost = null;
+[SerializeField] TextMeshProUGUI DefenseType = null;
+
 
 private GameObject currentObject = null;
 private int currentTower = -1;
@@ -34,10 +45,19 @@ public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info) {
 }
 void Update() {
     if (!pv.IsMine) return;
+
     if (currentObject != null) {
+    DisplayPanel.SetActive(true);
+    DefenseName.text = $"Name: {currentObject.name.Replace("(Clone)", "")}";
+    Defense defense = currentObject.GetComponent<Defense>();
+    if (defense == null) { defense = currentObject.transform.GetComponentInChildren<Defense>(true); }
+    DefenseCost.text = $"Cost: {defense.Cost}";
+    DefenseType.text = $"Type: {defense.Type}";
     MovePlaceableToMouse();
     RotatePlaceable();
-    }
+    } else {
+    DisplayPanel.SetActive(false);
+	}
 }
 private void DeleteUnit() {
     if (!pv.IsMine) return;

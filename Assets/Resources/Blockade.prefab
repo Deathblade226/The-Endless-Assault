@@ -216,6 +216,7 @@ GameObject:
   - component: {fileID: 7545086368392123824}
   - component: {fileID: 4613415799444573188}
   - component: {fileID: 6242223429951303899}
+  - component: {fileID: -7156534543213693425}
   m_Layer: 2
   m_Name: Blockade
   m_TagString: Defense
@@ -387,6 +388,20 @@ MonoBehaviour:
   active: 0
   targets:
   - Monster
+--- !u!114 &-7156534543213693425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1670681377402366227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 922ec77ff689fe843809dacc57601e71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: Blockade
+  cost: 30
 --- !u!1 &2879365945562088179
 GameObject:
   m_ObjectHideFlags: 0
@@ -891,15 +906,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54323df1c268d4840b8621baa1013856, type: 3}
---- !u!1 &7852452342492280074 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 54323df1c268d4840b8621baa1013856,
-    type: 3}
-  m_PrefabInstance: {fileID: 6933549035771037787}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7472126410847416240 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 54323df1c268d4840b8621baa1013856,
+    type: 3}
+  m_PrefabInstance: {fileID: 6933549035771037787}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7852452342492280074 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 54323df1c268d4840b8621baa1013856,
     type: 3}
   m_PrefabInstance: {fileID: 6933549035771037787}
   m_PrefabAsset: {fileID: 0}

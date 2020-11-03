@@ -862,7 +862,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ac243cb85cbba94b913fd9e0b817e91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cost: 0
+  type: Tower
+  cost: 40
   attackRate: 1
   damage: 10
   shotSpeed: 30
@@ -885,9 +886,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fieldOfViewAngle: 360
   visionRange: 40
+  visionTrigger: {fileID: 6040005500139292633}
+  active: 0
   targets:
   - Monster
-  visionTrigger: {fileID: 6040005500139292633}
 --- !u!114 &3611080924836530993
 MonoBehaviour:
   m_ObjectHideFlags: 0
