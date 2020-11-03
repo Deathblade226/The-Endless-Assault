@@ -5289,13 +5289,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 431931695}
-  m_LocalRotation: {x: 0.48477125, y: 0.22033419, z: 0.21380992, w: 0.8189841}
+  m_LocalRotation: {x: 0.67599016, y: 0.2356158, z: 0.27207622, w: 0.6430374}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 44.413002, y: 52.697002, z: 52.123}
+  m_LocalEulerAnglesHint: {x: 47.831, y: 92.130005, z: 95.297005}
 --- !u!1001 &434756278
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7253,6 +7253,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3807300301017779582, guid: 2a31c6fd5db8e844dae79c86ef431f22,
+        type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[0].SynchronizeType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3807300301017779582, guid: 2a31c6fd5db8e844dae79c86ef431f22,
+        type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[1].SynchronizeType
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7250804571136628107, guid: 2a31c6fd5db8e844dae79c86ef431f22,
         type: 3}
