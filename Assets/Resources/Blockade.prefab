@@ -383,9 +383,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fieldOfViewAngle: 180
   visionRange: 1
+  visionTrigger: {fileID: 4613415799444573188}
+  active: 0
   targets:
   - Monster
-  visionTrigger: {fileID: 4613415799444573188}
 --- !u!1 &2879365945562088179
 GameObject:
   m_ObjectHideFlags: 0
