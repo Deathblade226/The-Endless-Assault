@@ -22693,7 +22693,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ad1a4d297560274bb36f32495fc27e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PV: {fileID: 1436503369}
+  pv: {fileID: 1436503369}
   currency: 300
   currencyDisplay: {fileID: 1777217449}
 --- !u!114 &1436503369

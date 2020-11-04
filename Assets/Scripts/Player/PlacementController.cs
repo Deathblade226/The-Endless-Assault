@@ -88,7 +88,10 @@ public void PlaceObject(InputAction.CallbackContext context) {
     if (currentObject != null) {
     Defense defense = currentObject.GetComponent<Defense>();
     if (defense == null) defense = currentObject.transform.GetComponentInChildren<Defense>();
-    if (defense != null) valid = Game.game.ModifyCurrency(defense.Cost);
+    if (defense != null) { 
+    Game.game.Pv.RPC("ModifyCurrency", RpcTarget.All, defense.Cost); 
+    valid = (Game.game.Currency - defense.Cost >= 0);
+    }
     }
 
     if (valid && this.currentObject != null) {
@@ -115,11 +118,15 @@ private void DestroyDefense() {
     Ray ray = Camera.main.ScreenPointToRay(mouseInput);
     RaycastHit hitInfo;
     if (Physics.Raycast(ray, out hitInfo)) {
-    if (layers.Contains(hitInfo.collider.gameObject.layer.ToString())) { 
+    if (layers.Contains(hitInfo.collider.gameObject.layer.ToString())) {
+    if (hitInfo.collider.gameObject.GetComponent<PhotonView>().Owner == pv.Owner) { 
     Defense defense = hitInfo.collider.gameObject.GetComponent<Defense>();
     if (defense == null) defense = hitInfo.collider.gameObject.transform.GetComponentInChildren<Defense>();
-    if (defense != null) Game.game.ModifyCurrency(-defense.Cost);
+    Damagable damagable = hitInfo.collider.gameObject.GetComponent<Damagable>();
+    int value = (damagable.health/damagable.MaxHealth == 1) ? -defense.Cost : -defense.Cost/2;
+    if (defense != null) Game.game.Pv.RPC("ModifyCurrency", RpcTarget.All, value);
     PhotonNetwork.Destroy(hitInfo.collider.gameObject);
+    }
     }
     }
 }

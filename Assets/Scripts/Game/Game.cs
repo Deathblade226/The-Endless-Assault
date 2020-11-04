@@ -10,7 +10,7 @@ using UnityEngine.UI;
 public class Game : MonoBehaviourPun, IPunObservable {
 
 [Header("Photon")]
-[SerializeField]PhotonView PV = null;
+[SerializeField]PhotonView pv = null;
 
 [Header("Starting Values")]
 [SerializeField] int currency = 0;
@@ -22,6 +22,7 @@ public static Game game;
 
 public bool GameRunning { get; set; } = false;
 public int Currency { get => currency; set => currency =  value ; }
+public PhotonView Pv { get => pv; set => pv =  value ; }
 
 private void Start() { game = this; }
 
@@ -36,11 +37,10 @@ public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info) {
 void Update() {
 	currencyDisplay.text = $"{currency}";
 }
-public bool ModifyCurrency(int input) {
-	if (Currency - input >= 0) { 
-	Currency -= input;
-	return true;
-	}
-return false; }
+
+[PunRPC]
+public void ModifyCurrency(int input) {
+	if (Currency - input >= 0) { Currency -= input; }
+}
 
 }
