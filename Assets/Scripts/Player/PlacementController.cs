@@ -9,6 +9,8 @@ using UnityEngine.AI;
 using System.Security.Cryptography;
 using TMPro;
 using System.Text.RegularExpressions;
+using UnityEngine.Experimental.Rendering;
+using TMPro.EditorUtilities;
 
 public class PlacementController : MonoBehaviourPun, IPunObservable {
 
@@ -87,8 +89,15 @@ private void MovePlaceableToMouse() {
     }
 }
 public void PlaceObject(InputAction.CallbackContext context) {
+    bool valid = true;
     if (!pv.IsMine) return;
-    if (this.currentObject != null) {
+    if (currentObject != null) {
+    Defense defense = currentObject.GetComponent<Defense>();
+    if (defense == null) defense = currentObject.transform.GetComponentInChildren<Defense>();
+    if (defense != null) valid = Game.game.ModifyCurrency(defense.Cost);
+    }
+
+    if (valid && this.currentObject != null) {
     pv.RPC("UpdateNav", RpcTarget.All);
     pv.RPC("SettingValues", RpcTarget.All, currentObject.GetComponent<PhotonView>().ViewID);
     this.currentObject = null;
@@ -103,14 +112,24 @@ public void SettingValues(int id) {
     vs.Active = true;
 }
 
-public void KeyZ(InputAction.CallbackContext context) { 
+public void KeyZ(InputAction.CallbackContext context) {
+    DestroyDefense();
+}
+
+private void DestroyDefense() { 
     if (!pv.IsMine) return;
     Ray ray = Camera.main.ScreenPointToRay(mouseInput);
     RaycastHit hitInfo;
     if (Physics.Raycast(ray, out hitInfo)) {
-    if (layers.Contains(hitInfo.collider.gameObject.layer.ToString())) PhotonNetwork.Destroy(hitInfo.collider.gameObject);
+    if (layers.Contains(hitInfo.collider.gameObject.layer.ToString())) { 
+    Defense defense = hitInfo.collider.gameObject.GetComponent<Defense>();
+    if (defense == null) defense = hitInfo.collider.gameObject.transform.GetComponentInChildren<Defense>();
+    if (defense != null) Game.game.ModifyCurrency(-defense.Cost);
+    PhotonNetwork.Destroy(hitInfo.collider.gameObject);
+    }
     }
 }
+
 public void KeyOne(InputAction.CallbackContext context) { 
     if (!pv.IsMine) return;    
     if (currentTower == 0) { Destroy(); } 

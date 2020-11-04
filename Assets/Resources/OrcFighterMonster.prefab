@@ -1377,14 +1377,13 @@ GameObject:
   - component: {fileID: 7904772248334793665}
   - component: {fileID: 8260753577783504034}
   - component: {fileID: 7112480092966709010}
-  - component: {fileID: 6312789746102671678}
-  - component: {fileID: 1191424372950128339}
   - component: {fileID: 1565432829060781885}
   - component: {fileID: 3872360748396516199}
   - component: {fileID: 169756670296317013}
   - component: {fileID: 4434929028125929389}
   - component: {fileID: 1259409080391402732}
   - component: {fileID: 4102826955050597747}
+  - component: {fileID: 2601511590666684256}
   m_Layer: 0
   m_Name: OrcFighterMonster
   m_TagString: Monster
@@ -1585,38 +1584,6 @@ MonoBehaviour:
   MoveCd: 5
   searchDistance: 5
   nc: {fileID: 1565432829060781885}
---- !u!135 &6312789746102671678
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3336172698178726445}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 1
-  m_Center: {x: 0, y: 1, z: 0}
---- !u!114 &1191424372950128339
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3336172698178726445}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ac768a6d026f944ebad8d4cd676aa06, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fieldOfViewAngle: 124
-  visionRange: 3
-  visionTrigger: {fileID: 6312789746102671678}
-  active: 1
-  targets:
-  - Player
-  - Defense
 --- !u!114 &1565432829060781885
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1705,7 +1672,6 @@ MonoBehaviour:
   - {fileID: 7904772248334793665}
   - {fileID: 8260753577783504034}
   - {fileID: 7112480092966709010}
-  - {fileID: 1191424372950128339}
   - {fileID: 1565432829060781885}
   - {fileID: 169756670296317013}
   - {fileID: 4434929028125929389}
@@ -1743,6 +1709,20 @@ MonoBehaviour:
   sevenFive: {r: 1, g: 0.9504018, b: 0, a: 1}
   five: {r: 1, g: 0.5615011, b: 0, a: 1}
   twoFive: {r: 1, g: 0, b: 0.18256807, a: 1}
+--- !u!136 &2601511590666684256
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3336172698178726445}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.3
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &3545960413016804269
 GameObject:
   m_ObjectHideFlags: 0
@@ -5355,9 +5335,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4968505252026913903}
   - component: {fileID: 7719793828102305748}
-  - component: {fileID: 471122296448460521}
   - component: {fileID: 3764065040906566439}
   - component: {fileID: 5496298731474999670}
+  - component: {fileID: 7220032701506101106}
+  - component: {fileID: 6706243761577897980}
   m_Layer: 0
   m_Name: OrcFighter
   m_TagString: Untagged
@@ -5415,20 +5396,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!136 &471122296448460521
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8748305036868919588}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 0.3
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 1, z: 0}
 --- !u!114 &3764065040906566439
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5473,9 +5440,42 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 3764065040906566439}
+  - {fileID: 6706243761577897980}
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
+--- !u!135 &7220032701506101106
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8748305036868919588}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &6706243761577897980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8748305036868919588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ac768a6d026f944ebad8d4cd676aa06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fieldOfViewAngle: 124
+  visionRange: 3
+  visionTrigger: {fileID: 7220032701506101106}
+  active: 1
+  targets:
+  - Player
+  - Defense
 --- !u!1 &8984854172644119226
 GameObject:
   m_ObjectHideFlags: 0

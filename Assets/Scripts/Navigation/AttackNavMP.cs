@@ -44,7 +44,7 @@ private void Update() {
 
 	//if (this.altT != null) { this.Target = this.altT.tag; this.Active = true; }
 	//else { StopAttacking(); this.Nc.Agent.isStopped = false; }
-	VisionSystem vs = GetComponent<VisionSystem>();
+	VisionSystem vs = transform.GetComponentInChildren<VisionSystem>();
 	GameObject target = vs.SeenTarget;
 	//Debug.Log(AttackTime);
 	if (target != null && Active) { 

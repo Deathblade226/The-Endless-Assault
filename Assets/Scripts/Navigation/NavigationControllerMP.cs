@@ -10,7 +10,6 @@ using UnityEngine.AI;
 [RequireComponent(typeof(AttackNavMP))]
 [RequireComponent(typeof(TravelNavMP))]
 [RequireComponent(typeof(WanderNavMP))]
-[RequireComponent(typeof(VisionSystem))]
 public class NavigationControllerMP : NavigationMP, IPunObservable {
 
 [SerializeField] AttackNavMP attackNav = null;
@@ -28,7 +27,7 @@ void IPunObservable.OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo
 }
 
 private void Awake() {
-    GetComponent<VisionSystem>().Active = true;
+    transform.GetComponentInChildren<VisionSystem>().Active = true;
     Agent = gameObject.GetComponent<NavMeshAgent>();
     attackNav = gameObject.GetComponent<AttackNavMP>();        
     travelNav = gameObject.GetComponent<TravelNavMP>();        
@@ -48,7 +47,7 @@ private IEnumerator Start() {
 }
 
 private void Update() {
-    GameObject target = GetComponent<VisionSystem>().SeenTarget;
+    GameObject target = transform.GetComponentInChildren<VisionSystem>().SeenTarget;
     //Debug.Log(target);
     if (target != null) { 
     
