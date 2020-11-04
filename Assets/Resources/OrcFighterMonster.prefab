@@ -803,6 +803,7 @@ GameObject:
   - component: {fileID: 4887940917142539993}
   - component: {fileID: 4629093507723360587}
   - component: {fileID: 3021593097439756354}
+  - component: {fileID: 6057036317538108620}
   m_Layer: 0
   m_Name: SM_Wep_Goblin_Axe_01
   m_TagString: Untagged
@@ -879,7 +880,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2030333344383778048}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -925,6 +926,19 @@ MonoBehaviour:
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
+--- !u!65 &6057036317538108620
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2030333344383778048}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.08308159, y: 0.8869333, z: 0.2540735}
+  m_Center: {x: 0.0000002689851, y: 0.2308887, z: 0.05138436}
 --- !u!1 &2517902542117945623
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,6 +12,7 @@ public class Projectile : MonoBehaviourPun, IPunObservable {
 
 public float WeaponDamage { get => damage; set => damage = value; }
 public string EnemyTag { get => enemyTag; set => enemyTag = value; }
+public PhotonView Pv { get => pv; set => pv =  value ; }
 
 private float currentLife;
 
@@ -27,7 +28,7 @@ private void Start() {
     currentLife = LifeTime;	
 }
 private void Update() {
-    if (currentLife > 0) { currentLife -= Time.deltaTime; } else { pv.RPC("RPC_Destroy", RpcTarget.All); }
+    if (currentLife > 0) { currentLife -= Time.deltaTime; } else { Pv.RPC("RPC_Destroy", RpcTarget.All); }
 }
 private void OnTriggerEnter(Collider other) {
     if (other.tag == EnemyTag) { 
@@ -37,7 +38,7 @@ private void OnTriggerEnter(Collider other) {
     if (health != null) { 
     other.GetComponent<PhotonView>().RPC("ApplyDamage", RpcTarget.All, WeaponDamage);    
     }
-    pv.RPC("RPC_Destroy", RpcTarget.All);
+    Pv.RPC("RPC_Destroy", RpcTarget.All);
     }       
 }
 

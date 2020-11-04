@@ -12,11 +12,11 @@ GameObject:
   - component: {fileID: 7579752024015242593}
   - component: {fileID: 4464913490198203530}
   - component: {fileID: 2649074285733130227}
-  - component: {fileID: 1451393805334101949}
   - component: {fileID: 7879491054201214893}
   - component: {fileID: 850602103041075225}
   - component: {fileID: 3156208539718799005}
   - component: {fileID: 7771492702169579242}
+  - component: {fileID: 8083442714584824460}
   m_Layer: 0
   m_Name: CanonBall
   m_TagString: Untagged
@@ -98,22 +98,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1451393805334101949
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4440159720214366206}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c41d25d950b6494ba10349b33ba7781, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 0
-  enemyTag: Monster
-  LifeTime: 10
-  pv: {fileID: 7879491054201214893}
 --- !u!114 &7879491054201214893
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133,9 +117,9 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   ObservedComponents:
-  - {fileID: 1451393805334101949}
   - {fileID: 850602103041075225}
   - {fileID: 7771492702169579242}
+  - {fileID: 8083442714584824460}
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -186,3 +170,21 @@ MonoBehaviour:
   m_SynchronizeAngularVelocity: 0
   m_TeleportEnabled: 0
   m_TeleportIfDistanceGreaterThan: 3
+--- !u!114 &8083442714584824460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4440159720214366206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 111684cf7c4cedb4c80cce4b6546497f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 0
+  enemyTag: Monster
+  LifeTime: 10
+  pv: {fileID: 7879491054201214893}
+  explosion: {fileID: 3566667130584805874, guid: 1532b87dc35d2c843bed7e49712295a3,
+    type: 3}
