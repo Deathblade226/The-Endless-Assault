@@ -84,12 +84,13 @@ private void MovePlaceableToMouse() {
 }
 public void PlaceObject(InputAction.CallbackContext context) {
     bool valid = true;
+    int cost = 0;
     if (!pv.IsMine) return;
     if (currentObject != null) {
     Defense defense = currentObject.GetComponent<Defense>();
     if (defense == null) defense = currentObject.transform.GetComponentInChildren<Defense>();
     if (defense != null) { 
-    Game.game.Pv.RPC("ModifyCurrency", RpcTarget.All, defense.Cost); 
+    cost = defense.Cost;
     valid = (Game.game.Currency - defense.Cost >= 0);
     }
     }
@@ -97,6 +98,7 @@ public void PlaceObject(InputAction.CallbackContext context) {
     if (valid && this.currentObject != null) {
     pv.RPC("UpdateNav", RpcTarget.All);
     pv.RPC("SettingValues", RpcTarget.All, currentObject.GetComponent<PhotonView>().ViewID);
+    Game.game.Pv.RPC("ModifyCurrency", RpcTarget.All, cost); 
     this.currentObject = null;
     }
 }

@@ -1,16 +1,19 @@
 ﻿using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Wave : MonoBehaviourPun, IPunObservable {
 
 [SerializeField]float spawnRange = 1;
-[SerializeField]PhotonView pv;
+[SerializeField]int endwaveCurrency = 0;
 [SerializeField]List<SpawnCluster> clusters;
 
 private int spot = 0;
 private float currentSpawnCD = 0;
+
+public int EndwaveCurrency { get => endwaveCurrency; set => endwaveCurrency =  value ; }
 
 public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info) {
 	if(stream.IsWriting) {
@@ -23,9 +26,10 @@ public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info) {
 }
 
 void Update() {
-	if (spot == clusters.Count) { gameObject.SetActive(false); }
-	else if (currentSpawnCD > 0) { currentSpawnCD -= Time.deltaTime; }
-	else if (currentSpawnCD <= 0 && PhotonNetwork.IsMasterClient) {  
+	if (spot == clusters.Count && GameObject.FindGameObjectsWithTag("Monster").Length == 0) {
+	gameObject.SetActive(false); 	
+	} else if (currentSpawnCD > 0 && spot != clusters.Count) { currentSpawnCD -= Time.deltaTime; }
+	else if (currentSpawnCD <= 0 && PhotonNetwork.IsMasterClient && spot != clusters.Count) {  
 
 	for (int i = 0; i < clusters[spot].Count; i++) {
 	float rX = Random.Range(-spawnRange, spawnRange);
@@ -34,10 +38,8 @@ void Update() {
 	Vector3 spawn = new Vector3(transform.position.x + rX, transform.position.y + 0.1f, transform.position.z + rZ);
 	PhotonNetwork.InstantiateRoomObject(name, spawn, Quaternion.identity);
 	}
-
 	currentSpawnCD = clusters[spot].SpawnCD;
 	spot++;
-
 	}
 }
 

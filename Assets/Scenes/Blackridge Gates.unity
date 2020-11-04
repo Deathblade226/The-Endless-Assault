@@ -847,6 +847,8 @@ GameObject:
   m_Component:
   - component: {fileID: 31204218}
   - component: {fileID: 31204219}
+  - component: {fileID: 31204221}
+  - component: {fileID: 31204220}
   m_Layer: 8
   m_Name: Wave 5
   m_TagString: Untagged
@@ -881,8 +883,51 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnRange: 4
-  pv: {fileID: 0}
-  clusters: []
+  endwaveCurrency: 0
+  clusters:
+  - {fileID: 31204221}
+  - {fileID: 31204221}
+  - {fileID: 31204221}
+  - {fileID: 31204221}
+  - {fileID: 31204221}
+  - {fileID: 31204221}
+  - {fileID: 31204221}
+  - {fileID: 31204221}
+  - {fileID: 31204221}
+  - {fileID: 31204221}
+  - {fileID: 31204221}
+  - {fileID: 31204221}
+  - {fileID: 31204221}
+--- !u!114 &31204220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 31204217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a2d31d6bfc11b345b0e50dbdb20d73a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  monster: {fileID: 413197153697535199, guid: 2a31c6fd5db8e844dae79c86ef431f22, type: 3}
+  count: 1
+  spawnCD: 0
+--- !u!114 &31204221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 31204217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a2d31d6bfc11b345b0e50dbdb20d73a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  monster: {fileID: 3336172698178726445, guid: 4c30bfe328760af45a0df7ffcc75960e, type: 3}
+  count: 3
+  spawnCD: 10
 --- !u!1001 &43337562
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12005,7 +12050,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnRange: 4
-  pv: {fileID: 0}
+  endwaveCurrency: 300
   clusters:
   - {fileID: 796319086}
   - {fileID: 796319086}
@@ -16664,6 +16709,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1120138015}
   - component: {fileID: 1120138016}
+  - component: {fileID: 1120138017}
   m_Layer: 8
   m_Name: Wave 4
   m_TagString: Untagged
@@ -16698,8 +16744,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnRange: 4
-  pv: {fileID: 0}
-  clusters: []
+  endwaveCurrency: 300
+  clusters:
+  - {fileID: 1120138017}
+  - {fileID: 1120138017}
+  - {fileID: 1120138017}
+  - {fileID: 1120138017}
+  - {fileID: 1120138017}
+  - {fileID: 1120138017}
+  - {fileID: 1120138017}
+  - {fileID: 1120138017}
+  - {fileID: 1120138017}
+  - {fileID: 1120138017}
+  - {fileID: 1120138017}
+--- !u!114 &1120138017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1120138014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a2d31d6bfc11b345b0e50dbdb20d73a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  monster: {fileID: 3336172698178726445, guid: 4c30bfe328760af45a0df7ffcc75960e, type: 3}
+  count: 3
+  spawnCD: 10
 --- !u!1001 &1127697401
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28291,6 +28363,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1790363379}
   - component: {fileID: 1790363380}
+  - component: {fileID: 1790363381}
   m_Layer: 8
   m_Name: Wave 3
   m_TagString: Untagged
@@ -28325,8 +28398,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnRange: 4
-  pv: {fileID: 0}
-  clusters: []
+  endwaveCurrency: 300
+  clusters:
+  - {fileID: 1790363381}
+  - {fileID: 1790363381}
+  - {fileID: 1790363381}
+  - {fileID: 1790363381}
+  - {fileID: 1790363381}
+  - {fileID: 1790363381}
+  - {fileID: 1790363381}
+  - {fileID: 1790363381}
+  - {fileID: 1790363381}
+--- !u!114 &1790363381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1790363378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a2d31d6bfc11b345b0e50dbdb20d73a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  monster: {fileID: 3336172698178726445, guid: 4c30bfe328760af45a0df7ffcc75960e, type: 3}
+  count: 3
+  spawnCD: 10
 --- !u!1001 &1791760950
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32431,8 +32528,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnRange: 4
-  pv: {fileID: 0}
+  endwaveCurrency: 300
   clusters:
+  - {fileID: 1994828075}
+  - {fileID: 1994828075}
   - {fileID: 1994828075}
   - {fileID: 1994828075}
   - {fileID: 1994828075}
@@ -32451,8 +32550,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monster: {fileID: 3336172698178726445, guid: 4c30bfe328760af45a0df7ffcc75960e, type: 3}
-  count: 10
-  spawnCD: 5
+  count: 3
+  spawnCD: 10
 --- !u!1001 &1995609757
 PrefabInstance:
   m_ObjectHideFlags: 0
