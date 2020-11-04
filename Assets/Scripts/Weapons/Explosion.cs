@@ -11,7 +11,7 @@ public string Target { get => target; set => target =  value ; }
 public float Damage { get => damage; set => damage =  value ; }
 
 public void Update() {
-    if (!particle.isEmitting) { PhotonNetwork.Destroy(gameObject); }
+    if (particle.time >= 1) { PhotonNetwork.Destroy(gameObject); }
 }
 
 private void OnTriggerEnter(Collider other) {
