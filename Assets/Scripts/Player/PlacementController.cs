@@ -1,16 +1,10 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using Photon.Pun;
 using UnityEngine.InputSystem;
 using UnityEngine.AI;
-using System.Security.Cryptography;
 using TMPro;
-using System.Text.RegularExpressions;
-using UnityEngine.Experimental.Rendering;
-using TMPro.EditorUtilities;
 
 public class PlacementController : MonoBehaviourPun, IPunObservable {
 

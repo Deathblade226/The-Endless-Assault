@@ -452,7 +452,7 @@ GameObject:
   - component: {fileID: 6040005499747659653}
   m_Layer: 2
   m_Name: GameObject
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -465,7 +465,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6040005499747659652}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.872}
+  m_LocalPosition: {x: 0, y: 0, z: 0.904}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6040005500139292634}
@@ -1061,6 +1061,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CannonTop
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0d5991767cd184f47b01b3afa916cf3b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d5991767cd184f47b01b3afa916cf3b, type: 3}
 --- !u!4 &1063860634776825047 stripped
@@ -1150,6 +1155,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CannonTowerBase
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e6139073826b440459ff73bf8f53ff84,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6139073826b440459ff73bf8f53ff84, type: 3}
