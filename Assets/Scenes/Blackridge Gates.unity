@@ -34297,10 +34297,6 @@ PrefabInstance:
       propertyPath: viewIdField
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 1681316551, guid: 7d692372c72a26a41bd3fc7b8b41784c, type: 3}
-      propertyPath: waitTime
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 823490968781449877, guid: 7d692372c72a26a41bd3fc7b8b41784c,
         type: 3}
       propertyPath: viewIdField
@@ -34369,7 +34365,7 @@ PrefabInstance:
     - target: {fileID: 6009537733364256689, guid: 7d692372c72a26a41bd3fc7b8b41784c,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7d692372c72a26a41bd3fc7b8b41784c, type: 3}
