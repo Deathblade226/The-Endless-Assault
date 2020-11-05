@@ -884,6 +884,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnRange: 4
   endwaveCurrency: 0
+  spawner: {fileID: 1089757399}
   clusters:
   - {fileID: 31204221}
   - {fileID: 31204221}
@@ -12051,6 +12052,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnRange: 4
   endwaveCurrency: 300
+  spawner: {fileID: 1089757399}
   clusters:
   - {fileID: 796319086}
   - {fileID: 796319086}
@@ -16745,6 +16747,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnRange: 4
   endwaveCurrency: 300
+  spawner: {fileID: 1089757399}
   clusters:
   - {fileID: 1120138017}
   - {fileID: 1120138017}
@@ -28399,6 +28402,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnRange: 4
   endwaveCurrency: 300
+  spawner: {fileID: 1089757399}
   clusters:
   - {fileID: 1790363381}
   - {fileID: 1790363381}
@@ -32529,6 +32533,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnRange: 4
   endwaveCurrency: 300
+  spawner: {fileID: 1089757399}
   clusters:
   - {fileID: 1994828075}
   - {fileID: 1994828075}

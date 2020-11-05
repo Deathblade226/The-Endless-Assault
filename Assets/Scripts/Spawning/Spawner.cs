@@ -21,20 +21,21 @@ public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info) {
 	this.spawning = (bool)stream.ReceiveNext();
 	}
 }
-public void Update() {
-	if (waitingToPay && !spawning && GameObject.FindGameObjectWithTag("Monster") != null && wave < waves.Count-1 && !waves[wave].gameObject.activeSelf) {
+private void Update() {
+	if (waitingToPay && GameObject.FindGameObjectWithTag("Monster") == null) {
+	if (PhotonNetwork.IsMasterClient) Game.game.Pv.RPC("ModifyCurrency", RpcTarget.All, -waves[wave-1].EndwaveCurrency);
 	waitingToPay = false;
-	Game.game.Pv.RPC("ModifyCurrency", RpcTarget.All, -waves[wave].EndwaveCurrency);		
-	}
+	}		
 }
 
 [PunRPC] 
 public void StartWave() { 
-	spawning = (GameObject.FindGameObjectWithTag("Monster") != null && waves[wave].gameObject.activeSelf);
-	//Debug.Log($"{!spawning} | {!waves[wave].gameObject.activeSelf} | {wave}");
-	if (wave < waves.Count) waves[wave].gameObject.SetActive(true);
-	if (!spawning && !waves[wave].gameObject.activeSelf) wave++;
+	spawning = (GameObject.FindGameObjectWithTag("Monster") != null || waves[wave].gameObject.activeSelf);
+	if (wave < waves.Count && !spawning) { waves[wave].gameObject.SetActive(true); }
+}
+public void EndWave() {
 	waitingToPay = true;
+	wave++;
 }
 
 }

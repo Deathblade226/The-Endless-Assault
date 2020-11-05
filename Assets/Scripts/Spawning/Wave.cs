@@ -8,6 +8,7 @@ public class Wave : MonoBehaviourPun, IPunObservable {
 
 [SerializeField]float spawnRange = 1;
 [SerializeField]int endwaveCurrency = 0;
+[SerializeField]Spawner spawner = null;
 [SerializeField]List<SpawnCluster> clusters;
 
 private int spot = 0;
@@ -27,6 +28,7 @@ public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info) {
 
 void Update() {
 	if (spot == clusters.Count && GameObject.FindGameObjectsWithTag("Monster").Length == 0) {
+	spawner.EndWave();
 	gameObject.SetActive(false); 	
 	} else if (currentSpawnCD > 0 && spot != clusters.Count) { currentSpawnCD -= Time.deltaTime; }
 	else if (currentSpawnCD <= 0 && PhotonNetwork.IsMasterClient && spot != clusters.Count) {  
