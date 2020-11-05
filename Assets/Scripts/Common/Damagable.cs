@@ -99,7 +99,6 @@ public void ApplyDamage(float damageAmount) {
 	//Game.game.Currency += score;
 	if (m_deathSpawn != null) {
 	GameObject damage = PhotonNetwork.Instantiate(m_deathSpawn.name, transform.position, transform.rotation);
-	damage.GetComponent<Damage>().Spawn(transform.position, Vector3.zero, Vector3.up);
 	}
 	//Destroy(gameObject);
 	if (PV.IsMine) { 

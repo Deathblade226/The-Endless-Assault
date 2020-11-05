@@ -450,7 +450,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6040005499747659653}
-  m_Layer: 10
+  m_Layer: 2
   m_Name: GameObject
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -518,7 +518,7 @@ GameObject:
   - component: {fileID: 6040005500139292635}
   - component: {fileID: 3802982981742484626}
   - component: {fileID: 2521500158862220911}
-  m_Layer: 10
+  m_Layer: 2
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1072,7 +1072,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 0d5991767cd184f47b01b3afa916cf3b,
         type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d5991767cd184f47b01b3afa916cf3b, type: 3}
