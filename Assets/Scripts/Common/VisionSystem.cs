@@ -12,6 +12,7 @@ public class VisionSystem : MonoBehaviourPun, IPunObservable {
 [SerializeField][Range(0,360)] float fieldOfViewAngle = 180f;
 [SerializeField][Range(0,50)] float visionRange = 10f;
 [SerializeField]SphereCollider visionTrigger = null;
+[SerializeField] LayerMask ignoreLayers;
 
 [Header("Vision Active")]
 [SerializeField] bool active;
@@ -33,11 +34,8 @@ public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info) {
 	}
 }
 
-private void Awake() {
-    visionTrigger.radius = visionRange;		
-}
 private void Update() {
-    if (GameObject.FindGameObjectWithTag("Monster") == null) { visionTrigger.radius = 0; }
+    if (Physics.CheckSphere(transform.position, visionRange, ignoreLayers) && GameObject.FindGameObjectWithTag("Monster") == null) { visionTrigger.radius = 0; }
     else { visionTrigger.radius = visionRange; }
 }
 private void OnTriggerEnter(Collider other) { TargetCheck(other); }

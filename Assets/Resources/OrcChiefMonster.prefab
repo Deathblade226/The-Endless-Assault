@@ -203,14 +203,13 @@ GameObject:
   - component: {fileID: 6685321407979092440}
   - component: {fileID: 8246309568133611641}
   - component: {fileID: 6981402644459061194}
-  - component: {fileID: 2649828721066842183}
-  - component: {fileID: 4981506746760093887}
   - component: {fileID: 2496098305512758044}
   - component: {fileID: 7250804571136628107}
   - component: {fileID: 7772359556315134247}
   - component: {fileID: 8266191107018143486}
   - component: {fileID: 372560374702073510}
   - component: {fileID: 4593732150796279489}
+  - component: {fileID: 6081968931833017325}
   m_Layer: 0
   m_Name: OrcChiefMonster
   m_TagString: Monster
@@ -411,38 +410,6 @@ MonoBehaviour:
   MoveCd: 5
   searchDistance: 5
   nc: {fileID: 2496098305512758044}
---- !u!135 &2649828721066842183
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 413197153697535199}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 1
-  m_Center: {x: 0, y: 1, z: 0}
---- !u!114 &4981506746760093887
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 413197153697535199}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ac768a6d026f944ebad8d4cd676aa06, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fieldOfViewAngle: 124
-  visionRange: 5
-  visionTrigger: {fileID: 2649828721066842183}
-  active: 1
-  targets:
-  - Player
-  - Defence
 --- !u!114 &2496098305512758044
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -484,7 +451,6 @@ MonoBehaviour:
   - {fileID: 6685321407979092440}
   - {fileID: 8246309568133611641}
   - {fileID: 6981402644459061194}
-  - {fileID: 4981506746760093887}
   - {fileID: 2496098305512758044}
   - {fileID: 7772359556315134247}
   - {fileID: 372560374702073510}
@@ -553,7 +519,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PV: {fileID: 7250804571136628107}
   m_health: 500
-  m_damageReduction: 0.25
+  m_damageReduction: 0.5
   m_damageCd: 0
   m_killOnDeath: 1
   m_regenCap: 1
@@ -569,6 +535,20 @@ MonoBehaviour:
   sevenFive: {r: 1, g: 0.9504018, b: 0, a: 1}
   five: {r: 1, g: 0.5615011, b: 0, a: 1}
   twoFive: {r: 1, g: 0, b: 0.18256807, a: 1}
+--- !u!136 &6081968931833017325
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 413197153697535199}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.3
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &607256328293622847
 GameObject:
   m_ObjectHideFlags: 0
@@ -3912,9 +3892,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2259882217650052139}
   - component: {fileID: 8915803548005266637}
-  - component: {fileID: 4329095468721253193}
   - component: {fileID: 3807300301017779582}
   - component: {fileID: 762912169798589474}
+  - component: {fileID: 1051496095864803853}
+  - component: {fileID: 5617144929799453624}
   m_Layer: 0
   m_Name: OrcChief
   m_TagString: Untagged
@@ -3972,20 +3953,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!136 &4329095468721253193
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6021097052067587080}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 0.3
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 1, z: 0}
 --- !u!114 &3807300301017779582
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4030,9 +3997,45 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 3807300301017779582}
+  - {fileID: 5617144929799453624}
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
+--- !u!135 &1051496095864803853
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6021097052067587080}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &5617144929799453624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6021097052067587080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ac768a6d026f944ebad8d4cd676aa06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fieldOfViewAngle: 124
+  visionRange: 5
+  visionTrigger: {fileID: 1051496095864803853}
+  ignoreLayers:
+    serializedVersion: 2
+    m_Bits: 823
+  active: 1
+  targets:
+  - Player
+  - Defence
 --- !u!1 &6061385981402569300
 GameObject:
   m_ObjectHideFlags: 0

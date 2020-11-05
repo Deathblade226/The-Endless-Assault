@@ -210,14 +210,13 @@ GameObject:
   - component: {fileID: 46018409668141362}
   - component: {fileID: 524224731480750055}
   - component: {fileID: 4445526523671458852}
-  - component: {fileID: 6317760118692096263}
-  - component: {fileID: 5958918340397131854}
   - component: {fileID: 1366767068853417376}
   - component: {fileID: 3876112660688700711}
   - component: {fileID: 595601047578413827}
   - component: {fileID: 5154216881067772120}
   - component: {fileID: 1383502236491338188}
   - component: {fileID: 3636733897979312411}
+  - component: {fileID: 6064959496769016699}
   m_Layer: 0
   m_Name: UndeadArmoredMonster
   m_TagString: Untagged
@@ -418,38 +417,6 @@ MonoBehaviour:
   MoveCd: 5
   searchDistance: 5
   nc: {fileID: 1366767068853417376}
---- !u!135 &6317760118692096263
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 620276120765555011}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 1
-  m_Center: {x: 0, y: 1, z: 0}
---- !u!114 &5958918340397131854
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 620276120765555011}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ac768a6d026f944ebad8d4cd676aa06, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fieldOfViewAngle: 124
-  visionRange: 3
-  visionTrigger: {fileID: 6317760118692096263}
-  active: 1
-  targets:
-  - Player
-  - Defense
 --- !u!114 &1366767068853417376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -538,7 +505,6 @@ MonoBehaviour:
   - {fileID: 46018409668141362}
   - {fileID: 524224731480750055}
   - {fileID: 4445526523671458852}
-  - {fileID: 5958918340397131854}
   - {fileID: 1366767068853417376}
   - {fileID: 595601047578413827}
   - {fileID: 5154216881067772120}
@@ -576,6 +542,20 @@ MonoBehaviour:
   sevenFive: {r: 1, g: 0.9504018, b: 0, a: 1}
   five: {r: 1, g: 0.5615011, b: 0, a: 1}
   twoFive: {r: 1, g: 0, b: 0.18256807, a: 1}
+--- !u!136 &6064959496769016699
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 620276120765555011}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.3
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &727144185215664406
 GameObject:
   m_ObjectHideFlags: 0
@@ -1391,9 +1371,10 @@ GameObject:
   m_Component:
   - component: {fileID: 7859561460206822710}
   - component: {fileID: 1584445522657431483}
-  - component: {fileID: 2608049318110471532}
   - component: {fileID: 4389274563581024856}
   - component: {fileID: 42922821990736468}
+  - component: {fileID: 8275054759423633383}
+  - component: {fileID: 5336879433799623494}
   m_Layer: 0
   m_Name: UndeadArmored
   m_TagString: Untagged
@@ -1451,20 +1432,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!136 &2608049318110471532
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2117463313768061520}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 0.3
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 1, z: 0}
 --- !u!114 &4389274563581024856
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1509,9 +1476,45 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 4389274563581024856}
+  - {fileID: 5336879433799623494}
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
+--- !u!135 &8275054759423633383
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2117463313768061520}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &5336879433799623494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2117463313768061520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ac768a6d026f944ebad8d4cd676aa06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fieldOfViewAngle: 124
+  visionRange: 3
+  visionTrigger: {fileID: 0}
+  ignoreLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  active: 1
+  targets:
+  - Player
+  - Defense
 --- !u!1 &2146711954622399133
 GameObject:
   m_ObjectHideFlags: 0

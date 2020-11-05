@@ -385,6 +385,9 @@ MonoBehaviour:
   fieldOfViewAngle: 180
   visionRange: 1
   visionTrigger: {fileID: 4613415799444573188}
+  ignoreLayers:
+    serializedVersion: 2
+    m_Bits: 0
   active: 0
   targets:
   - Monster
