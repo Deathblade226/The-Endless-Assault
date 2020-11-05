@@ -62,7 +62,7 @@ private void TargetCheck(Collider other) {
     if (valid && distanceSeen > distanceNew && angleDif <= fieldOfViewAngle) { 
     SeenTarget = other.gameObject;
     }
-    }
+    } else { return; }
 }
 
 private void OnDrawGizmos() {

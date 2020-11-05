@@ -62,6 +62,7 @@ MonoBehaviour:
   damage: 30
   target: Monster
   particle: {fileID: 9023619468879614883}
+  Pv: {fileID: 7719986405388394983}
 --- !u!114 &7719986405388394983
 MonoBehaviour:
   m_ObjectHideFlags: 0
