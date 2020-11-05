@@ -307,7 +307,7 @@ GameObject:
   - component: {fileID: 205614333300749906}
   - component: {fileID: 4242924041715165599}
   - component: {fileID: 5370503536638386087}
-  m_Layer: 2
+  m_Layer: 10
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -507,7 +507,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6040005499747659653}
-  m_Layer: 2
+  m_Layer: 10
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -766,7 +766,7 @@ GameObject:
   - component: {fileID: 6040005500139292633}
   - component: {fileID: 6040005500139292632}
   - component: {fileID: 6040005500139292635}
-  m_Layer: 2
+  m_Layer: 10
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -861,6 +861,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ac243cb85cbba94b913fd9e0b817e91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: Defense
   cost: 0
   attackRate: 5
   damage: 0
@@ -884,9 +885,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fieldOfViewAngle: 180
   visionRange: 20
+  visionTrigger: {fileID: 6040005500139292633}
+  active: 0
   targets:
   - Monster
-  visionTrigger: {fileID: 6040005500139292633}
 --- !u!1 &6040005500278772246
 GameObject:
   m_ObjectHideFlags: 0

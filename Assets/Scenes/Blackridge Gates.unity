@@ -898,7 +898,7 @@ MonoBehaviour:
   - {fileID: 31204221}
   - {fileID: 31204221}
   - {fileID: 31204221}
-  - {fileID: 31204221}
+  - {fileID: 31204220}
 --- !u!114 &31204220
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -912,7 +912,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monster: {fileID: 413197153697535199, guid: 2a31c6fd5db8e844dae79c86ef431f22, type: 3}
-  count: 1
+  count: 3
   spawnCD: 0
 --- !u!114 &31204221
 MonoBehaviour:

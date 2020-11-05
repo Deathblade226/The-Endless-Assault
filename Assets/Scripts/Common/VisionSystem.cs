@@ -36,6 +36,10 @@ public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info) {
 private void Awake() {
     visionTrigger.radius = visionRange;		
 }
+private void Update() {
+    if (GameObject.FindGameObjectWithTag("Monster") == null) { visionTrigger.radius = 0; }
+    else { visionTrigger.radius = visionRange; }
+}
 private void OnTriggerEnter(Collider other) { TargetCheck(other); }
 
 private void OnTriggerStay(Collider other) { TargetCheck(other); }
@@ -43,7 +47,7 @@ private void OnTriggerStay(Collider other) { TargetCheck(other); }
 private void OnTriggerExit(Collider other) {
     if (other.gameObject == seenTarget) { seenTarget = null; }		
 }
-private void TargetCheck(Collider other) { 
+private void TargetCheck(Collider other) {
     if (targets.Contains(other.tag) && Active) {
     if (seenTarget == null) seenTarget = other.gameObject;
     bool valid = true;

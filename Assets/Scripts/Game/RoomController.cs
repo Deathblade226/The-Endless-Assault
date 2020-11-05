@@ -34,7 +34,7 @@ void OnGUI() {
     // leave this Room        
     //if (GUI.Button(new Rect(5, 5, 125, 25), "Leave Room")) { PhotonNetwork.LeaveRoom(); }
     // show the Room name        
-    GUI.Label(new Rect(135, 5, 200, 25), PhotonNetwork.CurrentRoom.Name);
+    GUI.Label(new Rect(5, 5, 200, 25), $"Server Name: {PhotonNetwork.CurrentRoom.Name}");
     // show the list of the players connected to this Room        
     for (int i = 0; i < PhotonNetwork.PlayerList.Length; i++) {
     // show if this player is a Master Client. There can only be one Master Client per Room so use this to define the authoritative logic etc.)            
