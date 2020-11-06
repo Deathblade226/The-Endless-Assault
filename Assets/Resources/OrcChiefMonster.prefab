@@ -527,7 +527,8 @@ MonoBehaviour:
   m_regenCd: 0
   m_constantRegen: 0
   m_hideObject: {fileID: 0}
-  m_deathSpawn: {fileID: 0}
+  m_deathSpawn: {fileID: 6009537733364256689, guid: 7d692372c72a26a41bd3fc7b8b41784c,
+    type: 3}
   m_healthBar: {fileID: 2032749062535818987}
   m_healthText: {fileID: 5523880095404036286}
   fillArea: {fileID: 8530463754927084723}

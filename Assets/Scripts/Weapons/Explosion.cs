@@ -12,7 +12,7 @@ public string Target { get => target; set => target =  value ; }
 public float Damage { get => damage; set => damage =  value ; }
 
 public void Update() {
-    if (particle.time >= 1) { Pv.RPC("RPC_Destroy", RpcTarget.All); }
+    if (particle != null && particle.time >= 1 && Pv != null) { Pv.RPC("RPC_Destroy", RpcTarget.All); }
 }
 
 private void OnTriggerEnter(Collider other) {

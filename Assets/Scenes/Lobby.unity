@@ -14382,6 +14382,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b9419e40456d624eb1a8cc5b60d9562, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  music: {fileID: 1155037934}
+  sfx: {fileID: 893081645}
 --- !u!1 &1132662363
 GameObject:
   m_ObjectHideFlags: 0
@@ -17705,6 +17707,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b9419e40456d624eb1a8cc5b60d9562, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  music: {fileID: 0}
+  sfx: {fileID: 0}
 --- !u!114 &1328764143
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22829,6 +22833,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b9419e40456d624eb1a8cc5b60d9562, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  music: {fileID: 0}
+  sfx: {fileID: 0}
 --- !u!114 &1826944775
 MonoBehaviour:
   m_ObjectHideFlags: 0

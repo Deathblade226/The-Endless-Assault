@@ -23,7 +23,6 @@ public class PlacementController : MonoBehaviourPun, IPunObservable {
 [SerializeField] TextMeshProUGUI DefenseCost = null;
 [SerializeField] TextMeshProUGUI DefenseType = null;
 
-
 private GameObject currentObject = null;
 private int currentTower = -1;
 private Vector2 mouseInput;

@@ -3,8 +3,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class SceneManagment : MonoBehaviour {
+
+[SerializeField] Slider music = null;
+[SerializeField] Slider sfx = null;
+
+private void Start() {
+	music.value = PlayerPrefs.GetFloat("MusicLevels");
+}
 
 public void ExitGame() { 
     #if UNITY_EDITOR
@@ -29,6 +37,10 @@ return PlayerPrefs.GetString(name);}
 public static void SetValue(string name, int value) { PlayerPrefs.SetInt(name, value); }
 public static void SetValue(string name, float value) { PlayerPrefs.SetFloat(name, value); }
 public static void SetValue(string name, string value) { PlayerPrefs.SetString(name, value); }
+
+public void SetMusic() { PlayerPrefs.SetFloat("MusicLevels", music.value); }
+public void SetSFX() { PlayerPrefs.SetFloat("SFXLevels", sfx.value); }
+
 public void LeaveRoom(bool quitGame = false) { 
     PhotonNetwork.DestroyPlayerObjects(PhotonNetwork.LocalPlayer);
     PhotonNetwork.LeaveRoom(); 
