@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour {
 
 [Header("Weapon")]
 [SerializeField]GameObject weapon = null;
+[SerializeField]float attackRate = 1;
 
 [Header("Placement Controller")]
 [SerializeField]PlacementController pc = null;
@@ -54,6 +55,7 @@ private float jumpCDC = 0;
 private bool lockCursor = false;
 private bool locked = false;
 private bool attacking = false;
+private float attackCd = 0;
 
 private void Awake() {
 	if (!pv.IsMine) return;
@@ -70,6 +72,8 @@ private void FixedUpdate() {
 	if (!pv.IsMine) return;
 	if(jumpCD > 0) jumpCDC -= Time.deltaTime;
 
+	if (attackCd > 0) { attackCd -= Time.deltaTime; }
+	attacking = (attackCd > 0);
 	weapon.SetActive(pc.CurrentObject == null);
 
 	RaycastHit hit;
@@ -83,7 +87,7 @@ private void FixedUpdate() {
 	}	
 
 	if (walkInput != Vector2.zero) { 
-	character.transform.rotation = new Quaternion(); 
+	character.transform.localRotation = new Quaternion(); 
 	character.transform.localPosition = new Vector3();
 	}
 	transform.Translate(new Vector3((walkInput.x * Time.deltaTime) * currentSpeed,0, (walkInput.y * Time.deltaTime) * currentSpeed));
@@ -160,7 +164,7 @@ public void CloseMenu() {
 public void Attack(InputAction.CallbackContext context) { 
 	if (!pv.IsMine) return;
 	if (pc.CurrentObject == null && weapon.activeSelf && !attacking) { 
-
+	attackCd = attackRate;
 	weapon.GetComponent<Weapon>().CanAttack = true;
 	animator.SetTrigger("Attack");
 

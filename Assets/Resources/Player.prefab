@@ -2809,6 +2809,7 @@ MonoBehaviour:
   damage: 20
   enemies:
   - Monster
+  continuousAttack: 0
   Type: Weapon
 --- !u!114 &6908956607144110112
 MonoBehaviour:
@@ -3895,6 +3896,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pv: {fileID: 9164312130522971429}
   weapon: {fileID: 7878975334768551666}
+  attackRate: 2.1
   pc: {fileID: 6825458950818869460}
   walkSpeed: 10
   jumpForce: 10
