@@ -565,7 +565,7 @@ MonoBehaviour:
   type: Tower
   cost: 50
   attackRate: 5
-  damage: 50
+  damage: 80
   shotSpeed: 50
   shotHasGravity: 0
   spawnPoint: {fileID: 6040005499747659652}

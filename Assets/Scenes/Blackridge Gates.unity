@@ -15993,7 +15993,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce419a851da174947b5b4252cca6511b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  music: {fileID: 1086076042}
+  musicCollection: []
   pv: {fileID: 1086076044}
 --- !u!1 &1089757397
 GameObject:
@@ -34343,7 +34343,7 @@ PrefabInstance:
     - target: {fileID: 5642761385455719071, guid: 7d692372c72a26a41bd3fc7b8b41784c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 37.22
+      value: 29.542
       objectReference: {fileID: 0}
     - target: {fileID: 5642761385455719071, guid: 7d692372c72a26a41bd3fc7b8b41784c,
         type: 3}
