@@ -29,6 +29,8 @@ private Vector2 mouseInput;
 private float scrollInput;
 private List<String> layers = new List<string>{"7", "9"};
 
+public GameObject CurrentObject { get => currentObject; set => currentObject =  value ; }
+
 public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info) {
     if(stream.IsWriting) {
 	//stream.SendNext(this.currentObject);
@@ -41,11 +43,11 @@ public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info) {
 void Update() {
     if (!pv.IsMine) return;
 
-    if (currentObject != null) {
+    if (CurrentObject != null) {
     DisplayPanel.SetActive(true);
-    DefenseName.text = $"Name: {currentObject.name.Replace("(Clone)", "")}";
-    Defense defense = currentObject.GetComponent<Defense>();
-    if (defense == null) { defense = currentObject.transform.GetComponentInChildren<Defense>(true); }
+    DefenseName.text = $"Name: {CurrentObject.name.Replace("(Clone)", "")}";
+    Defense defense = CurrentObject.GetComponent<Defense>();
+    if (defense == null) { defense = CurrentObject.transform.GetComponentInChildren<Defense>(true); }
     DefenseCost.text = $"Cost: {defense.Cost}";
     DefenseType.text = $"Type: {defense.Type}";
     MovePlaceableToMouse();
@@ -67,7 +69,7 @@ private void DeleteUnit() {
 }
 private void RotatePlaceable() {
     if (!pv.IsMine) return;
-    currentObject.transform.Rotate(Vector3.up, (scrollInput / 12) * rotationSpeed);
+    CurrentObject.transform.Rotate(Vector3.up, (scrollInput / 12) * rotationSpeed);
     scrollInput = 0;
 }
 private void MovePlaceableToMouse() {
@@ -76,7 +78,7 @@ private void MovePlaceableToMouse() {
     RaycastHit hitInfo;
     if (Physics.Raycast(ray, out hitInfo)) {
     if (((1<<hitInfo.collider.gameObject.layer) & IgnoredLayers) == 0) { 
-    currentObject.transform.position = hitInfo.point;
+    CurrentObject.transform.position = hitInfo.point;
     //currentObject.transform.rotation = Quaternion.FromToRotation(Vector3.up, hitInfo.normal);
     }
     }
@@ -85,20 +87,20 @@ public void PlaceObject(InputAction.CallbackContext context) {
     bool valid = true;
     int cost = 0;
     if (!pv.IsMine) return;
-    if (currentObject != null) {
-    Defense defense = currentObject.GetComponent<Defense>();
-    if (defense == null) defense = currentObject.transform.GetComponentInChildren<Defense>();
+    if (CurrentObject != null) {
+    Defense defense = CurrentObject.GetComponent<Defense>();
+    if (defense == null) defense = CurrentObject.transform.GetComponentInChildren<Defense>();
     if (defense != null) { 
     cost = defense.Cost;
     valid = (Game.game.Currency - defense.Cost >= 0);
     }
     }
 
-    if (valid && this.currentObject != null) {
+    if (valid && this.CurrentObject != null) {
     pv.RPC("UpdateNav", RpcTarget.All);
-    pv.RPC("SettingValues", RpcTarget.All, currentObject.GetComponent<PhotonView>().ViewID);
+    pv.RPC("SettingValues", RpcTarget.All, CurrentObject.GetComponent<PhotonView>().ViewID);
     Game.game.Pv.RPC("ModifyCurrency", RpcTarget.All, cost); 
-    this.currentObject = null;
+    this.CurrentObject = null;
     }
 }
 [PunRPC]
@@ -229,13 +231,13 @@ private void Spawn(int key) {
     if (!pv.IsMine) return;
     if (Units.Count > key) { 
     currentTower = key;
-    currentObject = PhotonNetwork.Instantiate(Units[currentTower].name, new Vector3(), Quaternion.identity);
+    CurrentObject = PhotonNetwork.Instantiate(Units[currentTower].name, new Vector3(), Quaternion.identity);
     }
 }
 [PunRPC]
 private void Destroy() {
-    if (currentObject != null) 
-    PhotonNetwork.Destroy(currentObject);
+    if (CurrentObject != null) 
+    PhotonNetwork.Destroy(CurrentObject);
     currentTower = -1;
 }
 [PunRPC]

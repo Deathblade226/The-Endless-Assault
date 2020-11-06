@@ -11,7 +11,7 @@ public class SceneManagment : MonoBehaviour {
 [SerializeField] Slider sfx = null;
 
 private void Start() {
-	music.value = PlayerPrefs.GetFloat("MusicLevels");
+    if (music != null) music.value = PlayerPrefs.GetFloat("MusicLevels");
 }
 
 public void ExitGame() { 

@@ -16,11 +16,15 @@ public class PlayerController : MonoBehaviour {
 [Header("Weapon")]
 [SerializeField]GameObject weapon = null;
 
+[Header("Placement Controller")]
+[SerializeField]PlacementController pc = null;
+
 [Header("Movement Controls")]
 [SerializeField]float walkSpeed = 1;
 [SerializeField]float jumpForce = 1;
 [SerializeField]float jumpCD = 2;
 [SerializeField]Animator animator = null;
+[SerializeField]GameObject character = null;
 
 [Header("Ground Detection")]
 [SerializeField]GameObject groundStart = null;
@@ -49,6 +53,7 @@ private bool grounded = true;
 private float jumpCDC = 0;
 private bool lockCursor = false;
 private bool locked = false;
+private bool attacking = false;
 
 private void Awake() {
 	if (!pv.IsMine) return;
@@ -65,6 +70,8 @@ private void FixedUpdate() {
 	if (!pv.IsMine) return;
 	if(jumpCD > 0) jumpCDC -= Time.deltaTime;
 
+	weapon.SetActive(pc.CurrentObject == null);
+
 	RaycastHit hit;
 	Vector3 GS = groundStart.gameObject.transform.position;
 	Vector3 GE = groundEnd.gameObject.transform.position;
@@ -75,6 +82,10 @@ private void FixedUpdate() {
 	grounded = groundLayers == (groundLayers | (1 << hit.collider.gameObject.layer)); 
 	}	
 
+	if (walkInput != Vector2.zero) { 
+	character.transform.rotation = new Quaternion(); 
+	character.transform.localPosition = new Vector3();
+	}
 	transform.Translate(new Vector3((walkInput.x * Time.deltaTime) * currentSpeed,0, (walkInput.y * Time.deltaTime) * currentSpeed));
 	Vector2 position = new Vector2((Screen.width/2) - mouseInput.x, (Screen.height/2) - mouseInput.y);
 
@@ -144,6 +155,16 @@ public void CloseMenu() {
 	locked = Cursor.lockState == CursorLockMode.Locked;
 	if (locked && !lockCursor) { Cursor.lockState = CursorLockMode.Locked;
 	} else { Cursor.lockState = CursorLockMode.Confined; }
+}
+
+public void Attack(InputAction.CallbackContext context) { 
+	if (!pv.IsMine) return;
+	if (pc.CurrentObject == null && weapon.activeSelf && !attacking) { 
+
+	weapon.GetComponent<Weapon>().CanAttack = true;
+	animator.SetTrigger("Attack");
+
+	}
 }
 
 }

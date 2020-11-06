@@ -1860,6 +1860,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 27e9c656-99cf-4953-9703-f2556caa005f
     m_ActionName: Player/Escape[/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 2efa9150-32f1-4334-ab89-f818b3a863f6
+    m_ActionName: Player/Attack[/Mouse/leftButton]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Placement
@@ -3890,10 +3894,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pv: {fileID: 9164312130522971429}
+  weapon: {fileID: 7878975334768551666}
+  pc: {fileID: 6825458950818869460}
   walkSpeed: 10
   jumpForce: 10
   jumpCD: 1
   animator: {fileID: 9164312129461584159}
+  character: {fileID: 9164312129469088375}
   groundStart: {fileID: 1019996534709364007}
   groundEnd: {fileID: 1517133929037209179}
   groundLayers:
@@ -4089,6 +4096,21 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 27e9c656-99cf-4953-9703-f2556caa005f
     m_ActionName: Player/Escape[/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 9164312130522971424}
+        m_MethodName: Attack
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 2efa9150-32f1-4334-ab89-f818b3a863f6
+    m_ActionName: Player/Attack[/Mouse/leftButton]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -4530,7 +4552,7 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: ddb26a055e7a0a844964e51ab947fba8, type: 2}
     - target: {fileID: 9513408, guid: 3f42b29f9f09e0e40b05df7c984384f1, type: 3}
       propertyPath: m_ApplyRootMotion
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f42b29f9f09e0e40b05df7c984384f1, type: 3}

@@ -15,5 +15,6 @@ public string Type = "Weapon";
 public float Damage { get => damage; set => damage = value; }
 public bool CanAttack { get; set; }
 public List<string> Enemies { get => enemies; set => enemies =  value ; }
+
 }
 
