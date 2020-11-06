@@ -13,6 +13,9 @@ public class PlayerController : MonoBehaviour {
 [Header("Photon")]
 [SerializeField]PhotonView pv;    
 
+[Header("Weapon")]
+[SerializeField]GameObject weapon = null;
+
 [Header("Movement Controls")]
 [SerializeField]float walkSpeed = 1;
 [SerializeField]float jumpForce = 1;
