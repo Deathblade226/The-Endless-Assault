@@ -903,6 +903,7 @@ MonoBehaviour:
   enemies:
   - Player
   - Defense
+  continuousAttack: 0
   Type: Weapon
 --- !u!114 &3021593097439756354
 MonoBehaviour:

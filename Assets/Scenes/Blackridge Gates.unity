@@ -23136,7 +23136,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PV: {fileID: 1461171302}
   m_health: 1000
-  m_damageReduction: 0.25
+  m_damageReduction: 0
   m_damageCd: 0
   m_killOnDeath: 1
   m_regenCap: 1
