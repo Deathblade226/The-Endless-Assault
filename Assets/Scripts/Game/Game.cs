@@ -17,8 +17,11 @@ public class Game : MonoBehaviourPun, IPunObservable {
 
 [Header("UI Elements")]
 [SerializeField]TextMeshProUGUI currencyDisplay = null;
+[SerializeField]TextMeshProUGUI statTracker = null;
 
 public static Game game;
+
+private float fpsUpdateTime = 1;
 
 public bool GameRunning { get; set; } = false;
 public int Currency { get => currency; set => currency =  value ; }
@@ -36,6 +39,15 @@ public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info) {
 
 void Update() {
 	currencyDisplay.text = $"{currency}";
+}
+
+private void LateUpdate() {
+	if (pv.IsMine && fpsUpdateTime <= 0) { 
+	float ms = PhotonNetwork.GetPing();
+	int fps = (int)(1.0f/Time.deltaTime);
+	statTracker.text = $"FPS: {fps} MS: {ms}";
+	fpsUpdateTime = 1;
+	} else { fpsUpdateTime -= Time.deltaTime; }
 }
 
 [PunRPC]
