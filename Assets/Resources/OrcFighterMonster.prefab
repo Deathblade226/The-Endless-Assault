@@ -1720,6 +1720,9 @@ MonoBehaviour:
     type: 3}
   m_healthBar: {fileID: 2231079099279168838}
   m_healthText: {fileID: 3524073663746135420}
+  hideObject: {fileID: 6758501970340279552}
+  hide: 1
+  hideDistance: 10
   fillArea: {fileID: 5054406839803124113}
   oneHundred: {r: 0, g: 0.6981132, b: 0.13947354, a: 1}
   sevenFive: {r: 1, g: 0.9504018, b: 0, a: 1}

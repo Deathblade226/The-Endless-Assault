@@ -1029,6 +1029,9 @@ MonoBehaviour:
   m_deathSpawn: {fileID: 0}
   m_healthBar: {fileID: 7058988679760083100}
   m_healthText: {fileID: 5922939322397546401}
+  hideObject: {fileID: 182977991246891845}
+  hide: 1
+  hideDistance: 10
   fillArea: {fileID: 3936681744374272981}
   oneHundred: {r: 0, g: 0.6981132, b: 0.13947354, a: 1}
   sevenFive: {r: 1, g: 0.9504018, b: 0, a: 1}

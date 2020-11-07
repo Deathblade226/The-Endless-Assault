@@ -537,6 +537,9 @@ MonoBehaviour:
   m_deathSpawn: {fileID: 0}
   m_healthBar: {fileID: 9152286644261776863}
   m_healthText: {fileID: 1458802209129128795}
+  hideObject: {fileID: 5028644186591966806}
+  hide: 1
+  hideDistance: 10
   fillArea: {fileID: 3576429605810969456}
   oneHundred: {r: 0, g: 0.6981132, b: 0.13947354, a: 1}
   sevenFive: {r: 1, g: 0.9504018, b: 0, a: 1}
@@ -4875,6 +4878,7 @@ MonoBehaviour:
   enemies:
   - Player
   - Defense
+  continuousAttack: 0
   Type: Weapon
 --- !u!114 &4076855717836736748
 MonoBehaviour:

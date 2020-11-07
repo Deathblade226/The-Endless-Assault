@@ -182,7 +182,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &7855931525435369659
 RectTransform:
   m_ObjectHideFlags: 0
@@ -344,7 +344,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -763,6 +763,9 @@ MonoBehaviour:
   m_deathSpawn: {fileID: 0}
   m_healthBar: {fileID: 922783062901758961}
   m_healthText: {fileID: 7677072377076957301}
+  hideObject: {fileID: 4144158528830774486}
+  hide: 1
+  hideDistance: 10
   fillArea: {fileID: 5342703909541443329}
   oneHundred: {r: 0, g: 0.6981132, b: 0.13947354, a: 1}
   sevenFive: {r: 1, g: 0.9504018, b: 0, a: 1}

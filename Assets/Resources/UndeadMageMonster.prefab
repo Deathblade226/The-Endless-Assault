@@ -3763,6 +3763,9 @@ MonoBehaviour:
   fieldOfViewAngle: 60
   visionRange: 10
   visionTrigger: {fileID: 5425879186702437927}
+  ignoreLayers:
+    serializedVersion: 2
+    m_Bits: 0
   active: 1
   targets:
   - Player
@@ -3888,6 +3891,9 @@ MonoBehaviour:
   m_deathSpawn: {fileID: 0}
   m_healthBar: {fileID: 1011287498242633148}
   m_healthText: {fileID: 5357324193412008013}
+  hideObject: {fileID: 2166149080955527395}
+  hide: 1
+  hideDistance: 10
   fillArea: {fileID: 3401852795550831030}
   oneHundred: {r: 0, g: 0.6981132, b: 0.13947354, a: 1}
   sevenFive: {r: 1, g: 0.9504018, b: 0, a: 1}
