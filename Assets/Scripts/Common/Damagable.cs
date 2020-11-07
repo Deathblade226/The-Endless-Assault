@@ -71,7 +71,7 @@ private void Update() {
 	//if (PhotonNetwork.IsMasterClient) Debug.Log($"{PV.IsMine}|{hide}|{hideObject != null}|{( Camera.main.transform.position - hideObject.transform.position ).magnitude}");
 	if (PV.IsMine && hide && hideObject != null && ( Camera.main.transform.position - hideObject.transform.position).magnitude >= hideDistance) { 
 	hideObject.SetActive(false);
-	} else { hideObject.SetActive(true); }
+	} else if (PV.IsMine && hideObject != null) { hideObject.SetActive(true); }
 
 	m_healthText.SetText($"{health}/{maxHealth}");
 	Color color = new Color();
