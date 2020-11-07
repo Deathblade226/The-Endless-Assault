@@ -13,7 +13,7 @@ private int spot = 0;
 public int Spot { get => spot; set => spot =  value ; }
 
 private void Update() {
-	if (!pv.IsMine) musicCollection[Spot].enabled = false;
+	if (!pv.IsMine) { gameObject.SetActive(false); return; }
 	else musicCollection[Spot].enabled = true;
 	
 	spot = (GameObject.FindGameObjectWithTag("Monster") != null) ? 1 : 0;

@@ -649,7 +649,7 @@ GameObject:
   - component: {fileID: 6043647538720696236}
   - component: {fileID: 7311612173545537411}
   m_Layer: 2
-  m_Name: Flame Tower
+  m_Name: Flame Shot Tower
   m_TagString: Defense
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -614,9 +614,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: Tower
-  cost: 100
+  cost: 120
   attackRate: 5
-  damage: 30
+  damage: 15
   shotSpeed: 20
   shotHasGravity: 0
   spawnPoint: {fileID: 6040005499747659652}

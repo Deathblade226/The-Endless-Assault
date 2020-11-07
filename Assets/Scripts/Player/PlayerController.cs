@@ -163,7 +163,7 @@ public void CloseMenu() {
 
 public void Attack(InputAction.CallbackContext context) { 
 	if (!pv.IsMine) return;
-	if (pc.CurrentObject == null && weapon.activeSelf && !attacking) { 
+	if (!locked && pc.CurrentObject == null && weapon.activeSelf && !attacking) { 
 	attackCd = attackRate;
 	weapon.GetComponent<Weapon>().CanAttack = true;
 	animator.SetTrigger("Attack");

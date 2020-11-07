@@ -30,6 +30,11 @@ public class Damagable : MonoBehaviourPun, IPunObservable {
 [SerializeField] Slider m_healthBar = null;
 [SerializeField] TextMeshProUGUI m_healthText = null;
 
+[Header("Hide settings")]
+[SerializeField] GameObject hideObject = null;
+[SerializeField] bool hide = false;
+[SerializeField] float hideDistance = 10;
+
 [Header("Color")]
 [SerializeField] Image fillArea = null;
 [SerializeField] Color oneHundred;
@@ -63,6 +68,10 @@ private void Start() { MaxHealth = health;
 }
 
 private void Update() {
+	//if (PV.IsMine && hide && hideObject != null && (hideObject.transform.position - Camera.main.transform.position).magnitude >= hideDistance) { 
+	//hideObject.SetActive(false);
+	//} else { hideObject.SetActive(true); }
+
 	m_healthText.SetText($"{health}/{maxHealth}");
 	Color color = new Color();
 	float percent = health/maxHealth;
