@@ -534,7 +534,8 @@ MonoBehaviour:
   m_regenCd: 0
   m_constantRegen: 0
   m_hideObject: {fileID: 0}
-  m_deathSpawn: {fileID: 0}
+  m_deathSpawn: {fileID: 6175823771943761405, guid: a75781d4c1de5e2449c37614da25abc1,
+    type: 3}
   m_healthBar: {fileID: 9152286644261776863}
   m_healthText: {fileID: 1458802209129128795}
   hideObject: {fileID: 5028644186591966806}
@@ -1510,10 +1511,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fieldOfViewAngle: 124
   visionRange: 3
-  visionTrigger: {fileID: 0}
+  visionTrigger: {fileID: 8275054759423633383}
   ignoreLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 823
   active: 1
   targets:
   - Player
