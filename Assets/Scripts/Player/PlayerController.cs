@@ -113,8 +113,10 @@ public void StartGame(InputAction.CallbackContext context) {
 
 private void ActivateWaves() { 
 	if (!PhotonNetwork.IsMasterClient) return;
-	GameObject go = GameObject.FindGameObjectWithTag("Spawner");
-	go.GetComponent<PhotonView>().RPC("StartWave", RpcTarget.All);
+	GameObject[] spawners = GameObject.FindGameObjectsWithTag("Spawner");
+	foreach(GameObject spawner in spawners) { 
+	spawner.GetComponent<PhotonView>().RPC("StartWave", RpcTarget.All);
+	}
 }
 
 public void OnMove(InputAction.CallbackContext context) {
