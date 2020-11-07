@@ -23135,7 +23135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PV: {fileID: 1461171302}
-  m_health: 1000
+  m_health: 2000
   m_damageReduction: 0
   m_damageCd: 0
   m_killOnDeath: 1
@@ -23147,6 +23147,9 @@ MonoBehaviour:
   m_deathSpawn: {fileID: 0}
   m_healthBar: {fileID: 1637144360}
   m_healthText: {fileID: 1369411887}
+  hideObject: {fileID: 0}
+  hide: 0
+  hideDistance: 10
   fillArea: {fileID: 1237763702}
   oneHundred: {r: 0, g: 0.6981132, b: 0.13947354, a: 1}
   sevenFive: {r: 1, g: 0.9504018, b: 0, a: 1}
