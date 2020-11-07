@@ -566,7 +566,7 @@ MonoBehaviour:
   cost: 80
   attackRate: 5
   damage: 100
-  shotSpeed: 50
+  shotSpeed: 100
   shotHasGravity: 0
   spawnPoint: {fileID: 6040005499747659652}
   projectile: {fileID: 1384266958994512122, guid: 9e4476ec0075526428253f46c0bf4654,
