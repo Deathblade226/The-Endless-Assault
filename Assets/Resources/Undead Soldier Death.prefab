@@ -3144,7 +3144,7 @@ MonoBehaviour:
   pv: {fileID: 990621395514855641}
   waitTime: 2
   animator: {fileID: 8163760549192704162}
-  model: {fileID: 6226893817005645616}
+  model: {fileID: 198710420782548531}
   particles: {fileID: 3234269308798854587}
 --- !u!114 &990621395514855641
 MonoBehaviour:

@@ -563,7 +563,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: Tower
-  cost: 80
+  cost: 100
   attackRate: 5
   damage: 100
   shotSpeed: 100

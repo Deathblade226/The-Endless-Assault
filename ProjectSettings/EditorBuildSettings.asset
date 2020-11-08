@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Blackridge Gates.unity
     guid: f9f24e4d35eac9f4a88a4abaf0502d63
+  - enabled: 1
+    path: Assets/Scenes/The Lost Crypt.unity
+    guid: b9ca7dee85431c24987769317930fdf9
   m_configObjects: {}
