@@ -1673,7 +1673,7 @@ MonoBehaviour:
   - {fileID: 6040005500278772246, guid: 5add09ac482299e418a419092f363a33, type: 3}
   IgnoredLayers:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 1536
   tags:
   - Defense
   - Obstacle
