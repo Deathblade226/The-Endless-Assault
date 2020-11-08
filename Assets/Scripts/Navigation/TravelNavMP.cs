@@ -27,7 +27,7 @@ public void StartTravel() {
 }
 
 public void Update() {
-	if (Moving && Target != new Vector3() && nc.Agent.destination != Target) {
+	if (nc.Agent.isOnNavMesh && Moving && Target != new Vector3() && nc.Agent.destination != Target) {
 	nc.Agent.SetDestination(Target);
 	//Debug.Log($"{gameObject.name} | {nc.Agent.isOnNavMesh}");
 	}
