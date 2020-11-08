@@ -16,6 +16,7 @@ TagManager:
   - FxTemporaire
   - Projectile
   - Floor
+  - Pathing
   layers:
   - Default
   - TransparentFX

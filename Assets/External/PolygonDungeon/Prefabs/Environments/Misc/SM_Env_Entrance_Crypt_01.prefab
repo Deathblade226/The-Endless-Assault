@@ -349,6 +349,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tags:
   - Monster
+  - Pathing
 --- !u!1 &4496849263280674636
 GameObject:
   m_ObjectHideFlags: 0
