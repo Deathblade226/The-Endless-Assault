@@ -9,12 +9,15 @@ public class SceneManagment : MonoBehaviour {
 
 [SerializeField] Slider music = null;
 [SerializeField] Slider sfx = null;
+[SerializeField] PhotonView pv = null;
+[SerializeField] GameObject Endscreen = null;
 
 private void Start() {
     if (music != null) music.value = PlayerPrefs.GetFloat("MusicLevels");
 }
 
-public void ExitGame() { 
+public void ExitGame() {
+    if (pv != null) { if (!pv.IsMine) return; }
     #if UNITY_EDITOR
     UnityEditor.EditorApplication.isPlaying = false;
     #elif UNITY_WEBPLAYER
@@ -41,10 +44,15 @@ public static void SetValue(string name, string value) { PlayerPrefs.SetString(n
 public void SetMusic() { PlayerPrefs.SetFloat("MusicLevels", music.value); }
 public void SetSFX() { PlayerPrefs.SetFloat("SFXLevels", sfx.value); }
 
-public void LeaveRoom(bool quitGame = false) { 
+public void LeaveRoom(bool quitGame = false) {
+    if (pv != null) { if (!pv.IsMine) return; }
     PhotonNetwork.DestroyPlayerObjects(PhotonNetwork.LocalPlayer);
     PhotonNetwork.LeaveRoom(); 
     if (quitGame) { ExitGame(); } else { PhotonNetwork.LoadLevel(0); }
+}
+public void CloseEndWindow() {     
+    if (pv != null) { if (!pv.IsMine) return; }
+    Endscreen.SetActive(false);
 }
 
 }

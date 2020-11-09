@@ -1510,6 +1510,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   music: {fileID: 2192949244065906391}
   sfx: {fileID: 3596027234295306077}
+  pv: {fileID: 0}
+  Endscreen: {fileID: 0}
 --- !u!1 &4736812534049856841
 GameObject:
   m_ObjectHideFlags: 0
