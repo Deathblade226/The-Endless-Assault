@@ -20,6 +20,7 @@ public class Game : MonoBehaviourPun, IPunObservable {
 [SerializeField]TextMeshProUGUI statTracker = null;
 [SerializeField]GameObject endScreen = null;
 [SerializeField]TextMeshProUGUI endScreenMessage = null;
+[SerializeField]TextMeshProUGUI waveTracker = null;
 
 [Header("Loose Conditions")]
 [SerializeField] List<GameObject> objectives;
@@ -47,6 +48,7 @@ public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info) {
 void Update() {
 	currencyDisplay.text = $"{currency}";
 	Spawner spawner = GameObject.FindGameObjectWithTag("Spawner").GetComponent<Spawner>();
+	if (waveTracker != null) waveTracker.text = $"Wave: {spawner.Wave+1}";
 	if (spawner.Waves.Count <= spawner.Wave && GameObject.FindGameObjectsWithTag("Monster") == null && Game.game.objectives[0] != null) { 
 	Game.game.endScreenMessage.text = "Victory";
 	Game.game.endScreen.SetActive(true); 

@@ -30556,6 +30556,7 @@ MonoBehaviour:
   statTracker: {fileID: 0}
   endScreen: {fileID: 1042357500}
   endScreenMessage: {fileID: 1042357501}
+  waveTracker: {fileID: 1042357503}
   objectives:
   - {fileID: 7742273684368207395}
 --- !u!114 &846982522
@@ -39391,6 +39392,18 @@ MonoBehaviour:
 --- !u!114 &1042357502 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7318895221719503211, guid: 46658c9d1dc6e9d439c6604732e6b44f,
+    type: 3}
+  m_PrefabInstance: {fileID: 1042357499}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1042357503 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5794134906242966418, guid: 46658c9d1dc6e9d439c6604732e6b44f,
     type: 3}
   m_PrefabInstance: {fileID: 1042357499}
   m_PrefabAsset: {fileID: 0}

@@ -20087,6 +20087,7 @@ MonoBehaviour:
   statTracker: {fileID: 0}
   endScreen: {fileID: 934064112}
   endScreenMessage: {fileID: 1417183737}
+  waveTracker: {fileID: 7318895221050916547}
   objectives:
   - {fileID: 1461171300}
 --- !u!114 &1436503369
@@ -29473,3 +29474,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 46658c9d1dc6e9d439c6604732e6b44f, type: 3}
+--- !u!114 &7318895221050916547 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5794134906242966418, guid: 46658c9d1dc6e9d439c6604732e6b44f,
+    type: 3}
+  m_PrefabInstance: {fileID: 7318895221050916546}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
