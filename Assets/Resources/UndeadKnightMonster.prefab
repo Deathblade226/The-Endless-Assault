@@ -218,7 +218,7 @@ GameObject:
   - component: {fileID: 3636733897979312411}
   - component: {fileID: 6064959496769016699}
   m_Layer: 0
-  m_Name: UndeadArmoredMonster
+  m_Name: UndeadKnightMonster
   m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -526,9 +526,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PV: {fileID: 1383502236491338188}
   m_health: 300
-  m_damageReduction: 0.4
+  m_damageReduction: 0.5
   m_damageCd: 0
-  m_killOnDeath: 0
+  m_killOnDeath: 1
   m_regenCap: 1
   m_regenAmount: 0
   m_regenCd: 0
