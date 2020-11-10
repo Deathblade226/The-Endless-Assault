@@ -3144,7 +3144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monster: {fileID: 3336172698178726445, guid: 7deab0464dda2994692f9fddcc9e64c3, type: 3}
-  count: 5
+  count: 4
   spawnCD: 10
 --- !u!114 &76777496
 MonoBehaviour:
@@ -3161,7 +3161,14 @@ MonoBehaviour:
   spawnRange: 3
   endwaveCurrency: 100
   spawner: {fileID: 517974218}
-  clusters: []
+  clusters:
+  - {fileID: 76777495}
+  - {fileID: 76777498}
+  - {fileID: 76777495}
+  - {fileID: 76777495}
+  - {fileID: 76777495}
+  - {fileID: 76777498}
+  - {fileID: 76777495}
 --- !u!114 &76777497
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3175,7 +3182,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monster: {fileID: 620276120765555011, guid: 085328aea6660d64281c1bf7d996c661, type: 3}
-  count: 5
+  count: 4
   spawnCD: 10
 --- !u!114 &76777498
 MonoBehaviour:
@@ -3190,7 +3197,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monster: {fileID: 620276120765555011, guid: 3ac09504366b85f4b8485978a9c9c2df, type: 3}
-  count: 5
+  count: 4
   spawnCD: 10
 --- !u!1001 &78309815
 PrefabInstance:
@@ -12415,7 +12422,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monster: {fileID: 3336172698178726445, guid: 7deab0464dda2994692f9fddcc9e64c3, type: 3}
-  count: 5
+  count: 4
   spawnCD: 10
 --- !u!114 &358345468
 MonoBehaviour:
@@ -12432,7 +12439,14 @@ MonoBehaviour:
   spawnRange: 3
   endwaveCurrency: 100
   spawner: {fileID: 2070151403}
-  clusters: []
+  clusters:
+  - {fileID: 358345467}
+  - {fileID: 358345470}
+  - {fileID: 358345467}
+  - {fileID: 358345467}
+  - {fileID: 358345467}
+  - {fileID: 358345470}
+  - {fileID: 358345467}
 --- !u!114 &358345469
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12446,7 +12460,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monster: {fileID: 620276120765555011, guid: 085328aea6660d64281c1bf7d996c661, type: 3}
-  count: 5
+  count: 4
   spawnCD: 10
 --- !u!114 &358345470
 MonoBehaviour:
@@ -12461,7 +12475,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monster: {fileID: 620276120765555011, guid: 3ac09504366b85f4b8485978a9c9c2df, type: 3}
-  count: 5
+  count: 4
   spawnCD: 10
 --- !u!1001 &358388930
 PrefabInstance:
@@ -20588,7 +20602,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monster: {fileID: 3336172698178726445, guid: 7deab0464dda2994692f9fddcc9e64c3, type: 3}
-  count: 5
+  count: 4
   spawnCD: 10
 --- !u!114 &581300488
 MonoBehaviour:
@@ -20605,7 +20619,18 @@ MonoBehaviour:
   spawnRange: 3
   endwaveCurrency: 100
   spawner: {fileID: 2070151403}
-  clusters: []
+  clusters:
+  - {fileID: 581300487}
+  - {fileID: 581300487}
+  - {fileID: 581300490}
+  - {fileID: 581300489}
+  - {fileID: 581300490}
+  - {fileID: 581300487}
+  - {fileID: 581300490}
+  - {fileID: 581300489}
+  - {fileID: 581300490}
+  - {fileID: 581300487}
+  - {fileID: 581300487}
 --- !u!114 &581300489
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20619,7 +20644,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monster: {fileID: 620276120765555011, guid: 085328aea6660d64281c1bf7d996c661, type: 3}
-  count: 5
+  count: 4
   spawnCD: 10
 --- !u!114 &581300490
 MonoBehaviour:
@@ -20634,7 +20659,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monster: {fileID: 620276120765555011, guid: 3ac09504366b85f4b8485978a9c9c2df, type: 3}
-  count: 5
+  count: 4
   spawnCD: 10
 --- !u!1001 &581580823
 PrefabInstance:
@@ -24859,7 +24884,12 @@ MonoBehaviour:
   spawnRange: 3
   endwaveCurrency: 100
   spawner: {fileID: 2070151403}
-  clusters: []
+  clusters:
+  - {fileID: 682590150}
+  - {fileID: 682590150}
+  - {fileID: 682590150}
+  - {fileID: 682590150}
+  - {fileID: 682590150}
 --- !u!114 &682590150
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24873,7 +24903,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monster: {fileID: 3336172698178726445, guid: 7deab0464dda2994692f9fddcc9e64c3, type: 3}
-  count: 5
+  count: 4
   spawnCD: 10
 --- !u!114 &682590151
 MonoBehaviour:
@@ -24888,7 +24918,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monster: {fileID: 620276120765555011, guid: 085328aea6660d64281c1bf7d996c661, type: 3}
-  count: 5
+  count: 4
   spawnCD: 10
 --- !u!114 &682590152
 MonoBehaviour:
@@ -24903,7 +24933,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monster: {fileID: 620276120765555011, guid: 3ac09504366b85f4b8485978a9c9c2df, type: 3}
-  count: 5
+  count: 4
   spawnCD: 10
 --- !u!1 &683529458
 GameObject:
@@ -35440,7 +35470,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monster: {fileID: 3336172698178726445, guid: 7deab0464dda2994692f9fddcc9e64c3, type: 3}
-  count: 5
+  count: 4
   spawnCD: 10
 --- !u!114 &968914746
 MonoBehaviour:
@@ -35457,7 +35487,18 @@ MonoBehaviour:
   spawnRange: 3
   endwaveCurrency: 100
   spawner: {fileID: 2070151403}
-  clusters: []
+  clusters:
+  - {fileID: 968914748}
+  - {fileID: 968914748}
+  - {fileID: 968914748}
+  - {fileID: 968914747}
+  - {fileID: 968914748}
+  - {fileID: 968914748}
+  - {fileID: 968914748}
+  - {fileID: 968914747}
+  - {fileID: 968914748}
+  - {fileID: 968914748}
+  - {fileID: 968914748}
 --- !u!114 &968914747
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35471,7 +35512,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monster: {fileID: 620276120765555011, guid: 085328aea6660d64281c1bf7d996c661, type: 3}
-  count: 5
+  count: 4
   spawnCD: 10
 --- !u!114 &968914748
 MonoBehaviour:
@@ -35486,7 +35527,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monster: {fileID: 620276120765555011, guid: 3ac09504366b85f4b8485978a9c9c2df, type: 3}
-  count: 5
+  count: 4
   spawnCD: 10
 --- !u!1001 &969163596
 PrefabInstance:
@@ -37360,7 +37401,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monster: {fileID: 3336172698178726445, guid: 7deab0464dda2994692f9fddcc9e64c3, type: 3}
-  count: 5
+  count: 4
   spawnCD: 10
 --- !u!114 &1002705465
 MonoBehaviour:
@@ -37377,7 +37418,12 @@ MonoBehaviour:
   spawnRange: 3
   endwaveCurrency: 100
   spawner: {fileID: 727840154}
-  clusters: []
+  clusters:
+  - {fileID: 1002705464}
+  - {fileID: 1002705464}
+  - {fileID: 1002705464}
+  - {fileID: 1002705464}
+  - {fileID: 1002705464}
 --- !u!114 &1002705466
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37391,7 +37437,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monster: {fileID: 620276120765555011, guid: 085328aea6660d64281c1bf7d996c661, type: 3}
-  count: 5
+  count: 4
   spawnCD: 10
 --- !u!114 &1002705467
 MonoBehaviour:
@@ -37406,7 +37452,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monster: {fileID: 620276120765555011, guid: 3ac09504366b85f4b8485978a9c9c2df, type: 3}
-  count: 5
+  count: 4
   spawnCD: 10
 --- !u!1001 &1004676472
 PrefabInstance:
@@ -39752,7 +39798,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monster: {fileID: 3336172698178726445, guid: 7deab0464dda2994692f9fddcc9e64c3, type: 3}
-  count: 5
+  count: 4
   spawnCD: 10
 --- !u!114 &1052517222
 MonoBehaviour:
@@ -39769,7 +39815,16 @@ MonoBehaviour:
   spawnRange: 3
   endwaveCurrency: 100
   spawner: {fileID: 727840154}
-  clusters: []
+  clusters:
+  - {fileID: 1052517221}
+  - {fileID: 1052517224}
+  - {fileID: 1052517221}
+  - {fileID: 1052517224}
+  - {fileID: 1052517221}
+  - {fileID: 1052517224}
+  - {fileID: 1052517221}
+  - {fileID: 1052517224}
+  - {fileID: 1052517221}
 --- !u!114 &1052517223
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39783,7 +39838,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monster: {fileID: 620276120765555011, guid: 085328aea6660d64281c1bf7d996c661, type: 3}
-  count: 5
+  count: 4
   spawnCD: 10
 --- !u!114 &1052517224
 MonoBehaviour:
@@ -39798,7 +39853,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monster: {fileID: 620276120765555011, guid: 3ac09504366b85f4b8485978a9c9c2df, type: 3}
-  count: 5
+  count: 4
   spawnCD: 10
 --- !u!1001 &1053405888
 PrefabInstance:
@@ -44045,7 +44100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monster: {fileID: 3336172698178726445, guid: 7deab0464dda2994692f9fddcc9e64c3, type: 3}
-  count: 5
+  count: 4
   spawnCD: 10
 --- !u!114 &1168475986
 MonoBehaviour:
@@ -44062,7 +44117,12 @@ MonoBehaviour:
   spawnRange: 3
   endwaveCurrency: 100
   spawner: {fileID: 517974218}
-  clusters: []
+  clusters:
+  - {fileID: 1168475985}
+  - {fileID: 1168475985}
+  - {fileID: 1168475985}
+  - {fileID: 1168475985}
+  - {fileID: 1168475985}
 --- !u!114 &1168475987
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44076,7 +44136,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monster: {fileID: 620276120765555011, guid: 085328aea6660d64281c1bf7d996c661, type: 3}
-  count: 5
+  count: 4
   spawnCD: 10
 --- !u!114 &1168475988
 MonoBehaviour:
@@ -44091,7 +44151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monster: {fileID: 620276120765555011, guid: 3ac09504366b85f4b8485978a9c9c2df, type: 3}
-  count: 5
+  count: 4
   spawnCD: 10
 --- !u!1001 &1169116956
 PrefabInstance:
@@ -47941,7 +48001,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monster: {fileID: 3336172698178726445, guid: 7deab0464dda2994692f9fddcc9e64c3, type: 3}
-  count: 5
+  count: 4
   spawnCD: 10
 --- !u!114 &1278400788
 MonoBehaviour:
@@ -47958,7 +48018,18 @@ MonoBehaviour:
   spawnRange: 3
   endwaveCurrency: 100
   spawner: {fileID: 727840154}
-  clusters: []
+  clusters:
+  - {fileID: 1278400790}
+  - {fileID: 1278400790}
+  - {fileID: 1278400790}
+  - {fileID: 1278400789}
+  - {fileID: 1278400790}
+  - {fileID: 1278400790}
+  - {fileID: 1278400790}
+  - {fileID: 1278400789}
+  - {fileID: 1278400790}
+  - {fileID: 1278400790}
+  - {fileID: 1278400790}
 --- !u!114 &1278400789
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47972,7 +48043,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monster: {fileID: 620276120765555011, guid: 085328aea6660d64281c1bf7d996c661, type: 3}
-  count: 5
+  count: 4
   spawnCD: 10
 --- !u!114 &1278400790
 MonoBehaviour:
@@ -47987,7 +48058,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monster: {fileID: 620276120765555011, guid: 3ac09504366b85f4b8485978a9c9c2df, type: 3}
-  count: 5
+  count: 4
   spawnCD: 10
 --- !u!1 &1278667069
 GameObject:
@@ -54487,7 +54558,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monster: {fileID: 3336172698178726445, guid: 7deab0464dda2994692f9fddcc9e64c3, type: 3}
-  count: 5
+  count: 4
   spawnCD: 10
 --- !u!114 &1479307974
 MonoBehaviour:
@@ -54504,7 +54575,16 @@ MonoBehaviour:
   spawnRange: 3
   endwaveCurrency: 100
   spawner: {fileID: 517974218}
-  clusters: []
+  clusters:
+  - {fileID: 1479307973}
+  - {fileID: 1479307976}
+  - {fileID: 1479307973}
+  - {fileID: 1479307976}
+  - {fileID: 1479307973}
+  - {fileID: 1479307976}
+  - {fileID: 1479307973}
+  - {fileID: 1479307976}
+  - {fileID: 1479307973}
 --- !u!114 &1479307975
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54518,7 +54598,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monster: {fileID: 620276120765555011, guid: 085328aea6660d64281c1bf7d996c661, type: 3}
-  count: 5
+  count: 4
   spawnCD: 10
 --- !u!114 &1479307976
 MonoBehaviour:
@@ -54533,7 +54613,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monster: {fileID: 620276120765555011, guid: 3ac09504366b85f4b8485978a9c9c2df, type: 3}
-  count: 5
+  count: 4
   spawnCD: 10
 --- !u!1001 &1482667135
 PrefabInstance:
@@ -56621,7 +56701,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monster: {fileID: 3336172698178726445, guid: 7deab0464dda2994692f9fddcc9e64c3, type: 3}
-  count: 5
+  count: 4
   spawnCD: 10
 --- !u!114 &1553060120
 MonoBehaviour:
@@ -56638,7 +56718,18 @@ MonoBehaviour:
   spawnRange: 3
   endwaveCurrency: 100
   spawner: {fileID: 517974218}
-  clusters: []
+  clusters:
+  - {fileID: 1553060119}
+  - {fileID: 1553060119}
+  - {fileID: 1553060122}
+  - {fileID: 1553060121}
+  - {fileID: 1553060122}
+  - {fileID: 1553060119}
+  - {fileID: 1553060122}
+  - {fileID: 1553060121}
+  - {fileID: 1553060122}
+  - {fileID: 1553060119}
+  - {fileID: 1553060119}
 --- !u!114 &1553060121
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56652,7 +56743,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monster: {fileID: 620276120765555011, guid: 085328aea6660d64281c1bf7d996c661, type: 3}
-  count: 5
+  count: 4
   spawnCD: 10
 --- !u!114 &1553060122
 MonoBehaviour:
@@ -56667,7 +56758,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monster: {fileID: 620276120765555011, guid: 3ac09504366b85f4b8485978a9c9c2df, type: 3}
-  count: 5
+  count: 4
   spawnCD: 10
 --- !u!1001 &1554622085
 PrefabInstance:
@@ -56989,7 +57080,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monster: {fileID: 3336172698178726445, guid: 7deab0464dda2994692f9fddcc9e64c3, type: 3}
-  count: 5
+  count: 4
   spawnCD: 10
 --- !u!114 &1563373802
 MonoBehaviour:
@@ -57006,7 +57097,18 @@ MonoBehaviour:
   spawnRange: 3
   endwaveCurrency: 100
   spawner: {fileID: 517974218}
-  clusters: []
+  clusters:
+  - {fileID: 1563373804}
+  - {fileID: 1563373804}
+  - {fileID: 1563373804}
+  - {fileID: 1563373803}
+  - {fileID: 1563373804}
+  - {fileID: 1563373804}
+  - {fileID: 1563373804}
+  - {fileID: 1563373803}
+  - {fileID: 1563373804}
+  - {fileID: 1563373804}
+  - {fileID: 1563373804}
 --- !u!114 &1563373803
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57020,7 +57122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monster: {fileID: 620276120765555011, guid: 085328aea6660d64281c1bf7d996c661, type: 3}
-  count: 5
+  count: 4
   spawnCD: 10
 --- !u!114 &1563373804
 MonoBehaviour:
@@ -57035,7 +57137,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monster: {fileID: 620276120765555011, guid: 3ac09504366b85f4b8485978a9c9c2df, type: 3}
-  count: 5
+  count: 4
   spawnCD: 10
 --- !u!1001 &1564455394
 PrefabInstance:
@@ -61516,7 +61618,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monster: {fileID: 3336172698178726445, guid: 7deab0464dda2994692f9fddcc9e64c3, type: 3}
-  count: 5
+  count: 4
   spawnCD: 10
 --- !u!114 &1678058336
 MonoBehaviour:
@@ -61533,7 +61635,14 @@ MonoBehaviour:
   spawnRange: 3
   endwaveCurrency: 100
   spawner: {fileID: 727840154}
-  clusters: []
+  clusters:
+  - {fileID: 1678058335}
+  - {fileID: 1678058338}
+  - {fileID: 1678058335}
+  - {fileID: 1678058335}
+  - {fileID: 1678058335}
+  - {fileID: 1678058338}
+  - {fileID: 1678058335}
 --- !u!114 &1678058337
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61547,7 +61656,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monster: {fileID: 620276120765555011, guid: 085328aea6660d64281c1bf7d996c661, type: 3}
-  count: 5
+  count: 4
   spawnCD: 10
 --- !u!114 &1678058338
 MonoBehaviour:
@@ -61562,7 +61671,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monster: {fileID: 620276120765555011, guid: 3ac09504366b85f4b8485978a9c9c2df, type: 3}
-  count: 5
+  count: 4
   spawnCD: 10
 --- !u!1001 &1678421721
 PrefabInstance:
@@ -72519,7 +72628,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monster: {fileID: 3336172698178726445, guid: 7deab0464dda2994692f9fddcc9e64c3, type: 3}
-  count: 5
+  count: 4
   spawnCD: 10
 --- !u!114 &2038243295
 MonoBehaviour:
@@ -72536,7 +72645,18 @@ MonoBehaviour:
   spawnRange: 3
   endwaveCurrency: 100
   spawner: {fileID: 727840154}
-  clusters: []
+  clusters:
+  - {fileID: 2038243294}
+  - {fileID: 2038243294}
+  - {fileID: 2038243297}
+  - {fileID: 2038243296}
+  - {fileID: 2038243297}
+  - {fileID: 2038243294}
+  - {fileID: 2038243297}
+  - {fileID: 2038243296}
+  - {fileID: 2038243297}
+  - {fileID: 2038243294}
+  - {fileID: 2038243294}
 --- !u!114 &2038243296
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -72550,7 +72670,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monster: {fileID: 620276120765555011, guid: 085328aea6660d64281c1bf7d996c661, type: 3}
-  count: 5
+  count: 4
   spawnCD: 10
 --- !u!114 &2038243297
 MonoBehaviour:
@@ -72565,7 +72685,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monster: {fileID: 620276120765555011, guid: 3ac09504366b85f4b8485978a9c9c2df, type: 3}
-  count: 5
+  count: 4
   spawnCD: 10
 --- !u!1001 &2038570744
 PrefabInstance:
@@ -72839,7 +72959,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monster: {fileID: 3336172698178726445, guid: 7deab0464dda2994692f9fddcc9e64c3, type: 3}
-  count: 5
+  count: 4
   spawnCD: 10
 --- !u!114 &2046596571
 MonoBehaviour:
@@ -72856,7 +72976,16 @@ MonoBehaviour:
   spawnRange: 3
   endwaveCurrency: 100
   spawner: {fileID: 2070151403}
-  clusters: []
+  clusters:
+  - {fileID: 2046596570}
+  - {fileID: 2046596573}
+  - {fileID: 2046596570}
+  - {fileID: 2046596573}
+  - {fileID: 2046596570}
+  - {fileID: 2046596573}
+  - {fileID: 2046596570}
+  - {fileID: 2046596573}
+  - {fileID: 2046596570}
 --- !u!114 &2046596572
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -72870,7 +72999,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monster: {fileID: 620276120765555011, guid: 085328aea6660d64281c1bf7d996c661, type: 3}
-  count: 5
+  count: 4
   spawnCD: 10
 --- !u!114 &2046596573
 MonoBehaviour:
@@ -72885,7 +73014,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monster: {fileID: 620276120765555011, guid: 3ac09504366b85f4b8485978a9c9c2df, type: 3}
-  count: 5
+  count: 4
   spawnCD: 10
 --- !u!1001 &2047697363
 PrefabInstance:
