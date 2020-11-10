@@ -49,7 +49,11 @@ void Update() {
 	currencyDisplay.text = $"{currency}";
 	Spawner spawner = GameObject.FindGameObjectWithTag("Spawner").GetComponent<Spawner>();
 	if (waveTracker != null) waveTracker.text = $"Wave: {spawner.Wave+1}";
-	if (spawner.Waves.Count <= spawner.Wave && GameObject.FindGameObjectsWithTag("Monster") == null && Game.game.objectives[0] != null) { 
+	
+	//Debug.Log(GameObject.FindGameObjectsWithTag("Monster"));
+	//Debug.Log($"{spawner.Waves.Count} | {spawner.Wave} | { GameObject.FindGameObjectsWithTag("Monster") == null} | {Game.game.objectives[0] != null}");
+
+	if (spawner.Waves.Count <= spawner.Wave && GameObject.FindGameObjectWithTag("Monster") == null && Game.game.objectives[0] != null) { 
 	Game.game.endScreenMessage.text = "Victory";
 	Game.game.endScreen.SetActive(true); 
 	} else if (Game.game.objectives[0] == null) {
