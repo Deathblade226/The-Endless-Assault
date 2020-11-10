@@ -390,8 +390,8 @@ MonoBehaviour:
   visionTrigger: {fileID: 4613415799444573188}
   ignoreLayers:
     serializedVersion: 2
-    m_Bits: 0
-  active: 0
+    m_Bits: 822
+  active: 1
   targets:
   - Monster
 --- !u!114 &-7156534543213693425
