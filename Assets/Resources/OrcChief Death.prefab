@@ -3339,6 +3339,11 @@ MonoBehaviour:
   animator: {fileID: 8617994893825923822}
   model: {fileID: 2957892327401700654}
   particles: {fileID: 3040117256102223863}
+  deathDamage: 5
+  deathDamageRange: 2
+  targetLayers:
+    serializedVersion: 2
+    m_Bits: 1024
 --- !u!114 &823490968781449877
 MonoBehaviour:
   m_ObjectHideFlags: 0

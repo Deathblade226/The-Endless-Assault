@@ -27,7 +27,7 @@ private GameObject currentObject = null;
 private int currentTower = -1;
 private Vector2 mouseInput;
 private float scrollInput;
-private List<String> layers = new List<string>{"7", "9"};
+private List<String> layers = new List<string>{"10"};
 
 public GameObject CurrentObject { get => currentObject; set => currentObject =  value ; }
 
@@ -106,7 +106,7 @@ public void PlaceObject(InputAction.CallbackContext context) {
 [PunRPC]
 public void SettingValues(int id) { 
     GameObject go = PhotonView.Find(id).gameObject;
-    go.layer = LayerMask.NameToLayer("World");
+    go.layer = LayerMask.NameToLayer("Defense");
     VisionSystem vs = go.GetComponent<VisionSystem>();
     if(vs == null) { vs = go.transform.GetComponentInChildren<VisionSystem>(true); }
     vs.Active = true;
@@ -126,7 +126,8 @@ private void DestroyDefense() {
     Defense defense = hitInfo.collider.gameObject.GetComponent<Defense>();
     if (defense == null) defense = hitInfo.collider.gameObject.transform.GetComponentInChildren<Defense>();
     Damagable damagable = hitInfo.collider.gameObject.GetComponent<Damagable>();
-    int value = (damagable.health/damagable.MaxHealth == 1) ? -defense.Cost : -defense.Cost/2;
+    //int value = (damagable.health/damagable.MaxHealth == 1) ? -defense.Cost : -defense.Cost * ;
+    int value = (int)(-defense.Cost * ( damagable.health / damagable.MaxHealth));
     if (defense != null) Game.game.Pv.RPC("ModifyCurrency", RpcTarget.All, value);
     PhotonNetwork.Destroy(hitInfo.collider.gameObject);
     }
