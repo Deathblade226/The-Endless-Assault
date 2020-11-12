@@ -217,7 +217,7 @@ GameObject:
   - component: {fileID: 1383502236491338188}
   - component: {fileID: 3636733897979312411}
   - component: {fileID: 6064959496769016699}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: UndeadKnightMonster
   m_TagString: Monster
   m_Icon: {fileID: 0}

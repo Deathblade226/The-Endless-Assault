@@ -285,9 +285,9 @@ GameObject:
   - component: {fileID: 6534395827305720615}
   - component: {fileID: 5208158146290625829}
   - component: {fileID: 6663344740221724785}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Demo Aura
-  m_TagString: Untagged
+  m_TagString: Defense
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -320,17 +320,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 742c27d66b9e80e40ae8362eb195fd08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: Aura
+  cost: 0
   damage: 1
   damageRange: 4
   damageRate: 1
-  damagable: {fileID: 5208158146290625829}
   pv: {fileID: 6663344740221724785}
+  particle: {fileID: 0}
   layers:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 2048
   ignoredLayers:
     serializedVersion: 2
-    m_Bits: 1846
+    m_Bits: 1847
 --- !u!114 &5208158146290625829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -383,6 +385,7 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   ObservedComponents:
+  - {fileID: 6534395827305720615}
   - {fileID: 5208158146290625829}
   viewIdField: 0
   InstantiationId: 0
@@ -605,7 +608,7 @@ GameObject:
   - component: {fileID: 872050421799330954}
   - component: {fileID: 6554693380116745262}
   - component: {fileID: 8653779316691746189}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}

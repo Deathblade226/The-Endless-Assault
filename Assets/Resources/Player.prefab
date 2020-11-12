@@ -1673,6 +1673,7 @@ MonoBehaviour:
   - {fileID: 6040005500278772246, guid: 1f69d39ac80ed964aa3cc87759aa42f3, type: 3}
   - {fileID: 6040005500278772246, guid: e85957f3f0288ef4b857ef4636178b7e, type: 3}
   - {fileID: 6040005500278772246, guid: 5add09ac482299e418a419092f363a33, type: 3}
+  - {fileID: 5933414892891710484, guid: a02f5e8bdbaea5d46b06e131d6c4887a, type: 3}
   IgnoredLayers:
     serializedVersion: 2
     m_Bits: 1536

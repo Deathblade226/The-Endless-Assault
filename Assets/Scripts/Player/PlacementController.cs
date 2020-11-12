@@ -108,8 +108,8 @@ public void SettingValues(int id) {
     GameObject go = PhotonView.Find(id).gameObject;
     go.layer = LayerMask.NameToLayer("Defense");
     VisionSystem vs = go.GetComponent<VisionSystem>();
-    if(vs == null) { vs = go.transform.GetComponentInChildren<VisionSystem>(true); }
-    vs.Active = true;
+    if (vs == null) vs = go.transform.GetComponentInChildren<VisionSystem>(true);
+    if (vs != null) vs.Active = true;
 }
 
 public void KeyZ(InputAction.CallbackContext context) {

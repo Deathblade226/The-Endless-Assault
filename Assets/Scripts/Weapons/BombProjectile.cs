@@ -9,7 +9,7 @@ public class BombProjectile : Projectile {
 
 private void OnTriggerEnter(Collider other) {
 	if (PhotonNetwork.IsMasterClient) {
-	if (other.tag == "Floor" || other.tag == EnemyTag) { 
+	if (other.tag == "Floor" || other.tag == EnemyTag || other.tag == "World") { 
 	GameObject spawned = PhotonNetwork.InstantiateRoomObject(explosion.name, transform.position, Quaternion.identity);
 	Pv.RPC("RPC_Destroy", RpcTarget.All);
 	}

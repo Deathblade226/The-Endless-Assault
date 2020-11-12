@@ -210,7 +210,7 @@ GameObject:
   - component: {fileID: 372560374702073510}
   - component: {fileID: 4593732150796279489}
   - component: {fileID: 6081968931833017325}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: OrcChiefMonster
   m_TagString: Monster
   m_Icon: {fileID: 0}

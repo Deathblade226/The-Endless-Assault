@@ -1399,7 +1399,7 @@ GameObject:
   - component: {fileID: 1259409080391402732}
   - component: {fileID: 4102826955050597747}
   - component: {fileID: 2601511590666684256}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: UndeadBasicMonster
   m_TagString: Monster
   m_Icon: {fileID: 0}

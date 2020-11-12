@@ -3535,7 +3535,7 @@ GameObject:
   - component: {fileID: 7654982630152222227}
   - component: {fileID: 2724179909582691583}
   - component: {fileID: 6747018903042931669}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: UndeadMageMonster
   m_TagString: Monster
   m_Icon: {fileID: 0}
