@@ -9,6 +9,7 @@ public class MusicController : MonoBehaviour {
 [SerializeField] PhotonView pv = null;
 
 private int spot = 0;
+private bool changed = false;
 
 public int Spot { get => spot; set => spot =  value ; }
 
@@ -18,9 +19,21 @@ private void Update() {
 	
 	spot = (GameObject.FindGameObjectWithTag("Monster") != null) ? 1 : 0;
 
-	if (spot == 1) { musicCollection[0].enabled = false; musicCollection[1].enabled = true; }
-	if (spot == 0) { musicCollection[0].enabled = true; musicCollection[1].enabled = false; }
+	if (spot == 1) { 
+	musicCollection[0].enabled = false; 
+	musicCollection[1].enabled = true; 
+	} else if (spot == 0) { 
+	musicCollection[0].enabled = true; 
+	musicCollection[1].enabled = false; 
+	}
 
+	if (!musicCollection[spot].isPlaying) {
+	musicCollection[spot].volume = 0f;
+	musicCollection[spot].Play();
+	for(float i = 0; i <= PlayerPrefs.GetFloat("MusicLevels") * 0.002f; i += 0.01f) {
+	musicCollection[spot].volume = i;
+	}
+	}
 	musicCollection[Spot].volume = PlayerPrefs.GetFloat("MusicLevels") * 0.002f;
 }
 
