@@ -16,6 +16,7 @@ private float resetTimeCD = 0;
 
 void Start() {
     transform.position = startingPoint.position;
+    agent.ResetPath();
     agent.SetDestination(target.position);
     trail.Clear();
 }
@@ -25,11 +26,13 @@ void Update() {
     if (valid && trail.positionCount == 0) { 
     gameObject.transform.position = startingPoint.position;
     trail.Clear();
+    agent.ResetPath();
     agent.SetDestination(target.position);
     }
 
     if (GameObject.FindGameObjectWithTag("Monster") != null) {
     transform.position = startingPoint.position;
+    agent.ResetPath();
     agent.SetDestination(target.position);
     trail.Clear();
     agent.isStopped = true;

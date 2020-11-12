@@ -12,7 +12,7 @@ NavMeshProjectSettings:
   - name: Jump
     cost: 10
   - name: Blockade
-    cost: 100
+    cost: 10000000
   - name: 
     cost: 1
   - name: 
