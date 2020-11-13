@@ -2884,6 +2884,8 @@ MonoBehaviour:
   - Monster
   continuousAttack: 0
   Type: Weapon
+  BuffDamage: 0
+  BuffDamageCd: 0
 --- !u!114 &6908956607144110112
 MonoBehaviour:
   m_ObjectHideFlags: 0

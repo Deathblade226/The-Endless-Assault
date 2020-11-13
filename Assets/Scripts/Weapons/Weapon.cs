@@ -13,9 +13,12 @@ public abstract class Weapon : MonoBehaviour {
 public PhotonView PV { get => pv; set => pv = value; }
 public AttackNavMP attack { get; set; }
 public string Type = "Weapon";
-public float Damage { get => damage; set => damage = value; }
+public float Damage { get => damage + BuffDamage; set => damage = value; }
 public bool CanAttack { get; set; }
 public List<string> Enemies { get => enemies; set => enemies =  value ; }
 public bool ContinuousAttack { get => continuousAttack; set => continuousAttack =  value ; }
+public float BuffDamage = 0;
+public float BuffDamageCd = 0;
+
 }
 

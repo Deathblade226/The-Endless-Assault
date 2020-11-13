@@ -217,6 +217,7 @@ GameObject:
   - component: {fileID: 1383502236491338188}
   - component: {fileID: 3636733897979312411}
   - component: {fileID: 6064959496769016699}
+  - component: {fileID: 1844261707001097955}
   m_Layer: 11
   m_Name: UndeadBossKnightMonster
   m_TagString: Monster
@@ -534,7 +535,7 @@ MonoBehaviour:
   m_regenCd: 0
   m_constantRegen: 0
   m_hideObject: {fileID: 0}
-  m_deathSpawn: {fileID: 6175823771943761405, guid: a75781d4c1de5e2449c37614da25abc1,
+  m_deathSpawn: {fileID: 6175823771943761405, guid: 981d7afb3c2a04e4dbbd0ddbe2a268b4,
     type: 3}
   m_healthBar: {fileID: 9152286644261776863}
   m_healthText: {fileID: 1458802209129128795}
@@ -560,6 +561,23 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &1844261707001097955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 620276120765555011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ac0facbc386f9543a3ad403cc0b2d02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buffAmount: 10
+  buffRange: 5
+  layers:
+    serializedVersion: 2
+    m_Bits: 2048
 --- !u!1 &727144185215664406
 GameObject:
   m_ObjectHideFlags: 0
@@ -4913,6 +4931,8 @@ MonoBehaviour:
   - Defense
   continuousAttack: 0
   Type: Weapon
+  BuffDamage: 0
+  BuffDamageCd: 0
 --- !u!114 &4076855717836736748
 MonoBehaviour:
   m_ObjectHideFlags: 0
