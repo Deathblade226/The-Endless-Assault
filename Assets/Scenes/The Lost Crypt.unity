@@ -34849,6 +34849,8 @@ GameObject:
   - component: {fileID: 968914745}
   - component: {fileID: 968914748}
   - component: {fileID: 968914747}
+  - component: {fileID: 968914750}
+  - component: {fileID: 968914749}
   m_Layer: 0
   m_Name: Wave 5
   m_TagString: Untagged
@@ -34912,6 +34914,9 @@ MonoBehaviour:
   - {fileID: 968914748}
   - {fileID: 968914748}
   - {fileID: 968914748}
+  - {fileID: 968914750}
+  - {fileID: 968914749}
+  - {fileID: 968914750}
 --- !u!114 &968914747
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34942,6 +34947,36 @@ MonoBehaviour:
   monster: {fileID: 620276120765555011, guid: 3ac09504366b85f4b8485978a9c9c2df, type: 3}
   count: 4
   spawnCD: 10
+--- !u!114 &968914749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 968914743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a2d31d6bfc11b345b0e50dbdb20d73a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  monster: {fileID: 620276120765555011, guid: 6b33a2523036cee4583cf1a1dfa70b83, type: 3}
+  count: 1
+  spawnCD: 0
+--- !u!114 &968914750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 968914743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a2d31d6bfc11b345b0e50dbdb20d73a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  monster: {fileID: 620276120765555011, guid: 085328aea6660d64281c1bf7d996c661, type: 3}
+  count: 2
+  spawnCD: 0
 --- !u!1001 &969163596
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -36765,7 +36800,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1002705462
 GameObject:
@@ -38756,7 +38791,7 @@ PrefabInstance:
     - target: {fileID: 7318895222227802224, guid: 46658c9d1dc6e9d439c6604732e6b44f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7318895222227802224, guid: 46658c9d1dc6e9d439c6604732e6b44f,
         type: 3}
@@ -47158,6 +47193,8 @@ GameObject:
   - component: {fileID: 1278400787}
   - component: {fileID: 1278400790}
   - component: {fileID: 1278400789}
+  - component: {fileID: 1278400792}
+  - component: {fileID: 1278400791}
   m_Layer: 0
   m_Name: Wave 5
   m_TagString: Untagged
@@ -47221,6 +47258,9 @@ MonoBehaviour:
   - {fileID: 1278400790}
   - {fileID: 1278400790}
   - {fileID: 1278400790}
+  - {fileID: 1278400792}
+  - {fileID: 1278400791}
+  - {fileID: 1278400792}
 --- !u!114 &1278400789
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47251,6 +47291,36 @@ MonoBehaviour:
   monster: {fileID: 620276120765555011, guid: 3ac09504366b85f4b8485978a9c9c2df, type: 3}
   count: 4
   spawnCD: 10
+--- !u!114 &1278400791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1278400785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a2d31d6bfc11b345b0e50dbdb20d73a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  monster: {fileID: 620276120765555011, guid: 6b33a2523036cee4583cf1a1dfa70b83, type: 3}
+  count: 1
+  spawnCD: 0
+--- !u!114 &1278400792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1278400785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a2d31d6bfc11b345b0e50dbdb20d73a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  monster: {fileID: 620276120765555011, guid: 085328aea6660d64281c1bf7d996c661, type: 3}
+  count: 2
+  spawnCD: 0
 --- !u!1001 &1281394722
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -55922,6 +55992,8 @@ GameObject:
   - component: {fileID: 1563373801}
   - component: {fileID: 1563373804}
   - component: {fileID: 1563373803}
+  - component: {fileID: 1563373806}
+  - component: {fileID: 1563373805}
   m_Layer: 0
   m_Name: Wave 5
   m_TagString: Untagged
@@ -55985,6 +56057,9 @@ MonoBehaviour:
   - {fileID: 1563373804}
   - {fileID: 1563373804}
   - {fileID: 1563373804}
+  - {fileID: 1563373806}
+  - {fileID: 1563373805}
+  - {fileID: 1563373806}
 --- !u!114 &1563373803
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56015,6 +56090,36 @@ MonoBehaviour:
   monster: {fileID: 620276120765555011, guid: 3ac09504366b85f4b8485978a9c9c2df, type: 3}
   count: 4
   spawnCD: 10
+--- !u!114 &1563373805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1563373799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a2d31d6bfc11b345b0e50dbdb20d73a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  monster: {fileID: 620276120765555011, guid: 6b33a2523036cee4583cf1a1dfa70b83, type: 3}
+  count: 1
+  spawnCD: 0
+--- !u!114 &1563373806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1563373799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a2d31d6bfc11b345b0e50dbdb20d73a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  monster: {fileID: 620276120765555011, guid: 085328aea6660d64281c1bf7d996c661, type: 3}
+  count: 2
+  spawnCD: 0
 --- !u!1001 &1564455394
 PrefabInstance:
   m_ObjectHideFlags: 0
