@@ -5495,7 +5495,7 @@ MonoBehaviour:
   visionTrigger: {fileID: 7220032701506101106}
   ignoreLayers:
     serializedVersion: 2
-    m_Bits: 823
+    m_Bits: 2871
   active: 1
   targets:
   - Player

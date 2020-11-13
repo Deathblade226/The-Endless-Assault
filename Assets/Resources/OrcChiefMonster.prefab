@@ -3615,6 +3615,8 @@ MonoBehaviour:
   - Defense
   continuousAttack: 0
   Type: Weapon
+  BuffDamage: 0
+  BuffDamageCd: 0
 --- !u!114 &8644891617590022026
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4036,7 +4038,7 @@ MonoBehaviour:
   visionTrigger: {fileID: 1051496095864803853}
   ignoreLayers:
     serializedVersion: 2
-    m_Bits: 823
+    m_Bits: 2871
   active: 1
   targets:
   - Player
