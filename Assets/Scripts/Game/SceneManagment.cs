@@ -51,7 +51,7 @@ public void LeaveRoom(bool quitGame = false) {
     if (quitGame) { ExitGame(); } else { PhotonNetwork.LoadLevel(0); }
 }
 public void CloseEndWindow() {     
-    if (pv != null) { if (!pv.IsMine) return; }
+    if (pv != null) { if (!pv.IsMine) { return; } }
     Endscreen.SetActive(false);
 }
 
