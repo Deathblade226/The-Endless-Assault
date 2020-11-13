@@ -219,7 +219,7 @@ GameObject:
   - component: {fileID: -7156534543213693425}
   m_Layer: 2
   m_Name: Wooden Blockade
-  m_TagString: Defense
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -9,7 +9,7 @@ private void Update() {
 	
 	if (target != null) {
 	tag = "Defense";
-	} else { tag = "Untagged"; }
+	} else { tag = "Obstacle"; }
 
 }
 

@@ -5032,7 +5032,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackCD: 5
-  attackRange: 8
+  attackRange: 4.5
   nc: {fileID: 5407821617469083735}
   weapon: {fileID: 5521803290751163961}
 --- !u!114 &3175581283910282184
