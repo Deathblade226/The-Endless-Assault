@@ -905,6 +905,8 @@ MonoBehaviour:
   - Defense
   continuousAttack: 0
   Type: Weapon
+  BuffDamage: 0
+  BuffDamageCd: 0
 --- !u!114 &3021593097439756354
 MonoBehaviour:
   m_ObjectHideFlags: 0

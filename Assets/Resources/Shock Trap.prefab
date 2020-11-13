@@ -581,7 +581,7 @@ MonoBehaviour:
   type: Trap
   cost: 30
   cooldown: 2
-  damage: 10
+  damage: 40
   damageRange: 4
   layers:
     serializedVersion: 2
