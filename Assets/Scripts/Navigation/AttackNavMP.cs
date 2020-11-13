@@ -51,17 +51,17 @@ private void Update() {
 
 	attacking = (vs.Distance <= attackRange && AttackTime <= 0);
 
-	if (this.attacking) {
-	this.Nc.Agent.isStopped = true; 
-	this.transform.LookAt(target.transform);
-	this.AttackTime = attackCD; 
+	if (attacking) {
+	Nc.Agent.isStopped = true; 
+	transform.LookAt(target.transform);
+	AttackTime = attackCD; 
 
 	if (weapon != null) { weapon.CanAttack = true; }
 	if (this.Nc.Animator != null) this.Nc.Animator.SetTrigger("Attack");  
 	if (weapon.gameObject.GetComponent<HealWeapon>() != null) { ((HealWeapon)weapon).Heal(); }
 
-	} else if (vs.Distance <= this.attackRange) { 
-	this.Nc.Agent.isStopped = true; 
+	} else if (vs.Distance <= attackRange) { 
+	Nc.Agent.isStopped = true; 
 	
 	} else { 
 	

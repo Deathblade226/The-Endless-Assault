@@ -47,7 +47,7 @@ private void OnTriggerExit(Collider other) {
 }
 private void TargetCheck(Collider other) {
     if (targets.Contains(other.tag) && Active) {
-    if (seenTarget == null) seenTarget = other.gameObject;
+    if (seenTarget == null) { seenTarget = other.gameObject; return; }
     bool valid = true;
     Vector3 targetDir = other.transform.position - transform.position;
     float angleDif = Vector3.Angle(targetDir, transform.forward);

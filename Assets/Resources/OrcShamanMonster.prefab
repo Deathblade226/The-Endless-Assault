@@ -5031,8 +5031,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a101db767043f8d449e41867bc1da8db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackCD: 4
-  attackRange: 4
+  attackCD: 5
+  attackRange: 8
   nc: {fileID: 5407821617469083735}
   weapon: {fileID: 5521803290751163961}
 --- !u!114 &3175581283910282184
@@ -5634,7 +5634,7 @@ MonoBehaviour:
   BuffDamage: 0
   BuffDamageCd: 0
   animationWait: 0.2
-  healAmount: 50
+  healAmount: 20
   healRange: 4
   layers:
     serializedVersion: 2
