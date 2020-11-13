@@ -5030,7 +5030,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackCD: 3
-  attackRange: 1.5
+  attackRange: 4
   nc: {fileID: 5407821617469083735}
   weapon: {fileID: 5521803290751163961}
 --- !u!114 &3175581283910282184
@@ -5624,13 +5624,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764156135118b4f44a446467af814208, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pv: {fileID: 0}
+  pv: {fileID: 6109659831402352164}
   damage: 0
   enemies: []
   continuousAttack: 0
-  Type: Weapon
+  Type: Staff
   BuffDamage: 0
   BuffDamageCd: 0
+  animationWait: 0
+  healAmount: 50
+  healRange: 4
+  layers:
+    serializedVersion: 2
+    m_Bits: 2048
+  healPoint: {fileID: 8459082606192134682}
+--- !u!114 &6109659831402352164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8899404229357791190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  observableSearch: 2
+  Synchronization: 3
+  OwnershipTransfer: 0
+  ObservedComponents: []
+  viewIdField: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &8954452122837255805
 GameObject:
   m_ObjectHideFlags: 0

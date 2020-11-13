@@ -104,7 +104,10 @@ public void ApplyDamage(float damageAmount) {
 	if (damageCd <= 0) {
 	damageCd = m_damageCd;
 	regenCd = m_regenCd;
-	if (PhotonNetwork.IsMasterClient) health -= (damageAmount - (damageAmount*DamageReduction));
+	if (PhotonNetwork.IsMasterClient) {
+	health -= (damageAmount - (damageAmount*DamageReduction));
+	if (health > maxHealth) health = maxHealth;
+	}
 	if (!destroyed && health <= 0 && m_killOnDeath) {
 	//Game.game.Currency += score;
 	if (m_deathSpawn != null) {
