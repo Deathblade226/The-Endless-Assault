@@ -20634,7 +20634,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pv: {fileID: 1436503369}
-  currency: 300
+  currency: 1500
   currencyDisplay: {fileID: 1777217449}
   statTracker: {fileID: 0}
   endScreen: {fileID: 934064112}
@@ -23598,7 +23598,7 @@ PrefabInstance:
     - target: {fileID: 4178761956323907159, guid: 9f05bd4b54d11ef488e178f70d81ca1b,
         type: 3}
       propertyPath: m_regenAmount
-      value: 0.2
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4935854663048609258, guid: 9f05bd4b54d11ef488e178f70d81ca1b,
         type: 3}
