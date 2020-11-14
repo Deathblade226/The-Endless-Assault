@@ -42,7 +42,6 @@ public class Damagable : MonoBehaviourPun, IPunObservable {
 [SerializeField] Color five;
 [SerializeField] Color twoFive;
 
-
 private float maxHealth;
 private float damageCd;
 private float regenCd;
@@ -93,7 +92,7 @@ private void Update() {
 	//This will start the regen when both cds are 0
 	//Resets the regen cd if hit
 	if (damageCd <= 0 && regenCd > 0) { regenCd -= Time.deltaTime; }
-	else if (m_constantRegen || ( damageCd <= 0 && regenCd <= 0 )) { //PV.RPC("RegenHealth", RpcTarget.All); 
+	else if (m_constantRegen || ( damageCd <= 0 && regenCd <= 0 )) { PV.RPC("RegenHealth", RpcTarget.All); 
 	}
 	else { regenCd = m_regenCd; }
 }
@@ -133,7 +132,7 @@ public void RegenHealth() {
 	//Debug.Log(regenCap);
 	if (health + m_regenAmount <= regenCap) { health += m_regenAmount; }
 	else if (health + m_regenAmount > regenCap && health < regenCap) { health = regenCap; }
-	m_healthText.SetText($"{health}/{maxHealth}");
+	//m_healthText.SetText($"{health}/{maxHealth}");
 }
 
 public void RunRPCMethod(float damage) { 
