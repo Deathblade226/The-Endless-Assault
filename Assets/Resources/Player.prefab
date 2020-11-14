@@ -3894,6 +3894,7 @@ MonoBehaviour:
   m_damageReduction: 0.1
   m_damageCd: 0
   m_killOnDeath: 0
+  canRegen: 1
   m_regenCap: 1
   m_regenAmount: 1
   m_regenCd: 5

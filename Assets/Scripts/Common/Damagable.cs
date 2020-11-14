@@ -17,6 +17,7 @@ public class Damagable : MonoBehaviourPun, IPunObservable {
 [SerializeField] bool m_killOnDeath = false;
 
 [Header("Regeneration")]
+[SerializeField] bool canRegen = false;
 [SerializeField] [Range(0,1)]float m_regenCap = 1;
 [SerializeField] float m_regenAmount = 0;
 [SerializeField] float m_regenCd = 0;
@@ -54,8 +55,12 @@ public float DamageReduction { get => m_damageReduction; set => m_damageReductio
 void IPunObservable.OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info) { 
 	if(stream.IsWriting) {
 	stream.SendNext(this.health);
+	stream.SendNext(this.damageCd);
+	stream.SendNext(this.regenCd);
 	} else {
 	this.health = (float) stream.ReceiveNext();
+	this.damageCd= (float) stream.ReceiveNext();
+	this.regenCd = (float) stream.ReceiveNext();
 	}
 }
 
@@ -91,10 +96,12 @@ private void Update() {
 	//Redices the regen cd when the target hasnt taken damage in a bit
 	//This will start the regen when both cds are 0
 	//Resets the regen cd if hit
+	if (canRegen) { 
 	if (damageCd <= 0 && regenCd > 0) { regenCd -= Time.deltaTime; }
 	else if (m_constantRegen || ( damageCd <= 0 && regenCd <= 0 )) { PV.RPC("RegenHealth", RpcTarget.All); 
 	}
 	else { regenCd = m_regenCd; }
+	}
 }
 
 [PunRPC]

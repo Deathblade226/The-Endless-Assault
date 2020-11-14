@@ -3337,7 +3337,7 @@ MonoBehaviour:
   pv: {fileID: 823490968781449877}
   waitTime: 2
   animator: {fileID: 8617994893825923822}
-  model: {fileID: 2957892327401700654}
+  model: {fileID: 5137266883032440853}
   particles: {fileID: 3040117256102223863}
   deathDamage: 5
   deathDamageRange: 2

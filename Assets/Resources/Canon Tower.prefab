@@ -813,6 +813,7 @@ MonoBehaviour:
   m_damageReduction: 0
   m_damageCd: 0
   m_killOnDeath: 1
+  canRegen: 0
   m_regenCap: 1
   m_regenAmount: 0
   m_regenCd: 0

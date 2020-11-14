@@ -363,7 +363,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.1
-  m_Speed: 1
+  m_Speed: 2
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -534,8 +534,9 @@ MonoBehaviour:
   m_damageReduction: 0
   m_damageCd: 0
   m_killOnDeath: 1
+  canRegen: 1
   m_regenCap: 1
-  m_regenAmount: 0.2
+  m_regenAmount: 5
   m_regenCd: 0
   m_constantRegen: 1
   m_hideObject: {fileID: 0}
