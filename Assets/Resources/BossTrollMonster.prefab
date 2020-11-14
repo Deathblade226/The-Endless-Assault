@@ -871,6 +871,20 @@ Transform:
   m_Father: {fileID: 4682299850552430827}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: -71.153, y: 72.482, z: -119.161}
+--- !u!64 &1638700652232187689
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8632011530690461867}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 8c165d25ac4df514aa07a93e06b4da2c, type: 3}
 --- !u!65 &6619501121469085773
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -897,7 +911,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pv: {fileID: 8571231325650651518}
-  damage: 20
+  damage: 50
   enemies:
   - Player
   - Defense
@@ -1384,6 +1398,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2250a4a4fc528684c85ba955eb992ec6, type: 3}
+--- !u!1 &4679188879325800127 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1473157611212552, guid: 2250a4a4fc528684c85ba955eb992ec6,
+    type: 3}
+  m_PrefabInstance: {fileID: 4677809181815826871}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4682299850552430827 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4561106240256348, guid: 2250a4a4fc528684c85ba955eb992ec6,
@@ -1399,12 +1419,6 @@ Animator:
 --- !u!4 &4676253518128475045 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4373196678005266, guid: 2250a4a4fc528684c85ba955eb992ec6,
-    type: 3}
-  m_PrefabInstance: {fileID: 4677809181815826871}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &4679188879325800127 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1473157611212552, guid: 2250a4a4fc528684c85ba955eb992ec6,
     type: 3}
   m_PrefabInstance: {fileID: 4677809181815826871}
   m_PrefabAsset: {fileID: 0}
