@@ -59,7 +59,7 @@ private void Update() {
     //print(sceneName);
 }
 
-void OnGUI() { if (GUIActive) GUI.Window(0, new Rect(Screen.width / 2 + 60, Screen.height / 2 - 170, 255, 340), LobbyWindow, "Games");    }    
+void OnGUI() { if (GUIActive) GUI.Window(0, new Rect(Screen.width / 2 + 60, Screen.height / 2 - 170, 255, 170), LobbyWindow, "Games");    }    
 
 void LobbyWindow(int index) { 
     roomListScroll = GUILayout.BeginScrollView(roomListScroll, false, true);

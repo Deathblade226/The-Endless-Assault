@@ -18,6 +18,10 @@ public class MenuSystem : MonoBehaviour {
 [Header("Lobby")]
 [SerializeField] GameLobby lobbyObject = null;
 
+[Header("Map Display")]
+[SerializeField] Dropdown dropdown = null;
+[SerializeField] List<GameObject> mapImages;
+
 
 public void Start() {
 	if (!PlayerPrefs.HasKey("MusicLevels")) { PlayerPrefs.SetFloat("MusicLevels", 100); }
@@ -25,6 +29,11 @@ public void Start() {
 	
 	if (!PlayerPrefs.HasKey("SFXLevels")) { PlayerPrefs.SetFloat("SFXLevels", 100); }
 	else { sfx.value = PlayerPrefs.GetFloat("SFXLevels"); }
+}
+
+public void Update() {
+	mapImages.ForEach(g => g.SetActive(false));
+	mapImages[dropdown.value].SetActive(true);
 }
 
 public void ShowTitle() {
