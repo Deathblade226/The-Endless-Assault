@@ -59,7 +59,9 @@ private void Update() {
 
 	if (weapon != null) { weapon.CanAttack = true; }
 	if (this.Nc.Animator != null) this.Nc.Animator.SetTrigger("Attack");  
+
 	if (weapon.gameObject.GetComponent<HealWeapon>() != null) { ((HealWeapon)weapon).Heal(); }
+	else if (weapon.gameObject.GetComponent<SelfDestruct>() != null) { ((SelfDestruct)weapon).Explode(); }
 
 	} else if (vs.Distance <= attackRange) { 
 	Nc.Agent.isStopped = true; 
