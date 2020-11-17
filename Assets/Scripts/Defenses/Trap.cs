@@ -15,6 +15,10 @@ public class Trap : Defense, IPunObservable {
 
 private float resetCd = 0;
 
+public void Start() {
+	particle.Stop();		
+}
+
 void IPunObservable.OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info) { 
 	if(stream.IsWriting) {
 	stream.SendNext(this.resetCd);
