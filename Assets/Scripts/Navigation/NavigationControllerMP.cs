@@ -68,7 +68,6 @@ private void Update() {
     attackNav.StopAttacking();
     wanderNav.StartWander();
     }
-
     if (Animator != null) Animator.SetFloat("Speed", Agent.velocity.magnitude);
 }
 
