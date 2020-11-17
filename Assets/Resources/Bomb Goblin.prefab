@@ -592,7 +592,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pv: {fileID: 6659027563934651336}
-  damage: 50
+  damage: 100
   enemies:
   - Player
   - Defense
