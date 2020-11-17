@@ -29427,6 +29427,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bomb Goblin
       objectReference: {fileID: 0}
+    - target: {fileID: 6659027563934651329, guid: 96db7a2a1889d5b408a3f8950376d1a9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6659027563934651331, guid: 96db7a2a1889d5b408a3f8950376d1a9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -29486,6 +29491,16 @@ PrefabInstance:
         type: 3}
       propertyPath: viewIdField
       value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 7339685715076144786, guid: 96db7a2a1889d5b408a3f8950376d1a9,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7339685715076144786, guid: 96db7a2a1889d5b408a3f8950376d1a9,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96db7a2a1889d5b408a3f8950376d1a9, type: 3}
