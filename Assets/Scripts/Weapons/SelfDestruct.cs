@@ -19,13 +19,15 @@ public void Update() {
 
 public void Explode() { 
 	Collider[] colliders = Physics.OverlapSphere(transform.position, range, layers);
-	if (colliders.Length < 0) { 
-	foreach(Collider collider in colliders) { 
-	collider.GetComponent<PhotonView>().RPC("ApplyDamage", RpcTarget.All, Damage);
-	}
+	Debug.Log(colliders[0]);
+	if (colliders.Length > 0) { 
 	GetComponent<NavigationControllerMP>().Agent.isStopped = true;
 	particles.SetActive(true);
 	particles.GetComponent<ParticleSystem>().Play();
+	foreach(Collider collider in colliders) { 
+	collider.GetComponent<PhotonView>().RPC("ApplyDamage", RpcTarget.All, Damage);
+	}
+	model.SetActive(false);
 	}
 }
 

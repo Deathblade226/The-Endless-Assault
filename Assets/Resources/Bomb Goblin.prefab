@@ -240,7 +240,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6659027563934651331
 Transform:
   m_ObjectHideFlags: 0
@@ -266,7 +266,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6659027563934651329}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.2
   m_Height: 1.4
@@ -417,7 +417,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackCD: 10
-  attackRange: 1
+  attackRange: 2
   nc: {fileID: 6659027563934651337}
   weapon: {fileID: 4655337041488217693}
 --- !u!114 &6659027563934651339
@@ -1019,12 +1019,12 @@ PrefabInstance:
     - target: {fileID: 4157476720829886716, guid: c41a6e3f323189a48861f98702366616,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4157476720829886716, guid: c41a6e3f323189a48861f98702366616,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6313386396988411012, guid: c41a6e3f323189a48861f98702366616,
         type: 3}

@@ -47,6 +47,7 @@ private IEnumerator Start() {
 }
 
 private void Update() {
+    if (transform.GetComponentInChildren<VisionSystem>() == null) return;
     GameObject target = transform.GetComponentInChildren<VisionSystem>().SeenTarget;
     //Debug.Log(target);
     if (target != null) { 

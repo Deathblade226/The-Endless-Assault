@@ -44,6 +44,7 @@ private void Update() {
 
 	//if (this.altT != null) { this.Target = this.altT.tag; this.Active = true; }
 	//else { StopAttacking(); this.Nc.Agent.isStopped = false; }
+	if (transform.GetComponentInChildren<VisionSystem>() == null) return;
 	VisionSystem vs = transform.GetComponentInChildren<VisionSystem>();
 	GameObject target = (vs.SeenTarget != null && nc.Agent.CalculatePath(vs.SeenTarget.transform.position, new UnityEngine.AI.NavMeshPath())) ? vs.SeenTarget : null;
 
