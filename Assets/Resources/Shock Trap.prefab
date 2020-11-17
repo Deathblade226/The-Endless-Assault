@@ -647,6 +647,7 @@ MonoBehaviour:
   m_damageReduction: 0
   m_damageCd: 0
   m_killOnDeath: 1
+  canRegen: 0
   m_regenCap: 1
   m_regenAmount: 0
   m_regenCd: 0
@@ -849,6 +850,10 @@ PrefabInstance:
     - target: {fileID: 100008, guid: 1ca16f2a31fb6a548ad8954bed1d321f, type: 3}
       propertyPath: m_Layer
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 100008, guid: 1ca16f2a31fb6a548ad8954bed1d321f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: 1ca16f2a31fb6a548ad8954bed1d321f, type: 3}
       propertyPath: m_LocalPosition.x
