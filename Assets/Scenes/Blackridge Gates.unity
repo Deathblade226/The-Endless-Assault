@@ -14538,6 +14538,11 @@ PrefabInstance:
       propertyPath: viewIdField
       value: 17
       objectReference: {fileID: 0}
+    - target: {fileID: 6659027563934651340, guid: 96db7a2a1889d5b408a3f8950376d1a9,
+        type: 3}
+      propertyPath: attackRange
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7339685715076144786, guid: 96db7a2a1889d5b408a3f8950376d1a9,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -20728,7 +20733,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pv: {fileID: 1436503369}
-  currency: 1500
+  currency: 300
   currencyDisplay: {fileID: 1777217449}
   statTracker: {fileID: 0}
   endScreen: {fileID: 934064112}

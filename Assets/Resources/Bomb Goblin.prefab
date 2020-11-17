@@ -419,7 +419,7 @@ MonoBehaviour:
   attackCD: 10
   attackRange: 1
   nc: {fileID: 6659027563934651337}
-  weapon: {fileID: 0}
+  weapon: {fileID: 4655337041488217693}
 --- !u!114 &6659027563934651339
 MonoBehaviour:
   m_ObjectHideFlags: 0
