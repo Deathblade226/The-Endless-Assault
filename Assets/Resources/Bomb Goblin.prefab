@@ -558,7 +558,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PV: {fileID: 6659027563934651336}
   m_health: 75
-  m_damageReduction: -0.1
+  m_damageReduction: -0.2
   m_damageCd: 0
   m_killOnDeath: 1
   canRegen: 0
