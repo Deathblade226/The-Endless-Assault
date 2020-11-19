@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Spawner : MonoBehaviourPun, IPunObservable {
 
@@ -32,7 +33,8 @@ private void Update() {
 }
 
 [PunRPC] 
-public void StartWave() { 
+public void StartWave() {
+	GameObject.FindGameObjectsWithTag("NavMesh")[0].GetComponent<NavMeshSurface>().BuildNavMesh();
 	spawning = (GameObject.FindGameObjectWithTag("Monster") != null || Waves[Wave].gameObject.activeSelf);
 	if (Wave < Waves.Count && !spawning) { Waves[Wave].gameObject.SetActive(true); }
 }
