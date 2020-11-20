@@ -5035,6 +5035,7 @@ MonoBehaviour:
   attackRange: 4.5
   nc: {fileID: 5407821617469083735}
   weapon: {fileID: 5521803290751163961}
+  altWeapon: {fileID: 6608300971633716138}
 --- !u!114 &3175581283910282184
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5176,6 +5177,7 @@ MonoBehaviour:
   m_damageReduction: 0
   m_damageCd: 0
   m_killOnDeath: 1
+  canRegen: 0
   m_regenCap: 1
   m_regenAmount: 0
   m_regenCd: 0
@@ -5663,6 +5665,27 @@ MonoBehaviour:
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
+--- !u!114 &6608300971633716138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8899404229357791190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2be0c5067b335db48a1bd2a1eea67c76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pv: {fileID: 8351911487519311560}
+  damage: 2
+  enemies:
+  - Defense
+  - Player
+  continuousAttack: 0
+  Type: Weapon
+  BuffDamage: 0
+  BuffDamageCd: 0
 --- !u!1 &8954452122837255805
 GameObject:
   m_ObjectHideFlags: 0

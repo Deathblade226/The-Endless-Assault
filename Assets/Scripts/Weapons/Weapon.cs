@@ -20,5 +20,7 @@ public string Type = "Weapon";
 [HideInInspector] public float BuffDamage = 0;
 [HideInInspector] public float BuffDamageCd = 0;
 
+public virtual void Attack() { }
+
 }
 

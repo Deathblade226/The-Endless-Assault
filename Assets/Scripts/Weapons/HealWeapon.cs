@@ -12,6 +12,8 @@ public class HealWeapon : Weapon {
 [SerializeField] Transform healPoint;
 [SerializeField] GameObject particle;
 
+public bool canHeal { get => (Physics.OverlapSphere(healPoint.position, healRange, layers).Length > 1); }
+
 private bool healed = true;
 private float healCD = 0;
 

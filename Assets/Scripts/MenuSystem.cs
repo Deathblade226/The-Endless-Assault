@@ -33,7 +33,7 @@ public void Start() {
 
 public void Update() {
 	mapImages.ForEach(g => g.SetActive(false));
-	mapImages[dropdown.value].SetActive(true);
+	if (mapImages.Count > dropdown.value) mapImages[dropdown.value].SetActive(true);
 }
 
 public void ShowTitle() {

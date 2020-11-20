@@ -9,11 +9,15 @@ public class AttackNavMP : MonoBehaviourPun, IPunObservable {
 [SerializeField] float attackRange = 2.0f;
 [SerializeField] NavigationControllerMP nc = null;
 [SerializeField] Weapon weapon = null;
+[SerializeField] Weapon altWeapon = null;
 //[SerializeField] bool lookForAltTarget = true;
 
 public bool Active { get; set; } = false;
 public NavigationControllerMP Nc { get => nc; set => nc = value; }
 public bool Attacking { get => attacking; }
+
+private bool useAltRange = false;
+private float altRange = 1.5f;
 
 private float AttackTime = 0;
 private bool attacking = false;
@@ -51,7 +55,9 @@ private void Update() {
 	//Debug.Log(AttackTime);
 	if (target != null && Active) { 
 
-	attacking = (vs.Distance <= attackRange && AttackTime <= 0);
+	float range = (useAltRange) ? altRange : attackRange;
+
+	attacking = (vs.Distance <= range && AttackTime <= 0);
 
 	if (attacking) {
 	Nc.Agent.isStopped = true; 
@@ -61,8 +67,12 @@ private void Update() {
 	if (weapon != null) { weapon.CanAttack = true; }
 	if (this.Nc.Animator != null) this.Nc.Animator.SetTrigger("Attack");  
 
-	if (weapon.gameObject.GetComponent<HealWeapon>() != null) { ((HealWeapon)weapon).Heal(); }
-	else if (weapon.gameObject.GetComponent<SelfDestruct>() != null) { ((SelfDestruct)weapon).Explode(); }
+	if (weapon.gameObject.GetComponent<HealWeapon>() != null) { 
+	HealWeapon healWeapon = weapon.gameObject.GetComponent<HealWeapon>();
+	if (healWeapon.canHeal) { useAltRange = false; healWeapon.Heal(); }
+	else { useAltRange = true; }	
+
+	} else if (weapon.gameObject.GetComponent<SelfDestruct>() != null) { ((SelfDestruct)weapon).Explode(); }
 
 	} else if (vs.Distance <= attackRange) { 
 	Nc.Agent.isStopped = true; 
