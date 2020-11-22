@@ -822,13 +822,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2135243856411448827}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 1.437, z: 0.773}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 9164312130522971425}
   m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!1 &2358308170107014118
 GameObject:
   m_ObjectHideFlags: 0
@@ -1329,7 +1329,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pv: {fileID: 2087074386294416611}
-  damage: 1
+  damage: 10
   enemies:
   - Monster
   continuousAttack: 0
@@ -1338,7 +1338,9 @@ MonoBehaviour:
   BuffDamageCd: 0
   projectile: {fileID: 1384266958994512122, guid: 9e4476ec0075526428253f46c0bf4654,
     type: 3}
-  waitTime: 1
+  spawnpoint: {fileID: 5538367113046095127}
+  waitTime: 0.7
+  shotSpeed: 30
 --- !u!1 &3281426894308896507
 GameObject:
   m_ObjectHideFlags: 0

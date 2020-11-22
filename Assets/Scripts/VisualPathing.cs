@@ -22,7 +22,7 @@ void Start() {
 }
 
 void Update() {
-    bool valid = ( transform.position.z == target.position.z && transform.position.x == target.position.x );
+    bool valid = ((target.transform.position - transform.position).magnitude < 1);
     if (valid && trail.positionCount == 0) { 
     gameObject.transform.position = startingPoint.position;
     trail.Clear();
