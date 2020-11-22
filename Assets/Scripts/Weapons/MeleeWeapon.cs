@@ -17,4 +17,6 @@ private void OnTriggerEnter(Collider other) {
 	}	
 }
 
+public override void Attack() { CanAttack = true; }
+
 }

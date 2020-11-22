@@ -10,6 +10,9 @@ public class Damagable : MonoBehaviourPun, IPunObservable {
 [Header("Photon")]
 [SerializeField] PhotonView PV = null;
 
+[Header("Animator")]
+[SerializeField] Animator animator = null;
+
 [Header("Damage")]
 [SerializeField] float m_health = 100;
 [SerializeField] [Range(-1,1)]float m_damageReduction = 0;
@@ -46,6 +49,7 @@ public class Damagable : MonoBehaviourPun, IPunObservable {
 private float maxHealth;
 private float damageCd;
 private float regenCd;
+private bool alive = true;
 
 public float MaxHealth { get => maxHealth; set => maxHealth = value; }
 public float health { get => m_health; set => m_health = value; }
@@ -72,6 +76,7 @@ private void Start() { MaxHealth = health;
 }
 
 private void Update() {
+	if (animator != null) { animator.SetFloat("Health", health);  }
 	//if (PhotonNetwork.IsMasterClient) Debug.Log($"{PV.IsMine}|{hide}|{hideObject != null}|{( Camera.main.transform.position - hideObject.transform.position ).magnitude}");
 	if (PV.IsMine && hide && hideObject != null && ( Camera.main.transform.position - hideObject.transform.position).magnitude >= hideDistance) { 
 	hideObject.SetActive(false);
@@ -128,6 +133,8 @@ public void ApplyDamage(float damageAmount) {
 	if (m_hideObject != null) { 
 	m_hideObject.SetActive(false);
 	destroyed = true;
+	alive = false;
+	if (animator != null) { animator.SetBool("Alive", alive); }
 	}
 	}
 	}

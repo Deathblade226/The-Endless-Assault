@@ -13,9 +13,11 @@ public class PlayerController : MonoBehaviour {
 [Header("Photon")]
 [SerializeField]PhotonView pv;    
 
-[Header("Weapon")]
-[SerializeField]GameObject weapon = null;
-[SerializeField]float attackRate = 1;
+[Header("Weapons")]
+[SerializeField]GameObject meleeWeapon = null;
+[SerializeField]float meleeAttackRate = 1;
+[SerializeField]GameObject rangedWeapon = null;
+[SerializeField]float castRate = 1;
 
 [Header("Placement Controller")]
 [SerializeField]PlacementController pc = null;
@@ -44,8 +46,10 @@ public class PlayerController : MonoBehaviour {
 [SerializeField]GameObject pauseMenu = null;
 
 
+private GameObject weapon;
 private Rigidbody rb;
 private float currentSpeed;
+private float attackRate;
 private Vector2 walkInput;
 private Vector2 mouseInput;
 private float sprintInput;
@@ -61,6 +65,7 @@ private void Awake() {
 	if (!pv.IsMine) return;
 	rb = gameObject.GetComponent<Rigidbody>();
 	Cursor.lockState = CursorLockMode.Confined;
+	weapon = meleeWeapon;
 }
 
 private void Start() {
@@ -75,6 +80,7 @@ private void FixedUpdate() {
 	if (attackCd > 0) { attackCd -= Time.deltaTime; }
 	attacking = (attackCd > 0);
 	weapon.SetActive(pc.CurrentObject == null);
+	animator.SetBool("Ranged", (weapon.GetComponent<StaffWeapon>() != null));
 
 	RaycastHit hit;
 	Vector3 GS = groundStart.gameObject.transform.position;
@@ -166,11 +172,20 @@ public void CloseMenu() {
 public void Attack(InputAction.CallbackContext context) { 
 	if (!pv.IsMine) return;
 	if (!locked && pc.CurrentObject == null && weapon.activeSelf && !attacking) { 
+	character.transform.localRotation = new Quaternion(); 
+	character.transform.localPosition = new Vector3();
 	attackCd = attackRate;
-	weapon.GetComponent<Weapon>().CanAttack = true;
+	weapon.GetComponent<Weapon>().Attack();
 	animator.SetTrigger("Attack");
 
 	}
+}
+
+public void ChangeWeapon(InputAction.CallbackContext context) { 
+	if (!pv.IsMine) return;
+	meleeWeapon.SetActive(!meleeWeapon.activeSelf);
+	rangedWeapon.SetActive(!rangedWeapon.activeSelf);
+	weapon = (meleeWeapon.gameObject.activeSelf) ? meleeWeapon : rangedWeapon;
 }
 
 }
