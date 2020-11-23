@@ -48,15 +48,17 @@ public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info) {
 void Update() {
 	currencyDisplay.text = $"{currency}";
 	Spawner spawner = GameObject.FindGameObjectWithTag("Spawner").GetComponent<Spawner>();
-	if (waveTracker != null) waveTracker.text = $"Wave: {spawner.Wave+1}";
+	if (waveTracker != null && spawner.Wave <= spawner.Waves.Count) waveTracker.text = $"Wave: {spawner.Wave+1}";
 	
 	//Debug.Log(GameObject.FindGameObjectsWithTag("Monster"));
 	//Debug.Log($"{spawner.Waves.Count} | {spawner.Wave} | { GameObject.FindGameObjectsWithTag("Monster") == null} | {Game.game.objectives[0] != null}");
 
-	if (spawner.Waves.Count <= spawner.Wave && GameObject.FindGameObjectWithTag("Monster") == null && Game.game.objectives[0] != null) { 
+	bool defendedObjectives = (Game.game.objectives[0] != null && Game.game.objectives[0].GetComponent<Damagable>().health > 0);
+
+	if (spawner.Waves.Count <= spawner.Wave && GameObject.FindGameObjectWithTag("Monster") == null && defendedObjectives) { 
 	Game.game.endScreenMessage.text = "Victory";
 	Game.game.endScreen.SetActive(true); 
-	} else if (Game.game.objectives[0] == null) {
+	} else if (!defendedObjectives) {
 	Game.game.endScreenMessage.text = "Defeat";
 	Game.game.endScreen.SetActive(true); 
 	}

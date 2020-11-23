@@ -31,8 +31,11 @@ void Update() {
 private void Spawn(int id) { 
 	if (projectile != null) { 
 	GameObject shot = PhotonView.Find(id).gameObject;
+	if (lookAtTarget && vs != null)  { 
+	shot.transform.LookAt(vs.SeenTarget.transform.position); 
+	spawnpoint.transform.LookAt(vs.SeenTarget.transform.position);
+	}
 	transform.rotation = spawnpoint.rotation;
-	if (lookAtTarget && vs != null)  { shot.transform.LookAt(vs.SeenTarget.transform.position); }
 	Projectile projectile = shot.GetComponent<Projectile>();
 	projectile.WeaponDamage = Damage;
 	projectile.EnemyTag = (vs != null) ? vs.SeenTarget.tag : enemy;

@@ -44,5 +44,7 @@ void Update() {
 	spot++;
 	}
 }
-
+private void OnDrawGizmos() {
+	Gizmos.DrawWireCube(transform.position, new Vector3(spawnRange, spawnRange, spawnRange)); 
+}
 }

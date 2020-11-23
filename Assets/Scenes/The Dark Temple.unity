@@ -1799,6 +1799,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 10221079}
     m_Modifications:
+    - target: {fileID: 1298203025495975644, guid: a2cf33da462b9be448d81fa4056b5411,
+        type: 3}
+      propertyPath: viewIdField
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: 1947850054441391069, guid: a2cf33da462b9be448d81fa4056b5411,
         type: 3}
       propertyPath: m_Layer
@@ -28505,6 +28510,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 708571497}
     m_Modifications:
+    - target: {fileID: 1298203025495975644, guid: a2cf33da462b9be448d81fa4056b5411,
+        type: 3}
+      propertyPath: viewIdField
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: 1947850054441391069, guid: a2cf33da462b9be448d81fa4056b5411,
         type: 3}
       propertyPath: m_Layer
@@ -37743,7 +37753,7 @@ PrefabInstance:
     - target: {fileID: 7318895222227802220, guid: 46658c9d1dc6e9d439c6604732e6b44f,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7318895222227802224, guid: 46658c9d1dc6e9d439c6604732e6b44f,
         type: 3}
@@ -38111,6 +38121,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 185202442}
     m_Modifications:
+    - target: {fileID: 1298203025495975644, guid: a2cf33da462b9be448d81fa4056b5411,
+        type: 3}
+      propertyPath: viewIdField
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 6627855271252998288, guid: a2cf33da462b9be448d81fa4056b5411,
         type: 3}
       propertyPath: viewIdField
@@ -62583,7 +62598,7 @@ MonoBehaviour:
   endScreenMessage: {fileID: 1135316065}
   waveTracker: {fileID: 1135316067}
   objectives:
-  - {fileID: 0}
+  - {fileID: 299577365}
 --- !u!114 &1658701570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -85174,6 +85189,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2116015926}
     m_Modifications:
+    - target: {fileID: 1298203025495975644, guid: a2cf33da462b9be448d81fa4056b5411,
+        type: 3}
+      propertyPath: viewIdField
+      value: 17
+      objectReference: {fileID: 0}
     - target: {fileID: 1947850054441391069, guid: a2cf33da462b9be448d81fa4056b5411,
         type: 3}
       propertyPath: m_Layer

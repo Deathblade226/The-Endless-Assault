@@ -420,6 +420,7 @@ MonoBehaviour:
   attackRange: 2
   nc: {fileID: 6659027563934651337}
   weapon: {fileID: 4655337041488217693}
+  altWeapon: {fileID: 0}
 --- !u!114 &6659027563934651339
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -557,6 +558,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PV: {fileID: 6659027563934651336}
+  animator: {fileID: 0}
   m_health: 75
   m_damageReduction: -0.2
   m_damageCd: 0
