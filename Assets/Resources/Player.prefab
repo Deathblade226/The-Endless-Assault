@@ -1339,6 +1339,7 @@ MonoBehaviour:
   projectile: {fileID: 1384266958994512122, guid: 9e4476ec0075526428253f46c0bf4654,
     type: 3}
   spawnpoint: {fileID: 5538367113046095127}
+  lookAtTarget: 0
   enemy: Monster
   waitTime: 0.7
   shotSpeed: 30

@@ -53,6 +53,7 @@ private void Update() {
     if (transform.GetComponentInChildren<VisionSystem>() == null) return;
     GameObject target = transform.GetComponentInChildren<VisionSystem>().SeenTarget;
     //Debug.Log(target);
+    Debug.Log($"{objective != null} | {target == null}");
     if (target != null) { 
     
     TravelNav.Moving = false;
