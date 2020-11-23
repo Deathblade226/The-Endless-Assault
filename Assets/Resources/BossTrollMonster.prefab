@@ -391,6 +391,7 @@ MonoBehaviour:
   attackRange: 3
   nc: {fileID: 1491907976331361305}
   weapon: {fileID: 1626460604112542449}
+  altWeapon: {fileID: 0}
 --- !u!114 &8334418156537300870
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -530,6 +531,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PV: {fileID: 1186570243461083080}
+  animator: {fileID: 0}
   m_health: 1000
   m_damageReduction: 0
   m_damageCd: 0
@@ -1395,7 +1397,7 @@ PrefabInstance:
     - target: {fileID: 95998111322576624, guid: 2250a4a4fc528684c85ba955eb992ec6,
         type: 3}
       propertyPath: m_ApplyRootMotion
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2250a4a4fc528684c85ba955eb992ec6, type: 3}

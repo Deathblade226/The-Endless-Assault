@@ -74,12 +74,14 @@ private void Update() {
 
 	} else if (weapon.gameObject.GetComponent<SelfDestruct>() != null) { ((SelfDestruct)weapon).Explode(); }
 
+	else if (weapon.gameObject.GetComponent<StaffWeapon>() != null) { ((StaffWeapon)weapon).Attack(); }
+
 	} else if (vs.Distance <= attackRange) { 
 	Nc.Agent.isStopped = true; 
 	
 	} else { 
 	
-	if (this.weapon != null) { 
+	if (this.weapon != null && !Nc.Agent.isStopped) { 
 	this.Nc.Agent.SetDestination(target.transform.position);
 	this.Nc.Agent.isStopped = false; 
 	}

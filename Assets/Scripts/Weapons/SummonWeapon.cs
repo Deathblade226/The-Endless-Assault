@@ -8,30 +8,36 @@ public class SummonWeapon : Weapon {
 [SerializeField] GameObject summonMonster = null;
 [SerializeField] int maxSummons = 1;
 [SerializeField] float summonDistance = 1;
+[SerializeField] float summonTime = 1;
+[SerializeField] float summonWait = 1;
+[SerializeField] NavigationControllerMP nc = null;
 
+private float summonCD = 0;
 private bool canSummon = false;
 private List<GameObject> Summons = new List<GameObject>();
 
-private void Update() {
-    if (!PV.IsMine) return;
-    PV.RPC("RPC_Summon", RpcTarget.All);
+private void Start() {
+    summonCD = summonTime;		
 }
 
-[PunRPC]
-void RPC_Summon() { 
-    if (Summons.Count < maxSummons && canSummon && attack.Nc.Animator.GetCurrentAnimatorStateInfo(0).IsName("Standing 2H Magic Area Attack 01")) {
-    canSummon = false;
-    StartCoroutine(SummonMonster(attack.Nc.Animator.GetCurrentAnimatorStateInfo(0).length));
+private void Update() {
+    if (!PV.IsMine && !PhotonNetwork.IsMasterClient) return;
+    for (int i = 0; i < Summons.Count; i++) { if (Summons[i] == null) { Summons[i] = Summons[Summons.Count - 1]; Summons.RemoveAt(Summons.Count - 1); } } 
+
+    if (Summons.Count != maxSummons && summonCD <= 0) {
+    nc.Agent.isStopped = true;
+    nc.Animator.SetTrigger("Attack");
+    summonCD = summonTime;
+    int count = (Summons.Count == maxSummons) ? 0 : Random.Range(1, maxSummons - Summons.Count);
+    for (int i = 0; i < count; i++) {
+    Vector3 offset = new Vector3(Random.Range(-summonDistance, summonDistance), 0, Random.Range(-summonDistance, summonDistance));
+    GameObject spawn = PhotonNetwork.Instantiate(summonMonster.gameObject.name, transform.position + offset, Quaternion.identity);
+    Summons.Add(spawn);
+    }
+    } else if (summonCD > 0) { 
+    summonCD -= Time.deltaTime; 
+    if (summonCD < summonTime - summonWait) { nc.Agent.isStopped = false; }
     }
 }
-
-IEnumerator SummonMonster(float time) {
-    yield return new WaitForSeconds(time/2);
-    GameObject sum = GameObject.Instantiate(summonMonster);
-    sum.transform.position = new Vector3(transform.position.x, transform.transform.position.y, transform.position.z);
-    sum.transform.position += transform.forward * summonDistance;
-    Summons.Add(sum);
-    StopCoroutine(SummonMonster(0));
-yield return null;}
 
 }
