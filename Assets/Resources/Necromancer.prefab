@@ -138,8 +138,11 @@ MonoBehaviour:
   projectile: {fileID: 1384266958994512122, guid: 57ed6aa27213bb04ab1e1db3b38501bf,
     type: 3}
   spawnpoint: {fileID: 3942131961256562196}
-  waitTime: 0
+  lookAtTarget: 1
+  enemy: 
+  waitTime: 0.7
   shotSpeed: 20
+  vs: {fileID: 3429381239178374230}
 --- !u!114 &5821006645159307111
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -460,7 +463,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4245027195739352742}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 2}
+  m_LocalPosition: {x: 0, y: 1, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7430351735327647317}
@@ -1134,7 +1137,7 @@ MonoBehaviour:
   maxSummons: 5
   summonDistance: 2
   summonTime: 5
-  summonWait: 2
+  summonWait: 5
   nc: {fileID: 6446105020608920600}
 --- !u!1001 &2645526077640304962
 PrefabInstance:

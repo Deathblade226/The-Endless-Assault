@@ -29981,12 +29981,12 @@ PrefabInstance:
     - target: {fileID: 702233411896180203, guid: 27120cb454410f54d957887ea3e10090,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 702233411896180203, guid: 27120cb454410f54d957887ea3e10090,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1414129305088620798, guid: 27120cb454410f54d957887ea3e10090,
         type: 3}
@@ -30007,6 +30007,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BaseMonster
+      objectReference: {fileID: 0}
+    - target: {fileID: 7097908190211866888, guid: 27120cb454410f54d957887ea3e10090,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7430351735327647317, guid: 27120cb454410f54d957887ea3e10090,
         type: 3}
