@@ -53,21 +53,25 @@ private void Update() {
     if (transform.GetComponentInChildren<VisionSystem>() == null) return;
     GameObject target = transform.GetComponentInChildren<VisionSystem>().SeenTarget;
     //Debug.Log(target);
-    Debug.Log($"{objective != null} | {target == null}");
+    //Debug.Log($"{objective != null} | {target == null}");
+    Debug.Log(travelNav.Target);
     if (target != null) { 
     
+    //Debug.Log("Attack");
     TravelNav.Moving = false;
     WanderNav.StopWander(); 
     attackNav.StartAttacking(); 
     
     } else if (objective != null && target == null) { 
-    
+
+    //Debug.Log("Travel");
     WanderNav.StopWander();
     attackNav.StopAttacking();
     TravelNav.StartTravel();  
     
     } else { 
     
+    //Debug.Log("Waner");
     TravelNav.Moving = false;
     attackNav.StopAttacking();
     WanderNav.StartWander();
