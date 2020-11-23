@@ -17,6 +17,9 @@ public class NavigationControllerMP : NavigationMP, IPunObservable {
 [SerializeField] WanderNavMP wanderNav = null;
 
 public AttackNavMP AttackNav { get => attackNav; set => attackNav = value; }
+public TravelNavMP TravelNav { get => travelNav; set => travelNav = value; }
+public WanderNavMP WanderNav { get => wanderNav; set => wanderNav =  value ; }
+
 //public Game GameController { get; set; }
 
 private NavMeshPath navPath;
@@ -30,8 +33,8 @@ private void Awake() {
     transform.GetComponentInChildren<VisionSystem>().Active = true;
     Agent = gameObject.GetComponent<NavMeshAgent>();
     attackNav = gameObject.GetComponent<AttackNavMP>();        
-    travelNav = gameObject.GetComponent<TravelNavMP>();        
-    wanderNav = gameObject.GetComponent<WanderNavMP>();
+    TravelNav = gameObject.GetComponent<TravelNavMP>();        
+    WanderNav = gameObject.GetComponent<WanderNavMP>();
 }
 
 private IEnumerator Start() { 
@@ -39,10 +42,10 @@ private IEnumerator Start() {
     //this.GameController = Game.game;
     this.navPath = new NavMeshPath();
     if (this.attackNav != null) this.attackNav.Nc = this;
-    if (this.wanderNav != null) this.wanderNav.Nc = this;
-    if (this.travelNav != null && this.travelNav.TargetTag != "") {
-    this.travelNav.Nc = this;
-    this.objective = AIUtilities.GetNearestGameObject(this.gameObject, this.travelNav.TargetTag, xray:true);
+    if (this.WanderNav != null) this.WanderNav.Nc = this;
+    if (this.TravelNav != null && this.TravelNav.TargetTag != "") {
+    this.TravelNav.Nc = this;
+    this.objective = AIUtilities.GetNearestGameObject(this.gameObject, this.TravelNav.TargetTag, xray:true);
     }
 }
 
@@ -52,21 +55,21 @@ private void Update() {
     //Debug.Log(target);
     if (target != null) { 
     
-    travelNav.Moving = false;
-    wanderNav.StopWander(); 
+    TravelNav.Moving = false;
+    WanderNav.StopWander(); 
     attackNav.StartAttacking(); 
     
     } else if (objective != null && target == null) { 
     
-    wanderNav.StopWander();
+    WanderNav.StopWander();
     attackNav.StopAttacking();
-    travelNav.StartTravel();  
+    TravelNav.StartTravel();  
     
     } else { 
     
-    travelNav.Moving = false;
+    TravelNav.Moving = false;
     attackNav.StopAttacking();
-    wanderNav.StartWander();
+    WanderNav.StartWander();
     }
     if (Animator != null) Animator.SetFloat("Speed", Agent.velocity.magnitude);
 }

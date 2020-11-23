@@ -99,7 +99,7 @@ MonoBehaviour:
   projectile: {fileID: 1384266958994512122, guid: 57ed6aa27213bb04ab1e1db3b38501bf,
     type: 3}
   spawnpoint: {fileID: 1535114448397261393}
-  waitTime: 0.7
+  waitTime: 0
   shotSpeed: 20
 --- !u!114 &8300355008072266530
 MonoBehaviour:
@@ -734,10 +734,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackCD: 3
-  attackRange: 5
+  attackRange: 10
   nc: {fileID: 8830921195217037405}
   weapon: {fileID: 7118085848775603378}
-  altWeapon: {fileID: 0}
+  altWeapon: {fileID: 1110371130476269174}
 --- !u!114 &2130241417154696130
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -16,6 +16,8 @@ private float summonCD = 0;
 private bool canSummon = false;
 private List<GameObject> Summons = new List<GameObject>();
 
+public bool SummonLimmit { get => Summons.Count == maxSummons; }
+
 private void Start() {
     summonCD = summonTime;		
 }
@@ -25,8 +27,9 @@ private void Update() {
     for (int i = 0; i < Summons.Count; i++) { if (Summons[i] == null) { Summons[i] = Summons[Summons.Count - 1]; Summons.RemoveAt(Summons.Count - 1); } } 
 
     if (Summons.Count != maxSummons && summonCD <= 0) {
-    nc.Agent.isStopped = true;
+    nc.Agent.SetDestination(transform.position);
     nc.Animator.SetTrigger("Attack");
+    canSummon = false;
     summonCD = summonTime;
     int count = (Summons.Count == maxSummons) ? 0 : Random.Range(1, maxSummons - Summons.Count);
     for (int i = 0; i < count; i++) {
@@ -36,7 +39,10 @@ private void Update() {
     }
     } else if (summonCD > 0) { 
     summonCD -= Time.deltaTime; 
-    if (summonCD < summonTime - summonWait) { nc.Agent.isStopped = false; }
+    if (summonCD < summonTime - summonWait && !canSummon) {
+    canSummon = true;
+    GetComponent<NavigationControllerMP>().WanderNav.StartWander();
+    }
     }
 }
 

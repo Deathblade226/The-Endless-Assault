@@ -51,13 +51,14 @@ private void Update() {
 	if (transform.GetComponentInChildren<VisionSystem>() == null) return;
 	VisionSystem vs = transform.GetComponentInChildren<VisionSystem>();
 	GameObject target = (vs.SeenTarget != null && nc.Agent.CalculatePath(vs.SeenTarget.transform.position, new UnityEngine.AI.NavMeshPath())) ? vs.SeenTarget : null;
+	bool summonWeaponLimmit = ( altWeapon != null && altWeapon.GetComponent<SummonWeapon>() != null) ? (altWeapon.GetComponent<SummonWeapon>().SummonLimmit) : true;
 
 	//Debug.Log(AttackTime);
 	if (target != null && Active) { 
 
 	float range = (useAltRange) ? altRange : attackRange;
 
-	attacking = (vs.Distance <= range && AttackTime <= 0);
+	attacking = (vs.Distance <= range && AttackTime <= 0 && summonWeaponLimmit);
 
 	if (attacking) {
 	Nc.Agent.isStopped = true; 
