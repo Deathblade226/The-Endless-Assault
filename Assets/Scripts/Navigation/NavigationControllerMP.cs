@@ -52,9 +52,6 @@ private IEnumerator Start() {
 private void Update() {
     if (transform.GetComponentInChildren<VisionSystem>() == null) return;
     GameObject target = transform.GetComponentInChildren<VisionSystem>().SeenTarget;
-    //Debug.Log(target);
-    //Debug.Log($"{objective != null} | {target == null}");
-    Debug.Log(travelNav.Target);
     if (target != null) { 
     
     //Debug.Log("Attack");
