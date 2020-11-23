@@ -643,6 +643,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PV: {fileID: 8354699134985879981}
+  animator: {fileID: 0}
   m_health: 100
   m_damageReduction: 0
   m_damageCd: 0

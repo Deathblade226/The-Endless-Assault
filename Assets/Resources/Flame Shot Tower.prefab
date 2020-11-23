@@ -5477,6 +5477,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PV: {fileID: 3366420395868956466}
+  animator: {fileID: 0}
   m_health: 100
   m_damageReduction: 0
   m_damageCd: 0
