@@ -17083,15 +17083,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1535114448397261393, guid: 9747563840740144fa3a5c52d74cc3f6,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3046196714493700526, guid: 9747563840740144fa3a5c52d74cc3f6,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3046196714493700526, guid: 9747563840740144fa3a5c52d74cc3f6,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3487872197104921787, guid: 9747563840740144fa3a5c52d74cc3f6,
         type: 3}
@@ -17102,6 +17107,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BaseMonster
+      objectReference: {fileID: 0}
+    - target: {fileID: 4717595034873664845, guid: 9747563840740144fa3a5c52d74cc3f6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4964514755408163344, guid: 9747563840740144fa3a5c52d74cc3f6,
         type: 3}
