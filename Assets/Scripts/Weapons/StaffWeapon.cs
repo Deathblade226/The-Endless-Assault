@@ -27,10 +27,11 @@ void Update() {
 private void Spawn(int id) { 
 	if (projectile != null) { 
 	GameObject shot = PhotonView.Find(id).gameObject;
+	transform.rotation = spawnpoint.rotation;
 	shot.GetComponent<Projectile>().WeaponDamage = Damage;
 	Rigidbody shotRB = shot.GetComponent<Rigidbody>();
 	shotRB.useGravity = false;
-	shotRB.AddForce(gameObject.transform.right * shotSpeed * 10, ForceMode.Acceleration);
+	shotRB.AddForce(spawnpoint.transform.forward * shotSpeed * 10, ForceMode.Acceleration);
 	}
 }
 
