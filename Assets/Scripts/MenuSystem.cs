@@ -11,6 +11,9 @@ public class MenuSystem : MonoBehaviour {
 [SerializeField] GameObject optionsMenu = null;
 [SerializeField] GameObject helpMenu = null;
 
+[Header("Lobby")]
+[SerializeField] GameLobby gl;
+
 [Header("Settings")]
 [SerializeField] Slider music = null;
 [SerializeField] Slider sfx = null;
@@ -57,5 +60,7 @@ public void ShowOptions() {
 public void ToggleHelp() { 
 	helpMenu.SetActive(!helpMenu.activeSelf);
 }
+
+public void NameInputChange(string input) { gl.PlayerName = input; }
 
 }

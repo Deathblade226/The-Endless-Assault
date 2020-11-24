@@ -25,6 +25,7 @@ List<RoomInfo> createdRooms = new List<RoomInfo>();
 Vector2 roomListScroll = Vector2.zero; 
 bool joiningRoom = false;
 public bool GUIActive { get; set; } = false;
+public string PlayerName { get => playerName; set => playerName =  value ; }
 
 void Start() {
     Cursor.lockState = CursorLockMode.None;
@@ -72,7 +73,7 @@ void LobbyWindow(int index) {
     if (GUILayout.Button("Join Room")) {
     joiningRoom = true;                    
     // set player name                    
-    PhotonNetwork.NickName = (playerName.Trim() == "") ? SystemInfo.deviceName : playerName;     
+    PhotonNetwork.NickName = (PlayerName.Trim() == "") ? SystemInfo.deviceName : PlayerName;     
     
     // join the Room                    
     PhotonNetwork.JoinRoom(createdRooms[i].Name);
@@ -120,7 +121,7 @@ public override void OnJoinRandomFailed(short returnCode, string message) {
 public override void OnCreatedRoom() { 
     Debug.Log("OnCreatedRoom");        
     // set player name        
-    PhotonNetwork.NickName = (nameInput != null && nameInput.text.Trim() != "") ? nameInput.text : playerName;        
+    PhotonNetwork.NickName = (nameInput != null && nameInput.text.Trim() != "") ? nameInput.text : PlayerName;        
     // load the scene (make sure the scene is added to build settings)  
     PhotonNetwork.LoadLevel(sceneName);    
 }    

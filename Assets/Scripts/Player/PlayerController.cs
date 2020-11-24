@@ -42,7 +42,8 @@ public class PlayerController : MonoBehaviour {
 [SerializeField]float horizontalWindow = 200;
 [SerializeField]float verticalWindow = 75;
 
-[Header("Pause Menu")]
+[Header("Menus")]
+[SerializeField]GameObject personalUI = null;
 [SerializeField]GameObject pauseMenu = null;
 
 
@@ -62,7 +63,8 @@ private bool attacking = false;
 private float attackCd = 0;
 
 private void Awake() {
-	if (!pv.IsMine) return;
+	if (!pv.IsMine) { return; }
+	personalUI.SetActive(true);
 	rb = gameObject.GetComponent<Rigidbody>();
 	Cursor.lockState = CursorLockMode.Confined;
 	weapon = meleeWeapon;

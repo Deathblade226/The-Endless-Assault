@@ -13,6 +13,7 @@ public class SceneManagment : MonoBehaviour {
 [SerializeField] GameObject Endscreen = null;
 
 private void Start() {
+    if (pv != null && !pv.IsMine) return;
     if (music != null) music.value = PlayerPrefs.GetFloat("MusicLevels");
 }
 
