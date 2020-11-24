@@ -55,6 +55,11 @@ public float MaxHealth { get => maxHealth; set => maxHealth = value; }
 public float health { get => m_health; set => m_health = value; }
 public bool destroyed { get; set; } = false;
 public float DamageReduction { get => m_damageReduction; set => m_damageReduction = value; }
+public Color OneHundred { get => oneHundred; set => oneHundred = value; }
+public Color SevenFive { get => sevenFive; set => sevenFive = value; }
+public Color Five { get => five; set => five = value; }
+public Color TwoFive { get => twoFive; set => twoFive =  value ; }
+public GameObject HideObject { get => hideObject; set => hideObject =  value ; }
 
 void IPunObservable.OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info) { 
 	if(stream.IsWriting) {
@@ -78,17 +83,17 @@ private void Start() { MaxHealth = health;
 private void Update() {
 	if (animator != null) { animator.SetFloat("Health", health);  }
 	//if (PhotonNetwork.IsMasterClient) Debug.Log($"{PV.IsMine}|{hide}|{hideObject != null}|{( Camera.main.transform.position - hideObject.transform.position ).magnitude}");
-	if (PV.IsMine && hide && hideObject != null && ( Camera.main.transform.position - hideObject.transform.position).magnitude >= hideDistance) { 
-	hideObject.SetActive(false);
-	} else if (PV.IsMine && hideObject != null) { hideObject.SetActive(true); }
+	if (PV.IsMine && hide && HideObject != null && ( Camera.main.transform.position - HideObject.transform.position).magnitude >= hideDistance) { 
+	HideObject.SetActive(false);
+	} else if (PV.IsMine && HideObject != null) { HideObject.SetActive(true); }
 
 	m_healthText.SetText($"{health}/{maxHealth}");
 	Color color = new Color();
 	float percent = health/maxHealth;
-	if (percent <= 0.25f) { color = twoFive; }
-	else if (percent <= 0.5f) { color = five; }
-	else if (percent <= 0.75f) { color = sevenFive; }
-	else { color = oneHundred; }
+	if (percent <= 0.25f) { color = TwoFive; }
+	else if (percent <= 0.5f) { color = Five; }
+	else if (percent <= 0.75f) { color = SevenFive; }
+	else { color = OneHundred; }
 
 	//Updates the healthbar
 	if (m_healthBar != null) { 
