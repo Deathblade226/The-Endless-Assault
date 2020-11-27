@@ -10,6 +10,7 @@ public class MenuSystem : MonoBehaviour {
 [SerializeField] GameObject lobbyMenu = null;
 [SerializeField] GameObject optionsMenu = null;
 [SerializeField] GameObject helpMenu = null;
+[SerializeField] GameObject defenseSelect = null;
 
 [Header("Lobby")]
 [SerializeField] GameLobby gl;
@@ -43,13 +44,22 @@ public void ShowTitle() {
 	titleScreen.SetActive(true);
 	lobbyMenu.SetActive(false);
 	optionsMenu.SetActive(false);
+	defenseSelect.SetActive(false);
 	lobbyObject.GUIActive = false;
 }
 public void ShowLobby() { 
 	lobbyMenu.SetActive(true);
 	titleScreen.SetActive(false);
 	optionsMenu.SetActive(false);
+	defenseSelect.SetActive(false);
 	lobbyObject.GUIActive = true;
+}
+public void ShowDefenseSelect() { 
+	lobbyMenu.SetActive(false);
+	titleScreen.SetActive(false);
+	optionsMenu.SetActive(false);
+	defenseSelect.SetActive(true);
+	lobbyObject.GUIActive = false;
 }
 public void ShowOptions() { 
 	titleScreen.SetActive(false);
