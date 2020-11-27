@@ -24,7 +24,7 @@ void Start() {
 
 private void Update() {
     if(!playerSpawned && m_playerPrefab != null) {
-    // spawn a character for the local player. it gets synced by using PhotonNetwork.Instantiate  
+    // spawn a character for the local player. it gets synced by using PhotonNetwork.Instantiate
     PhotonNetwork.Instantiate(m_playerPrefab.name, m_spawnPoint.position, Quaternion.identity, 0);
     playerSpawned = true;
     }

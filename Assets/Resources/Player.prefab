@@ -2156,13 +2156,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pv: {fileID: 3782384596182855408}
   rotationSpeed: 1
-  Units:
-  - {fileID: 1670681377402366227, guid: 9871d830700905b4a8600740e0fec8ba, type: 3}
-  - {fileID: 6040005500278772246, guid: 1f69d39ac80ed964aa3cc87759aa42f3, type: 3}
-  - {fileID: 6040005500278772246, guid: e85957f3f0288ef4b857ef4636178b7e, type: 3}
-  - {fileID: 6040005500278772246, guid: 5add09ac482299e418a419092f363a33, type: 3}
-  - {fileID: 5933414892891710484, guid: a02f5e8bdbaea5d46b06e131d6c4887a, type: 3}
-  - {fileID: 8354699134985879959, guid: c869d174b249b084d83d44a2877ccc02, type: 3}
+  defenses:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   IgnoredLayers:
     serializedVersion: 2
     m_Bits: 1536
@@ -2426,6 +2424,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 2efa9150-32f1-4334-ab89-f818b3a863f6
     m_ActionName: Player/Attack[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 24d79c08-82c4-41c8-9b7d-bbbacf9132b1
+    m_ActionName: Player/Toggle[/Keyboard/tab]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Placement
@@ -4432,9 +4434,10 @@ GameObject:
   - component: {fileID: 9164312130522971451}
   - component: {fileID: 9164312130522971424}
   - component: {fileID: 1134590605255202224}
+  - component: {fileID: 1514929017652582638}
   m_Layer: 10
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4836,6 +4839,37 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &1514929017652582638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9164312130522971448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e269230d3e08de24ea6f4a934e227c35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pv: {fileID: 9164312130522971429}
+  pc: {fileID: 6825458950818869460}
+  DefensesObjects:
+  - {fileID: 1670681377402366227, guid: 9871d830700905b4a8600740e0fec8ba, type: 3}
+  - {fileID: 6040005500278772246, guid: 5add09ac482299e418a419092f363a33, type: 3}
+  - {fileID: 6040005500278772246, guid: e85957f3f0288ef4b857ef4636178b7e, type: 3}
+  - {fileID: 6040005500278772246, guid: 1f69d39ac80ed964aa3cc87759aa42f3, type: 3}
+  - {fileID: 5933414892891710484, guid: a02f5e8bdbaea5d46b06e131d6c4887a, type: 3}
+  - {fileID: 8354699134985879959, guid: c869d174b249b084d83d44a2877ccc02, type: 3}
+  DefensesImages:
+  - {fileID: 21300000, guid: 792b666504dbdf14db71b8d0408bff74, type: 3}
+  - {fileID: 21300000, guid: f7ae9bc977b289a438c548c7f430d1e0, type: 3}
+  - {fileID: 21300000, guid: e1a83536cc028ef439fd0824e1ffd5d5, type: 3}
+  - {fileID: 21300000, guid: 0a74ff7dbd9374e42bdcbb00d73984c2, type: 3}
+  - {fileID: 21300000, guid: 52261e4426b21440d923081a4601fc5e, type: 3}
+  - {fileID: 21300000, guid: 52261e4426b21440d923081a4601fc5e, type: 3}
+  - {fileID: 21300000, guid: 52261e4426b21440d923081a4601fc5e, type: 3}
+  - {fileID: 21300000, guid: 52261e4426b21440d923081a4601fc5e, type: 3}
+  - {fileID: 21300000, guid: 52261e4426b21440d923081a4601fc5e, type: 3}
 --- !u!1001 &3249607268339059989
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5365,15 +5399,15 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 9164312129468999903}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &9164312129461584159 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 9513408, guid: 3f42b29f9f09e0e40b05df7c984384f1,
-    type: 3}
-  m_PrefabInstance: {fileID: 9164312129468999903}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &9164312129468770297 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 495398, guid: 3f42b29f9f09e0e40b05df7c984384f1,
+    type: 3}
+  m_PrefabInstance: {fileID: 9164312129468999903}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &9164312129461584159 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 9513408, guid: 3f42b29f9f09e0e40b05df7c984384f1,
     type: 3}
   m_PrefabInstance: {fileID: 9164312129468999903}
   m_PrefabAsset: {fileID: 0}

@@ -17,6 +17,10 @@ TagManager:
   - Projectile
   - Floor
   - Pathing
+  - D1
+  - D2
+  - D3
+  - D4
   layers:
   - Default
   - TransparentFX

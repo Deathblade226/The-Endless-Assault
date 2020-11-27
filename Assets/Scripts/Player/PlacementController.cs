@@ -13,7 +13,7 @@ public class PlacementController : MonoBehaviourPun, IPunObservable {
 
 [Header("Placement")]
 [SerializeField] float rotationSpeed = 1;
-[SerializeField] List<GameObject> Units = new List<GameObject>();
+[SerializeField] List<GameObject> defenses;
 [SerializeField] LayerMask IgnoredLayers;
 [SerializeField] List<String> tags;
 
@@ -30,6 +30,7 @@ private float scrollInput;
 private List<String> layers = new List<string>{"10"};
 
 public GameObject CurrentObject { get => currentObject; set => currentObject =  value ; }
+public List<GameObject> Defenses { get => defenses; set => defenses =  value ; }
 
 public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info) {
     if(stream.IsWriting) {
@@ -230,9 +231,9 @@ public void OnMouseScroll(InputAction.CallbackContext context) {
 [PunRPC]
 private void Spawn(int key) {
     if (!pv.IsMine) return;
-    if (Units.Count > key) { 
+    if (Defenses.Count > key) { 
     currentTower = key;
-    CurrentObject = PhotonNetwork.Instantiate(Units[currentTower].name, new Vector3(), Quaternion.identity);
+    CurrentObject = PhotonNetwork.Instantiate(Defenses[currentTower].name, new Vector3(), Quaternion.identity);
     }
 }
 [PunRPC]
