@@ -31,7 +31,7 @@ void Update() {
     foreach (Collider collider in colliders) {
     collider.gameObject.GetComponent<PhotonView>().RPC("SetSlow", RpcTarget.All, slow);
     }
-    pv.RPC("ApplyDamage", RpcTarget.All, 1f);
+    pv.RPC("ApplyDamage", RpcTarget.All, 1);
     }
     activateCD = slowRate;
 	} else if (activateCD > 0) { activateCD -= Time.deltaTime; }
