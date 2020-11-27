@@ -5132,7 +5132,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: Defense
   cost: 30
-  slow: 5
+  slow: 1
   slowRange: 4
   slowRate: 1
   pv: {fileID: 6663344740221724785}
