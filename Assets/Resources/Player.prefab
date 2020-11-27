@@ -4860,6 +4860,7 @@ MonoBehaviour:
   - {fileID: 6040005500278772246, guid: 1f69d39ac80ed964aa3cc87759aa42f3, type: 3}
   - {fileID: 5933414892891710484, guid: a02f5e8bdbaea5d46b06e131d6c4887a, type: 3}
   - {fileID: 8354699134985879959, guid: c869d174b249b084d83d44a2877ccc02, type: 3}
+  - {fileID: 5933414892891710484, guid: 788e7fce054b5e24b9c14dc944636a91, type: 3}
   DefensesImages:
   - {fileID: 21300000, guid: 792b666504dbdf14db71b8d0408bff74, type: 3}
   - {fileID: 21300000, guid: f7ae9bc977b289a438c548c7f430d1e0, type: 3}
@@ -4867,9 +4868,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 0a74ff7dbd9374e42bdcbb00d73984c2, type: 3}
   - {fileID: 21300000, guid: e96e3f9c54368e44d860ee8d364b6d15, type: 3}
   - {fileID: 21300000, guid: 3d8fc4c1966604b4bb9b1a9c21487145, type: 3}
-  - {fileID: 21300000, guid: 52261e4426b21440d923081a4601fc5e, type: 3}
-  - {fileID: 21300000, guid: 52261e4426b21440d923081a4601fc5e, type: 3}
-  - {fileID: 21300000, guid: 52261e4426b21440d923081a4601fc5e, type: 3}
+  - {fileID: 21300000, guid: 28a8b627ca5d85e458a1b389afee21d0, type: 3}
 --- !u!1001 &3249607268339059989
 PrefabInstance:
   m_ObjectHideFlags: 0

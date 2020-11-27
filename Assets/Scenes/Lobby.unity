@@ -2057,6 +2057,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 0a74ff7dbd9374e42bdcbb00d73984c2, type: 3}
   - {fileID: 21300000, guid: e96e3f9c54368e44d860ee8d364b6d15, type: 3}
   - {fileID: 21300000, guid: 3d8fc4c1966604b4bb9b1a9c21487145, type: 3}
+  - {fileID: 21300000, guid: 28a8b627ca5d85e458a1b389afee21d0, type: 3}
   DefenseSlots:
   - {fileID: 1062888520}
   - {fileID: 1320504541}
@@ -15636,7 +15637,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d39501b085d2e4262864da757517d6dc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 28a8b627ca5d85e458a1b389afee21d0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

@@ -735,6 +735,7 @@ MonoBehaviour:
   attackNav: {fileID: 182203019727357089}
   travelNav: {fileID: 2130241417154696130}
   wanderNav: {fileID: 972968984235694194}
+  speed: 2
 --- !u!54 &6523841473481354247
 Rigidbody:
   m_ObjectHideFlags: 0

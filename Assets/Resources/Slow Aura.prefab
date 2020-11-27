@@ -330,7 +330,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 0.6666667, b: 0.23529412, a: 0.7058824}
-      maxColor: {r: 1, g: 0.040395662, b: 0, a: 1}
+      maxColor: {r: 0, g: 0.59772396, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -5000,13 +5000,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4436957266433652056}
-  - component: {fileID: 6534395827305720615}
   - component: {fileID: 5208158146290625829}
   - component: {fileID: 6663344740221724785}
   - component: {fileID: 4270537087611355730}
   - component: {fileID: 7999153716492153550}
+  - component: {fileID: 3897411105601940807}
   m_Layer: 2
-  m_Name: Flame Aura
+  m_Name: Slow Aura
   m_TagString: Aura
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5029,31 +5029,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6534395827305720615
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5933414892891710484}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 742c27d66b9e80e40ae8362eb195fd08, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: Aura
-  cost: 30
-  damage: 5
-  damageRange: 4
-  damageRate: 1
-  pv: {fileID: 6663344740221724785}
-  particle: {fileID: 8253865949641768848}
-  layers:
-    serializedVersion: 2
-    m_Bits: 2048
-  ignoredLayers:
-    serializedVersion: 2
-    m_Bits: 1847
 --- !u!114 &5208158146290625829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5108,9 +5083,9 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   ObservedComponents:
-  - {fileID: 6534395827305720615}
   - {fileID: 5208158146290625829}
   - {fileID: 7999153716492153550}
+  - {fileID: 3897411105601940807}
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -5143,6 +5118,31 @@ MonoBehaviour:
   m_SynchronizePosition: 1
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
+--- !u!114 &3897411105601940807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5933414892891710484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d08b9bbde2a16c64a8bd829bae81747b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: Defense
+  cost: 30
+  slow: 5
+  slowRange: 4
+  slowRate: 1
+  pv: {fileID: 6663344740221724785}
+  particle: {fileID: 8253865949641768848}
+  layers:
+    serializedVersion: 2
+    m_Bits: 2048
+  ignoredLayers:
+    serializedVersion: 2
+    m_Bits: 1847
 --- !u!1 &7362677350269283508
 GameObject:
   m_ObjectHideFlags: 0

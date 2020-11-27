@@ -21,6 +21,7 @@ TagManager:
   - D2
   - D3
   - D4
+  - Aura
   layers:
   - Default
   - TransparentFX

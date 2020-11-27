@@ -5,7 +5,7 @@ using UnityEngine.Rendering;
 using System.Linq;
 using Photon.Pun;
 
-public class Aura : Defense, IPunObservable {
+public class DamageAura : Defense, IPunObservable {
 
 [SerializeField] float damage = 1;
 [SerializeField] float damageRange = 1;
