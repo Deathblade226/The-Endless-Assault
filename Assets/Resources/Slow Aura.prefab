@@ -5130,7 +5130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d08b9bbde2a16c64a8bd829bae81747b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: Defense
+  type: Aura
   cost: 30
   slow: 1
   slowRange: 4
