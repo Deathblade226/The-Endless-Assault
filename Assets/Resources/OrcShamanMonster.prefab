@@ -5005,7 +5005,7 @@ NavMeshAgent:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8140694629802044743}
   m_Enabled: 1
-  m_AgentTypeID: 0
+  m_AgentTypeID: -1372625422
   m_Radius: 0.1
   m_Speed: 2
   m_Acceleration: 8
@@ -5084,6 +5084,7 @@ MonoBehaviour:
   attackNav: {fileID: 3676799578156776619}
   travelNav: {fileID: 3175581283910282184}
   wanderNav: {fileID: 4323846178809192568}
+  speed: 3
 --- !u!54 &7712584044627383309
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5173,6 +5174,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PV: {fileID: 5751000122111214470}
+  animator: {fileID: 0}
   m_health: 200
   m_damageReduction: 0
   m_damageCd: 0
@@ -5643,6 +5645,27 @@ MonoBehaviour:
     m_Bits: 2048
   healPoint: {fileID: 8459082606192134682}
   particle: {fileID: 2324437677641128148}
+--- !u!114 &6608300971633716138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8899404229357791190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2be0c5067b335db48a1bd2a1eea67c76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pv: {fileID: 8351911487519311560}
+  damage: 2
+  enemies:
+  - Defense
+  - Player
+  continuousAttack: 0
+  Type: Weapon
+  BuffDamage: 0
+  BuffDamageCd: 0
 --- !u!114 &8351911487519311560
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5665,27 +5688,6 @@ MonoBehaviour:
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!114 &6608300971633716138
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8899404229357791190}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2be0c5067b335db48a1bd2a1eea67c76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pv: {fileID: 8351911487519311560}
-  damage: 2
-  enemies:
-  - Defense
-  - Player
-  continuousAttack: 0
-  Type: Weapon
-  BuffDamage: 0
-  BuffDamageCd: 0
 --- !u!1 &8954452122837255805
 GameObject:
   m_ObjectHideFlags: 0

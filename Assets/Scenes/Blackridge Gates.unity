@@ -8964,7 +8964,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_AgentTypeID: 0
+  m_AgentTypeID: -1372625422
   m_CollectObjects: 0
   m_Size: {x: 10, y: 10, z: 10}
   m_Center: {x: 0, y: 2, z: 0}
@@ -8978,7 +8978,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.33333334
+  m_VoxelSize: 0.16666667
   m_BuildHeightMesh: 0
   m_NavMeshData: {fileID: 23800000, guid: 2ef0ed11834f0de409fd333d4b6c4a5e, type: 2}
 --- !u!1001 &622701106
@@ -30091,6 +30091,11 @@ PrefabInstance:
         type: 3}
       propertyPath: viewIdField
       value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 4959431467459995386, guid: 27120cb454410f54d957887ea3e10090,
+        type: 3}
+      propertyPath: m_AgentTypeID
+      value: -1372625422
       objectReference: {fileID: 0}
     - target: {fileID: 5821006645159307111, guid: 27120cb454410f54d957887ea3e10090,
         type: 3}

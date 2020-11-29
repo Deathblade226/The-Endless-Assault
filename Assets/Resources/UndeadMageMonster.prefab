@@ -3676,7 +3676,7 @@ NavMeshAgent:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5425879186702437924}
   m_Enabled: 1
-  m_AgentTypeID: 0
+  m_AgentTypeID: -1372625422
   m_Radius: 0.07
   m_Speed: 2
   m_Acceleration: 8
@@ -3706,6 +3706,7 @@ MonoBehaviour:
   attackRange: 2
   nc: {fileID: 5425879186702437925}
   weapon: {fileID: 0}
+  altWeapon: {fileID: 0}
 --- !u!114 &5425879186702437921
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3789,6 +3790,7 @@ MonoBehaviour:
   attackNav: {fileID: 5425879186702437922}
   travelNav: {fileID: 5425879186702437921}
   wanderNav: {fileID: 5425879186702437920}
+  speed: 3
 --- !u!54 &2190664325099150334
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3879,10 +3881,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PV: {fileID: 2724179909582691583}
+  animator: {fileID: 0}
   m_health: 150
   m_damageReduction: 0
   m_damageCd: 0
   m_killOnDeath: 1
+  canRegen: 0
   m_regenCap: 1
   m_regenAmount: 0
   m_regenCd: 0

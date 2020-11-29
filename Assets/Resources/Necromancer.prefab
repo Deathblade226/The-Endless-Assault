@@ -908,7 +908,7 @@ NavMeshAgent:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7097908190211866888}
   m_Enabled: 1
-  m_AgentTypeID: 0
+  m_AgentTypeID: -1372625422
   m_Radius: 0.1
   m_Speed: 2
   m_Acceleration: 8
@@ -987,6 +987,7 @@ MonoBehaviour:
   attackNav: {fileID: 2413866705189785828}
   travelNav: {fileID: 4497043362904541063}
   wanderNav: {fileID: 3348488403094588471}
+  speed: 3
 --- !u!54 &8750987849847912514
 Rigidbody:
   m_ObjectHideFlags: 0
