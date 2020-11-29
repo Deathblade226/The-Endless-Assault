@@ -22,6 +22,7 @@ TagManager:
   - D3
   - D4
   - Aura
+  - MapLogic
   layers:
   - Default
   - TransparentFX

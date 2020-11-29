@@ -37,7 +37,7 @@ void Update() {
     trail.Clear();
     agent.isStopped = true;
     } else {
-    agent.isStopped = false;
+    if (agent != null) agent.isStopped = false;
     }
 }
 
