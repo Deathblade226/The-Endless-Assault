@@ -12,14 +12,16 @@ private string key = "00000000";
 
 public override void StartEffect() { 
 	Spawner spawner = GameObject.FindGameObjectWithTag("Spawner").GetComponent<Spawner>();
-	switch(spawner.Wave) {
+	switch(spawner.Wave % 8) {
+	case 0: if (key != "00000001") { key = "00000001"; animator.SetTrigger("R8"); } break;
 	case 1: if (key != "10000000") { key = "10000000"; animator.SetTrigger("R1"); } break;
 	case 2: if (key != "01000000") { key = "01000000"; animator.SetTrigger("R2"); } break;
 	case 3: if (key != "00100000") { key = "00100000"; animator.SetTrigger("R3"); } break;
 	case 4: if (key != "00010000") { key = "00010000"; animator.SetTrigger("R4"); } break;
 	case 5: if (key != "00001000") { key = "00001000"; animator.SetTrigger("R5"); } break;
 	case 6: if (key != "00000100") { key = "00000100"; animator.SetTrigger("R6"); } break;
-	default: Debug.Log("This map wasnt set for 7 waves"); break;
+	case 7: if (key != "00000010") { key = "00000010"; animator.SetTrigger("R7"); } break;
+	default: Debug.Log($"{spawner.Wave % 7} is larger then 8 and smaller then 1"); break;
 	}
 }
 

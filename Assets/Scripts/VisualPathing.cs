@@ -16,8 +16,10 @@ private float resetTimeCD = 0;
 
 void Start() {
     transform.position = startingPoint.position;
+    if (agent != null && agent.isOnNavMesh) { 
     agent.ResetPath();
     agent.SetDestination(target.position);
+    }
     trail.Clear();
 }
 
@@ -37,7 +39,7 @@ void Update() {
     trail.Clear();
     agent.isStopped = true;
     } else {
-    if (agent != null) agent.isStopped = false;
+    if (agent != null && agent.isOnNavMesh) agent.isStopped = false;
     }
 }
 
