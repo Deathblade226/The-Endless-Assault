@@ -25,6 +25,7 @@ void Start() {
 
 void Update() {
     bool valid = ((target.transform.position - transform.position).magnitude < 1);
+    if (agent != null && agent.isOnNavMesh) { 
     if (valid && trail.positionCount == 0) { 
     gameObject.transform.position = startingPoint.position;
     trail.Clear();
@@ -39,7 +40,8 @@ void Update() {
     trail.Clear();
     agent.isStopped = true;
     } else {
-    if (agent != null && agent.isOnNavMesh) agent.isStopped = false;
+    agent.isStopped = false;
+    }
     }
 }
 

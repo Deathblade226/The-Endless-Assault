@@ -1572,6 +1572,7 @@ MonoBehaviour:
   attackRange: 1.5
   nc: {fileID: 1565432829060781885}
   weapon: {fileID: 4629093507723360587}
+  altWeapon: {fileID: 0}
 --- !u!114 &8260753577783504034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1620,6 +1621,7 @@ MonoBehaviour:
   attackNav: {fileID: 7904772248334793665}
   travelNav: {fileID: 8260753577783504034}
   wanderNav: {fileID: 7112480092966709010}
+  speed: 3
 --- !u!54 &3872360748396516199
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1709,10 +1711,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PV: {fileID: 1259409080391402732}
+  animator: {fileID: 0}
   m_health: 200
   m_damageReduction: 0
   m_damageCd: 0
   m_killOnDeath: 1
+  canRegen: 0
   m_regenCap: 1
   m_regenAmount: 0
   m_regenCd: 0

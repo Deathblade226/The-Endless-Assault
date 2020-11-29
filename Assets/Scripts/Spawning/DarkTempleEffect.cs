@@ -25,7 +25,8 @@ public override void StartEffect() {
 	}
 }
 
-public void RebuildNavMesh() { if (PhotonNetwork.IsMasterClient) Pv.RPC("Build", RpcTarget.All); }
+public void RebuildNavMesh() { //if (PhotonNetwork.IsMasterClient) Pv.RPC("Build", RpcTarget.All); 
+}
 
 [PunRPC]
 public void Build() { 
