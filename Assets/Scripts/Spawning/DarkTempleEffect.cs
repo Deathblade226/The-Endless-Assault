@@ -29,8 +29,8 @@ public override void StartEffect() {
 	}
 }
 
-public void ReBuildMap() { if (PhotonNetwork.IsMasterClient) Pv.RPC("Build", RpcTarget.All); 
-}
+public void ReBuildMap() { if (PhotonNetwork.IsMasterClient) Pv.RPC("Build", RpcTarget.All); }
+public void Pause() { if (PhotonNetwork.IsMasterClient) Pv.RPC("PauseSpawns", RpcTarget.All); }
 
 [PunRPC]
 public void Build() { 
