@@ -21,6 +21,7 @@ public class VisionSystem : MonoBehaviourPun, IPunObservable {
 [SerializeField] List<string> targets;
 
 private GameObject seenTarget = null;
+private List<GameObject> seenTargets = new List<GameObject>();
 
 public GameObject SeenTarget { get => seenTarget; set => seenTarget =  value ; }
 public float Distance { get => (seenTarget.transform.position - transform.position).magnitude; }
@@ -34,16 +35,26 @@ public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info) {
 	}
 }
 
+public void Start() {
+    StartCoroutine(UpdateTarget());		
+}
+
 private void Update() {
     if (Physics.CheckSphere(transform.position, visionRange, ignoreLayers) && GameObject.FindGameObjectWithTag("Monster") == null) { visionTrigger.radius = 0; }
     else { visionTrigger.radius = visionRange; }
 }
-private void OnTriggerEnter(Collider other) { TargetCheck(other); }
+private void OnTriggerEnter(Collider other) { 
+    //StartCoroutine(TargetCalc(other)); 
+    if (targets.Contains(other.tag) && Active && !seenTargets.Contains(other.gameObject)) seenTargets.Add(other.gameObject);
+}
 
-private void OnTriggerStay(Collider other) { TargetCheck(other); }
+private void OnTriggerStay(Collider other) { /* TargetCheck(other); */ 
+    //StartCoroutine(TargetCalc(other)); 
+}
 
 private void OnTriggerExit(Collider other) {
     if (other.gameObject == seenTarget) { seenTarget = null; }		
+    seenTargets.Remove(other.gameObject);
 }
 private void TargetCheck(Collider other) {
     if (targets.Contains(other.tag) && Active) {
@@ -61,6 +72,26 @@ private void TargetCheck(Collider other) {
     SeenTarget = other.gameObject;
     }
     } else { return; }
+}
+
+IEnumerator UpdateTarget() {
+    while(true) { 
+    if (active && seenTargets.Count > 0) {
+    for (int i = 0; i < seenTargets.Count; i++) {
+    if (seenTargets[i] == null) { 
+    seenTargets[i] = seenTargets[seenTargets.Count -1];
+    seenTargets.RemoveAt(seenTargets.Count - 1);
+    } else { 
+    TargetCheck(seenTargets[i].GetComponent<Collider>());
+    }
+    }
+    }
+yield return null;
+    }
+}
+
+private void OnDestroy() {
+    StopCoroutine(UpdateTarget());
 }
 
 private void OnDrawGizmos() {

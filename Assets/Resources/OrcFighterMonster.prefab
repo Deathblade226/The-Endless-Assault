@@ -5504,6 +5504,7 @@ MonoBehaviour:
   targets:
   - Player
   - Defense
+  - Obstacle
 --- !u!1 &8984854172644119226
 GameObject:
   m_ObjectHideFlags: 0

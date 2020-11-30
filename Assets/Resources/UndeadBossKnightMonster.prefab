@@ -1544,6 +1544,7 @@ MonoBehaviour:
   targets:
   - Player
   - Defense
+  - Obstacle
 --- !u!108 &8548360178762252432
 Light:
   m_ObjectHideFlags: 0

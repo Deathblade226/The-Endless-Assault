@@ -387,8 +387,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ac768a6d026f944ebad8d4cd676aa06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fieldOfViewAngle: 180
-  visionRange: 1
+  fieldOfViewAngle: 360
+  visionRange: 2
   visionTrigger: {fileID: 4613415799444573188}
   ignoreLayers:
     serializedVersion: 2
