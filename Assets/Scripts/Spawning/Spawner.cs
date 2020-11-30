@@ -12,7 +12,7 @@ public class Spawner : MonoBehaviourPun, IPunObservable {
 private int wave = 0;
 private bool spawning = false;
 private bool waitingToPay = false;
-
+public bool WaitToSpawn { get; set; } = false;
 public int Wave { get => wave; set => wave =  value ; }
 public List<Wave> Waves { get => waves; set => waves =  value ; }
 
@@ -25,6 +25,7 @@ public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info) {
 	this.spawning = (bool)stream.ReceiveNext();
 	}
 }
+
 private void Update() {
 	if (waitingToPay && GameObject.FindGameObjectWithTag("Monster") == null) {
 	if (PhotonNetwork.IsMasterClient) Game.game.Pv.RPC("ModifyCurrency", RpcTarget.All, -Waves[Wave-1].EndwaveCurrency);
@@ -34,6 +35,7 @@ private void Update() {
 
 [PunRPC] 
 public void StartWave() {
+	if (WaitToSpawn) return;
 	GameObject.FindGameObjectsWithTag("NavMesh")[0].GetComponent<NavMeshSurface>().BuildNavMesh();
 	spawning = (GameObject.FindGameObjectWithTag("Monster") != null || Waves[Wave].gameObject.activeSelf);
 	if (Wave < Waves.Count && !spawning) { Waves[Wave].gameObject.SetActive(true); }

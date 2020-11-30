@@ -10,6 +10,10 @@ public class DarkTempleEffect : MapEffect {
 
 private string key = "00000000";
 
+public void Start() {
+	if (PhotonNetwork.IsMasterClient) Pv.RPC("PauseSpawns", RpcTarget.All);
+}
+
 public override void StartEffect() { 
 	Spawner spawner = GameObject.FindGameObjectWithTag("Spawner").GetComponent<Spawner>();
 	switch(spawner.Wave % 8) {
@@ -25,12 +29,22 @@ public override void StartEffect() {
 	}
 }
 
-public void RebuildNavMesh() { //if (PhotonNetwork.IsMasterClient) Pv.RPC("Build", RpcTarget.All); 
+public void ReBuildMap() { if (PhotonNetwork.IsMasterClient) Pv.RPC("Build", RpcTarget.All); 
 }
 
 [PunRPC]
 public void Build() { 
-	GameObject.FindGameObjectWithTag("NavMesh").GetComponent<NavMeshSurface>().BuildNavMesh();
+	GameObject[] gos = GameObject.FindGameObjectsWithTag("Spawner");
+	foreach(GameObject go in gos) { 
+	go.GetComponent<Spawner>().WaitToSpawn = false;
+	}
+}
+[PunRPC]
+public void PauseSpawns() { 
+	GameObject[] gos = GameObject.FindGameObjectsWithTag("Spawner");
+	foreach(GameObject go in gos) { 
+	go.GetComponent<Spawner>().WaitToSpawn = true;
+	}
 }
 
 }
