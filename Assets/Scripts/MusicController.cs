@@ -17,7 +17,7 @@ private void Update() {
 	if (!pv.IsMine) { gameObject.SetActive(false); return; }
 	else musicCollection[Spot].enabled = true;
 	
-	spot = (GameObject.FindGameObjectWithTag("Monster") != null) ? 1 : 0;
+	spot = (GameObject.FindGameObjectWithTag("Monster") != null && SceneManagerHelper.ActiveSceneName != "Testing World") ? 1 : 0;
 
 	if (spot == 1) { 
 	musicCollection[0].enabled = false; 
