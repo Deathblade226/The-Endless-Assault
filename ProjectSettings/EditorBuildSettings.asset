@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/The Dark Temple.unity
     guid: e97233df19611ec47b402575cac05882
+  - enabled: 1
+    path: Assets/Scenes/Testing World.unity
+    guid: 1d356bb48d2aabd46bd2831d77f17d42
   m_configObjects: {}

@@ -85,8 +85,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2376791165561889003}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalScale: {x: 0.75, y: 2, z: 0.75}
   m_Children: []
   m_Father: {fileID: 2376791165151996864}
   m_RootOrder: 0
@@ -165,7 +165,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!114 &3417779263551738810
 MonoBehaviour:
@@ -180,18 +180,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PV: {fileID: 5391643832316444562}
-  m_health: 100
+  animator: {fileID: 0}
+  m_health: 10000
   m_damageReduction: 0
   m_damageCd: 0
   m_killOnDeath: 0
+  canRegen: 1
   m_regenCap: 1
-  m_regenAmount: 100
-  m_regenCd: 10
+  m_regenAmount: 1
+  m_regenCd: 5
   m_constantRegen: 0
   m_hideObject: {fileID: 0}
   m_deathSpawn: {fileID: 0}
   m_healthBar: {fileID: 815734005561561581}
   m_healthText: {fileID: 6565632926206501366}
+  hideObject: {fileID: 0}
+  hide: 0
+  hideDistance: 10
   fillArea: {fileID: 3729952222052238793}
   oneHundred: {r: 0, g: 0.6981132, b: 0.13947354, a: 1}
   sevenFive: {r: 1, g: 0.9504018, b: 0, a: 1}

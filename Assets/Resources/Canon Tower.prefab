@@ -644,6 +644,7 @@ MonoBehaviour:
   active: 0
   targets:
   - Monster
+  - Target
 --- !u!114 &3802982981742484626
 MonoBehaviour:
   m_ObjectHideFlags: 0

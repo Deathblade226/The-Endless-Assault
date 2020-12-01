@@ -24873,6 +24873,8 @@ MonoBehaviour:
   playerSlider: {fileID: 1499698431}
   mapSelecter: {fileID: 1833256862}
   serverVisability: {fileID: 1577749885}
+  debugWorld: Testing World
+  canOpendebugWorld: 1
 --- !u!4 &1457202030
 Transform:
   m_ObjectHideFlags: 0

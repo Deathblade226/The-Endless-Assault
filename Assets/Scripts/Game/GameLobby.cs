@@ -21,6 +21,9 @@ public class GameLobby : MonoBehaviourPunCallbacks {
 [SerializeField]Text mapSelecter = null;
 [SerializeField]Toggle serverVisability = null;
 
+[SerializeField] string debugWorld = "";
+[SerializeField] bool canOpendebugWorld = false;
+
 List<RoomInfo> createdRooms = new List<RoomInfo>(); 
 Vector2 roomListScroll = Vector2.zero; 
 bool joiningRoom = false;
@@ -92,7 +95,7 @@ void LobbyWindow(int index) {
 }    
 
 public void Click_CreateRoom() {
-    if (roomInput != null) roomName = roomInput.text;
+    if (roomInput != null) roomName = roomInput.text; 
     if (roomName != "") {
     joiningRoom = true;
     RoomOptions roomOptions = new RoomOptions(); 
@@ -123,7 +126,8 @@ public override void OnCreatedRoom() {
     // set player name        
     PhotonNetwork.NickName = (nameInput != null && nameInput.text.Trim() != "") ? nameInput.text : PlayerName;        
     // load the scene (make sure the scene is added to build settings)  
-    PhotonNetwork.LoadLevel(sceneName);    
+    Debug.Log($"{roomName} : {debugWorld}");
+    PhotonNetwork.LoadLevel((canOpendebugWorld && roomName == debugWorld) ? debugWorld : sceneName);    
 }    
 
 public override void OnJoinedRoom() {        
