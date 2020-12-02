@@ -7,6 +7,7 @@ using UnityEngine.AI;
 public class DarkTempleEffect : MapEffect {
 
 [SerializeField] Animator animator = null;
+[SerializeField] List<GameObject> visPath;
 
 private string key = "00000000";
 
@@ -35,9 +36,13 @@ public void Pause() { if (PhotonNetwork.IsMasterClient) Pv.RPC("PauseSpawns", Rp
 [PunRPC]
 public void Build() { 
 	GameObject[] gos = GameObject.FindGameObjectsWithTag("Spawner");
+	GameObject.FindGameObjectWithTag("NavMesh").GetComponent<NavMeshSurface>().BuildNavMesh();
 	foreach(GameObject go in gos) { 
 	go.GetComponent<Spawner>().WaitToSpawn = false;
 	}
+	foreach(GameObject go in visPath) { 
+	go.GetComponent<VisualPathingController>().StartSpirit();
+	}	
 }
 [PunRPC]
 public void PauseSpawns() { 
@@ -45,6 +50,9 @@ public void PauseSpawns() {
 	foreach(GameObject go in gos) { 
 	go.GetComponent<Spawner>().WaitToSpawn = true;
 	}
+	foreach(GameObject go in visPath) { 
+	go.GetComponent<VisualPathingController>().PauseSpirit();
+	}	
 }
 
 }

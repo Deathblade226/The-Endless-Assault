@@ -46,10 +46,15 @@ public void ChangeDefense(int selected) {
     foreach(GameObject go in SelectionHighlight) { go.SetActive(false); }
     }
 }
-public void SelectDefense(int selected) { 
+public void SelectDefense(int selected) {
+    if (SelectionHighlight[selected].activeSelf) { 
+    SelectionHighlight[selected].SetActive(false);
+    autoSelect = selected;
+    } else { 
     foreach(GameObject go in SelectionHighlight) { go.SetActive(false); }
     SelectionHighlight[selected].SetActive(true);
     autoSelect = selected;
+    }
 }
 
 public void SetDefault() {

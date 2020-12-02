@@ -88,7 +88,7 @@ private void Update() {
 	}
 	}
 
-	}        
+	} else if (target == null) { StopAttacking(); }
 	if (AttackTime > 0) this.AttackTime -= Time.deltaTime; 
 	//}
 }
@@ -96,7 +96,8 @@ public void StartAttacking() {
 	Active = true;
 }
 
-public void StopAttacking() { 
+public void StopAttacking() {
+	nc.Agent.isStopped = false;
 	Active = false;
 }
 

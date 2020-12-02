@@ -126,7 +126,7 @@ public override void OnCreatedRoom() {
     // set player name        
     PhotonNetwork.NickName = (nameInput != null && nameInput.text.Trim() != "") ? nameInput.text : PlayerName;        
     // load the scene (make sure the scene is added to build settings)  
-    Debug.Log($"{roomName} : {debugWorld}");
+    //Debug.Log($"{roomName} : {debugWorld}");
     PhotonNetwork.LoadLevel((canOpendebugWorld && roomName == debugWorld) ? debugWorld : sceneName);    
 }    
 
