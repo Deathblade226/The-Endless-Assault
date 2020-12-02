@@ -4514,7 +4514,7 @@ MonoBehaviour:
   m_killOnDeath: 0
   canRegen: 1
   m_regenCap: 1
-  m_regenAmount: 1
+  m_regenAmount: 0.5
   m_regenCd: 5
   m_constantRegen: 0
   m_hideObject: {fileID: 9164312129469088375}
