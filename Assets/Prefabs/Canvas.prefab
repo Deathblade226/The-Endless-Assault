@@ -744,7 +744,7 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 1
+          m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &7318895221505941220
 GameObject:
@@ -1512,7 +1512,7 @@ GameObject:
   - component: {fileID: 7318895221798513015}
   - component: {fileID: 7318895221798513014}
   m_Layer: 0
-  m_Name: QuitMenu
+  m_Name: QuitDesktop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1627,7 +1627,7 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!1 &7318895221798559117
 GameObject:
@@ -1706,7 +1706,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Quit To Menu
+  m_Text: Quit To Desktop
 --- !u!1 &7318895221831221488
 GameObject:
   m_ObjectHideFlags: 0

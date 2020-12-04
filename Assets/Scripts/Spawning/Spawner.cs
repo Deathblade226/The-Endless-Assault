@@ -41,8 +41,8 @@ public void StartWave() {
 	if (Wave < Waves.Count && !spawning) { Waves[Wave].gameObject.SetActive(true); }
 }
 public void EndWave() {
-	MapEffect me = GameObject.FindGameObjectWithTag("MapLogic").GetComponent<MapEffect>();
-	if (me != null) me.StartEffect();
+	GameObject go = GameObject.FindGameObjectWithTag("MapLogic");
+	if (go != null) { go.GetComponent<MapEffect>().StartEffect(); }
 	waitingToPay = true;
 	Wave++;
 }
