@@ -378,7 +378,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackCD: 3
-  attackRange: 1.5
+  attackRange: 1.4
   nc: {fileID: 2496098305512758044}
   weapon: {fileID: 7374259174621758362}
   altWeapon: {fileID: 0}
