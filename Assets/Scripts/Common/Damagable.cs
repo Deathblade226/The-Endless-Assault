@@ -13,11 +13,23 @@ public class Damagable : MonoBehaviourPun, IPunObservable {
 [Header("Animator")]
 [SerializeField] Animator animator = null;
 
-[Header("Damage")]
-[SerializeField] float m_health = 100;
-[SerializeField] [Range(-1,1)]float m_damageReduction = 0;
-[SerializeField] float m_damageCd = 0;
+[Header("-- Damage Logic --")]
 [SerializeField] bool m_killOnDeath = false;
+[SerializeField] float m_damageCd = 0;
+
+[SerializeField] [Range(-1,1)]float m_damageReduction = 0;
+
+[Header("- Health -")]
+[SerializeField] float m_health = 100;
+
+[Header("- Defenses -")] // Cover damage types that will either do more or less damage
+[SerializeField] List<DefenseDamageTypes> resistances;
+
+[Header("- Immunity -")] // Cover damage types that will do no damage
+
+[SerializeField] List<ImmuneDamageTypes> immunities;
+
+[Header("------------------")]
 
 [Header("Regeneration")]
 [SerializeField] bool canRegen = false;
