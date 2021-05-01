@@ -552,8 +552,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PV: {fileID: 7250804571136628107}
+<<<<<<< Updated upstream
   m_health: 500
   m_damageReduction: 0.2
+=======
+  animator: {fileID: 0}
+  m_health: 300
+  m_damageReduction: 0.5
+>>>>>>> Stashed changes
   m_damageCd: 0
   m_killOnDeath: 1
   m_regenCap: 1
@@ -3625,7 +3631,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pv: {fileID: 8644891617590022026}
-  damage: 10
+  damage: 30
   enemies:
   - Player
   - Defense

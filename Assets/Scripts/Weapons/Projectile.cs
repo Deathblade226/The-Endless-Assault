@@ -9,6 +9,7 @@ public class Projectile : MonoBehaviourPun, IPunObservable {
 [SerializeField] string enemyTag = "";
 [SerializeField] float LifeTime = 0;
 [SerializeField] PhotonView pv;
+[SerializeField] List<DamageType.Damage> damageTypes;
 
 public float WeaponDamage { get => damage; set => damage = value; }
 public string EnemyTag { get => enemyTag; set => enemyTag = value; }
@@ -35,7 +36,7 @@ private void OnTriggerEnter(Collider other) {
     Damagable health = other.GetComponent<Damagable>();
     //Debug.Log(health);
     if (health != null) { 
-    other.GetComponent<PhotonView>().RPC("ApplyDamage", RpcTarget.All, WeaponDamage);    
+    other.GetComponent<PhotonView>().RPC("ApplyDamage", RpcTarget.All, WeaponDamage, damageTypes);    
     }
     pv.RPC("RPC_Destroy", RpcTarget.All);
     }       

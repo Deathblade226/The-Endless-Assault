@@ -115,6 +115,7 @@ MonoBehaviour:
   enemyTag: Monster
   LifeTime: 10
   pv: {fileID: 5350718435060618250}
+  damageTypes: 0000000001000000
 --- !u!114 &5350718435060618250
 MonoBehaviour:
   m_ObjectHideFlags: 0

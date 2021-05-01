@@ -7,14 +7,30 @@ using UnityEngine.UI;
 
 public class Damagable : MonoBehaviourPun, IPunObservable {
 
+[System.Serializable]
+public struct Resistances { 
+	public List<DamageType.Damage> resistantDamageTypes;
+	[Range(-1,1)] public float damageReduction;
+}
+
+
 [Header("Photon")]
 [SerializeField] PhotonView PV = null;
 
+<<<<<<< Updated upstream
 [Header("Damage")]
+=======
+[Header("Animator")]
+[SerializeField] Animator animator = null;
+
+[Header("Defense")]
+>>>>>>> Stashed changes
 [SerializeField] float m_health = 100;
 [SerializeField] [Range(-1,1)]float m_damageReduction = 0;
 [SerializeField] float m_damageCd = 0;
 [SerializeField] bool m_killOnDeath = false;
+[SerializeField] List<DamageType.Damage> damageImmunity;
+[SerializeField] List<Resistances> damageResistances;
 
 [Header("Regeneration")]
 [SerializeField] [Range(0,1)]float m_regenCap = 1;
@@ -89,8 +105,12 @@ private void Update() {
 }
 
 [PunRPC]
-public void ApplyDamage(float damageAmount) {
+public void ApplyDamage(float damageAmount, List<DamageType.Damage> damageTypes) {
 	//Debug.Log(damageAmount);
+
+	//Checks to see if the target is immune to a specific damage type. 
+	if (damageImmunity.Contains(damageTypes[0])) damageAmount = 0;
+
 	if (damageCd <= 0) {
 	damageCd = m_damageCd;
 	regenCd = m_regenCd;

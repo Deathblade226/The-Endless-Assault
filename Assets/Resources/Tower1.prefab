@@ -1090,15 +1090,111 @@ MonoBehaviour:
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
+<<<<<<< Updated upstream:Assets/Resources/Tower1.prefab
 --- !u!1001 &4919575308878585231
+=======
+--- !u!114 &8375721004635690582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7097908190211866888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c23f9b2ba9181147906fccd6a9e9a6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PV: {fileID: 6752852297313103817}
+  animator: {fileID: 4446637038933583696}
+  m_health: 150
+  m_damageReduction: 0
+  m_damageCd: 0
+  m_killOnDeath: 1
+  canRegen: 1
+  m_regenCap: 1
+  m_regenAmount: 1
+  m_regenCd: 0
+  m_constantRegen: 1
+  m_hideObject: {fileID: 0}
+  m_deathSpawn: {fileID: 7624330585982824992, guid: 072a738b7534b5242948fb9239c33a5f,
+    type: 3}
+  m_healthBar: {fileID: 5925259497390210659}
+  m_healthText: {fileID: 8945455987154976345}
+  hideObject: {fileID: 1227133298787900965}
+  hide: 1
+  hideDistance: 10
+  fillArea: {fileID: 786017488971477684}
+  oneHundred: {r: 0, g: 0.6981132, b: 0.13947354, a: 1}
+  sevenFive: {r: 1, g: 0.9504018, b: 0, a: 1}
+  five: {r: 1, g: 0.5615011, b: 0, a: 1}
+  twoFive: {r: 1, g: 0, b: 0.18256807, a: 1}
+--- !u!136 &7554453582433053765
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7097908190211866888}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.75
+  m_Height: 3.8340917
+  m_Direction: 1
+  m_Center: {x: 0, y: 1.7842996, z: 0}
+--- !u!114 &3211140192782228019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7097908190211866888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c0d0aa69b068e949af66b8d6bea2616, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pv: {fileID: 6752852297313103817}
+  damage: 0
+  enemies: []
+  continuousAttack: 0
+  Type: Summon
+  BuffDamage: 0
+  BuffDamageCd: 0
+  summonMonster: {fileID: 3336172698178726445, guid: 7deab0464dda2994692f9fddcc9e64c3,
+    type: 3}
+  maxSummons: 5
+  summonDistance: 2
+  summonTime: 5
+  summonWait: 5
+  nc: {fileID: 6446105020608920600}
+--- !u!1001 &2645526077640304962
+>>>>>>> Stashed changes:Assets/Resources/Necromancer.prefab
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 6040005500092588342}
     m_Modifications:
+<<<<<<< Updated upstream:Assets/Resources/Tower1.prefab
     - target: {fileID: -8679921383154817045, guid: df30fb33515bdb44cb065d998a1d65bd,
         type: 3}
+=======
+    - target: {fileID: 1367493687340342, guid: 609170bc4512ad645b42a2522e047265, type: 3}
+      propertyPath: m_Name
+      value: SM_Wep_Medusa_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 1367493687340342, guid: 609170bc4512ad645b42a2522e047265, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 4163036444141876, guid: 609170bc4512ad645b42a2522e047265, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4163036444141876, guid: 609170bc4512ad645b42a2522e047265, type: 3}
+>>>>>>> Stashed changes:Assets/Resources/Necromancer.prefab
       propertyPath: m_LocalPosition.x
       value: -0
       objectReference: {fileID: 0}
@@ -1112,8 +1208,16 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+<<<<<<< Updated upstream:Assets/Resources/Tower1.prefab
     - target: {fileID: -8679921383154817045, guid: df30fb33515bdb44cb065d998a1d65bd,
         type: 3}
+=======
+    - target: {fileID: 4163036444141876, guid: 609170bc4512ad645b42a2522e047265, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9459182
+      objectReference: {fileID: 0}
+    - target: {fileID: 4163036444141876, guid: 609170bc4512ad645b42a2522e047265, type: 3}
+>>>>>>> Stashed changes:Assets/Resources/Necromancer.prefab
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
@@ -1127,6 +1231,7 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0
       objectReference: {fileID: 0}
+<<<<<<< Updated upstream:Assets/Resources/Tower1.prefab
     - target: {fileID: -8679921383154817045, guid: df30fb33515bdb44cb065d998a1d65bd,
         type: 3}
       propertyPath: m_LocalRotation.w
@@ -1139,6 +1244,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: df30fb33515bdb44cb065d998a1d65bd,
         type: 3}
+=======
+    - target: {fileID: 4163036444141876, guid: 609170bc4512ad645b42a2522e047265, type: 3}
+>>>>>>> Stashed changes:Assets/Resources/Necromancer.prefab
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
@@ -1187,8 +1295,32 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6040005501054854171}
     m_Modifications:
+<<<<<<< Updated upstream:Assets/Resources/Tower1.prefab
     - target: {fileID: -8679921383154817045, guid: 6c6f73bcf82c9fe46ab5f84e64cbd0bf,
         type: 3}
+=======
+    - target: {fileID: 1297780734974752, guid: c7cebe2178705794aa9a9911f182d8c1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1909744818002174, guid: c7cebe2178705794aa9a9911f182d8c1, type: 3}
+      propertyPath: m_Name
+      value: Character_AncientWarrior_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 1909744818002174, guid: c7cebe2178705794aa9a9911f182d8c1, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1909744818002174, guid: c7cebe2178705794aa9a9911f182d8c1, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585453369738264, guid: c7cebe2178705794aa9a9911f182d8c1, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585453369738264, guid: c7cebe2178705794aa9a9911f182d8c1, type: 3}
+>>>>>>> Stashed changes:Assets/Resources/Necromancer.prefab
       propertyPath: m_LocalPosition.x
       value: -0
       objectReference: {fileID: 0}
@@ -1202,8 +1334,16 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+<<<<<<< Updated upstream:Assets/Resources/Tower1.prefab
     - target: {fileID: -8679921383154817045, guid: 6c6f73bcf82c9fe46ab5f84e64cbd0bf,
         type: 3}
+=======
+    - target: {fileID: 4585453369738264, guid: c7cebe2178705794aa9a9911f182d8c1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585453369738264, guid: c7cebe2178705794aa9a9911f182d8c1, type: 3}
+>>>>>>> Stashed changes:Assets/Resources/Necromancer.prefab
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
@@ -1217,6 +1357,7 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0
       objectReference: {fileID: 0}
+<<<<<<< Updated upstream:Assets/Resources/Tower1.prefab
     - target: {fileID: -8679921383154817045, guid: 6c6f73bcf82c9fe46ab5f84e64cbd0bf,
         type: 3}
       propertyPath: m_LocalRotation.w
@@ -1229,6 +1370,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6c6f73bcf82c9fe46ab5f84e64cbd0bf,
         type: 3}
+=======
+    - target: {fileID: 4585453369738264, guid: c7cebe2178705794aa9a9911f182d8c1, type: 3}
+>>>>>>> Stashed changes:Assets/Resources/Necromancer.prefab
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}

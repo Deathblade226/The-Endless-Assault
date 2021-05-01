@@ -186,3 +186,25 @@ MonoBehaviour:
   m_SynchronizeAngularVelocity: 0
   m_TeleportEnabled: 0
   m_TeleportIfDistanceGreaterThan: 3
+<<<<<<< Updated upstream:Assets/Resources/CannonBall.prefab
+=======
+--- !u!114 &8083442714584824460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4440159720214366206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 111684cf7c4cedb4c80cce4b6546497f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 50
+  enemyTag: Monster
+  LifeTime: 10
+  pv: {fileID: 7879491054201214893}
+  damageTypes: 0c000000
+  explosion: {fileID: 3566667130584805874, guid: 1532b87dc35d2c843bed7e49712295a3,
+    type: 3}
+>>>>>>> Stashed changes:Assets/Resources/CanonBall.prefab

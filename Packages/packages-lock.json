@@ -8,7 +8,11 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.ext.nunit": {
+<<<<<<< Updated upstream
       "version": "1.0.0",
+=======
+      "version": "1.0.6",
+>>>>>>> Stashed changes
       "depth": 1,
       "source": "registry",
       "dependencies": {},
@@ -31,18 +35,26 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.inputsystem": {
-      "version": "1.0.0",
+      "version": "1.0.2",
       "depth": 0,
       "source": "registry",
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
     "com.unity.test-framework": {
+<<<<<<< Updated upstream
       "version": "1.1.16",
       "depth": 0,
       "source": "registry",
       "dependencies": {
         "com.unity.ext.nunit": "1.0.0",
+=======
+      "version": "1.1.22",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.ext.nunit": "1.0.6",
+>>>>>>> Stashed changes
         "com.unity.modules.imgui": "1.0.0",
         "com.unity.modules.jsonserialize": "1.0.0"
       },
