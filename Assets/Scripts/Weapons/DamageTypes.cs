@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable] public class DefenseDamageTypes : DamageTypes {
-	[Range(-1,1)] public float resistance;
+	[Tooltip("Range of damage resistance. The lower the number to higher damage and the higher the lower the damage up to .99 (99% of damage). Ex: -1 = 200% damage taken")]
+	[Range(float.MinValue,.99f)] public float resistance;
 }
 
 [System.Serializable] public class ImmuneDamageTypes : DamageTypes { 
@@ -16,6 +17,7 @@ using UnityEngine;
 }
 
 [System.Serializable] public enum Type {
+	All,
 	Void,
 	Physical,
 	Melee,

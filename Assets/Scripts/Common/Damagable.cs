@@ -1,4 +1,5 @@
 ﻿using Photon.Pun;
+using Sirenix.OdinInspector;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -7,56 +8,44 @@ using UnityEngine.UI;
 
 public class Damagable : MonoBehaviourPun, IPunObservable {
 
-[Header("Photon")]
-[SerializeField] PhotonView PV = null;
+[FoldoutGroup("-- Photon --")] [SerializeField] PhotonView PV = null;
 
-[Header("Animator")]
-[SerializeField] Animator animator = null;
+[FoldoutGroup("-- Animator --")] [SerializeField] Animator animator = null;
 
-[Header("-- Damage Logic --")]
-[SerializeField] bool m_killOnDeath = false;
-[SerializeField] float m_damageCd = 0;
+[Header("Logic")]
+[FoldoutGroup("-- Damage Logic --")] [SerializeField] bool m_killOnDeath = false;
+[FoldoutGroup("-- Damage Logic --")] [SerializeField] float m_damageCd = 0;
 
-[SerializeField] [Range(-1,1)]float m_damageReduction = 0;
+[FoldoutGroup("-- Damage Logic --")] [SerializeField] [Range(-1,1)]float m_damageReduction = 0;
 
-[Header("- Health -")]
-[SerializeField] float m_health = 100;
+[FoldoutGroup("-- Damage Logic --")] [SerializeField] float m_health = 100;
 
-[Header("- Defenses -")] // Cover damage types that will either do more or less damage
-[SerializeField] List<DefenseDamageTypes> resistances;
+[Header("Defenses")]
+[FoldoutGroup("-- Damage Logic --")] [SerializeField] List<DefenseDamageTypes> resistances;
+[Header("Immunities")]
+[FoldoutGroup("-- Damage Logic --")] [SerializeField] List<ImmuneDamageTypes> immunities;
 
-[Header("- Immunity -")] // Cover damage types that will do no damage
+[FoldoutGroup("-- Regeneration --")] [SerializeField] bool canRegen = false;
+[FoldoutGroup("-- Regeneration --")] [SerializeField] [Range(0,1)]float m_regenCap = 1;
+[FoldoutGroup("-- Regeneration --")] [SerializeField] float m_regenAmount = 0;
+[FoldoutGroup("-- Regeneration --")] [SerializeField] float m_regenCd = 0;
+[FoldoutGroup("-- Regeneration --")] [SerializeField] bool m_constantRegen = false;
 
-[SerializeField] List<ImmuneDamageTypes> immunities;
+[FoldoutGroup("-- Death --")] [SerializeField] GameObject m_hideObject = null;
+[FoldoutGroup("-- Death --")] [SerializeField] GameObject m_deathSpawn = null;
 
-[Header("------------------")]
+[FoldoutGroup("-- Display --")] [SerializeField] Slider m_healthBar = null;
+[FoldoutGroup("-- Display --")] [SerializeField] TextMeshProUGUI m_healthText = null;
 
-[Header("Regeneration")]
-[SerializeField] bool canRegen = false;
-[SerializeField] [Range(0,1)]float m_regenCap = 1;
-[SerializeField] float m_regenAmount = 0;
-[SerializeField] float m_regenCd = 0;
-[SerializeField] bool m_constantRegen = false;
+[FoldoutGroup("-- Hide settings --")] [SerializeField] GameObject hideObject = null;
+[FoldoutGroup("-- Hide settings --")] [SerializeField] bool hide = false;
+[FoldoutGroup("-- Hide settings --")] [SerializeField] float hideDistance = 10;
 
-[Header("Death")]
-[SerializeField] GameObject m_hideObject = null;
-[SerializeField] GameObject m_deathSpawn = null;
-
-[Header("Display")]
-[SerializeField] Slider m_healthBar = null;
-[SerializeField] TextMeshProUGUI m_healthText = null;
-
-[Header("Hide settings")]
-[SerializeField] GameObject hideObject = null;
-[SerializeField] bool hide = false;
-[SerializeField] float hideDistance = 10;
-
-[Header("Color")]
-[SerializeField] Image fillArea = null;
-[SerializeField] Color oneHundred;
-[SerializeField] Color sevenFive;
-[SerializeField] Color five;
-[SerializeField] Color twoFive;
+[FoldoutGroup("-- Color --")] [SerializeField] Image fillArea = null;
+[FoldoutGroup("-- Color --")] [SerializeField] Color oneHundred;
+[FoldoutGroup("-- Color --")] [SerializeField] Color sevenFive;
+[FoldoutGroup("-- Color --")] [SerializeField] Color five;
+[FoldoutGroup("-- Color --")] [SerializeField] Color twoFive;
 
 private float maxHealth;
 private float damageCd;
